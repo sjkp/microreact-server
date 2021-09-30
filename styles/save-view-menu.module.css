@@ -1,0 +1,34 @@
+
+.root {
+  width: 480px;
+}
+
+.root :global footer {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.root :global footer > * {
+  flex-grow: 1;
+}
+
+.root :global .mr-thumbnail {
+  height: 240px;
+  overflow: hidden;
+
+  display: flex;
+  background-color: #efefef;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.root :global .mr-thumbnail :global img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.root :global .MuiButton-root :global .MuiCircularProgress-root {
+  position: absolute;
+}

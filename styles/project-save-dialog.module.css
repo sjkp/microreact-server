@@ -1,0 +1,137 @@
+
+.root :global .MuiDialog-paper {
+  position: relative;
+}
+/* .root :global .MuiLinearProgress-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+} */
+
+
+.root :global .mr-saved-done {
+  position: absolute;
+  top: calc(50% - 80px);
+  left: calc(50% - 80px);
+  width: 160px;
+  height: 160px;
+  z-index: 3;
+}
+
+/* .root :global section {
+  margin-bottom: 8px;
+} */
+
+/* .root :global .mr-close-button {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  padding: 8px;
+} */
+
+
+.root :global .mr-project-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.root :global .mr-project-info .MuiTextField-root {
+  margin: 8px 0;
+}
+
+
+.root :global .mr-save-actions {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.root :global .mr-save-actions :global .MuiButtonBase-root {
+  text-transform: unset;
+  flex: 1 1 0px;
+  padding: 16px 0;
+}
+
+.root :global .mr-save-actions :global .MuiButtonBase-root + .MuiButtonBase-root :global {
+  margin-left: 16px;
+}
+
+.root :global .mr-save-actions :global .MuiButtonBase-root :global .mr-ui-icon-stack {
+  width: 80px;
+  height: 80px;
+  /* margin: 16px 0; */
+}
+
+.root :global .mr-save-actions :global .mr-download-file :global .mr-ui-icon-stack {
+  padding: 8px 0;
+}
+
+.root :global .mr-save-actions :global .MuiButtonBase-root :global .MuiButton-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.root :global .mr-save-actions :global .MuiButtonBase-root p {
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+/*#region Saving spinner */
+
+.root :global .mr-save-actions :global .MuiButtonBase-root {
+  position: relative;
+}
+.root :global .mr-save-actions :global .MuiCircularProgress-root {
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 60px);
+  /* width: 160px;
+  height: 160px; */
+  z-index: 1;
+}
+
+/*#endregion*/
+
+/*#region Blinder */
+
+.root :global .MuiDialogContent-root {
+  position: relative;
+}
+.root :global .mr-blinder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root :global .mr-blinder .MuiFormControl-root {
+  position: absolute;
+  bottom: 54px;
+  background-color: var(--background-main);
+  left: 40px;
+  right: 40px;
+}
+
+.root :global .mr-blinder input {
+  cursor: pointer !important;
+}
+
+/*#endregion*/
+
+/*#region Icon stacks */
+
+.root :global .mr-save-actions :global svg:not(:first-child) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*#endregion*/

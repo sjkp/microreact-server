@@ -1,0 +1,37 @@
+.vimeo {
+  position: relative;
+}
+
+.vimeo :global .overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0;
+  width: inherit;
+  height: inherit;
+  left: 0;
+}
+
+.vimeo :global .overlay :global .play-icon {
+  transition: 300ms;
+  height: 100px;
+  width: 100px;
+  opacity: 1;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOCA1djE0bDExLTd6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #3C7383;
+  border-radius: 100%;
+}
+
+.vimeo :global .overlay:hover :global .play-icon {
+  background-color: #9bb7bf;
+}
+
+.vimeo :global .player {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+}

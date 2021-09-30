@@ -1,0 +1,73 @@
+@import './variables.css';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-family: var(--fontFamilyBody);
+  overflow: hidden;
+}
+
+a {
+  color: #3C7383;
+  font-weight: 400;
+}
+a:hover {
+  color: #3C7383;
+  text-decoration: none;
+}
+a.active {
+  color: #000;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+input::placeholder {
+  font-family: inherit; /* for Firefox */
+}
+
+
+.mr-heading,
+.cgps-heading {
+  font-family: var(--fontFamilyHeading);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #3c7383;
+}
+
+.mr-muted {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mr-placeholder-text {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+}
+
+.mr-button-large {
+  margin: 32px;
+  font-size: 20px;
+  line-height: 64px;
+  height: 64px;
+}
+
+
+.mr-error-icon {
+  font-size: 80px;
+  color: #3C7383;
+}
+
+.mr-error-page {
+  text-align: center;
+  padding-bottom: 64px !important;
+}
+
+.mr-error-page ul {
+  list-style: none;
+  margin-bottom: 16px;
+  padding: 0;
+}
+

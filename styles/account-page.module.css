@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+}
+
+.page :global main {
+  /* height: calc(100vh - 96px); */
+  min-height: calc(100vh - 48px);
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.page :global .MuiContainer-root {
+  padding-top: 0;
+  padding-bottom: 32px;
+  position: relative;
+  /* min-height: calc(100vh - 96px); */
+}
+
+.page :global h2,
+.page :global h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  height: 48px;
+  padding: 12px 0;
+}
+
+.page :global .mr-project-grid-controls {
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  width: 240px;
+}
+
+.api-section :global .MuiTypography-root + * {
+  min-height: 56px;
+  height: 56px;
+  width: 100%;
+} 

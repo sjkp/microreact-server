@@ -1,0 +1,89 @@
+body > .page > div > :not(.error):first-child::before {
+  background-image: url("/images/logos/microreact.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  display: inline-block;
+  background-size: 140px;
+  padding: 40px 0 8px 0;
+  content: "";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3333;
+  color: var(--color-primary);
+}
+
+body > .page > div.signin > :not(.error):first-child::before {
+  content: "Sign in";
+}
+
+body .page .signin .provider:last-child::after {
+  content: "By signing in, you are agreeing to our cookies policy.";
+  font-size: 12px;
+}
+
+body label[for="input-email-for-email-provider"] {
+  position: relative;
+  top: 40px;
+  left: 16px;
+  z-index: 1;
+  margin-top: -16px;
+}
+
+body label[for="input-email-for-email-provider"]::before {
+  content: "Passwordless sign in with ";
+}
+
+body input#input-email-for-email-provider {
+  z-index: 2;
+  position: relative;
+}
+body input#input-email-for-email-provider::placeholder {
+  opacity: 0;
+}
+body input#input-email-for-email-provider:placeholder-shown {
+  z-index: 0;
+}
+
+body .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body .page > div {
+  min-width: 300px;
+  padding: 40px 40px 24px 40px;
+  border-radius: 8px;
+  border: 1px solid #dadce0;
+}
+
+body input#input-email-for-email-provider,
+body .provider input[type="text"],
+body .provider input[type="password"] {
+  border-radius: 4px;
+  /* color: #202124; */
+  font-size: 16px;
+  /* height: 28px; */
+  /* margin: 1px 1px 0 1px; */
+  padding: 13px 15px;
+  border: 1px solid #dadce0;
+  box-shadow: none;
+}
+
+body button {
+  /* border: 1px solid rgba(0, 0, 0, 0.23); */
+  padding: 5px 15px;
+  color: var(--color-primary);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  box-shadow: none;
+}

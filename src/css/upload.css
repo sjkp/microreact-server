@@ -1,0 +1,72 @@
+@import './variables.css';
+
+.mr-file-upload {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+}
+
+.mr-project-settings h6 {
+  margin: 8px 0 0 0;
+}
+
+.mr-warning {
+  position: relative;
+  padding: 16px 16px 8px 64px;
+  font-size: 14px;
+}
+.mr-warning .material-icons {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 4px 8px 4px 0;
+  font-size: 40px;
+}
+.mr-warning code {
+  margin: 0 2px;
+}
+
+.mr-project-options {
+  display: flex;
+}
+.mr-project-options > label {
+  margin-right: 16px;
+}
+
+.mr-project-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mr-project-fields > .mdl-textfield:not(:last-of-type) {
+  margin-right: 24px;
+}
+
+.mr-upload-requirements p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr-upload-requirements-title {
+  color: #3c7383;
+  font-family: var(--fontFamilyHeading);
+  text-align: center;
+}
+
+.mr-file-requirements {
+  justify-content: center;
+}
+
+.mr-file-requirements .mdl-cell {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .mr-file-requirements .mdl-cell {
+    width: calc(33.33% - 16px);
+  }
+}

@@ -1,0 +1,48 @@
+@import './variables.css';
+
+.mr-about-page section {
+  padding: 40px 0;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.mr-about-page section + section {
+  border-top: 1px dotted #ccc;
+}
+
+.mr-about-page h2,
+.mr-about-page h3 {
+  font-family: var(--fontFamilyHeading);
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.mr-about-page h2 {
+  font-size: calc(var(--fontSizeDisplay1) - 2px);
+}
+
+.mr-about-page h3 {
+  font-size: var(--fontSizeHeadline);
+  color: #3c7383;
+}
+
+.mr-about-page ul {
+  list-style: none;
+  font-size: var(--fontSizeTitle);
+  line-height: 2;
+  padding: 0;
+}
+
+.mr-about-page small {
+  font-size: 14px;
+}
+
+.mr-about-page cite {
+  font-size: var(--fontSizeTitle);
+  line-height: 1.5;
+}
+
+.mr-funding-acknowledge {
+  font-size: var(--fontSizeTitle);
+  margin-bottom: 0;
+}

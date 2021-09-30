@@ -1,0 +1,121 @@
+@import '../css/variables.css';
+
+.mr-documentation {
+  max-width: 960px;
+  margin: 0 auto 32px;
+}
+
+.mr-documentation,
+.mr-documentation ol,
+.mr-documentation ul {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mr-documentation h2,
+.mr-documentation h3,
+.mr-documentation h4 {
+  font-family: var(--fontFamilyHeading);
+  font-weight: 500;
+  color: #3c7383;
+}
+
+.mr-documentation table {
+  margin-bottom: 16px;
+}
+
+.mr-documentation-notabene {
+  background:rgb(103, 60, 144, 0.07);
+  padding: 16px;
+  border-left: 4px solid #673c90;
+}
+
+.mr-tutorial-list {
+  list-style: none;
+  padding: 0;
+}
+
+.mr-tutorial-card {
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+  color: rgb(0, 0, 0, 0.54);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 8px;
+  max-width: 640px;
+  min-height: 320px;
+  position: relative;
+  text-align: center;
+}
+
+.mr-tutorial-card-title {
+  align-self: flex-start;
+  background-color: #3c7383;
+  color: #fff;
+  font-family: var(--fontFamilyHeading);
+  font-size: var(--fontSizeHeadline);
+  line-height: 1.5;
+  margin: 0 0 auto;
+  padding: 16px;
+}
+
+.mr-tutorial-card i {
+  background-color: #3c7383;
+  border-radius: 50px;
+  color: #fff;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.mr-tutorial-card p {
+  padding: 0 16px;
+}
+
+.mr-tutorial-card > :last-child {
+  margin-bottom: auto;
+}
+
+@media (min-width: 1280px) {
+
+  .mr-tutorial-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mr-tutorial-card {
+    margin: 0 4px 8px;
+    width: calc(50% - 8px);
+  }
+
+}
+
+@supports (--color: green) {
+
+  .mr-tutorial-card-title {
+    background-color: var(--tutorialColor);
+  }
+
+  .mr-tutorial-card i {
+    background-color: var(--tutorialColor);
+  }
+
+  .mr-tutorial-card .mdl-button {
+    background-color: var(--tutorialColor) !important;
+  }
+
+  .mr-tutorial-card:nth-child(1) {
+    --tutorialColor: #673c90;
+  }
+
+  .mr-tutorial-card:nth-child(2) {
+    --tutorialColor: #3c7383;
+  }
+
+  .mr-tutorial-card:nth-child(3) {
+    --tutorialColor: #a386bd;
+  }
+
+}

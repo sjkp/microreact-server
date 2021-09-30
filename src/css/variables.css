@@ -1,0 +1,33 @@
+:root {
+  --fontFamilyBody: "Roboto", "Helvetica", "Arial", sans-serif;
+  --fontFamilyHeading: "Saira Semi Condensed", "Roboto", "Helvetica", "Arial", sans-serif;
+  --fontSizeBody: 14px;
+  --fontSizeTitle: 20px;
+  --lineHeightTitle: 1;
+  --fontSizeHeadline: 24px;
+  --lineHeightHeadline: 32px;
+  --fontSizeDisplay1: 34px;
+  --lineHeightDisplay1: 40px;
+  --fontSizeDisplay2: 45px;
+  --lineHeightDisplay2: 48px;
+  --fontSizeDisplay3: 56px;
+  --lineHeightDisplay3: 1.35;
+  --fontSizeDisplay4: 112px;
+  --lineHeightDisplay4: 1;
+  --transition: 0.28s cubic-bezier(.4,0,.2,1);
+
+  --primary-light: #6ca2b3;
+  --primary-main: #3c7383;
+  --primary-dark: #024756;
+  --primary-contrast: #fff;
+  --secondary-main: #b668a6;
+  --secondary-contrast: #000000;
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.54);
+  --text-disabled: rgba(0, 0, 0, 0.38);
+  --text-hint: rgba(0, 0, 0, 0.38);
+  --background-main: #ffffff;
+  --background-highlight: #f8f9fa;
+  --background-hover: #e8eaed;
+  --background-disabled: rgba(0, 0, 0, 0.24);
+}

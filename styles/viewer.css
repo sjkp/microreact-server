@@ -1,0 +1,37 @@
+.microreact-viewer .mr-header-bar {
+  position: sticky;
+}
+
+div.mr-ui-dialog .MuiDialog-paper {
+  margin: 0;
+}
+
+/* div.mr-ui-dialog .MuiDialog-paper.MuiPaper-rounded {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 3px rgba(60,64,67,.15);
+  padding: 0;
+}
+
+div.mr-ui-dialog .MuiDialogTitle-root {
+  padding: 24px 24px 16px 24px;
+  line-height: 24px;
+  position: relative;
+}
+
+div.mr-ui-dialog .MuiDialogTitle-root .MuiTypography-root {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  font-weight: 500;
+}
+div.mr-ui-dialog .MuiDialogTitle-root .mr-floating-action-buttons {
+  top: -5px
+}
+
+div.mr-ui-dialog  .MuiDialogActions-root {
+  line-height: 24px;
+  padding: 24px 24px 0 24px;
+}
+ */
+
