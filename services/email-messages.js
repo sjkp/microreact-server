@@ -1,62 +1,50 @@
+import nodemailer from "nodemailer";
+
 const path = require("path");
 const EmailTemplates = require("email-templates");
-const EmailJS = require("emailjs");
 
 const serverRuntimeConfig = require("../utils/server-runtime-config");
 const publicRuntimeConfig = require("../utils/public-runtime-config");
 
-const dataUrlRegex = /^data:(.+);base64,(.+)$/i;
+async function sendSmtpMessage(messageData) {
+  const transporter = nodemailer.createTransport(
+    serverRuntimeConfig.smtp
+  );
 
-async function smtpServer(messageData) {
-  return new Promise((resolve, reject) => {
-    const server = EmailJS.server.connect(serverRuntimeConfig.smtp);
-    server.send(messageData, (err, message) => {
-      if (err) {
-        reject(err);
-      }
-      else {
-        resolve(message);
-      }
-    });
-  });
+  messageData.from = serverRuntimeConfig.smtp.from;
+
+  const info = await transporter.sendMail(messageData);
+
+  return info;
 }
 
-module.exports.sendEmailMessage = async function sendEmailMessage(to, message, attachments) {
-  const toAddress = to.to ? to.to : to;
-  const replyToAddress = to.replyTo ? to.replyTo : undefined;
-
+module.exports.sendEmailMessage = async function sendEmailMessage(
+  toAddress,
+  message,
+  attachments,
+  replyToAddress,
+)
+{
   const smtpRequest = {
     text: message.text,
-    from: serverRuntimeConfig.smtp.from,
     to: Array.isArray(toAddress) ? toAddress.join(", ") : toAddress,
     subject: message.subject,
     attachment: [],
   };
 
+  if (replyToAddress) {
+    smtpRequest.replyTo = replyToAddress;
+  }
+
   if (message.html) {
-    smtpRequest.attachment.push({
-      data: message.html,
-      alternative: true,
-    });
+    smtpRequest.html = message.html;
   }
 
   if (Array.isArray(attachments)) {
-    for (const item of attachments) {
-      smtpRequest.attachment.push(item);
-      const match = item.data.match(dataUrlRegex);
-      if (match) {
-        item.encoded = true;
-        item.type = match[1];
-        item.data = match[2];
-      }
-    }
+    smtpRequest.attachments = attachments;
   }
 
-  if (replyToAddress) {
-    smtpRequest["reply-to"] = replyToAddress;
-  }
-
-  const smtpResponse = await smtpServer(smtpRequest);
+  const smtpResponse = await sendSmtpMessage(smtpRequest);
 
   return smtpResponse;
 };

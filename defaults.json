@@ -68,12 +68,14 @@
   "repoPath": "./files",
 
   "smtp": {   
-    "from": "Microreact <noreply@microreact.org>", 
-    "user": "smtp@microreact.org",
-    "password": "",
     "host": "smtp.microreact.org",
     "port": "25",
-    "ssl": false
+    "auth": {
+      "user": "smtp@microreact.org",
+      "pass": ""
+    },
+    "secure": false,
+    "from": "Microreact <noreply@microreact.org>"
   }
 
 }

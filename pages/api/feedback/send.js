@@ -11,8 +11,8 @@ export default async function (req, res) {
   const attachments = [];
   if (screenshotImage) {
     attachments.push({
-      data: screenshotImage,
-      name: "Screenshot.png",
+      path: screenshotImage,
+      filename: "Screenshot.png",
     });
   }
 
@@ -28,16 +28,14 @@ export default async function (req, res) {
   }
 
   await sendEmailMessage(
-    {
-      to: serverRuntimeConfig.helpDesk.email,
-      replyTo: emailAddress || (user?.email) || undefined,
-    },
+    serverRuntimeConfig.helpDesk.email,
     {
       subject: serverRuntimeConfig.helpDesk.subject,
       text: emailText.join(" \\\n"),
       html: null /* html */,
     },
     attachments,
+    emailAddress || (user?.email) || undefined,
   );
 
   res.status(200).send();
