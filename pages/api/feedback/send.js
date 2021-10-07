@@ -3,6 +3,14 @@ import getUser from "cgps-application-server/middleware/get-user";
 import { sendEmailMessage } from "../../../services/email-messages";
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: serverRuntimeConfig.bodySizeLimit,
+    },
+  },
+};
+
 export default async function (req, res) {
   const user = await getUser(req, res);
 
