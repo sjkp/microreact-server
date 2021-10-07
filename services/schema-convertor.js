@@ -99,6 +99,7 @@ module.exports = function (originalDoc) {
 
   doc.tables["table-1"] = {
     dataset: "dataset-1",
+    file: "data-file-1",
     title: "Metadata",
     columns: fields
       .filter((x) => !x.match(/(.+)__(color|colour|shape|pattern|url)$/i))
