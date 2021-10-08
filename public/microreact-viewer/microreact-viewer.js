@@ -5691,7 +5691,7 @@ function update(treeId, key, value) {
   return {
     delay: true,
     group: "".concat(treeId, "/").concat(key),
-    label: key === "alignLabels" ? "Tree: Toggle align labels" : key === "blockHeaderFontSize" ? "Tree: Set metadata header font size to ".concat(value) : key === "blockLength" ? "Tree: Set metadata block size to ".concat(value) : key === "blockPadding" ? "Tree: Set metadata block gap to ".concat(value) : key === "blocks" ? "Tree: Set metadata columns to ".concat(Arrays.summarise(value)) : key === "fontSize" ? "Tree: Set font size to ".concat(value) : key === "nodeSize" ? "Tree: Set node size to ".concat(value) : key === "showBlockHeaders" ? "Tree: Toggle metadata headers" : key === "showBranchLengths" ? "Tree: Toggle branch lengths" : key === "showLeafLabels" ? "Tree: Toggle leaf labels" : key === "showPiecharts" ? "Tree: Toggle internal nodes" : key === "showShapeBorders" ? "Tree: Toggle shape borders" : key === "showShapes" ? "Tree: Toggle node shapes" : key === "styleLeafLabels" ? "Tree: Toggle colour leaf labels" : key === "styleLeafNodes" ? "Tree: Toggle colour leaf nodes" : key === "styleNodeEdges" ? "Tree: Toggle colour internal edges" : key === "styleNodeLines" ? "Tree: Toggle colour internal edges" : undefined,
+    label: key === "alignLabels" ? "Tree: Toggle align labels" : key === "blockHeaderFontSize" ? "Tree: Set metadata header font size to ".concat(value) : key === "blockSize" ? "Tree: Set metadata block size to ".concat(value) : key === "blockPadding" ? "Tree: Set metadata block gap to ".concat(value) : key === "blocks" ? "Tree: Set metadata columns to ".concat(Arrays.summarise(value)) : key === "fontSize" ? "Tree: Set font size to ".concat(value) : key === "nodeSize" ? "Tree: Set node size to ".concat(value) : key === "showBlockHeaders" ? "Tree: Toggle metadata headers" : key === "showBranchLengths" ? "Tree: Toggle branch lengths" : key === "showLeafLabels" ? "Tree: Toggle leaf labels" : key === "showPiecharts" ? "Tree: Toggle internal nodes" : key === "showShapeBorders" ? "Tree: Toggle shape borders" : key === "showShapes" ? "Tree: Toggle node shapes" : key === "styleLeafLabels" ? "Tree: Toggle colour leaf labels" : key === "styleLeafNodes" ? "Tree: Toggle colour leaf nodes" : key === "styleNodeEdges" ? "Tree: Toggle colour internal edges" : key === "styleNodeLines" ? "Tree: Toggle colour internal edges" : undefined,
     payload: {
       key: key,
       value: value
@@ -24632,7 +24632,7 @@ var initialState = {
   subtreeIds: null,
   alignLabels: true,
   blockHeaderFontSize: 13,
-  blockLength: 14,
+  blockSize: 14,
   blockPadding: 0,
   blocks: [],
   fontSize: 16,
@@ -24657,7 +24657,7 @@ var queryPropMap = {
     key: "tc",
     type: Boolean
   },
-  blockLength: {
+  blockSize: {
     key: "tbl",
     type: Number
   },
@@ -24665,11 +24665,11 @@ var queryPropMap = {
     key: "tts",
     type: Number
   },
-  minBlockLength: {
+  minBlockSize: {
     key: "tnbl",
     type: Number
   },
-  maxBlockLength: {
+  maxBlockSize: {
     key: "txbl",
     type: Number
   },

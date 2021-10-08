@@ -2540,15 +2540,15 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeState = state.trees[treeId];
   return {
     blockHeaderFontSize: treeState.blockHeaderFontSize,
-    blockLength: treeState.blockLength,
+    blockSize: treeState.blockSize || treeState.blockLength,
     blockPadding: treeState.blockPadding,
     blocks: treeState.blocks,
     colourFields: (0, _dataColumns["default"])(state),
     fontSize: treeState.fontSize,
-    maxBlockLength: 160,
+    maxBlockSize: 160,
     maxBlockPadding: 16,
     maxFontSize: 64,
-    minBlockLength: 1,
+    minBlockSize: 1,
     minBlockPadding: 0,
     minFontSize: 1,
     showBlockHeaders: treeState.showBlockHeaders,
@@ -2562,8 +2562,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     onBlockHeaderFontSizeChange: function onBlockHeaderFontSizeChange(value) {
       return dispatch((0, _trees.update)(treeId, "blockHeaderFontSize", value));
     },
-    onBlockLengthChange: function onBlockLengthChange(value) {
-      return dispatch((0, _trees.update)(treeId, "blockLength", value));
+    onBlockSizeChange: function onBlockSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "blockSize", value));
     },
     onBlockPaddingChange: function onBlockPaddingChange(value) {
       return dispatch((0, _trees.update)(treeId, "blockPadding", value));
@@ -2631,12 +2631,12 @@ var TreeMetadataMenu = /*#__PURE__*/_react["default"].memo(function (props) {
     unit: "px",
     value: props.blockHeaderFontSize
   }), /*#__PURE__*/_react["default"].createElement(_UiSlider["default"], {
-    label: "Block Length",
-    max: props.maxBlockLength,
-    min: props.minBlockLength,
-    onChange: props.onBlockLengthChange,
+    label: "Block Size",
+    max: props.maxBlockSize,
+    min: props.minBlockSize,
+    onChange: props.onBlockSizeChange,
     unit: "px",
-    value: props.blockLength
+    value: props.blockSize
   }), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
     label: "Block gap",
     onCheckedChange: function onCheckedChange(checked) {
@@ -2669,19 +2669,19 @@ var TreeMetadataMenu = /*#__PURE__*/_react["default"].memo(function (props) {
 TreeMetadataMenu.displayName = "TreeMetadataMenu";
 TreeMetadataMenu.propTypes = {
   blockHeaderFontSize: _propTypes["default"].number.isRequired,
-  blockLength: _propTypes["default"].number.isRequired,
+  blockSize: _propTypes["default"].number.isRequired,
   blockPadding: _propTypes["default"].number.isRequired,
   blocks: _propTypes["default"].arrayOf(_propTypes["default"].string.isRequired),
   className: _propTypes["default"].string,
   colourFields: _propTypes["default"].arrayOf(_propTypes2.DataColumn).isRequired,
-  maxBlockLength: _propTypes["default"].number.isRequired,
+  maxBlockSize: _propTypes["default"].number.isRequired,
   maxBlockPadding: _propTypes["default"].number.isRequired,
   maxFontSize: _propTypes["default"].number.isRequired,
-  minBlockLength: _propTypes["default"].number.isRequired,
+  minBlockSize: _propTypes["default"].number.isRequired,
   minBlockPadding: _propTypes["default"].number.isRequired,
   minFontSize: _propTypes["default"].number.isRequired,
   onBlockHeaderFontSizeChange: _propTypes["default"].func.isRequired,
-  onBlockLengthChange: _propTypes["default"].func.isRequired,
+  onBlockSizeChange: _propTypes["default"].func.isRequired,
   onBlockPaddingChange: _propTypes["default"].func.isRequired,
   onBlocksChange: _propTypes["default"].func,
   onMetadataLabelsChange: _propTypes["default"].func,
