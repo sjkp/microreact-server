@@ -242,7 +242,7 @@ module.exports = function (originalDoc) {
       const { phylocanvas } = originalDoc.savedState.tree;
       doc.trees["tree-1"].nodeSize = phylocanvas.nodeSize;
       doc.trees["tree-1"].type = phylocanvas.type;
-      doc.trees["tree-1"].blockLength = phylocanvas.blockLength;
+      doc.trees["tree-1"].blockSize = phylocanvas.blockLength;
       doc.trees["tree-1"].showLeafLabels = phylocanvas.showLeafLabels;
       // doc.trees["tree-1"].showShapeBorders = phylocanvas.showShapeBorders;
     }
