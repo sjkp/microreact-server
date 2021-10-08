@@ -21399,12 +21399,13 @@ var TablePaneEditor = /*#__PURE__*/function (_React$PureComponent) {
             try {
               for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                 var row = _step2.value;
+                var value = row[dataColumn.name];
 
-                if (values.has(row[dataColumn.name])) {
+                if (value === undefined || value === null || values.has(value)) {
                   isUnique = false;
                   break;
                 } else {
-                  values.add(row[dataColumn.name]);
+                  values.add(value);
                 }
               }
             } catch (err) {
