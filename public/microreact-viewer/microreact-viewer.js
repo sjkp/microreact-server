@@ -13858,7 +13858,7 @@ function loadCsvFile(_x, _x2, _x3) {
 
 function _loadCsvFile() {
   _loadCsvFile = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(fileBlobOrUrl, settings, onProgress) {
-    var loaderOptions, rows, groups, index, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, batch, _iterator3, _step3, row, keys, _iterator4, _step4, _field, key, _iterator5, _step5, field, _index, _iteratorAbruptCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, _batch, _iterator6, _step6, _row;
+    var loaderOptions, rows, groups, index, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, batch, _iterator3, _step3, row, _i, _Object$keys, _key, keys, _iterator4, _step4, _field, key, _iterator5, _step5, field, _index, _iteratorAbruptCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, _batch, _iterator6, _step6, _row, _i2, _Object$keys2, _key2;
 
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
@@ -13873,7 +13873,7 @@ function _loadCsvFile() {
                 // If true, the first row of parsed data will be interpreted as field names
                 rowFormat: "object",
                 skipEmptyLines: true,
-                transform: cleanUpFalsyCsvValue,
+                // transform: cleanUpFalsyCsvValue,
                 transformHeader: function transformHeader(x) {
                   return x.trim ? x.trim() : x;
                 }
@@ -13914,6 +13914,12 @@ function _loadCsvFile() {
             try {
               for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
                 row = _step3.value;
+
+                for (_i = 0, _Object$keys = Object.keys(row); _i < _Object$keys.length; _i++) {
+                  _key = _Object$keys[_i];
+                  row[_key] = cleanUpFalsyCsvValue(row[_key]);
+                }
+
                 keys = [];
                 _iterator4 = _createForOfIteratorHelper(settings.aggregate);
 
@@ -14037,6 +14043,12 @@ function _loadCsvFile() {
               for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
                 _row = _step6.value;
                 _row["--mr-index"] = _index.toString();
+
+                for (_i2 = 0, _Object$keys2 = Object.keys(_row); _i2 < _Object$keys2.length; _i2++) {
+                  _key2 = _Object$keys2[_i2];
+                  _row[_key2] = cleanUpFalsyCsvValue(_row[_key2]);
+                }
+
                 rows.push(_row);
                 _index += 1;
               }
