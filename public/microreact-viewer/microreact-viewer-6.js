@@ -505,8 +505,10 @@ function canvasLasso(mouseCanvas, drawingCanvas, options) {
   };
 
   var handleMouseup = function handleMouseup(event) {
-    if (Math.abs(offsetX - event.offsetX) < 5 && Math.abs(offsetY - event.offsetY) < 5) {
-      handleOnClick(event);
+    if (event.target.nodeName === "CANVAS") {
+      if (Math.abs(offsetX - event.offsetX) < 5 && Math.abs(offsetY - event.offsetY) < 5) {
+        handleOnClick(event);
+      }
     }
 
     offsetX = null;

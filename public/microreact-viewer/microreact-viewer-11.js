@@ -442,8 +442,10 @@ function canvasLasso(mouseCanvas, drawingCanvas, options) {
   };
 
   var handleMouseup = function handleMouseup(event) {
-    if (Math.abs(offsetX - event.offsetX) < 5 && Math.abs(offsetY - event.offsetY) < 5) {
-      handleOnClick(event);
+    if (event.target.nodeName === "CANVAS") {
+      if (Math.abs(offsetX - event.offsetX) < 5 && Math.abs(offsetY - event.offsetY) < 5) {
+        handleOnClick(event);
+      }
     }
 
     offsetX = null;
@@ -1346,9 +1348,9 @@ function _default(treePane) {
 
           if (path) {
             ids = [];
-            var nodes = tree.getNodes();
+            var graph = tree.getGraphAfterLayout();
 
-            var _iterator = _createForOfIteratorHelper(nodes.leaves),
+            var _iterator = _createForOfIteratorHelper(graph.leaves),
                 _step;
 
             try {
