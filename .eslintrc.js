@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = {
   "extends": [
     "cgps",
@@ -47,7 +45,7 @@ module.exports = {
   //       "config": {
   //         "resolve": {
   //           "alias": {
-  //             ...([ "components", "models", "services", "styles", "utils" ].reduce((prev, x) => { prev[x] = path.join(__dirname, x); return prev; }, {})),
+  //             ...([ "components", "models", "services", "styles", "utils" ].reduce((prev, x) => { prev[x] = require("path").join(__dirname, x); return prev; }, {})),
   //           }
   //         }
   //       }
