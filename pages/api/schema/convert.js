@@ -1,4 +1,5 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
+import createMicroreactDocument from "microreact.js";
 
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
 
@@ -22,38 +23,7 @@ export default async function (req, res) {
     );
   }
   else {
-    const schemaConvertor = require("../../../services/schema-convertor");
-    const ProxyService = require("../../../services/proxy-service");
-
-    const isDataUrl = ProxyService.isValidUrl(req.body.data);
-    const dataUrl = isDataUrl ? req.body.data : undefined;
-    // const dataFile = !isDataUrl ? req.body.data : undefined;
-    const dataFile = await (
-      isDataUrl
-        ?
-        ProxyService.get(req.body.data)
-        :
-        req.body.data
-    );
-
-    const isTreeUrl = ProxyService.isValidUrl(req.body.tree);
-    const treeUrl = isTreeUrl ? req.body.tree : undefined;
-    const treeFile = !isTreeUrl ? req.body.tree : undefined;
-
-    const isNetworkUrl = ProxyService.isValidUrl(req.body.network);
-    const networkUrl = isNetworkUrl ? req.body.network : undefined;
-    const networkFile = !isNetworkUrl ? req.body.network : undefined;
-
-    const doc = {
-      ...req.body,
-      dataFile,
-      dataUrl,
-      treeFile,
-      treeUrl,
-      networkFile,
-      networkUrl,
-    };
-    const json = schemaConvertor(doc);
+    const json = await createMicroreactDocument(req.body);
     res.json(json);
   }
 }
