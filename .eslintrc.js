@@ -1,3 +1,5 @@
+/* eslint-disable quote-props */
+
 module.exports = {
   "extends": [
     "cgps",
@@ -6,7 +8,7 @@ module.exports = {
 
   "env": {
     "node": true,
-    "browser": true
+    "browser": true,
   },
 
   "parser": "@babel/eslint-parser",
@@ -28,13 +30,13 @@ module.exports = {
         "@babel/plugin-proposal-optional-chaining",
         "@babel/plugin-proposal-nullish-coalescing-operator",
         "@babel/plugin-proposal-do-expressions",
-      ],    
+      ],
     },
   },
 
   "plugins": [
-		"@babel"
-	],
+    "@babel",
+  ],
 
   "settings": {
     "react": {
