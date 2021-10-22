@@ -24,6 +24,7 @@
     "jsonschema": "^1.4.0",
     "lodash.debounce": "^4.0.8",
     "merge-options": "^3.0.4",
+    "microreact.js": "gitlab:cgps/data-flo/microreact.js",
     "migrate-mongo": "^8.1.4",
     "mongoose": "^5.11.16",
     "next": "10.0.6",
