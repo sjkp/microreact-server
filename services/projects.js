@@ -1,4 +1,5 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
+import createMicroreactDocument from "microreact.js";
 
 import databaseService from "./dataabse";
 
@@ -174,39 +175,24 @@ async function toViewerJson(projectModel) {
 
   // Version 1 are projects from Microreact IV
   // We need to convert the schema to Microreact V on-the-fly.
-  const schemaConvertor = require("./schema-convertor");
-  const ProxyService = require("./proxy-service");
-  const FileStore = require("./file-storage");
 
-  const dataFile = await (
-    projectModel.json.dataUrl
-      ?
-      ProxyService.get(projectModel.json.dataUrl)
-      :
-      projectModel.json.dataFile
-  );
-
-  const doc = {
+  const json = await createMicroreactDocument({
     name: projectModel.json.meta.name,
     description: projectModel.json.meta.description,
     email: projectModel.json.meta.email,
     website: projectModel.json.meta.website,
 
-    dataFile,
-    dataUrl: projectModel.json.dataUrl,
-    treeFile: projectModel.json.treeFile,
-    treeUrl: projectModel.json.treeUrl,
-    networkFile: projectModel.json.networkFile,
-    networkUrl: projectModel.json.networkUrl,
+    data: projectModel.json.dataUrl || projectModel.json.dataFile,
+    tree: projectModel.json.treeUrl || projectModel.json.treeFile,
+    network: projectModel.json.networkUrl || projectModel.json.networkFile,
 
     settings: projectModel.json.settings,
 
     savedState: projectModel.savedState,
     viewId: projectModel.viewId,
-  };
+  });
 
-  const json = schemaConvertor(doc);
-
+  const FileStore = require("./file-storage");
   for (const file of Object.values(json.files)) {
     if (file.blob) {
       const storedFileHash = await FileStore.storeText(file.blob);
