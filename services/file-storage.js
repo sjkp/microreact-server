@@ -4,20 +4,39 @@ const fs = require("fs");
 const Stream = require("stream");
 const path = require("path");
 const tmp = require("tmp-promise");
-const writeFile = require("writers-digest");
 const pathExists = require("path-exists");
+const zlib = require("zlib");
+const { promisify } = require("util");
+// const isGzipStream = require("is-gzip-stream");
 
+const writeFile = require("./writers-digest");
 const config = require("../utils/server-runtime-config");
 const ProxyService = require("./proxy-service");
 
 const repoPath = path.resolve(config.repoPath);
-const tmpPath = path.join(repoPath, "tmp");
+const tmpPath = path.join(repoPath);
 
 const validHash = /^[a-f0-9]{40}$/;
 
 function createTmpFile() {
   return tmp.file({ tmpdir: tmpPath }).then((data) => data.path);
 }
+
+// function isGzip(stream) {
+//   return new Promise((resolve, reject) => {
+//     isGzipStream(
+//       stream,
+//       (err, isGzipped, knownStream) => {
+//         if (err) {
+//           reject(err);
+//         }
+//         else {
+//           resolve([ isGzipped, knownStream ]);
+//         }
+//       },
+//     );
+//   });
+// }
 
 async function checkFileSize(tmpFilePath, maxFileSizeInBytes) {
   const stats = await fs.promises.stat(tmpFilePath);
@@ -34,7 +53,7 @@ function hashToPath(hash) {
   return path.join(
     repoPath,
     hash.substr(0, 2),
-    hash.substr(2),
+    hash.substr(2) + ".gz",
   );
 }
 
@@ -54,13 +73,16 @@ function finished(input) {
   });
 }
 
-function saveContentToFile(content) {
+function saveContentToTmpFile(content) {
+  const gzip = promisify(zlib.gzip);
   return (
-    Promise.resolve()
-      .then(createTmpFile)
-      .then((tmpFilePath) => {
+    Promise.all([
+      createTmpFile(),
+      gzip(content),
+    ])
+      .then(([ tmpFilePath, gzippedContent ]) => {
         return (
-          fs.promises.writeFile(tmpFilePath, content, "utf-8")
+          fs.promises.writeFile(tmpFilePath, gzippedContent)
             .then(() => tmpFilePath)
         );
       })
@@ -72,7 +94,9 @@ function saveStreamToTmpFile(input) {
     Promise.resolve()
       .then(createTmpFile)
       .then((tmpFilePath) => {
-        input.pipe(fs.createWriteStream(tmpFilePath));
+        input
+          .pipe(zlib.createGzip())
+          .pipe(fs.createWriteStream(tmpFilePath));
         return (
           finished(input).then(() => tmpFilePath)
         );
@@ -100,7 +124,7 @@ function storeFile(tmpFilePath) {
 function storeText(content) {
   return (
     Promise.resolve(content)
-      .then(saveContentToFile)
+      .then(saveContentToTmpFile)
       .then(storeFile)
   );
 }
@@ -114,17 +138,30 @@ function storeStream(input, maxFileSizeInBytes) {
   );
 }
 
-function readText(fileHash) {
-  return (
-    Promise.resolve(hashToPath(fileHash))
-      .then((filePath) => fs.promises.readFile(filePath, "utf-8"))
-  );
-}
-
 function readStream(fileHash) {
   return (
     Promise.resolve(hashToPath(fileHash))
       .then((filePath) => fs.createReadStream(filePath))
+      .then((stream) => stream.pipe(zlib.createGunzip()))
+      // .then((stream) => isGzip(stream))
+      // .then(([ isGzipped, stream ]) => {
+      //   if (isGzipped) {
+      //     return stream.pipe(zlib.createGunzip());
+      //   }
+      //   else {
+      //     return stream;
+      //   }
+      // })
+  );
+}
+
+function readText(fileHash) {
+  return (
+    readStream(fileHash)
+      .then((stream) => {
+        stream.setEncoding("utf8");
+        return stream;
+      })
   );
 }
 
