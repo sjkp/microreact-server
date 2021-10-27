@@ -4,7 +4,7 @@ export default async function fetcher(originalUrl) {
     url = `/api/files/raw?${url.substr(13)}`;
   }
   if (url.startsWith("/")) {
-    url = `https://beta.microreact.org${url}`;
+    url = `https://microreact.org${url}`;
   }
 
   try {
