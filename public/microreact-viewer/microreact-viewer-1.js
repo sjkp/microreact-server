@@ -564,7 +564,7 @@ var dataFileUrlSelector = function dataFileUrlSelector(state) {
   })) === null || _Object$values$find === void 0 ? void 0 : _Object$values$find.url;
 
   if (url && url.startsWith("/api/files/")) {
-    return "https://beta.microreact.org".concat(url);
+    return "https://microreact.org".concat(url);
   } else {
     return url;
   }
