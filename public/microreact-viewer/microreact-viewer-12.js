@@ -459,6 +459,7 @@ var SortableList = (0, _reactSortableHoc.sortableContainer)(function (props) {
       onRenameView: props.onRenameView,
       onResaveView: props.onResaveView,
       onDownloadView: props.onDownloadView,
+      onDeleteView: props.onDeleteView,
       onLoadView: props.onLoadView
     });
   }));
@@ -524,6 +525,7 @@ var ViewsPane = /*#__PURE__*/function (_React$PureComponent) {
         items: props.entries // onDownloadView={props.onDownloadView}
         ,
         onLoadView: props.onLoadView,
+        onDeleteView: props.onDeleteView,
         onRenameView: _this.handleRenameView,
         onResaveView: props.onResaveView,
         onSortEnd: _this.handleSortEnd,
