@@ -1,4 +1,10 @@
+import { fetchFile } from "@loaders.gl/core";
+
 export default async function fetcher(originalUrl) {
+  if (typeof originalUrl !== "string") {
+    return fetchFile(originalUrl);
+  }
+
   let url = originalUrl;
   if (url.startsWith("microreact://")) {
     url = `/api/files/raw?${url.substr(13)}`;
