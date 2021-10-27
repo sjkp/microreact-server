@@ -232,7 +232,7 @@ var filterableValuesSelector = (0, _state.createKeyedStateSelector)(function (st
       var _value = _step2.value;
       items.push({
         name: _value,
-        label: (0, _text.toText)(dataColumn.type, _value, true
+        label: (0, _text.toText)(dataColumn.dataType, _value, true
         /* convertBlanks */
         )
       });

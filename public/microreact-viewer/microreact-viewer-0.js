@@ -596,7 +596,7 @@ var shapesLegendEntriesSelector = (0, _reselect.createSelector)(function (state,
       entries.push({
         shape: shape,
         value: value,
-        label: (0, _text.toText)(dataColumn.type, value)
+        label: (0, _text.toText)(dataColumn.dataType, value)
       });
     } // order the list of groups by label
 
@@ -795,7 +795,7 @@ var coloursLegendEntriesSelector = (0, _reselect.createSelector)(function (state
         entries.push({
           colour: colour,
           value: value,
-          label: (0, _text.toText)(dataColumn.type, value)
+          label: (0, _text.toText)(dataColumn.dataType, value)
         });
       } // order the list of groups by label
 
@@ -823,19 +823,19 @@ var coloursLegendEntriesSelector = (0, _reselect.createSelector)(function (state
       entries.push({
         colour: colourMap.colourGetter(index),
         value: [start, end],
-        label: "".concat((0, _text.toText)(dataColumn.type, start.toFixed(2)), " - ").concat((0, _text.toText)(dataColumn.type, end.toFixed(2)))
+        label: "".concat((0, _text.toText)(dataColumn.dataType, start.toFixed(2)), " - ").concat((0, _text.toText)(dataColumn.dataType, end.toFixed(2)))
       });
     }
   } else if (colourMap.scale === "continuous") {
     entries.push({
       colour: colourMap.range[0],
       value: colourMap.domain[0],
-      label: (0, _text.toText)(dataColumn.type, colourMap.domain[0])
+      label: (0, _text.toText)(dataColumn.dataType, colourMap.domain[0])
     });
     entries.push({
       colour: colourMap.range[1],
       value: colourMap.domain[1],
-      label: (0, _text.toText)(dataColumn.type, colourMap.domain[1])
+      label: (0, _text.toText)(dataColumn.dataType, colourMap.domain[1])
     });
   }
 
