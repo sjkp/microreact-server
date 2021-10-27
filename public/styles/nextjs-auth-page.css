@@ -31,7 +31,7 @@ body label[for="input-email-for-email-provider"] {
 }
 
 body label[for="input-email-for-email-provider"]::before {
-  content: "Passwordless sign in with ";
+  content: "Enter an ";
 }
 
 body input#input-email-for-email-provider {
