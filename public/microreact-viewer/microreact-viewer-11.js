@@ -65,7 +65,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -119,7 +119,7 @@ __webpack_require__(489);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _FileLoader = _interopRequireDefault(__webpack_require__(161));
 
@@ -712,7 +712,7 @@ var _rowStyles = _interopRequireDefault(__webpack_require__(502));
 
 var _selectedIdsList = _interopRequireDefault(__webpack_require__(158));
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _metadataBlocks = _interopRequireDefault(__webpack_require__(629));
 

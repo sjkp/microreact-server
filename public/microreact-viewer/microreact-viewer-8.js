@@ -64,7 +64,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -118,7 +118,7 @@ __webpack_require__(489);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _FileLoader = _interopRequireDefault(__webpack_require__(161));
 
@@ -276,9 +276,7 @@ var filterableValuesSelector = (0, _state.createKeyedStateSelector)(function (st
       var _value = _step2.value;
       items.push({
         name: _value,
-        label: (0, _text.toText)(dataColumn.dataType, _value, true
-        /* convertBlanks */
-        )
+        label: (0, _text.toText)(dataColumn.dataType, _value)
       });
     }
   } catch (err) {
@@ -890,7 +888,7 @@ var _state = __webpack_require__(3);
 
 var _charts = __webpack_require__(156);
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _dataColumn = _interopRequireDefault(__webpack_require__(100));
 

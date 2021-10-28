@@ -141,7 +141,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -1143,7 +1143,7 @@ var _reselect = __webpack_require__(11);
 
 var _charts = __webpack_require__(156);
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(487));
 

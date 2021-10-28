@@ -162,7 +162,7 @@ __webpack_require__(536);
 
 var _shortcuts = __webpack_require__(187);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _UiIconButton = _interopRequireDefault(__webpack_require__(165));
 

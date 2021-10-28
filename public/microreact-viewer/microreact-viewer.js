@@ -1198,7 +1198,7 @@ var _browser = __webpack_require__(20);
 
 var _panes = __webpack_require__(66);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var _panes2 = __webpack_require__(53);
 
@@ -2684,6 +2684,9 @@ var _default = {
     colour: "#3C7383",
     width: 4
   },
+  maps: {
+    style: "light"
+  },
   shape: "circle",
   stroke: {
     colour: "#222",
@@ -3342,6 +3345,25 @@ module.exports = require("@material-ui/core/SvgIcon");
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var configSelector = function configSelector(state) {
+  return state.config;
+};
+
+var _default = configSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _interopRequireDefault = __webpack_require__(0);
 
 Object.defineProperty(exports, "__esModule", {
@@ -3430,7 +3452,7 @@ var _default = PaneIcon;
 exports["default"] = _default;
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3685,25 +3707,6 @@ var layoutModelSelector = (0, _reselect.createSelector)(function (state) {
   return model;
 });
 var _default = layoutModelSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var configSelector = function configSelector(state) {
-  return state.config;
-};
-
-var _default = configSelector;
 exports["default"] = _default;
 
 /***/ }),
@@ -4018,7 +4021,7 @@ exports.removePane = removePane;
 exports.setLayoutModel = setLayoutModel;
 exports.setSidePane = setSidePane;
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var _panes = __webpack_require__(66);
 
@@ -5417,9 +5420,9 @@ function entriesLabel(number) {
 }
 
 function toText(dataType, value) {
-  var convertBlanks = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var convertBlanks = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
-  if (value === null || value === undefined) {
+  if (value === null || value === undefined || value === "") {
     if (convertBlanks) {
       return "(blank)";
     } else {
@@ -6963,7 +6966,7 @@ var discreteValueToColourMapSelector = (0, _state.createKeyedStateSelector)(func
   var _colourPaletteForFiel;
 
   return ((_colourPaletteForFiel = (0, _colourPaletteForField["default"])(state, field)) === null || _colourPaletteForFiel === void 0 ? void 0 : _colourPaletteForFiel.type) !== "custom" ? (0, _uniqueValues["default"])(state, field) : undefined;
-}, function (palette, colourFieldValues) {
+}, function (palette, uniqueFieldValues) {
   var colourMap = new Map();
 
   if (palette.type === "custom") {
@@ -6981,12 +6984,27 @@ var discreteValueToColourMapSelector = (0, _state.createKeyedStateSelector)(func
       _iterator.f();
     }
   } else {
-    for (var index = 0; index < colourFieldValues.length; index++) {
-      if (index <= palette.entries.length) {
-        colourMap.set(colourFieldValues[index], palette.entries[index]);
-      } else {
-        colourMap.set(colourFieldValues[index], palette.entries[index % palette.entries.length]);
+    var index = 0;
+
+    var _iterator2 = _createForOfIteratorHelper(uniqueFieldValues),
+        _step2;
+
+    try {
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var value = _step2.value;
+
+        if ((value !== null && value !== void 0 ? value : undefined) !== undefined) {
+          var colour = index <= palette.entries.length ? palette.entries[index] : palette.entries[index % palette.entries.length];
+          colourMap.set(value, colour);
+          index += 1;
+        } else {
+          colourMap.set(value, "transparent");
+        }
       }
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
     }
   }
 
@@ -7003,18 +7021,18 @@ var continuousValueToColourMapSelector = (0, _state.createKeyedStateSelector)(fu
   var colourGetter = (0, _d3Scale.scaleLinear)().domain(domainExtent).range(range);
   var colourMap = new Map();
 
-  var _iterator2 = _createForOfIteratorHelper(uniqueValues),
-      _step2;
+  var _iterator3 = _createForOfIteratorHelper(uniqueValues),
+      _step3;
 
   try {
-    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-      var value = _step2.value;
+    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+      var value = _step3.value;
       colourMap.set(value, colourGetter(value));
     }
   } catch (err) {
-    _iterator2.e(err);
+    _iterator3.e(err);
   } finally {
-    _iterator2.f();
+    _iterator3.f();
   }
 
   colourMap.scale = "continuous";
@@ -7036,19 +7054,19 @@ var binnedValueToColourMapSelector = (0, _state.createKeyedStateSelector)(functi
   var colourGetter = (0, _d3Scale.scaleLinear)().domain([1, numberOfBins]).range(range);
   var colourMap = new Map();
 
-  var _iterator3 = _createForOfIteratorHelper(uniqueValues),
-      _step3;
+  var _iterator4 = _createForOfIteratorHelper(uniqueValues),
+      _step4;
 
   try {
-    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-      var value = _step3.value;
+    for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+      var value = _step4.value;
       var binIndex = Math.floor((value - domainExtent[0]) / binLength);
       colourMap.set(value, colourGetter(binIndex));
     }
   } catch (err) {
-    _iterator3.e(err);
+    _iterator4.e(err);
   } finally {
-    _iterator3.f();
+    _iterator4.f();
   }
 
   colourMap.scale = "binned";
@@ -13103,7 +13121,7 @@ var _fullDataset = _interopRequireDefault(__webpack_require__(28));
 
 var _Viewer = _interopRequireDefault(__webpack_require__(222));
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _state = __webpack_require__(3);
 
@@ -13779,7 +13797,7 @@ var _constants = __webpack_require__(12);
 
 var _ui = __webpack_require__(25);
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _state = __webpack_require__(3);
 
@@ -16950,7 +16968,7 @@ var _ui = __webpack_require__(25);
 
 var _HeaderBar = _interopRequireDefault(__webpack_require__(293));
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _state = __webpack_require__(3);
 
@@ -17161,7 +17179,7 @@ __webpack_require__(135);
 
 var _panes = __webpack_require__(66);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -17448,7 +17466,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _downloads = __webpack_require__(68);
 
@@ -18209,7 +18227,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _StylesMenuContent = _interopRequireDefault(__webpack_require__(329));
 
@@ -19662,7 +19680,7 @@ var _panes = __webpack_require__(53);
 
 var _ui = __webpack_require__(25);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var _LayoutManager = _interopRequireDefault(__webpack_require__(359));
 
@@ -20147,7 +20165,7 @@ exports["default"] = void 0;
 
 var _ui = __webpack_require__(25);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var _state = __webpack_require__(3);
 
@@ -20244,7 +20262,7 @@ var _MapPaneEditor = _interopRequireDefault(__webpack_require__(366));
 
 var _NetworkPaneEditor = _interopRequireDefault(__webpack_require__(374));
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _TablePaneEditor = _interopRequireDefault(__webpack_require__(377));
 
@@ -22468,9 +22486,7 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
           var _value = _step2.value;
           items.push({
             name: _value,
-            label: (0, _text.toText)(dataColumn.dataType, _value, true
-            /* convertBlanks */
-            )
+            label: (0, _text.toText)(dataColumn.dataType, _value)
           });
         }
       } catch (err) {
@@ -22713,7 +22729,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _Theme = _interopRequireDefault(__webpack_require__(399));
 
@@ -23573,7 +23589,7 @@ var initialState = {
   showRegionOutlines: true,
   showRegions: true,
   source: undefined,
-  style: "light",
+  style: "",
   tileLayerDialog: false,
   tileLayerOpts: null,
   tileLayerUrl: null,

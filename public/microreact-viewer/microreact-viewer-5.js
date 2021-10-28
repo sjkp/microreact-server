@@ -65,7 +65,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(49));
+var _layoutModel = _interopRequireDefault(__webpack_require__(50));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -119,7 +119,7 @@ __webpack_require__(489);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _FileLoader = _interopRequireDefault(__webpack_require__(161));
 
@@ -538,7 +538,7 @@ var _filters = __webpack_require__(45);
 
 var _maps = __webpack_require__(70);
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 var _hasMarkerSizeLegend = _interopRequireDefault(__webpack_require__(512));
 
@@ -600,12 +600,16 @@ exports["default"] = _default;
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(0);
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
+
+var _config = _interopRequireDefault(__webpack_require__(48));
 
 // const categories = [ "labels", "roads", "buildings", "parks", "water", "background" ];
 // const layerSelector = {
@@ -617,7 +621,9 @@ var _state = __webpack_require__(3);
 //   labels: /label|place|poi/
 // };
 var mapboxStyleSelector = (0, _state.createKeyedStateSelector)(function (state, mapId) {
-  return state.maps[mapId].style;
+  var _configSelector, _configSelector$maps;
+
+  return state.maps[mapId].style || ((_configSelector = (0, _config["default"])(state)) === null || _configSelector === void 0 ? void 0 : (_configSelector$maps = _configSelector.maps) === null || _configSelector$maps === void 0 ? void 0 : _configSelector$maps.style);
 }, function (style) {
   if (style === "microreact") {
     var mapboxStyle = {
@@ -797,7 +803,7 @@ var mapboxStyleSelector = (0, _state.createKeyedStateSelector)(function (state, 
     // })
     // return mapboxStyle;
   } else {
-    return "mapbox://styles/mapbox/".concat(style, "-v9");
+    return "mapbox://styles/mapbox/".concat(style || "light", "-v9");
   }
 });
 var _default = mapboxStyleSelector;

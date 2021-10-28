@@ -74,7 +74,7 @@ __webpack_require__(489);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(48));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
 
 var _FileLoader = _interopRequireDefault(__webpack_require__(161));
 
@@ -232,9 +232,7 @@ var filterableValuesSelector = (0, _state.createKeyedStateSelector)(function (st
       var _value = _step2.value;
       items.push({
         name: _value,
-        label: (0, _text.toText)(dataColumn.dataType, _value, true
-        /* convertBlanks */
-        )
+        label: (0, _text.toText)(dataColumn.dataType, _value)
       });
     }
   } catch (err) {
@@ -614,7 +612,9 @@ var dataGetter = function dataGetter(args) {
     }, args.rowData[args.column.field]);
   }
 
-  return TextUtils.toText(args.column.dataType, args.rowData[args.column.field]); // const value = args.rowData[args.column.field];
+  return TextUtils.toText(args.column.dataType, args.rowData[args.column.field], false
+  /* convertBlanks */
+  ); // const value = args.rowData[args.column.field];
   // if (args.column.dataType === "date") {
   //   return timestampToDateString(value);
   // }
