@@ -1,4 +1,4 @@
-FROM node:lts-alpine AS backend
+FROM node:fermium-alpine AS backend
 
 ARG REPO_USER
 ARG REPO_TOKEN
@@ -32,7 +32,7 @@ RUN npm run build
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-FROM node:lts-alpine
+FROM node:fermium-alpine
 
 WORKDIR /microreact
 
