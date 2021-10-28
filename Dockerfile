@@ -8,7 +8,7 @@ RUN apk add --update --no-cache \
       g++ \
       git \
       make \
-      python
+      py-pip
 
 RUN git config --global url.https://$REPO_USER:$REPO_TOKEN@gitlab.com/.insteadOf git://gitlab.com/ && \
     git config --global url.https://$REPO_USER:$REPO_TOKEN@gitlab.com/cgps.insteadOf git@gitlab.com:cgps && \
