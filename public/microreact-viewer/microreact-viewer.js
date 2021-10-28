@@ -602,7 +602,7 @@ var _interopRequireDefault = __webpack_require__(0);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TreeType = exports.ThemeDef = exports.TableColumn = exports.StylePalette = exports.ReactRef = exports.MapMarker = exports.MapLocation = exports.LabelValuePair = exports.GeometricPoint = exports.HistoryEntry = exports.FileExtension = exports.FileKind = exports.FileDescriptor = exports.DataFilter = exports.DataColumn = exports.ColourModes = exports.ChartDataTable = exports.ChartAxisMode = exports.ChartTypes = void 0;
+exports.TreeType = exports.ThemeDef = exports.TableColumn = exports.StylePalette = exports.ReactRef = exports.MapboxStyle = exports.MapMarker = exports.MapLocation = exports.LabelValuePair = exports.GeometricPoint = exports.HistoryEntry = exports.FileExtension = exports.FileKind = exports.FileDescriptor = exports.DataFilter = exports.DataColumn = exports.ColourModes = exports.ChartDataTable = exports.ChartAxisMode = exports.ChartTypes = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -710,6 +710,10 @@ var MapMarker = _propTypes["default"].shape({
 });
 
 exports.MapMarker = MapMarker;
+
+var MapboxStyle = _propTypes["default"].oneOfType([_propTypes["default"].string.isRequired, _propTypes["default"].object.isRequired]);
+
+exports.MapboxStyle = MapboxStyle;
 
 var ReactRef = _propTypes["default"].shape({
   current: _propTypes["default"].object
