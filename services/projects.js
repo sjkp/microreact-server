@@ -161,7 +161,10 @@ async function findUserSharedProjects(user) {
 
   const query = {
     $or: [
-      { "shares.user": user.id },
+      {
+        "shares.kind": "user",
+        "shares.user": (user.id),
+      },
     ],
   };
 
