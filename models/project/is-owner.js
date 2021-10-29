@@ -3,7 +3,7 @@ module.exports = function (user) {
     return false;
   }
 
-  if (this.owner && this.owner.toString() === user.id) {
+  if (this.owner && this.owner.equals(user.id)) {
     return true;
   }
 
