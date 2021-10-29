@@ -90,16 +90,23 @@ function saveContentToTmpFile(content) {
 }
 
 function saveStreamToTmpFile(input) {
+  const pipeline = promisify(Stream.pipeline);
   return (
     Promise.resolve()
       .then(createTmpFile)
       .then((tmpFilePath) => {
-        input
-          .pipe(zlib.createGzip())
-          .pipe(fs.createWriteStream(tmpFilePath));
-        return (
-          finished(input).then(() => tmpFilePath)
-        );
+        return pipeline(
+          input,
+          zlib.createGzip(),
+          fs.createWriteStream(tmpFilePath)
+        )
+          .then(() => tmpFilePath);
+        // input
+        //   .pipe(zlib.createGzip())
+        //   .pipe(fs.createWriteStream(tmpFilePath));
+        // return (
+        //   finished(input).then(() => tmpFilePath)
+        // );
       })
   );
 }
