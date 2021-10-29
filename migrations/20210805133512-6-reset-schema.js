@@ -1,7 +1,9 @@
 module.exports = {
   async up(db, client) {
     await db.collection("projects").update(
-      {},
+      {
+        "json.schema": { $exists: true },
+      },
       {
         $set: {
           "json.schema": "https://microreact.org/schema/v1.json",
