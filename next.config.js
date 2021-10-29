@@ -71,6 +71,11 @@ module.exports = ({
         permanent: false,
       },
       {
+        source: "/myaccount",
+        destination: "/my-account",
+        permanent: false,
+      },
+      {
         source: "/api/files/get",
         destination: "/api/files/raw",
         permanent: false,
