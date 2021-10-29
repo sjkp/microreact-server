@@ -49,7 +49,7 @@ module.exports = {
         folder,
         updatedAt: lastUpdatedAt,
         id: shortId,
-        version,
+        version: 1,
         shares: [],
         json: {
           meta: {
