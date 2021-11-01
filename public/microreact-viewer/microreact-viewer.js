@@ -1258,7 +1258,7 @@ function addFiles(rawFiles, paneId) {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch(config({
-                loading: true
+                isBuzy: true
               }));
               _context.next = 3;
               return (0, _files.loadFiles)(rawFiles);
@@ -1320,7 +1320,7 @@ function addFiles(rawFiles, paneId) {
                 }
 
                 dispatch(config({
-                  loading: false,
+                  isBuzy: false,
                   pending: nextPendingFiles
                 }));
               }
@@ -1341,15 +1341,17 @@ function addFiles(rawFiles, paneId) {
 
 function addHistoryEntry(source, label) {
   return {
-    type: "MICROREACT VIEWER/ADD HISTORY ENTRY",
     label: "".concat(source, ": ").concat(label),
-    payload: undefined
+    payload: undefined,
+    savable: false,
+    type: "MICROREACT VIEWER/ADD HISTORY ENTRY"
   };
 }
 
 function batch(actions) {
   return {
     payload: actions,
+    savable: false,
     type: "MICROREACT VIEWER/BATCH"
   };
 }
@@ -1468,7 +1470,7 @@ function commitFiles(fileDescriptors) {
     }
 
     actions.push(config({
-      loading: false,
+      isBuzy: false,
       pending: undefined
     }));
 
@@ -1503,7 +1505,7 @@ function fetchFile(fileId, rawFile) {
           switch (_context2.prev = _context2.next) {
             case 0:
               dispatch(config({
-                loading: true
+                isBuzy: true
               }));
               _context2.prev = 1;
               rawFile.id = fileId;
@@ -1513,7 +1515,7 @@ function fetchFile(fileId, rawFile) {
             case 5:
               processedFile = _context2.sent;
               return _context2.abrupt("return", dispatch(batch([(0, _files2.updateFile)(processedFile), config({
-                loading: false
+                isBuzy: false
               })])));
 
             case 9:
@@ -1607,11 +1609,11 @@ function load(payload) {
 function loadDocument(payload) {
   return function (dispatch) {
     // TODO: no need to show a loader as files are not fetched here
-    // dispatch(update({ isLoading: true }));
     var doc = (0, _schema["default"])(payload);
     return dispatch({
       label: doc.schema ? "Project: Load project" : "Project: Load view",
       payload: doc,
+      savable: false,
       type: "MICROREACT VIEWER/LOAD"
     });
   };
@@ -1631,8 +1633,9 @@ function loadView(viewDocument) {
 
 function reset() {
   return {
-    type: "MICROREACT VIEWER/LOAD",
-    payload: (0, _schema["default"])()
+    payload: (0, _schema["default"])(),
+    savable: false,
+    type: "MICROREACT VIEWER/LOAD"
   };
 }
 
@@ -1697,6 +1700,7 @@ function query(updater) {
   return {
     delay: true,
     payload: updater,
+    savable: false,
     type: "MICROREACT VIEWER/QUERY"
   };
 }
@@ -1793,6 +1797,7 @@ function verify() {
 
 function unload() {
   return {
+    savable: false,
     type: "MICROREACT VIEWER/UNLOAD"
   };
 }
@@ -3161,13 +3166,14 @@ var selectRows = function selectRows() {
     }
 
     dispatch({
-      type: "MICROREACT VIEWER/SELECT ROWS",
+      delay: true,
+      label: "Filters: Select rows",
       payload: {
         ids: ids,
         merge: merge
       },
-      label: "Filters: Select rows",
-      delay: true
+      savable: false,
+      type: "MICROREACT VIEWER/SELECT ROWS"
     });
   };
 };
@@ -3193,35 +3199,36 @@ exports.selectQueryRows = selectQueryRows;
 
 function setSelectionBreakdownField(field) {
   return {
-    type: "MICROREACT VIEWER/SET SELECTION BREAKDOWN FIELD",
-    payload: field,
-    label: "Filters: Set selection breakdown column to ".concat(field),
+    delay: true,
     group: "Filters/selection breakdown field",
-    delay: true
+    label: "Filters: Set selection breakdown column to ".concat(field),
+    payload: field,
+    savable: false,
+    type: "MICROREACT VIEWER/SET SELECTION BREAKDOWN FIELD"
   };
 }
 
 function setFieldFilter(field, operator, value) {
   return {
-    type: "MICROREACT VIEWER/SET FIELD FILTER",
+    delay: true,
+    label: "Filters: Change column ".concat(field, " filter"),
+    group: "Filters/field ".concat(field),
     payload: {
       field: field,
       operator: operator,
       value: value
     },
-    label: "Filters: Change column ".concat(field, " filter"),
-    group: "Filters/field ".concat(field),
-    delay: true
+    type: "MICROREACT VIEWER/SET FIELD FILTER"
   };
 }
 
 var setSearchOperator = function setSearchOperator(operator) {
   return {
-    type: "MICROREACT VIEWER/SET SEARCH OPERATOR",
-    payload: operator,
-    label: "Filters: Change search filter",
+    delay: true,
     group: "Filters/search",
-    delay: true
+    label: "Filters: Change search filter",
+    payload: operator,
+    type: "MICROREACT VIEWER/SET SEARCH OPERATOR"
   };
 };
 
@@ -3229,11 +3236,11 @@ exports.setSearchOperator = setSearchOperator;
 
 var setSearchValue = function setSearchValue(value) {
   return {
-    type: "MICROREACT VIEWER/SET SEARCH VALUE",
-    payload: value,
-    label: "Filters: Change search filter",
+    delay: true,
     group: "Filters/search",
-    delay: true
+    label: "Filters: Change search filter",
+    payload: value,
+    type: "MICROREACT VIEWER/SET SEARCH VALUE"
   };
 };
 
@@ -3241,11 +3248,11 @@ exports.setSearchValue = setSearchValue;
 
 var resetAllFilters = function resetAllFilters() {
   return {
-    type: "MICROREACT VIEWER/RESET ALL FILTERS",
-    payload: null,
-    label: "Filters: Reset all filters",
+    delay: true,
     group: "Filters/reset",
-    delay: true
+    label: "Filters: Reset all filters",
+    payload: null,
+    type: "MICROREACT VIEWER/RESET ALL FILTERS"
   };
 };
 
@@ -3253,11 +3260,11 @@ exports.resetAllFilters = resetAllFilters;
 
 var resetMapFilters = function resetMapFilters() {
   return {
-    type: "MICROREACT VIEWER/RESET MAP FILTERS",
-    payload: null,
-    label: "Filters: Reset map filters",
+    delay: true,
     group: "Filters/reset",
-    delay: true
+    label: "Filters: Reset map filters",
+    payload: null,
+    type: "MICROREACT VIEWER/RESET MAP FILTERS"
   };
 };
 
@@ -3265,11 +3272,11 @@ exports.resetMapFilters = resetMapFilters;
 
 var resetNetworkFilters = function resetNetworkFilters() {
   return {
-    type: "MICROREACT VIEWER/RESET NETWORK FILTERS",
-    payload: null,
-    label: "Filters: Reset network filters",
+    delay: true,
     group: "Filters/reset",
-    delay: true
+    label: "Filters: Reset network filters",
+    payload: null,
+    type: "MICROREACT VIEWER/RESET NETWORK FILTERS"
   };
 };
 
@@ -3277,11 +3284,11 @@ exports.resetNetworkFilters = resetNetworkFilters;
 
 var resetTableFilters = function resetTableFilters() {
   return {
-    type: "MICROREACT VIEWER/RESET TABLE FILTERS",
-    payload: null,
-    label: "Filters: Reset table filters",
+    delay: true,
     group: "Filters/reset",
-    delay: true
+    label: "Filters: Reset table filters",
+    payload: null,
+    type: "MICROREACT VIEWER/RESET TABLE FILTERS"
   };
 };
 
@@ -3289,11 +3296,11 @@ exports.resetTableFilters = resetTableFilters;
 
 var resetTimelineFilters = function resetTimelineFilters() {
   return {
-    type: "MICROREACT VIEWER/RESET TIMELINE FILTERS",
-    payload: null,
-    label: "Filters: Reset timeline filters",
+    delay: true,
     group: "Filters/reset",
-    delay: true
+    label: "Filters: Reset timeline filters",
+    payload: null,
+    type: "MICROREACT VIEWER/RESET TIMELINE FILTERS"
   };
 };
 
@@ -3301,11 +3308,11 @@ exports.resetTimelineFilters = resetTimelineFilters;
 
 var resetTreeFilters = function resetTreeFilters() {
   return {
-    type: "MICROREACT VIEWER/RESET TREE FILTERS",
-    payload: null,
-    label: "Filters: Reset tree filters",
+    delay: true,
     group: "Filters/reset",
-    delay: true
+    label: "Filters: Reset tree filters",
+    payload: null,
+    type: "MICROREACT VIEWER/RESET TREE FILTERS"
   };
 };
 
@@ -4178,6 +4185,7 @@ function setLayoutModel(model) {
     group: "layout model",
     label: model.actionLabel ? "Layout: ".concat(model.actionLabel) : undefined,
     payload: model.toJson(),
+    savable: false,
     type: "MICROREACT VIEWER/SET LAYOUT MODEL"
   };
 }
@@ -5477,7 +5485,8 @@ var _filters = __webpack_require__(45);
 function addGeoData(mapId, fileId) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   return {
-    type: "MICROREACT VIEWER/ADD GEO DATA",
+    delay: true,
+    label: "Map: Add geographical features",
     mapId: mapId,
     payload: {
       file: fileId,
@@ -5485,14 +5494,14 @@ function addGeoData(mapId, fileId) {
       linkFieldName: options.linkFieldName,
       linkPropertyName: options.linkPropertyName
     },
-    label: "Map: Add geographical features",
-    delay: true
+    type: "MICROREACT VIEWER/ADD GEO DATA"
   };
 }
 
 function addGeographicCoordinatesMap(title, latitudeField, longitudeField, unit) {
   return {
-    type: "MICROREACT VIEWER/ADD MAP",
+    delay: true,
+    label: "Map: Add geographical map",
     payload: {
       title: title,
       dataType: "geographic-coordinates",
@@ -5500,18 +5509,17 @@ function addGeographicCoordinatesMap(title, latitudeField, longitudeField, unit)
       latitudeField: latitudeField,
       longitudeField: longitudeField
     },
-    label: "Map: Add geographical map",
-    delay: true
+    type: "MICROREACT VIEWER/ADD MAP"
   };
 }
 
 function addMap(paneId, title) {
   return {
-    type: "MICROREACT VIEWER/ADD MAP",
     payload: {
       paneId: paneId,
       title: title || "Map"
-    }
+    },
+    type: "MICROREACT VIEWER/ADD MAP"
   };
 }
 
@@ -5561,9 +5569,9 @@ function setLasso(mapId, isLassoActive) {
     delay: true,
     group: "".concat(mapId, "/lasso"),
     label: "Map: Toggle lasso",
-    type: "MICROREACT VIEWER/SET MAP LASSO",
     mapId: mapId,
-    payload: isLassoActive
+    payload: isLassoActive,
+    type: "MICROREACT VIEWER/SET MAP LASSO"
   };
 }
 
@@ -5572,19 +5580,20 @@ function setTrackViewport(mapId, isActive) {
     delay: true,
     group: "".concat(mapId, "/trackViewport"),
     label: "Map: Toggle filter on current viewport",
-    type: "MICROREACT VIEWER/SET MAP TRACK VIEWPORT",
     mapId: mapId,
-    payload: isActive
+    payload: isActive,
+    type: "MICROREACT VIEWER/SET MAP TRACK VIEWPORT"
   };
 }
 
 function setViewport(mapId, viewport) {
   return {
-    type: "MICROREACT VIEWER/SET MAP VIEWPORT",
-    label: "Map: Pan/zoom map",
     group: "".concat(mapId, "/viewport"),
+    label: "Map: Pan/zoom map",
     mapId: mapId,
-    payload: viewport
+    payload: viewport,
+    savable: false,
+    type: "MICROREACT VIEWER/SET MAP VIEWPORT"
   };
 }
 
@@ -5692,6 +5701,7 @@ function setPhylocanvasProps(treeId, updater, origin) {
     label: origin === "viewport" ? "Tree: Pan/zoom tree" : undefined,
     payload: updater,
     treeId: treeId,
+    savable: origin !== "viewport" || origin !== "hover",
     type: "MICROREACT VIEWER/SET PHYLOCANVAS PROPS"
   };
 }
@@ -11949,11 +11959,11 @@ exports.selectItem = selectItem;
 
 var update = function update(chartId, key, value) {
   return {
-    type: "MICROREACT VIEWER/UPDATE CHART",
+    delay: true,
     chartId: chartId,
-    payload: (0, _defineProperty2["default"])({}, key, value),
     label: key === "type" ? "Chart: Set chart type to ".concat(value) : key === "seriesField" ? "Chart: Set series column to ".concat(value) : key === "xAxisField" ? "Chart: Set X axis column to ".concat(value) : key === "yAxisField" ? "Chart: Set Y axis column to ".concat(value) : key === "seriesStacking" ? "Chart: Set series stacking to ".concat(value) : key === "interpolate" ? "Chart: Set interpolate to ".concat(value) : undefined,
-    delay: true
+    payload: (0, _defineProperty2["default"])({}, key, value),
+    type: "MICROREACT VIEWER/UPDATE CHART"
   };
 };
 
@@ -13720,7 +13730,7 @@ var _state = __webpack_require__(3);
 
 function mapStateToProps(state) {
   return {
-    isLoading: state.config.loading
+    isBuzy: state.config.isBuzy
   };
 }
 
@@ -13751,7 +13761,7 @@ var _CircularProgress = _interopRequireDefault(__webpack_require__(188));
 __webpack_require__(230);
 
 var BusyIndicator = /*#__PURE__*/_react["default"].memo(function (props) {
-  if (props.isLoading) {
+  if (props.isBuzy) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: "mr-busy-indicator"
     }, /*#__PURE__*/_react["default"].createElement(_CircularProgress["default"], {
@@ -13765,7 +13775,7 @@ var BusyIndicator = /*#__PURE__*/_react["default"].memo(function (props) {
 
 BusyIndicator.displayName = "BusyIndicator";
 BusyIndicator.propTypes = {
-  isLoading: _propTypes["default"].bool.isRequired
+  isBuzy: _propTypes["default"].bool.isRequired
 };
 var _default = BusyIndicator;
 exports["default"] = _default;
@@ -13807,7 +13817,6 @@ function mapStateToProps(state) {
   var defaults = (0, _config["default"])(state);
   return {
     validFileExtensions: defaults.validFileExtensions || _constants.emptyArray,
-    isLoading: state.config.loading,
     pendingFiles: state.config.pending || _constants.emptyArray
   };
 }
@@ -14522,7 +14531,7 @@ function _loadTextFile() {
             return _context3.finish(27);
 
           case 37:
-            return _context3.abrupt("return", data.join());
+            return _context3.abrupt("return", data.join(""));
 
           case 38:
           case "end":
@@ -23101,7 +23110,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var initialState = _objectSpread({
   editor: null,
-  loading: false,
+  isBuzy: false,
   mapboxApiAccessToken: null,
   pending: null,
   readOnly: false,
@@ -23118,7 +23127,8 @@ var _default = function _default() {
         var _action$payload, _action$payload$query;
 
         var nextState = _objectSpread(_objectSpread(_objectSpread({}, state), action.payload.config || _constants.emptyObject), {}, {
-          loading: false
+          editor: initialState.editor,
+          isBuzy: initialState.isBuzy
         });
 
         if (((_action$payload = action.payload) === null || _action$payload === void 0 ? void 0 : (_action$payload$query = _action$payload.query) === null || _action$payload$query === void 0 ? void 0 : _action$payload$query.ui) === "edit") {

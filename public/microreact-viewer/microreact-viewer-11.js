@@ -657,7 +657,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     onFilterChange: function onFilterChange(ids, path) {
       return dispatch((0, _trees.setTreeFilter)(treeId, ids, path));
     },
-    onPhylocanvasStateChange: function onPhylocanvasStateChange(updater, event) {
+    onPhylocanvasPropsChange: function onPhylocanvasPropsChange(updater, event) {
       return dispatch((0, _trees.setPhylocanvasProps)(treeId, updater, event));
     },
     onSelectRows: function onSelectRows(ids, merge) {
@@ -1097,7 +1097,7 @@ var TreePane = /*#__PURE__*/function (_React$PureComponent) {
       var PhylocanvasGL = (0, _phylocanvas["default"])(this);
       this.tree = new PhylocanvasGL(this.canvasRef.current, this.props.phylocanvasProps);
       this.tree.renderLasso();
-      this.tree.setProps = this.props.onPhylocanvasStateChange;
+      this.tree.setProps = this.props.onPhylocanvasPropsChange;
 
       if (this.props.phylocanvasProps.scale && !this.props.phylocanvasProps.transform) {
         this.tree.view.style.visibility = "hidden";
@@ -1241,7 +1241,7 @@ var TreePane = /*#__PURE__*/function (_React$PureComponent) {
   onAlignLabelsChange: _propTypes["default"].func.isRequired,
   onFilterChange: _propTypes["default"].func.isRequired,
   // onPhylocanvasInitialise: PropTypes.func.isRequired,
-  onPhylocanvasStateChange: _propTypes["default"].func.isRequired,
+  onPhylocanvasPropsChange: _propTypes["default"].func.isRequired,
   onSelectRows: _propTypes["default"].func.isRequired,
   onShowLeafLabelsChange: _propTypes["default"].func.isRequired,
   phylocanvasProps: _propTypes["default"].object,
