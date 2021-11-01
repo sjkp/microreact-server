@@ -1,5 +1,5 @@
 const slugify = require("slugify");
-const url = require("../../services/proxy-service");
+const UrlService = require("../../services/url-service");
 
 module.exports = function projectUrl(version, id, title) {
   let path = id;
@@ -13,5 +13,5 @@ module.exports = function projectUrl(version, id, title) {
     );
     path += `-${slug}`;
   }
-  return url.absolute(`project/${path}`);
+  return UrlService.absolute(`project/${path}`);
 };

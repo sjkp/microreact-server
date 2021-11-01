@@ -6,7 +6,7 @@ import Head from "next/head";
 import UiLoadingSpinner from "../../components/UiLoadingSpinner";
 
 import ProjectsService from "../../services/projects";
-import ProxyService from "../../services/proxy-service";
+import UrlService from "../../services/url-service";
 
 export async function getServerSideProps(context) {
   const [ projectId ] = context.query.param;
@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
     props.title = metadata.name || null;
     props.description = metadata.description || null;
     if (metadata.image) {
-      props.image = ProxyService.absolute(`api/projects/image?project=${projectId}`);
+      props.image = UrlService.UrlService(`api/projects/image?project=${projectId}`);
     }
   }
   return { props };

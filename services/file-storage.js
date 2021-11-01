@@ -11,7 +11,7 @@ const { promisify } = require("util");
 
 const writeFile = require("./writers-digest");
 const config = require("../utils/server-runtime-config");
-const ProxyService = require("./proxy-service");
+const UrlService = require("./url-service");
 
 const repoPath = path.resolve(config.repoPath);
 const tmpPath = path.join(repoPath);
@@ -174,7 +174,7 @@ function readText(fileHash) {
 
 function fileUri(fileHash) {
   // return `microreact://${fileHash}`;
-  return ProxyService.absolute(`api/files/raw?${fileHash}`);
+  return UrlService.absolute(`api/files/raw?${fileHash}`);
 }
 
 function fileSize(fileHash) {

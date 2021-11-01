@@ -1,5 +1,5 @@
-const url = require("../../services/proxy-service");
+const UrlService = require("../../services/url-service");
 
 module.exports = function fileUrl(fileHash) {
-  return url.absolute(`api/files/local?${fileHash}`);
+  return UrlService.absolute(`api/files/local?${fileHash}`);
 };

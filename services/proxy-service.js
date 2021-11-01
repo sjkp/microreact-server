@@ -2,9 +2,6 @@ import axios from "axios";
 import request from "request";
 import ftp from "ftp-get";
 import JSFtp from "jsftp";
-import validUrl from "valid-url";
-
-import publicRuntimeConfig from "../utils/public-runtime-config";
 
 function parseAuth(authInput) {
   if (authInput) {
@@ -160,24 +157,9 @@ function getStream(url) {
     );
 }
 
-function absoluteUrl(path) {
-  return `${publicRuntimeConfig.baseUrl}${path}`;
-}
-
-function isValidUrl(url) {
-  return validUrl.isUri(url);
-}
-
-// function relativeUrl(path) {
-//   const baseUrl = new URL(config.baseUrl);
-//   return `${baseUrl.pathname}${path}`;
-// }
-
 module.exports = {
   rewrite: rewriteUrl,
   // relative: relativeUrl,
   get: getUrl,
-  absolute: absoluteUrl,
   getStream,
-  isValidUrl,
 };
