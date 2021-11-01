@@ -35,7 +35,7 @@ const options = {
   jwt: {
     // A secret to use for key generation - you should set this explicitly
     // Defaults to NextAuth.js secret if not explicitly specified.
-    // secret: process.env.NEXTAUTH_SECRET,
+    secret: serverRuntimeConfig.auth.secret,
 
     // Set to true to use encryption. Defaults to false (signing only).
     encryption: true, // Very important to encrypt the JWT, otherwise you're leaking username+password into the browser
