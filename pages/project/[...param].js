@@ -36,6 +36,7 @@ const Project = (props) => {
 
   if (router?.query?.param) {
     const { param, ...rest } = router.query;
+
     return (
       <React.Fragment>
         {

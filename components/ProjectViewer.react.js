@@ -10,13 +10,19 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MicroreactViewer, { utils as ViewerUtils, UiIconButton, store as ViewerStore } from "microreact-viewer";
 
 import fetcher from "../utils/viewer-fetch-proxy";
+import useLeavePageConfirm from "../hooks/leave-page-confirm";
 
-import SaveViewMenu from "./SaveViewMenu";
+// import SaveViewMenu from "./SaveViewMenu";
 import ProjectSaveDialog from "./ProjectSaveDialog";
 import ProjectAccessDialog from "./ProjectAccessDialog";
 import ManageAccountsIcon from "./ManageAccountsIcon";
 
 ViewerUtils.proxy.setFetcher(fetcher);
+
+const ChangesChecker = (props) => {
+  useLeavePageConfirm(false);
+  return null;
+};
 
 class ProjectViewer extends React.PureComponent {
 
@@ -195,6 +201,8 @@ class ProjectViewer extends React.PureComponent {
 
           { this.renderSaveDialog() }
         </MicroreactViewer>
+
+        <ChangesChecker />
       </Provider>
     );
   }
