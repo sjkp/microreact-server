@@ -1,3 +1,5 @@
+const { projectSchemaVersion } = require("./schema");
+
 const FileStorage = require("../../services/file-storage");
 
 /**
@@ -19,6 +21,8 @@ module.exports = async function saveJson(projectJson, parentProjectId) {
   await saveInlineFilesInStorage(projectJson);
 
   this.json = projectJson;
+
+  this.version = projectSchemaVersion;
 
   return this.save();
 };

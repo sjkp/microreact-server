@@ -308,7 +308,7 @@ class ProjectSaveDialog extends React.PureComponent {
             </Button>
 
             {
-              props.projectProps.isOwner && props.projectProps.version > 1 && (
+              props.projectProps.isOwner && (
                 <UpdateProjectButton
                   handleUpdateOnServer={this.handleUpdateOnServer}
                 />
