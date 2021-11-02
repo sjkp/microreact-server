@@ -35,7 +35,7 @@ module.exports = {
         shortId,
         treeFile,
         treeUrl,
-        version,
+        // version,
         viewsCount,
         website,
       } = doc;
