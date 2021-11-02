@@ -1,5 +1,3 @@
-// const { projectSchemaVersion } = require("./schema");
-
 module.exports = function (next) {
   const date = new Date();
 
@@ -8,8 +6,6 @@ module.exports = function (next) {
   }
 
   this.updatedAt = date;
-
-  // this.version = projectSchemaVersion;
 
   next();
 };
