@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "121.0.0",
+  "version": "122.0.0",
   "private": true,
   "scripts": {
     "dev": "NEXTAUTH_URL=http://localhost:8082 next dev --port=8082",
