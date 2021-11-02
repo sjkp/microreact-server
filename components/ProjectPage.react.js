@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import UiLoadingSpinner from "./UiLoadingSpinner";
 import ProjectViewer from "./ProjectViewer.react";
-import OldProject from "./OldProject";
+import OldProject from "./OldProjectNotification";
 
 import * as ApiClient from "../utils/api-client";
 import publicRuntimeConfig from "../utils/public-runtime-config";
