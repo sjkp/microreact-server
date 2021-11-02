@@ -8,7 +8,6 @@ schema.pre("save", require("./pre-save"));
 
 schema.statics.projectUrl = require("./project-url");
 
-schema.methods.fileUrl = require("./file-url");
 schema.methods.isAccessibleBy = require("./is-accessible-by");
 schema.methods.hasOnwerAccess = require("./has-onwer-access");
 schema.methods.saveJson = require("./save-json");
