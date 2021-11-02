@@ -1,7 +1,6 @@
 import axios from "axios";
-import request from "request";
-import ftp from "ftp-get";
 import JSFtp from "jsftp";
+import { google } from "googleapis";
 
 function parseAuth(authInput) {
   if (authInput) {
@@ -16,7 +15,7 @@ function parseAuth(authInput) {
   return {};
 }
 
-function processUrl(rawUrl) {
+function processFtpUrl(rawUrl) {
   let url = String(rawUrl);
   url = url.trim();
   url = require("url").parse(url);
@@ -30,116 +29,62 @@ function processUrl(rawUrl) {
   // stripping the forward slash for files
   // at the apex of the FTP list
   // wu-ftpd + anonymous fails on these
-  const path = url.pathname.split("/");
-  if (path.length === 2) {
-    url.pathftp = url.pathname.substring(1);
+  const pathElements = url.pathname.split("/");
+  let pathftp;
+  if (pathElements.length === 2) {
+    pathftp = url.pathname.substring(1);
   } else {
-    url.pathftp = url.pathname;
+    pathftp = url.pathname;
   }
 
   // ftp breaks on %20 and other stuff like this
-  url.pathftp = decodeURIComponent(url.pathftp);
+  url.path = decodeURIComponent(pathftp);
 
   return url;
 }
 
-function rewriteUrl(url) {
-  const urlInfo = processUrl(url);
-  if (urlInfo.protocol === "http:" || urlInfo.protocol === "https:") {
-    return Promise.resolve({
-      protocol: urlInfo.protocol,
-      url,
-    });
-  }
-
-  if (urlInfo.protocol === "ftp:") {
-    if (urlInfo.pathftp.indexOf("/ /") > 0 && urlInfo.pathftp.endsWith("/")) {
-      const urlParts = urlInfo.pathftp.split("/ /");
-      const forlderPath = urlParts[0];
-      const fileName = urlParts[1].slice(0, -1);
-      const fileRegexp = new RegExp(fileName);
-
-      const ftpConnection = new JSFtp({
-        host: urlInfo.host,
-        port: urlInfo.port,
-        user: urlInfo.user,
-        pass: urlInfo.pass,
-      });
-
-      return new Promise((resolve, reject) => {
-        ftpConnection.ls(forlderPath, (err, res) => {
-          if (err) {
-            reject(err);
-          }
-          let fileUrl = null;
-          for (const file of res) {
-            if (fileRegexp.test(file.name)) {
-              fileUrl = `${url.split("/ /")[0]}/${file.name}`;
-              break;
-            }
-          }
-          if (fileUrl) {
-            resolve({
-              protocol: urlInfo.protocol,
-              url: fileUrl,
-            });
-          } else {
-            reject(`Invalid FTP path: \`${urlInfo.pathftp}\``);
-          }
-        });
-      });
-    }
-
-    return Promise.resolve({
-      protocol: urlInfo.protocol,
-      url,
-    });
-  }
-
-  return Promise.reject(
-    `Invalid URL protocol \`${urlInfo.protocol}\`. Supported protocols are \`http\`, \`https\`, and \`ftp\`.`
-  );
-}
-
-function getHttpUrl(url) {
-  return new Promise((resolve, reject) => {
-    request(url, (error, response, body) => {
-      if (error) {
-        reject(error);
-      } else if (response.statusCode !== 200) {
-        reject(`Status code ${response.statusCode} received when requesting the URL \'${url}\'.`);
-      } else {
-        resolve(body);
-      }
-    });
-  });
-}
-
 function getFtpUrl(url) {
+  const urlInfo = processFtpUrl(url);
+  const ftpConnection = new JSFtp({
+    host: urlInfo.host,
+    port: urlInfo.port,
+    user: urlInfo.user,
+    pass: urlInfo.pass,
+  });
   return new Promise((resolve, reject) => {
-    ftp.get(url, (error, data) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(data);
+    ftpConnection.get(urlInfo.path, (err, socket) => {
+      if (err) {
+        reject(err);
       }
+      socket.resume();
+      resolve({ stream: socket });
     });
   });
 }
 
-function getUrl(url) {
-  return rewriteUrl(url)
-    .then((urlInfo) => {
-      if (urlInfo.protocol === "http:" || urlInfo.protocol === "https:") {
-        return getHttpUrl(urlInfo.url);
-      }
+async function getGoogleClient() {
+  return google.auth.getClient({
+    scopes: [
+      "https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/drive.file",
+      "https://www.googleapis.com/auth/drive.appdata",
+      "https://www.googleapis.com/auth/spreadsheets",
+    ],
+  });
+}
 
-      if (urlInfo.protocol === "ftp:") {
-        return getFtpUrl(urlInfo.url);
-      }
-
-      return Promise.reject(`Invalid protocol \`${urlInfo.protocol}\``);
-    });
+async function getGoogleDriveStream(fileId) {
+  const authClient = await getGoogleClient();
+  const drive = google.drive({ version: "v3", auth: authClient });
+  const response = await drive.files.get(
+    {
+      fileId,
+      alt: "media",
+    },
+    { responseType: "stream" },
+  );
+  console.log(response.data);
+  return { stream: response.data };
 }
 
 function getStream(url) {
@@ -157,9 +102,62 @@ function getStream(url) {
     );
 }
 
+function rewriteUrl(url) {
+  let match = null;
+
+  // Dropbox shared files, converts links from:
+  // https://www.dropbox.com/s/isgyjgaulci4w3x/data.csv?dl=0 to:
+  // https://www.dropbox.com/s/isgyjgaulci4w3x/data.csv?dl=1
+  const dropboxShareRegexp = /^(https?:\/\/www\.dropbox\.com\/.+\?dl=)0$/;
+  if ((match = dropboxShareRegexp.exec(url)) && match[1]) {
+    return getStream(`${match[1]}1`);
+  }
+
+  // Google Drive shared files, converts links from:
+  // https://drive.google.com/file/d/0B8VUXsoIMe56bW9SaU4ycmJ1MkU/view?usp=sharing or
+  // https://drive.google.com/open?id=0B8VUXsoIMe56bW9SaU4ycmJ1MkU to:
+  // https://drive.google.com/uc?export=download&confirm=no_antivirus&id=0B8VUXsoIMe56bW9SaU4ycmJ1MkU
+  const googleDriveRegexp = /^^https:\/\/drive\.google\.com\/(?:file\/d\/|drive\/folders\/|drive\/u\/\d+\/folders\/|open\?id=)([A-Z0-9\_-]+)/i;
+  if ((match = googleDriveRegexp.exec(url)) && match[1]) {
+    return getGoogleDriveStream(match[1]);
+  }
+  const googleDriveDownloadRegexp = /^https:\/\/drive\.google\.com\/uc\?.+id=([A-Z0-9\_-]+)&?.*/i;
+  if ((match = googleDriveDownloadRegexp.exec(url)) && match[1]) {
+    return getGoogleDriveStream(match[1]);
+  }
+
+  // Google Spreadsheets files, converts links from:
+  // https://docs.google.com/spreadsheets/d/1BzQjYoBnkWxR7h9jX-m5_9uUXdHHNW40K-UvlaFYvkQ/edit?usp=sharing to:
+  // https://docs.google.com/spreadsheets/d/1BzQjYoBnkWxR7h9jX-m5_9uUXdHHNW40K-UvlaFYvkQ/export?format=csv
+  const googleSpreadsheetRegexp = /^(https?:\/\/docs\.google\.com\/spreadsheets\/d\/.+)\/(.*)$/;
+  if ((match = googleSpreadsheetRegexp.exec(url)) && match[1]) {
+    if (/^pub/.test(match[2])) {
+      return getStream(`${match[1]}/pub?output=csv&format=csv`);
+    }
+    return getStream(`${match[1]}/export?output=csv&format=csv`);
+  }
+
+  // // Figshare files, converts links from:
+  // // https://figshare.com/s/add1e9fd99dfcfae987f to:
+  // // https://ndownloader.figshare.com/files/4850722?private_link=ff1c38e57795230d9c4c
+  // const figshareRegexp = /^https?:\/\/figshare\.com\/s\/(.+)$/;
+  // if ((match = figshareRegexp.exec(url)) && match[1]) {
+  //   showFigsgareWarning();
+  //   return {
+  //     type: 'figshare',
+  //     url: '',
+  //   };
+  // }
+
+  const { protocol } = new URL(url);
+
+  if (protocol === "ftp:") {
+    return getFtpUrl(url);
+  }
+
+  return getStream(url);
+}
+
 module.exports = {
-  rewrite: rewriteUrl,
-  // relative: relativeUrl,
-  get: getUrl,
-  getStream,
+  getStream: rewriteUrl,
 };

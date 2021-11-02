@@ -9,7 +9,7 @@ export const config = {
 export default async function (req, res) {
   const response = await ProxyService.getStream(req.query.url);
 
-  res.status(response.status);
+  res.status(response.status ?? 200);
 
   if (response.headers) {
     for (const [ key, value ] of Object.entries(response.headers)) {
