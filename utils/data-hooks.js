@@ -32,21 +32,26 @@ export function userAccessToken() {
 }
 
 export function userFoldersDataHook() {
-  const { data, ...rest } = apiEndpointHook("/api/user/folders");
-  if (data) {
-    return {
-      ...rest,
-      data: data.map((x) => {
-        return {
-          name: x,
-          label: x,
-        };
-      }),
-    };
-  }
-  else {
-    return rest;
-  }
+  return apiEndpointHook("/api/user/folders");
+  // const { data, ...rest } = apiEndpointHook("/api/user/folders");
+  // if (data) {
+  //   return {
+  //     ...rest,
+  //     data: data.map((x) => {
+  //       return {
+  //         name: x.id,
+  //         label: x.name,
+  //       };
+  //     }),
+  //   };
+  // }
+  // else {
+  //   return rest;
+  // }
+}
+
+export function userFoldersMutation(data, update) {
+  return apiEndpointMutation("/api/user/folders", data, update);
 }
 
 export function userShareEmailsHook() {

@@ -33,16 +33,25 @@ async function handleStarProject(data, projectId, isStarred) {
   await ApiClient.updateProjectStar(projectId, isStarred);
 }
 
-async function handleMoveProject(data, projectId, folderName) {
+async function handleMoveProject(data, projectId, folderIdOrName, allFolders) {
+  const isNewFolder = folderIdOrName.endsWith(" (create new)");
   const projects = [ ...data ];
   const projectIndex = projects.findIndex((x) => x.id === projectId);
   projects[projectIndex] = {
     ...projects[projectIndex],
-    folder: folderName,
+    folder: folderIdOrName,
   };
   DataHooks.userProjectsMutation(projects, false);
 
-  await ApiClient.updateProjectFolder(projectId, folderName);
+  await ApiClient.updateProjectFolder(
+    projectId,
+    isNewFolder ? folderIdOrName.substr(0, folderIdOrName.length - 13) : folderIdOrName,
+  );
+
+  if (isNewFolder) {
+    DataHooks.userFoldersMutation(undefined, true);
+    DataHooks.userProjectsMutation(projects, true);
+  }
 }
 
 async function handleDeleteProject(data, projectId, isBinned) {
@@ -171,7 +180,7 @@ function AccountProjectGrid(props) {
                   onAccess={() => setAccessDialogOpen(item.id)}
                   onDelete={() => handleDeleteProject(data, item.id, !item.binned)}
                   onLoading={setLoading}
-                  onMove={(folderName) => handleMoveProject(data, item.id, folderName)}
+                  onMove={(folderId, allFolders) => handleMoveProject(data, item.id, folderId, allFolders)}
                   onStar={() => handleStarProject(data, item.id, !item.starred)}
                   starred={item.starred}
                   updatedAt={item.updatedAt}

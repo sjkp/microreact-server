@@ -1,5 +1,5 @@
 const connect = require("cgps-application-server/db/connect");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const serverRuntimeConfig = require("../utils/server-runtime-config");
 
@@ -14,14 +14,20 @@ const serverRuntimeConfig = require("../utils/server-runtime-config");
 //   }
 // }
 
+export function isValidObjectId(value) {
+  return mongoose.Types.ObjectId.isValid(value);
+}
+
 export default async function connectToDatabase() {
   const db = connect({
-    overwriteModels: true,
+    // overwriteModels: true,
+    // useFindAndModify: true,
     url: serverRuntimeConfig.mongodb.url,
   });
 
   const ProjectModel = require("../models/project");
   const UserModel = require("../models/user");
+  const FolderModel = require("../models/folder");
 
   return db;
 }

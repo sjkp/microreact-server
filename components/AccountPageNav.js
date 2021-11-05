@@ -81,10 +81,11 @@ function ProjectFoldersTreeItems() {
     data.map(
       (item) => (
         <StyledTreeItem
-          key={item.name}
-          nodeId={item.name}
-          labelText={item.label}
+          key={item.id}
+          nodeId={item.id}
+          labelText={item.name}
           labelIcon={FolderOutlinedIcon}
+          href={`/my-account/folder/${item.id}/${item.name}`}
         />
       )
     )
@@ -147,7 +148,6 @@ function AccountPageNav() {
           href="/my-account/shared"
         />
 
-        {/*
         <hr />
 
         <StyledTreeItem
@@ -159,7 +159,6 @@ function AccountPageNav() {
         />
 
         { showFolders && (<ProjectFoldersTreeItems />) }
-        */}
 
         <hr />
 

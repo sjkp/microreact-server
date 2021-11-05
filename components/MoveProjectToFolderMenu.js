@@ -40,11 +40,11 @@ const MoveProjectToFolderContent = React.memo(
           items={data || emptyArray}
           label="Type a name to search or create"
           createNewItem={
-            (name) => {
+            (label) => {
               return {
-                name,
-                label: `"${name} (create new)`
-              }
+                id: `${label} (create new)`,
+                name: `"${label}" (create new)`,
+              };
             }
           }
         >
@@ -54,10 +54,11 @@ const MoveProjectToFolderContent = React.memo(
                 boxed={false}
                 items={items}
                 nullable
-                nullOptionLabel="Without a folder"
-                onChange={props.onMove}
+                nullOptionLabel={<em>without a folder</em>}
+                onChange={(value) => props.onMove(value, data)}
                 value={props.folder}
-                valueProperty="name"
+                labelProperty="name"
+                valueProperty="id"
               />
             )
           }
@@ -70,6 +71,8 @@ const MoveProjectToFolderContent = React.memo(
 MoveProjectToFolderContent.displayName = "MoveProjectToFolderContent";
 
 MoveProjectToFolderContent.propTypes = {
+  folder: PropTypes.string,
+  onMove: PropTypes.func.isRequired,
   projectProps: PropTypes.object,
 };
 
@@ -80,7 +83,7 @@ const MoveProjectToFolderMenu = React.memo(
     return (
       <UiIconButtonMenu
         content={() => <MoveProjectToFolderContent {...props} />}
-        hideOnClick={false}
+        hideOnClick={true}
         icon={ButtonIcon}
         title="Move Project to Folder"
         className={rootClassname}
@@ -92,6 +95,8 @@ const MoveProjectToFolderMenu = React.memo(
 MoveProjectToFolderMenu.displayName = "MoveProjectToFolderMenu";
 
 MoveProjectToFolderMenu.propTypes = {
+  folder: PropTypes.string,
+  onMove: PropTypes.func.isRequired,
   projectProps: PropTypes.object,
 };
 

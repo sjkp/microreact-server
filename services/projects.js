@@ -1,7 +1,7 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
 import createMicroreactDocument from "microreact.js";
 
-import databaseService from "./dataabse";
+import databaseService, { isValidObjectId } from "./dataabse";
 
 /**
  * Finds a project documents by project ID or project slug.
@@ -207,6 +207,32 @@ async function toViewerJson(projectModel) {
   }
 
   return json;
+}
+
+export async function findOrCreateUserFolder(user, folderIdOrName) {
+  const db = await databaseService();
+
+  let doc;
+
+  if (isValidObjectId(folderIdOrName)) {
+    doc = await db.models.Folder.findOne(
+      {
+        owner: user.id,
+        _id: folderIdOrName,
+      }
+    );
+  }
+
+  if (!doc) {
+    doc = await db.models.Folder.create(
+      {
+        owner: user.id,
+        name: folderIdOrName,
+      }
+    );
+  }
+
+  return doc;
 }
 
 export default {

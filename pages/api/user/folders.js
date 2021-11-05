@@ -7,21 +7,26 @@ export default async function (req, res) {
   const db = await databaseService();
 
   const docs = [
-    // "Folder 1",
   ];
 
-  const projectFolders = await db.models.Project.distinct(
-    "folder",
-    {
-      owner: user.id,
-    },
+  const projectFolders = await db.models.Folder.find(
+    { owner: user.id },
+    { name: 1 },
+    { rawResult: true },
   );
 
-  for (const folderName of projectFolders) {
-    if (folderName) {
-      docs.push(folderName);
+  for (const folderDoc of projectFolders) {
+    if (folderDoc.name) {
+      docs.push({
+        id: folderDoc.id,
+        name: folderDoc.name,
+      });
     }
   }
 
-  return res.json(docs.sort());
+  return res.json(
+    docs.sort(
+      (a, b) => a.name.localeCompare(b.name)
+    )
+  );
 }

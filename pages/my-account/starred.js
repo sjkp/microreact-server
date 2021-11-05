@@ -50,7 +50,7 @@ function MyProjectsPage() {
       className={Styles.page}
     >
       <Head>
-        <title>My Projects</title>
+        <title>Starred projects</title>
       </Head>
 
       <AccountPageNav />

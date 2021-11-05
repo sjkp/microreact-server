@@ -29,7 +29,7 @@ const projectSchema = new mongoose.Schema({
   },
   binned: { type: Boolean },
   createdAt: { type: Date },
-  folder: { type: String },
+  folder: { type: ObjectId, ref: "Folder" },
   id: {
     default: shortUUID.generate,
     type: String,

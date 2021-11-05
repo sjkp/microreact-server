@@ -10,20 +10,20 @@ import StarOutlineOutlinedIcon from "@material-ui/icons/StarOutlineOutlined";
 import StarOutlinedIcon from "@material-ui/icons/StarOutlined";
 import RestoreFromTrashOutlinedIcon from "@material-ui/icons/RestoreFromTrashOutlined";
 import EditTwoToneIcon from "@material-ui/icons/EditTwoTone";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
 import ManageAccountsIcon from "./ManageAccountsIcon";
-// import UiLoadingBar from "./UiLoadingBar";
+import UiLoadingBar from "./UiLoadingBar";
 
 import { root as rootClassName } from "../styles/account-project-card.module.css";
 
-// const MoveProjectToFolderMenu = dynamic(
-//   () => import("./MoveProjectToFolderMenu"),
-//   {
-//     loading: UiLoadingBar,
-//     ssr: false,
-//   },
-// );
+const MoveProjectToFolderMenu = dynamic(
+  () => import("./MoveProjectToFolderMenu"),
+  {
+    loading: UiLoadingBar,
+    ssr: false,
+  },
+);
 
 function AccountProjectCard(props) {
   return (
@@ -94,11 +94,11 @@ function AccountProjectCard(props) {
       {
         (!props.shared) && (
           <CardActions disableSpacing className="main">
-            {/* <MoveProjectToFolderMenu
+            <MoveProjectToFolderMenu
               projectId={props.id}
               folder={props.folder}
               onMove={props.onMove}
-            /> */}
+            />
 
             <IconButton
               title="Edit Project Access"

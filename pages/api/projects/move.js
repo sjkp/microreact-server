@@ -1,7 +1,7 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
 import requireUserMiddleware from "cgps-application-server/middleware/require-user";
 
-import ProjectsService from "../../../services/projects";
+import * as ProjectsService from "../../../services/projects";
 
 export default async function (req, res) {
   const user = await requireUserMiddleware(req, res);
@@ -12,7 +12,11 @@ export default async function (req, res) {
     throw new ApiError(403);
   }
 
-  projectModel.folder = req.body.folder ?? null;
+  const folderIdOrName = req.body.folder ?? null;
+
+  const folderDocument = await ProjectsService.findOrCreateUserFolder(user, folderIdOrName);
+
+  projectModel.folder = folderDocument._id;
 
   await projectModel.save();
 

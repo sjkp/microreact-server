@@ -44,7 +44,7 @@ function MyProjectsPage() {
       className={Styles.page}
     >
       <Head>
-        <title>My Projects</title>
+        <title>Binned projects</title>
       </Head>
 
       <AccountPageNav />
