@@ -54,7 +54,7 @@ const MoveProjectToFolderContent = React.memo(
                 boxed={false}
                 items={items}
                 nullable
-                nullOptionLabel={<em>without a folder</em>}
+                nullOptionLabel={<em>unassigned to a folder</em>}
                 onChange={(value) => props.onMove(value, data)}
                 value={props.folder}
                 labelProperty="name"
