@@ -61,7 +61,7 @@
     "@babel/types": "^7.13.0",
     "eslint-config-cgps": "gitlab:cgps/dev/eslint-config",
     "feedback-screenshot-tool": "^1.0.5",
-    "microreact-viewer": "gitlab:cgps/microreact/viewer#main"
+    "microreact-viewer": "gitlab:cgps/microreact/viewer#v8.0.0"
   },
   "peerOptionalDependencies": {
     "mongodb": "^3.6.0"
