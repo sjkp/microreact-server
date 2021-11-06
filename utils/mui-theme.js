@@ -31,8 +31,8 @@ export const theme = {
     contrast: "#000000",
   },
   fonts: {
-    headline: `"Plus Jakarta Sans", "Roboto", "Helvetica", "Arial", sans-serif`,
-    body: `"Roboto", "Helvetica", "Arial", sans-serif`,
+    headline: `"Plus Jakarta Sans", "Helvetica", "Arial", sans-serif`,
+    body: `"Work Sans", "Helvetica", "Arial", sans-serif`,
   },
 };
 

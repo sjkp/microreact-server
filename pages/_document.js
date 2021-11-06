@@ -34,13 +34,12 @@ export default class MyDocument extends Document {
 
           {/* <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700|Saira+Semi+Condensed:300,400,500|Roboto+Mono:400" rel="stylesheet" /> */}
 
-          <link rel="stylesheet" href="https://unpkg.com/fontsource-roboto@4.0.0/300.css" />
-          <link rel="stylesheet" href="https://unpkg.com/fontsource-roboto@4.0.0/400.css" />
-          <link rel="stylesheet" href="https://unpkg.com/fontsource-roboto@4.0.0/500.css" />
-          <link rel="stylesheet" href="https://unpkg.com/fontsource-roboto@4.0.0/700.css" />
 
-          <link rel="stylesheet" href="https://unpkg.com/@fontsource/plus-jakarta-sans/index.css" />
-          <link rel="stylesheet" href="https://unpkg.com/@fontsource/plus-jakarta-sans/500.css" />
+          <link rel="stylesheet" href="https://unpkg.com/@fontsource/work-sans@4.5.1/index.css" />
+          <link rel="stylesheet" href="https://unpkg.com/@fontsource/work-sans@4.5.1/500.css" />
+
+          <link rel="stylesheet" href="https://unpkg.com/@fontsource/plus-jakarta-sans@4.5.0/index.css" />
+          <link rel="stylesheet" href="https://unpkg.com/@fontsource/plus-jakarta-sans@4.5.0/500.css" />
 
           <link
             rel="stylesheet"
