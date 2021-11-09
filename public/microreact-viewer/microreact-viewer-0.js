@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
@@ -90,7 +90,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -176,7 +176,7 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -316,7 +316,7 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -438,7 +438,7 @@ var _ShapesLegend = _interopRequireDefault(__webpack_require__(518));
 
 var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(547));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 function mapStateToProps(state, _ref) {
   var field = _ref.field;
@@ -487,7 +487,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _svg = __webpack_require__(519);
 
@@ -668,7 +668,7 @@ var _ColoursLegend = _interopRequireDefault(__webpack_require__(520));
 
 var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(550));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 function mapStateToProps(state, _ref) {
   var field = _ref.field;
@@ -723,7 +723,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _svg = __webpack_require__(519);
 

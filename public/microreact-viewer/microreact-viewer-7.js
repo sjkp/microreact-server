@@ -86,7 +86,7 @@ var _DoneOutlineRounded = _interopRequireDefault(__webpack_require__(465));
 
 var _EditRounded = _interopRequireDefault(__webpack_require__(451));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 

@@ -23,7 +23,7 @@ var _LegendPane = _interopRequireDefault(__webpack_require__(544));
 
 var _legends = _interopRequireDefault(__webpack_require__(551));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 function mapStateToProps(state) {
   return {
@@ -91,7 +91,7 @@ var _htmlsvg = _interopRequireDefault(__webpack_require__(457));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -333,7 +333,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _sets = __webpack_require__(41);
 

@@ -64,7 +64,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
@@ -213,7 +213,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -443,7 +443,7 @@ var _dataFileUrl = _interopRequireDefault(__webpack_require__(532));
 
 var _seriesStacking = _interopRequireDefault(__webpack_require__(515));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _ChartControls = _interopRequireDefault(__webpack_require__(533));
 
@@ -614,7 +614,7 @@ var _IconButton = _interopRequireDefault(__webpack_require__(21));
 
 var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -1182,7 +1182,7 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _charts = __webpack_require__(161);
 
@@ -1263,7 +1263,7 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _colourMapForField = _interopRequireDefault(__webpack_require__(97));
 
@@ -1760,7 +1760,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _charts = __webpack_require__(161);
 
@@ -1797,7 +1797,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _charts = __webpack_require__(161);
 
@@ -1834,7 +1834,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 var _charts = __webpack_require__(161);
 

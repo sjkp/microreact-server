@@ -63,7 +63,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
@@ -144,7 +144,7 @@ var _ListItemIcon = _interopRequireDefault(__webpack_require__(213));
 
 var _ListItemText = _interopRequireDefault(__webpack_require__(83));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
