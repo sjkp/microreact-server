@@ -2202,19 +2202,23 @@ var chartSpecSelector = (0, _state.createKeyedStateSelector)(function (state, ti
         field: "unitStartDate",
         type: "temporal",
         axis: {
-          title: null
+          title: null,
+          grid: false
         }
       },
       x2: {
         field: "unitEndDate",
         type: "temporal",
-        axis: null
+        axis: null,
+        grid: false
       },
       y: {
         // aggregate: "sum",
         field: "groupCount",
         type: "quantitative",
-        axis: null
+        axis: {
+          title: null
+        }
       },
       color: {
         field: "groupColour",
