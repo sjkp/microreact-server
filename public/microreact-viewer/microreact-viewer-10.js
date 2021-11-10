@@ -205,7 +205,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 503:
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -250,7 +250,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 510:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -360,7 +360,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 511:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -375,7 +375,7 @@ exports["default"] = void 0;
 
 var _bounds = _interopRequireDefault(__webpack_require__(196));
 
-var _fullRangeExtent = _interopRequireDefault(__webpack_require__(523));
+var _fullRangeExtent = _interopRequireDefault(__webpack_require__(524));
 
 function filteredRangeExtentSelector(state, timelineId) {
   return (0, _bounds["default"])(state, timelineId) || (0, _fullRangeExtent["default"])(state, timelineId);
@@ -386,7 +386,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 523:
+/***/ 524:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -401,7 +401,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(510));
+var _fullRangeChartData = _interopRequireDefault(__webpack_require__(511));
 
 var fullRangeExtentSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
   return (0, _fullRangeChartData["default"])(state, timelineId);
@@ -463,9 +463,9 @@ var _TimelinePane = _interopRequireDefault(__webpack_require__(616));
 
 var _timelines = __webpack_require__(74);
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(511));
+var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(512));
 
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(503));
+var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(504));
 
 // import chartDataSelector from "../selectors/timelines/chart-data";
 // import chartSpecSelector from "../selectors/timelines/chart-spec";
@@ -769,9 +769,9 @@ var _timelines = __webpack_require__(74);
 
 var _TimelineSlider = _interopRequireDefault(__webpack_require__(619));
 
-var _fullRangeExtent = _interopRequireDefault(__webpack_require__(523));
+var _fullRangeExtent = _interopRequireDefault(__webpack_require__(524));
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(511));
+var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(512));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var timelineId = _ref.timelineId;
@@ -1212,11 +1212,11 @@ var _ui = __webpack_require__(26);
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(510));
+var _fullRangeChartData = _interopRequireDefault(__webpack_require__(511));
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(511));
+var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(512));
 
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(503));
+var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(504));
 
 var _state = __webpack_require__(2);
 
@@ -1787,7 +1787,7 @@ var _reactVega = __webpack_require__(443);
 
 var _fullRangeChartSpec = _interopRequireDefault(__webpack_require__(625));
 
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(510));
+var _fullRangeChartData = _interopRequireDefault(__webpack_require__(511));
 
 var onError = function onError(err) {
   return console.error("Timeline", err);
@@ -2025,7 +2025,7 @@ var _selectedIdsSet = _interopRequireDefault(__webpack_require__(496));
 
 var _rowsWithDateField = _interopRequireDefault(__webpack_require__(101));
 
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(503));
+var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(504));
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(96));
 
@@ -2152,7 +2152,7 @@ var _paneSize = _interopRequireDefault(__webpack_require__(493));
 
 var _laneField = _interopRequireDefault(__webpack_require__(629));
 
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(503));
+var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(504));
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(55));
 
