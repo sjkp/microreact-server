@@ -1833,7 +1833,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _config = _interopRequireDefault(__webpack_require__(52));
+var _config = _interopRequireDefault(__webpack_require__(51));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(493));
 
@@ -2146,7 +2146,7 @@ var _state = __webpack_require__(2);
 
 var _charts = __webpack_require__(159);
 
-var _config = _interopRequireDefault(__webpack_require__(52));
+var _config = _interopRequireDefault(__webpack_require__(51));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(493));
 
