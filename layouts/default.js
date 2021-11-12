@@ -170,7 +170,7 @@ const DefaultLayout = (props) => {
           onKeyDown={handleDrawerClose}
         >
           <header>
-            <small>Version { publicRuntimeConfig.version }</small>
+            <small>Version { publicRuntimeConfig.version.endsWith(".0.0") ? publicRuntimeConfig.version.substr(0, publicRuntimeConfig.version.length - 4) : publicRuntimeConfig.version }</small>
             <Link href="/" className="header">
               <Image
                 src="/images/logos/microreact.svg"
