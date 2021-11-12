@@ -42,7 +42,7 @@ function StyledTreeItem(props) {
           // activeClassName={href ? styles.activeLink : undefined}
         >
           <LabelIcon color="inherit" className={styles.labelIcon} />
-          <span className={styles.labelText}>
+          <span title={labelText} className={styles.labelText}>
             { labelText }
           </span>
           {/* <Typography variant="caption" color="inherit">
