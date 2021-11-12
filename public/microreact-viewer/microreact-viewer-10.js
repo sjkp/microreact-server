@@ -119,7 +119,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _PaneIcon = _interopRequireDefault(__webpack_require__(53));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(164));
+var _FileLoader = _interopRequireDefault(__webpack_require__(165));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -193,7 +193,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(162));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(163));
 
 var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -373,7 +373,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _bounds = _interopRequireDefault(__webpack_require__(196));
+var _bounds = _interopRequireDefault(__webpack_require__(197));
 
 var _fullRangeExtent = _interopRequireDefault(__webpack_require__(526));
 
@@ -561,7 +561,7 @@ var _TimelineFullRangeChart = _interopRequireDefault(__webpack_require__(626));
 
 var _TimelineFilteredRangeChart = _interopRequireDefault(__webpack_require__(628));
 
-var _charts = __webpack_require__(159);
+var _charts = __webpack_require__(160);
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1394,7 +1394,7 @@ var _SkipPreviousRounded = _interopRequireDefault(__webpack_require__(484));
 
 var _Slider = _interopRequireDefault(__webpack_require__(109));
 
-var _Menu = _interopRequireDefault(__webpack_require__(161));
+var _Menu = _interopRequireDefault(__webpack_require__(162));
 
 var _Divider = _interopRequireDefault(__webpack_require__(94));
 
@@ -1404,13 +1404,13 @@ var _constants = __webpack_require__(12);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _Animation = _interopRequireDefault(__webpack_require__(165));
+var _Animation = _interopRequireDefault(__webpack_require__(166));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(163));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
 var _UiRadioList = _interopRequireDefault(__webpack_require__(99));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(160));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(161));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(108));
 
@@ -2144,7 +2144,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _charts = __webpack_require__(159);
+var _charts = __webpack_require__(160);
 
 var _config = _interopRequireDefault(__webpack_require__(51));
 
