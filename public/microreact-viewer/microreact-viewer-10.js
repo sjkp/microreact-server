@@ -524,7 +524,7 @@ __webpack_require__(619);
 
 var Datetime = _interopRequireWildcard(__webpack_require__(55));
 
-var _downloads = __webpack_require__(51);
+var _downloads = __webpack_require__(52);
 
 var _TimelineSlider = _interopRequireDefault(__webpack_require__(620));
 
@@ -1806,7 +1806,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _config = _interopRequireDefault(__webpack_require__(52));
+var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
@@ -2119,7 +2119,7 @@ var _state = __webpack_require__(3);
 
 var _charts = __webpack_require__(161);
 
-var _config = _interopRequireDefault(__webpack_require__(52));
+var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
