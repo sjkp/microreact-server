@@ -1195,22 +1195,25 @@ var _state = __webpack_require__(3);
 
 var _TimelineControls = _interopRequireDefault(__webpack_require__(625));
 
+var _config = _interopRequireDefault(__webpack_require__(49));
+
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var timelineId = _ref.timelineId;
   var timelineState = state.timelines[timelineId];
   return {
+    chartUnit: (0, _filteredRangeUnit["default"])(state, timelineId),
     controls: timelineState.controls,
+    dataFields: (0, _dataColumns["default"])(state),
+    fullRangeChartData: (0, _fullRangeChartData["default"])(state, timelineId),
+    isReadOnly: (0, _config["default"])(state).readOnly,
+    laneField: timelineState.laneField,
     maxNodeSize: 160,
     minNodeSize: 14,
     nodeSize: timelineState.nodeSize,
+    silderTemporalRange: (0, _filteredRangeExtent["default"])(state, timelineId),
     speed: timelineState.speed,
     style: timelineState.style,
-    laneField: timelineState.laneField,
-    silderTemporalRange: (0, _filteredRangeExtent["default"])(state, timelineId),
-    fullRangeChartData: (0, _fullRangeChartData["default"])(state, timelineId),
-    unit: timelineState.unit,
-    dataFields: (0, _dataColumns["default"])(state),
-    chartUnit: (0, _filteredRangeUnit["default"])(state, timelineId)
+    unit: timelineState.unit
   };
 };
 
@@ -1609,9 +1612,9 @@ var TimelineControls = /*#__PURE__*/function (_React$PureComponent) {
       }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"], {
         button: _UiControlsButton["default"],
         icon: /*#__PURE__*/_react["default"].createElement(_Menu["default"], null)
-      }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+      }, !props.isReadOnly && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
         onClick: props.onEditPane
-      }, "Edit Timeline"), /*#__PURE__*/_react["default"].createElement(_Divider["default"], null), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+      }, "Edit Timeline"), /*#__PURE__*/_react["default"].createElement(_Divider["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
         onClick: props.onDownloadPNG
       }, "Download as PNG image"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
         onClick: props.onDownloadSVG
@@ -1719,6 +1722,7 @@ TimelineControls.displayName = "TimelineControls";
 TimelineControls.propTypes = {
   controls: _propTypes["default"].bool.isRequired,
   dataFields: _propTypes["default"].arrayOf(_propTypes2.DataColumn).isRequired,
+  isReadOnly: _propTypes["default"].bool.isRequired,
   laneField: _propTypes["default"].string,
   maxNodeSize: _propTypes["default"].number.isRequired,
   minNodeSize: _propTypes["default"].number.isRequired,
@@ -1806,7 +1810,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(49));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
@@ -2119,7 +2123,7 @@ var _state = __webpack_require__(3);
 
 var _charts = __webpack_require__(161);
 
-var _config = _interopRequireDefault(__webpack_require__(50));
+var _config = _interopRequireDefault(__webpack_require__(49));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
