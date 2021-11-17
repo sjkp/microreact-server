@@ -2033,6 +2033,7 @@ function commitFiles(fileDescriptors) {
 function config(payload) {
   return {
     payload: payload,
+    savable: false,
     type: "MICROREACT VIEWER/CONFIG"
   };
 }
