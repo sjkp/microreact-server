@@ -8,7 +8,7 @@ import "cgps-application-server/nextjs/auth/with-custom-css";
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
 
 const options = {
-  callbackUrl: "/my-account",
+  callbackUrl: "/welcome",
 
   // @link https://next-auth.js.org/configuration/providers
   providers: [

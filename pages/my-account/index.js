@@ -63,7 +63,7 @@ function PageTitle() {
 }
 
 function MyProjectsPage() {
-  closeWindowAfterLogin();
+  // closeWindowAfterLogin();
 
   return (
     <div

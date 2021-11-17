@@ -7,15 +7,17 @@ import React from "react";
 import SaveRoundedIcon from "@material-ui/icons/SaveRounded";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import MicroreactViewer, { utils as ViewerUtils, UiIconButton, store as ViewerStore } from "microreact-viewer";
+import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as ViewerStore, actions as viewerActions } from "microreact-viewer";
 
 import fetcher from "../utils/viewer-fetch-proxy";
 import useLeavePageConfirm from "../hooks/leave-page-confirm";
+import * as Projects from "../utils/projects";
 
 // import SaveViewMenu from "./SaveViewMenu";
 import ProjectSaveDialog from "./ProjectSaveDialog";
 import ProjectAccessDialog from "./ProjectAccessDialog";
 import ManageAccountsIcon from "./ManageAccountsIcon";
+import EditOffMenu from "./EditOffMenu.react";
 
 ViewerUtils.proxy.setFetcher(fetcher);
 
@@ -35,6 +37,14 @@ class ProjectViewer extends React.PureComponent {
     };
 
     window.ViewerUtils = ViewerUtils;
+  }
+
+  componentWillMount() {
+    ViewerStore.dispatch(
+      viewerActions.config({
+        readOnly: !this.canEdit(),
+      })
+    );
   }
 
   /**
@@ -90,7 +100,51 @@ class ProjectViewer extends React.PureComponent {
     this.setState({ isAccessDialogOpen: !this.state.isAccessDialogOpen });
   }
 
+  // handleEnableEdit = () => {
+  //   ViewerStore.dispatch(
+  //     viewerActions.config({
+  //       readOnly: false,
+  //     })
+  //   );
+  //   this.setState({ editMode: true });
+  // }
+
+  handleMakeCopy = () => {
+    ViewerStore.dispatch(viewerActions.save())
+      .then(Projects.saveProjectOnServer)
+      .then((savedProjectProps) => {
+        ViewerStore.dispatch(
+          viewerActions.config({
+            readOnly: false,
+          })
+        );
+        this.setState(
+          {
+            projectProps: {
+              ...this.state.projectProps,
+              ...savedProjectProps,
+            },
+          }
+        );
+      });
+  }
+
   renderViewerComponents = () => {
+    let prependNavButtons = null;
+    const presentState = viewerSelectors.presentStateSelector(ViewerStore.getState());
+    if (presentState.config.readOnly) {
+      prependNavButtons = (
+        <EditOffMenu
+          onMakeCopy={this.handleMakeCopy}
+        />
+        // <UiIconButton
+        //   colour="inherit"
+        //   onClick={this.handleEnableEdit}
+        //   title="Edit this project"
+        // >
+        // </UiIconButton>
+      );
+    }
     return {
       drawerButton: (
         <IconButton
@@ -101,15 +155,7 @@ class ProjectViewer extends React.PureComponent {
           <MenuIcon />
         </IconButton>
       ),
-      // prependNavButtons: (
-      //   <UiIconButton
-      //     colour="inherit"
-      //     onClick={this.handleFeedback}
-      //     title="Send feedback"
-      //   >
-      //     <FeedbackTwoToneIcon />
-      //   </UiIconButton>
-      // ),
+      prependNavButtons,
       appendNavButtons: (
         <React.Fragment>
           {/*
@@ -194,7 +240,7 @@ class ProjectViewer extends React.PureComponent {
       <Provider store={ViewerStore}>
         <MicroreactViewer
           components={this.renderViewerComponents()}
-          disableEdits={!this.canEdit()}
+          // disableEdits={!this.canEdit()}
           disableThemeProvider
         >
           { this.renderAccessDialog() }

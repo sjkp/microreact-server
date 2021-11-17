@@ -10,7 +10,13 @@ class UploadPage extends React.Component {
 
   componentDidMount() {
     ViewerStore.dispatch(
-      actions.config({ mapboxApiAccessToken: publicRuntimeConfig.mapboxApiAccessToken })
+      actions.config({
+        mapboxApiAccessToken: publicRuntimeConfig.mapboxApiAccessToken,
+        readOnly: false,
+      })
+    );
+    ViewerStore.dispatch(
+      actions.reset()
     );
   }
 

@@ -18,6 +18,7 @@ import { actions as viewerActions, utils as viewerUtils, selectors as viewerSele
 
 import * as LocalStorage from "../utils/local-storage";
 import * as Projects from "../utils/projects";
+import * as Auth from "../utils/auth";
 
 import UiCopyTextfield from "./UiCopyTextfield";
 import UiIconStack from "./UiIconStack.react";
@@ -102,7 +103,7 @@ function SaveProjectButton(props) {
         className="mr-microreact-org"
         // href="/signin"
         // target="_blank"
-        onClick={props.handleLogin}
+        onClick={Auth.signin}
       >
         <UiIconStack>
           <WebAssetTwoToneIcon />
@@ -221,14 +222,6 @@ class ProjectSaveDialog extends React.PureComponent {
       });
   }
 
-  handleLogin = () => {
-    window.open(
-      "/signin",
-      "DescriptiveWindowName",
-      "resizable,scrollbars,status,width=600,height=600"
-    );
-  }
-
   render() {
     const { props } = this;
 
@@ -323,7 +316,6 @@ class ProjectSaveDialog extends React.PureComponent {
             }
 
             <SaveProjectButton
-              handleLogin={this.handleLogin}
               handleSaveOnServer={this.handleSaveOnServer}
             />
 

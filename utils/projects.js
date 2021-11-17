@@ -36,4 +36,3 @@ export async function updateProjectOnServer(projectId, projectJson) {
 
   return project;
 }
-
