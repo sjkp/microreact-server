@@ -30,9 +30,9 @@ body label[for="input-email-for-email-provider"] {
   margin-top: -16px;
 }
 
-body label[for="input-email-for-email-provider"]::before {
+/* body label[for="input-email-for-email-provider"]::before {
   content: "Enter an ";
-}
+} */
 
 body input#input-email-for-email-provider {
   z-index: 2;
