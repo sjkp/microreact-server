@@ -3,7 +3,7 @@ import EditTwoToneIcon from "@material-ui/icons/EditTwoTone";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import { useSession } from "next-auth/client";
 
 import { UiIconButtonMenu } from "microreact-viewer";
@@ -15,6 +15,7 @@ import UiLoadingBar from "./UiLoadingBar";
 
 function EditOffContent(props) {
   const [ session, loading ] = useSession();
+  const [ isCopying, setCopying ] = useState(false);
 
   if (loading) {
     return (
@@ -31,9 +32,16 @@ function EditOffContent(props) {
         <Button
           variant="text"
           color="primary"
-          onClick={props.onMakeCopy}
+          disabled={isCopying}
+          onClick={
+            () => {
+              setCopying(true);
+              props.onMakeCopy();
+            }
+          }
         >
-          Make a copy
+          { isCopying && (<UiLoadingBar />) }
+          { isCopying ? "Making a copying..." : "Make a copy" }
         </Button>
       </div>
     );
@@ -49,7 +57,7 @@ function EditOffContent(props) {
           color="primary"
           onClick={Auth.signin}
         >
-          Sign in to edit or make a copy
+          Sign in to edit
         </Button>
       </React.Fragment>
     );
