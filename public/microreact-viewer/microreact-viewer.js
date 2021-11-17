@@ -23767,11 +23767,12 @@ function rootReducer() {
   if (label !== nextState.config.label) {
     nextState.config = _objectSpread({}, nextState.config);
     nextState.config.label = label;
-  } // if (action.type.startsWith("MICROREACT VIEWER/") && action.savable !== false && !nextState.config.isDirty) {
-  //   nextState.config = { ...nextState.config };
-  //   nextState.config.isDirty = true;
-  // }
+  }
 
+  if (action.type.startsWith("MICROREACT VIEWER/") && action.savable !== false && !nextState.config.isDirty) {
+    nextState.config = _objectSpread({}, nextState.config);
+    nextState.config.isDirty = true;
+  }
 
   return nextState;
 }
