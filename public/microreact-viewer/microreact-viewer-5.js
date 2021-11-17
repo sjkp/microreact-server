@@ -192,9 +192,9 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 
 var minScaledMarkerNodeSelector = function minScaledMarkerNodeSelector(state, mapId) {
-  var _ref, _state$maps$mapId$min;
+  var _state$maps$mapId$nod;
 
-  return Math.max(1, (_ref = (_state$maps$mapId$min = state.maps[mapId].minMarkerSize) !== null && _state$maps$mapId$min !== void 0 ? _state$maps$mapId$min : state.maps[mapId].minNodeRadius) !== null && _ref !== void 0 ? _ref : 7);
+  return Math.max(1, (_state$maps$mapId$nod = state.maps[mapId].nodeSize) !== null && _state$maps$mapId$nod !== void 0 ? _state$maps$mapId$nod : 14);
 };
 
 var _default = minScaledMarkerNodeSelector;
@@ -301,7 +301,7 @@ var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(501));
 var maxScaledMarkerRadiusSelector = function maxScaledMarkerRadiusSelector(state, mapId) {
   var _state$maps$mapId$max;
 
-  return (_state$maps$mapId$max = state.maps[mapId].maxMarkerSize) !== null && _state$maps$mapId$max !== void 0 ? _state$maps$mapId$max : state.maps[mapId].nodeSize * 0.5 + (0, _minScaledMarkerSize["default"])(state, mapId);
+  return (_state$maps$mapId$max = state.maps[mapId].maxMarkerSize) !== null && _state$maps$mapId$max !== void 0 ? _state$maps$mapId$max : state.maps[mapId].nodeSize * 2;
 };
 
 var _default = maxScaledMarkerRadiusSelector;
@@ -1373,8 +1373,8 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     fixedSize: !mapState.scaleMarkers,
     markers: (0, _markersLayerData["default"])(state, mapId),
     nodeRadius: mapState.nodeSize / 2,
-    minScaledMarkerSize: (0, _minScaledMarkerSize["default"])(state, mapId),
-    maxScaledMarkerSize: (0, _maxScaledMarkerSize["default"])(state, mapId),
+    minScaledMarkerRadius: (0, _minScaledMarkerSize["default"])(state, mapId) / 2,
+    maxScaledMarkerRadius: (0, _maxScaledMarkerSize["default"])(state, mapId) / 2,
     selectedIds: (0, _selectedIdsSet["default"])(state),
     showMarkers: mapState.showMarkers,
     globalOpacity: mapState.markersOpacity / 100
@@ -1497,7 +1497,7 @@ var MapMarkersLayer = /*#__PURE__*/function (_React$PureComponent) {
                 var isHighlighted = marker.rows.some(function (row) {
                   return _this.props.selectedIds.has(row[0]);
                 });
-                var size = _this.props.fixedSize ? _this.props.nodeRadius : _this.props.minScaledMarkerSize + (_this.props.maxScaledMarkerSize - _this.props.minScaledMarkerSize) * marker.ratio;
+                var size = _this.props.fixedSize ? _this.props.nodeRadius : _this.props.minScaledMarkerRadius + (_this.props.maxScaledMarkerRadius - _this.props.minScaledMarkerRadius) * marker.ratio;
 
                 if (marker.slices) {
                   (0, _drawing.drawPieChart)(ctx, pixelX, pixelY, size, marker.slices, isHighlighted && _defaults["default"].THEME.COLOURS.GREEN);
@@ -1916,7 +1916,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     maxNodeSize: mapState.maxNodeSize,
     maxScaledMarkerSize: (0, _maxScaledMarkerSize["default"])(state, mapId),
     minNodeSize: mapState.minNodeSize,
-    minScaledMarkerSize: (0, _minScaledMarkerSize["default"])(state, mapId),
+    // minScaledMarkerSize: minScaledMarkerNodeSelector(state, mapId),
     nodeSize: mapState.nodeSize,
     regionsColourField: mapState.regionsColourField,
     regionsColourMethod: mapState.regionsColourMethod,
@@ -2251,20 +2251,11 @@ var MapControls = /*#__PURE__*/_react["default"].memo(function (props) {
   }, "log"), /*#__PURE__*/_react["default"].createElement("small", {
     value: "linear"
   }, "linear")), props.showMarkers && props.scaleMarkers && /*#__PURE__*/_react["default"].createElement(_UiSlider["default"], {
-    label: "Min marker size",
-    max: 128,
-    min: 1,
-    onChange: function onChange(value) {
-      return value < props.maxScaledMarkerSize && props.onMinMarkerSizeChange(value);
-    },
-    unit: "px",
-    value: props.minScaledMarkerSize
-  }), props.showMarkers && props.scaleMarkers && /*#__PURE__*/_react["default"].createElement(_UiSlider["default"], {
     label: "Max marker size",
     max: 128,
-    min: 1,
+    min: props.nodeSize,
     onChange: function onChange(value) {
-      return value > props.minScaledMarkerSize && props.onMaxMarkerSizeChange(value);
+      return props.onMaxMarkerSizeChange(value);
     },
     unit: "px",
     value: props.maxScaledMarkerSize
@@ -2643,6 +2634,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   var mapId = _ref.mapId;
   var hasMarkerSizeLegend = (0, _hasMarkerSizeLegend["default"])(state, mapId);
   var hasRegionColourLegend = (0, _hasRegionColourLegend["default"])(state, mapId);
+  var mapState = state.maps[mapId];
   return {
     hasMarkerSizeLegend: hasMarkerSizeLegend,
     hasRegionColourLegend: hasRegionColourLegend,
@@ -2650,6 +2642,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     markerSizeLegendItems: hasMarkerSizeLegend ? (0, _markerSizeLegendItems["default"])(state, mapId) : null,
     maxScaledMarkerSize: (0, _maxScaledMarkerSize["default"])(state, mapId),
     minScaledMarkerSize: (0, _minScaledMarkerSize["default"])(state, mapId),
+    nodeSize: mapState.nodeSize,
     regionColourLegendItems: hasRegionColourLegend ? (0, _regionColourLegendItems["default"])(state, mapId) : null,
     scaleMarkersDataField: (0, _scaleMarkersField["default"])(state, mapId)
   };
@@ -2658,14 +2651,17 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
   var mapId = _ref2.mapId;
   return {
-    onSelectRows: function onSelectRows(ids, merge) {
-      return dispatch((0, _filters.selectRows)(ids, merge));
+    onMaxMarkerSizeChange: function onMaxMarkerSizeChange(value) {
+      return dispatch((0, _maps.update)(mapId, "maxMarkerSize", value));
     },
     onMinMarkerSizeChange: function onMinMarkerSizeChange(value) {
       return dispatch((0, _maps.update)(mapId, "minMarkerSize", value));
     },
-    onMaxMarkerSizeChange: function onMaxMarkerSizeChange(value) {
-      return dispatch((0, _maps.update)(mapId, "maxMarkerSize", value));
+    onNodeSizeChange: function onNodeSizeChange(value) {
+      return dispatch((0, _maps.update)(mapId, "nodeSize", Number(value)));
+    },
+    onSelectRows: function onSelectRows(ids, merge) {
+      return dispatch((0, _filters.selectRows)(ids, merge));
     }
   };
 };
@@ -2717,10 +2713,10 @@ var numberOfMarks = {
 var markerSizeLegendItemsSelector = (0, _state.createKeyedStateSelector)(function (state, mapId) {
   return (0, _markersLayerData["default"])(state, mapId);
 }, function (state, mapId) {
-  return (0, _minScaledMarkerSize["default"])(state, mapId);
+  return (0, _minScaledMarkerSize["default"])(state, mapId) / 2;
 }, function (state, mapId) {
-  return (0, _maxScaledMarkerSize["default"])(state, mapId);
-}, function (markers, minScaledMarkerSize, maxScaledMarkerSize) {
+  return (0, _maxScaledMarkerSize["default"])(state, mapId) / 2;
+}, function (markers, minScaledMarkerRadius, maxScaledMarkerRadius) {
   var markersByMagnitude = new Map();
 
   var _iterator = _createForOfIteratorHelper(markers),
@@ -2744,7 +2740,7 @@ var markerSizeLegendItemsSelector = (0, _state.createKeyedStateSelector)(functio
     return a - b;
   });
   var items = [];
-  var radiusRange = maxScaledMarkerSize - minScaledMarkerSize;
+  var radiusRange = maxScaledMarkerRadius - minScaledMarkerRadius;
 
   if (orderedMarks.length > 0) {
     var marks = numberOfMarks[Math.min(5, orderedMarks.length)];
@@ -2759,7 +2755,7 @@ var markerSizeLegendItemsSelector = (0, _state.createKeyedStateSelector)(functio
         var value = orderedMarks[index];
         items.push({
           value: value,
-          radius: minScaledMarkerSize + radiusRange * markersByMagnitude.get(value).ratio
+          radius: minScaledMarkerRadius + radiusRange * markersByMagnitude.get(value).ratio
         });
       }
     } catch (err) {
@@ -2922,7 +2918,9 @@ var MapLegend = /*#__PURE__*/function (_React$PureComponent) {
       }, "Marker", /*#__PURE__*/_react["default"].createElement("br", null), "Size"))), /*#__PURE__*/_react["default"].createElement("tbody", null, props.markerSizeLegendItems.map(function (item, index) {
         return /*#__PURE__*/_react["default"].createElement("tr", {
           key: item.value
-        }, /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("svg", {
+        }, /*#__PURE__*/_react["default"].createElement("td", {
+          title: "".concat(Math.round(item.radius * 2), " px")
+        }, /*#__PURE__*/_react["default"].createElement("svg", {
           width: "".concat(props.maxScaledMarkerSize * 2 + 2, "px"),
           height: "".concat(item.radius * 2 + 2, "px"),
           xmlns: "http://www.w3.org/2000/svg",
@@ -2933,34 +2931,7 @@ var MapLegend = /*#__PURE__*/function (_React$PureComponent) {
           cx: props.maxScaledMarkerSize + 1,
           cy: item.radius + 1,
           r: item.radius
-        }))), index === 0 || index === props.markerSizeLegendItems.length - 1 ? /*#__PURE__*/_react["default"].createElement(_UiPopoverMenu["default"], {
-          button: "td",
-          buttonProps: {
-            children: item.value,
-            className: "mr-action-button",
-            title: "Click to set marker size"
-          },
-          direction: "right",
-          title: "Marker size"
-        }, index === 0 ? /*#__PURE__*/_react["default"].createElement(_UiSlider["default"], {
-          label: "Min marker size",
-          max: 128,
-          min: 1,
-          onChange: function onChange(value) {
-            return value < props.maxScaledMarkerSize && props.onMinMarkerSizeChange(value);
-          },
-          unit: "px",
-          value: props.minScaledMarkerSize
-        }) : /*#__PURE__*/_react["default"].createElement(_UiSlider["default"], {
-          label: "Max marker size",
-          max: 128,
-          min: 1,
-          onChange: function onChange(value) {
-            return value > props.minScaledMarkerSize && props.onMaxMarkerSizeChange(value);
-          },
-          unit: "px",
-          value: props.maxScaledMarkerSize
-        })) : /*#__PURE__*/_react["default"].createElement("td", null, item.value));
+        }))), /*#__PURE__*/_react["default"].createElement("td", null, item.value));
       })))), props.hasRegionColourLegend && /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("table", {
         className: "mr-legend-table"
       }, /*#__PURE__*/_react["default"].createElement("thead", {
