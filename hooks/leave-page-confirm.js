@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Router from "next/router";
-import { useBeforeUnload } from "react-use";
+import { useBeforeunload } from "react-beforeunload";
 
 import { selectors as viewerSelectors, store as viewerStore } from "microreact-viewer";
 
@@ -12,7 +12,11 @@ function checkChnages() {
 const useLeavePageConfirm = (
   message = "Are you sure want to leave this page?"
 ) => {
-  useBeforeUnload(checkChnages, message);
+  useBeforeunload((event) => {
+    if (checkChnages()) {
+      event.preventDefault();
+    }
+  });
 
   useEffect(() => {
     const handler = () => {

@@ -25,8 +25,8 @@ function EditOffContent(props) {
   if (session) {
     return (
       <div>
-        <p>
-          You cannot edit this project.
+        <p style={{ maxWidth: 280 }}>
+          You cannot edit this project because you are not the owner.
         </p>
         <Button
           variant="text"
@@ -41,15 +41,15 @@ function EditOffContent(props) {
   else {
     return (
       <React.Fragment>
-        <p>
-          You cannot edit this project.
+        <p style={{ maxWidth: 280 }}>
+          You cannot edit this project because you are not signed in.
         </p>
         <Button
           variant="text"
           color="primary"
           onClick={Auth.signin}
         >
-          Sign in to make a copy
+          Sign in to edit or make a copy
         </Button>
       </React.Fragment>
     );
@@ -67,7 +67,7 @@ const EditOffMenu = React.memo(
         disableHeader
         hideOnClick={false}
         icon={icon}
-        title="Labels, Colours, and Shapes"
+        title="Edit project"
       >
         <EditOffContent
           onMakeCopy={props.onMakeCopy}

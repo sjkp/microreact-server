@@ -22,7 +22,7 @@ import EditOffMenu from "./EditOffMenu.react";
 ViewerUtils.proxy.setFetcher(fetcher);
 
 const ChangesChecker = (props) => {
-  useLeavePageConfirm(false);
+  useLeavePageConfirm();
   return null;
 };
 
@@ -240,7 +240,6 @@ class ProjectViewer extends React.PureComponent {
       <Provider store={ViewerStore}>
         <MicroreactViewer
           components={this.renderViewerComponents()}
-          // disableEdits={!this.canEdit()}
           disableThemeProvider
         >
           { this.renderAccessDialog() }
@@ -248,7 +247,9 @@ class ProjectViewer extends React.PureComponent {
           { this.renderSaveDialog() }
         </MicroreactViewer>
 
-        <ChangesChecker />
+        {
+          this.canEdit() && (<ChangesChecker />)
+        }
       </Provider>
     );
   }
