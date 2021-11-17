@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[0],{
 
-/***/ 491:
+/***/ 500:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15,25 +15,21 @@ exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(164));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _CloseRounded = _interopRequireDefault(__webpack_require__(41));
+__webpack_require__(507);
 
-__webpack_require__(499);
-
-var _UiIconButton = _interopRequireDefault(__webpack_require__(165));
-
+// import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
+// import UiIconButton from "./UiIconButton.react";
 var UiSidePaneHeader = /*#__PURE__*/_react["default"].memo(function (props) {
   return /*#__PURE__*/_react["default"].createElement(_ListSubheader["default"], {
     className: "mr-ui-side-pane-header",
     disableSticky: props.disableSticky
   }, props.title, /*#__PURE__*/_react["default"].createElement("div", {
     className: "mr-actions"
-  }, props.children, /*#__PURE__*/_react["default"].createElement(_UiIconButton["default"], {
-    onClick: props.onClose
-  }, /*#__PURE__*/_react["default"].createElement(_CloseRounded["default"], null))));
+  }, props.children));
 });
 
 UiSidePaneHeader.displayName = "UiSidePaneHeader";
@@ -49,17 +45,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 499:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 500:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70,6 +56,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 508:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 517:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92,15 +88,15 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(164));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(538));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(545));
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(541));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(548));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -157,7 +153,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 509:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -184,9 +180,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(508);
 
-var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(539));
+var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(546));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -216,7 +212,8 @@ var ShapesLegend = /*#__PURE__*/function (_React$PureComponent) {
           key: index,
           onClick: _this.props.onSelectQueryRows ? function (e) {
             return _this.props.onSelectQueryRows(item.value, e.metaKey || e.ctrlKey);
-          } : undefined
+          } : undefined,
+          className: item.isSelected ? "mr-selected" : null
         }, /*#__PURE__*/_react["default"].createElement(_ShapeSvgImage["default"], {
           shape: item.shape,
           colour: "transparent"
@@ -241,7 +238,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 510:
+/***/ 519:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -255,9 +252,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.shapeImage = shapeImage;
 exports.linearGradientImage = linearGradientImage;
 
-var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(447));
+var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(458));
 
-var _phylocanvas = __webpack_require__(95);
+var _phylocanvas = __webpack_require__(98);
 
 /* eslint-disable no-lonely-if */
 
@@ -296,7 +293,7 @@ function linearGradientImage(width, height, startColour, stopColour) {
 
 /***/ }),
 
-/***/ 511:
+/***/ 520:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -323,9 +320,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(508);
 
-var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(542));
+var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(549));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -355,7 +352,8 @@ var ColoursLegend = /*#__PURE__*/function (_React$PureComponent) {
             key: index,
             onClick: props.onSelectQueryRows ? function (e) {
               return props.onSelectQueryRows(item.value, e.metaKey || e.ctrlKey);
-            } : undefined
+            } : undefined,
+            className: item.isSelected ? "mr-selected" : null
           }, /*#__PURE__*/_react["default"].createElement("code", {
             style: {
               backgroundColor: item.colour
@@ -419,7 +417,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 538:
+/***/ 545:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -434,11 +432,11 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(509));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(518));
 
-var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(540));
+var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(547));
 
 var _state = __webpack_require__(3);
 
@@ -464,7 +462,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 539:
+/***/ 546:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -491,7 +489,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(510);
+var _svg = __webpack_require__(519);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -547,7 +545,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 540:
+/***/ 547:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -562,13 +560,15 @@ exports["default"] = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
-var _text = __webpack_require__(69);
+var _text = __webpack_require__(70);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(42));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
-var _shapeMapByField = _interopRequireDefault(__webpack_require__(191));
+var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
+
+var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -576,34 +576,58 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var shapesLegendEntriesSelector = (0, _reselect.createSelector)(function (state, field) {
-  return (0, _dataColumnByField["default"])(state, field);
-}, function (state, field) {
-  return (0, _shapeMapByField["default"])(state, field);
-}, function (dataColumn, shapesMap) {
-  // group all rows
-  var entries = [];
-
-  var _iterator = _createForOfIteratorHelper(shapesMap.entries()),
+function isSelected(rows, field, value) {
+  var _iterator = _createForOfIteratorHelper(rows),
       _step;
 
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var _step$value = (0, _slicedToArray2["default"])(_step.value, 2),
-          value = _step$value[0],
-          shape = _step$value[1];
+      var row = _step.value;
 
-      entries.push({
-        shape: shape,
-        value: value,
-        label: (0, _text.toText)(dataColumn.dataType, value)
-      });
-    } // order the list of groups by label
-
+      if (row[field] === value) {
+        return true;
+      }
+    }
   } catch (err) {
     _iterator.e(err);
   } finally {
     _iterator.f();
+  }
+
+  return false;
+}
+
+var shapesLegendEntriesSelector = (0, _reselect.createSelector)(function (state, field) {
+  return (0, _dataColumnByField["default"])(state, field);
+}, function (state, field) {
+  return (0, _shapeMapByField["default"])(state, field);
+}, function (state) {
+  return (0, _selectedRows["default"])(state);
+}, function (dataColumn, shapesMap, selectedRows) {
+  // group all rows
+  var entries = [];
+
+  var _iterator2 = _createForOfIteratorHelper(shapesMap.entries()),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var _step2$value = (0, _slicedToArray2["default"])(_step2.value, 2),
+          value = _step2$value[0],
+          shape = _step2$value[1];
+
+      entries.push({
+        shape: shape,
+        value: value,
+        label: (0, _text.toText)(dataColumn.dataType, value),
+        isSelected: selectedRows && isSelected(selectedRows, dataColumn.name, value)
+      });
+    } // order the list of groups by label
+
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
   }
 
   return entries.sort(function (a, b) {
@@ -623,7 +647,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 541:
+/***/ 548:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -638,11 +662,11 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(511));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(520));
 
-var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(543));
+var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(550));
 
 var _state = __webpack_require__(3);
 
@@ -674,7 +698,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 542:
+/***/ 549:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -701,7 +725,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(510);
+var _svg = __webpack_require__(519);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -746,7 +770,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 543:
+/***/ 550:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -761,13 +785,17 @@ exports["default"] = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
-var _text = __webpack_require__(69);
+var _arrays = __webpack_require__(23);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(42));
+var _text = __webpack_require__(70);
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(94));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
+
+var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+
+var _colourMapForField = _interopRequireDefault(__webpack_require__(97));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -775,47 +803,61 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function isSelected(rows, field, value) {
+  var _iterator = _createForOfIteratorHelper(rows),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var row = _step.value;
+
+      if (row[field] === value) {
+        return true;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return false;
+}
+
 var coloursLegendEntriesSelector = (0, _reselect.createSelector)(function (state, field) {
   return (0, _dataColumnByField["default"])(state, field);
 }, function (state, field) {
   return (0, _colourMapForField["default"])(state, field);
-}, function (dataColumn, colourMap) {
+}, function (state) {
+  return (0, _selectedRows["default"])(state);
+}, function (dataColumn, colourMap, selectedRows) {
   var entries = [];
 
   if (colourMap.scale === "discrete") {
-    var _iterator = _createForOfIteratorHelper(colourMap.entries()),
-        _step;
+    var _iterator2 = _createForOfIteratorHelper(colourMap.entries()),
+        _step2;
 
     try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var _step$value = (0, _slicedToArray2["default"])(_step.value, 2),
-            value = _step$value[0],
-            colour = _step$value[1];
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var _step2$value = (0, _slicedToArray2["default"])(_step2.value, 2),
+            value = _step2$value[0],
+            colour = _step2$value[1];
 
         entries.push({
           colour: colour,
           value: value,
-          label: (0, _text.toText)(dataColumn.dataType, value)
+          label: (0, _text.toText)(dataColumn.dataType, value),
+          isSelected: selectedRows && isSelected(selectedRows, dataColumn.name, value)
         });
       } // order the list of groups by label
 
     } catch (err) {
-      _iterator.e(err);
+      _iterator2.e(err);
     } finally {
-      _iterator.f();
+      _iterator2.f();
     }
 
-    entries.sort(function (a, b) {
-      if (a.label > b.label) {
-        return 1;
-      }
-
-      if (a.label < b.label) {
-        return -1;
-      }
-
-      return 0;
-    });
+    entries.sort((0, _arrays.sortComparator)("label"));
   } else if (colourMap.scale === "binned") {
     for (var index = 1; index <= colourMap.numberOfBins; index++) {
       var start = colourMap.domain[0] + colourMap.binLength * (index - 1);

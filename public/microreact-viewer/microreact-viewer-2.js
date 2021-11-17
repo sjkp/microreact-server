@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[2],{
 
-/***/ 443:
+/***/ 454:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,13 +13,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(92);
+var _reactRedux = __webpack_require__(95);
 
-var _reduxUndo = __webpack_require__(107);
+var _reduxUndo = __webpack_require__(113);
 
-var _panes = __webpack_require__(53);
+var _panes = __webpack_require__(57);
 
-var _HistoryPane = _interopRequireDefault(__webpack_require__(535));
+var _HistoryPane = _interopRequireDefault(__webpack_require__(542));
 
 var mapStateToProps = function mapStateToProps(rootState) {
   return {
@@ -50,7 +50,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 491:
+/***/ 500:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65,25 +65,21 @@ exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(164));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _CloseRounded = _interopRequireDefault(__webpack_require__(41));
+__webpack_require__(507);
 
-__webpack_require__(499);
-
-var _UiIconButton = _interopRequireDefault(__webpack_require__(165));
-
+// import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
+// import UiIconButton from "./UiIconButton.react";
 var UiSidePaneHeader = /*#__PURE__*/_react["default"].memo(function (props) {
   return /*#__PURE__*/_react["default"].createElement(_ListSubheader["default"], {
     className: "mr-ui-side-pane-header",
     disableSticky: props.disableSticky
   }, props.title, /*#__PURE__*/_react["default"].createElement("div", {
     className: "mr-actions"
-  }, props.children, /*#__PURE__*/_react["default"].createElement(_UiIconButton["default"], {
-    onClick: props.onClose
-  }, /*#__PURE__*/_react["default"].createElement(_CloseRounded["default"], null))));
+  }, props.children));
 });
 
 UiSidePaneHeader.displayName = "UiSidePaneHeader";
@@ -99,7 +95,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 499:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -109,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 535:
+/***/ 542:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,7 +126,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -140,33 +136,33 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _List = _interopRequireDefault(__webpack_require__(114));
+var _List = _interopRequireDefault(__webpack_require__(121));
 
-var _ListItem = _interopRequireDefault(__webpack_require__(59));
+var _ListItem = _interopRequireDefault(__webpack_require__(61));
 
-var _ListItemIcon = _interopRequireDefault(__webpack_require__(208));
+var _ListItemIcon = _interopRequireDefault(__webpack_require__(213));
 
-var _ListItemText = _interopRequireDefault(__webpack_require__(82));
+var _ListItemText = _interopRequireDefault(__webpack_require__(83));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _RedoRounded = _interopRequireDefault(__webpack_require__(444));
+var _RedoRounded = _interopRequireDefault(__webpack_require__(455));
 
-var _UndoRounded = _interopRequireDefault(__webpack_require__(198));
+var _UndoRounded = _interopRequireDefault(__webpack_require__(203));
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
-__webpack_require__(536);
+__webpack_require__(543);
 
-var _shortcuts = __webpack_require__(187);
+var _shortcuts = __webpack_require__(191);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(165));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(491));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -290,7 +286,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 536:
+/***/ 543:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

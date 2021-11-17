@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[8],{
 
-/***/ 456:
+/***/ 467:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,15 +13,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
 
 var _state = __webpack_require__(3);
 
-var _PanePlaceholder = _interopRequireDefault(__webpack_require__(488));
+var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _SlicerPane = _interopRequireDefault(__webpack_require__(589));
+var _SlicerPane = _interopRequireDefault(__webpack_require__(596));
 
-var _isValidSlicer = _interopRequireDefault(__webpack_require__(595));
+var _isValidSlicer = _interopRequireDefault(__webpack_require__(602));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var slicerId = _ref.slicerId;
@@ -49,7 +49,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 487:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64,7 +64,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(50));
+var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -93,7 +93,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 488:
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -114,13 +114,13 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(489);
+__webpack_require__(499);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(161));
+var _FileLoader = _interopRequireDefault(__webpack_require__(165));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -169,7 +169,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 489:
+/***/ 499:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -179,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 496:
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -194,17 +194,17 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(40);
+var _sets = __webpack_require__(41);
 
-var _text = __webpack_require__(69);
+var _text = __webpack_require__(70);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _filteredFieldIds = _interopRequireDefault(__webpack_require__(181));
+var _filteredFieldIds = _interopRequireDefault(__webpack_require__(186));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _filteredNonDataIds = _interopRequireDefault(__webpack_require__(178));
+var _filteredNonDataIds = _interopRequireDefault(__webpack_require__(183));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -292,7 +292,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 503:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -305,15 +305,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filterableValues = _interopRequireDefault(__webpack_require__(496));
+var _filterableValues = _interopRequireDefault(__webpack_require__(505));
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _dataFieldFilter = _interopRequireDefault(__webpack_require__(167));
+var _dataFieldFilter = _interopRequireDefault(__webpack_require__(169));
 
 var _state = __webpack_require__(3);
 
-var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(504));
+var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(512));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var field = _ref.field;
@@ -338,7 +338,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 504:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -357,9 +357,9 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _UiSelectList = _interopRequireDefault(__webpack_require__(168));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(96));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(100));
 
 var _constants = __webpack_require__(12);
 
@@ -405,7 +405,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 589:
+/***/ 596:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -418,23 +418,25 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _SlicerPane = _interopRequireDefault(__webpack_require__(590));
+var _SlicerPane = _interopRequireDefault(__webpack_require__(597));
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _chartAxisType = _interopRequireDefault(__webpack_require__(186));
+var _chartAxisType = _interopRequireDefault(__webpack_require__(190));
 
-var _chartData = _interopRequireDefault(__webpack_require__(593));
+var _chartData = _interopRequireDefault(__webpack_require__(600));
 
-var _chartSpec = _interopRequireDefault(__webpack_require__(594));
+var _chartSpec = _interopRequireDefault(__webpack_require__(601));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(100));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _state = __webpack_require__(3);
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
 
-var _slicerState = _interopRequireDefault(__webpack_require__(72));
+var _slicerState = _interopRequireDefault(__webpack_require__(73));
+
+var _config = _interopRequireDefault(__webpack_require__(49));
 
 // import dataFieldFilterSelector from "../selectors/filters/data-field-filter";
 function mapStateToProps(state, _ref) {
@@ -442,11 +444,12 @@ function mapStateToProps(state, _ref) {
   var dataColumn = (0, _dataColumn["default"])(state, slicerId);
   var slicerState = (0, _slicerState["default"])(state, slicerId);
   return {
-    slicerType: slicerState.slicerType,
+    chartAxisType: (0, _chartAxisType["default"])(state, slicerId),
     chartData: (0, _chartData["default"])(state, slicerId),
     chartSpec: (0, _chartSpec["default"])(state, slicerId),
     dataColumn: dataColumn,
-    chartAxisType: (0, _chartAxisType["default"])(state, slicerId)
+    isReadOnly: (0, _config["default"])(state).readOnly,
+    slicerType: slicerState.slicerType
   };
 }
 
@@ -468,7 +471,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 590:
+/***/ 597:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -493,7 +496,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -507,19 +510,19 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _reactVega = __webpack_require__(436);
+var _reactVega = __webpack_require__(447);
 
-var _lodash = _interopRequireDefault(__webpack_require__(438));
+var _lodash = _interopRequireDefault(__webpack_require__(449));
 
-__webpack_require__(591);
+__webpack_require__(598);
 
-var _charts = __webpack_require__(156);
+var _charts = __webpack_require__(161);
 
-var _downloads = __webpack_require__(68);
+var _downloads = __webpack_require__(52);
 
-var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(503));
+var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(511));
 
-var _SlicerControls = _interopRequireDefault(__webpack_require__(592));
+var _SlicerControls = _interopRequireDefault(__webpack_require__(599));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -722,6 +725,7 @@ var SlicerPane = /*#__PURE__*/function (_React$PureComponent) {
         className: "mr-slicer" // style={scrollStyle}
 
       }, this.renderSlicer(), /*#__PURE__*/_react["default"].createElement(_SlicerControls["default"], {
+        isReadOnly: props.isReadOnly,
         onDownloadPNG: this.downloadPNG,
         onDownloadSVG: this.downloadSVG,
         onEditPane: props.onEditPane,
@@ -740,6 +744,7 @@ SlicerPane.propTypes = {
   dataColumn: _propTypes2.DataColumn.isRequired,
   filter: _propTypes2.DataFilter,
   height: _propTypes["default"].number.isRequired,
+  isReadOnly: _propTypes["default"].bool.isRequired,
   onColumnFilterChange: _propTypes["default"].func.isRequired,
   onEditPane: _propTypes["default"].func.isRequired,
   slicerId: _propTypes["default"].string.isRequired,
@@ -750,7 +755,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 591:
+/***/ 598:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -760,7 +765,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 592:
+/***/ 599:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -777,13 +782,13 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Menu = _interopRequireDefault(__webpack_require__(160));
+var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _Divider = _interopRequireDefault(__webpack_require__(93));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(157));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
 var SlicerControls = /*#__PURE__*/_react["default"].memo(function (props) {
   var isChart = props.slicerType === "chart";
@@ -792,7 +797,7 @@ var SlicerControls = /*#__PURE__*/_react["default"].memo(function (props) {
   }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"], {
     button: _UiControlsButton["default"],
     icon: /*#__PURE__*/_react["default"].createElement(_Menu["default"], null)
-  }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+  }, !props.isReadOnly && /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
     onClick: props.onEditPane
   }, "Edit Data Slicer"), isChart && /*#__PURE__*/_react["default"].createElement(_Divider["default"], null), isChart && /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
     onClick: props.onDownloadPNG
@@ -803,6 +808,7 @@ var SlicerControls = /*#__PURE__*/_react["default"].memo(function (props) {
 
 SlicerControls.displayName = "SlicerControls";
 SlicerControls.propTypes = {
+  isReadOnly: _propTypes["default"].bool.isRequired,
   onDownloadPNG: _propTypes["default"].func.isRequired,
   onDownloadSVG: _propTypes["default"].func.isRequired,
   onEditPane: _propTypes["default"].func.isRequired,
@@ -814,7 +820,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 593:
+/***/ 600:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -829,9 +835,9 @@ exports["default"] = void 0;
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(100));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(72));
+var _slicerState = _interopRequireDefault(__webpack_require__(73));
 
 var _state = __webpack_require__(3);
 
@@ -871,7 +877,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 594:
+/***/ 601:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -886,17 +892,17 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _charts = __webpack_require__(156);
+var _charts = __webpack_require__(161);
 
-var _config = _interopRequireDefault(__webpack_require__(48));
+var _config = _interopRequireDefault(__webpack_require__(49));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(100));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
-var _paneSize = _interopRequireDefault(__webpack_require__(487));
+var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _chartAxisType = _interopRequireDefault(__webpack_require__(186));
+var _chartAxisType = _interopRequireDefault(__webpack_require__(190));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(72));
+var _slicerState = _interopRequireDefault(__webpack_require__(73));
 
 var chartSpecSelector = (0, _state.createKeyedStateSelector)(function (state, slicerId) {
   return (0, _dataColumn["default"])(state, slicerId);
@@ -1042,7 +1048,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 595:
+/***/ 602:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1055,7 +1061,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _slicerState = _interopRequireDefault(__webpack_require__(72));
+var _slicerState = _interopRequireDefault(__webpack_require__(73));
 
 function isValidSlicerSelector(state, slicerId) {
   var slicerState = (0, _slicerState["default"])(state, slicerId);

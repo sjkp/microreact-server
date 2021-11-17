@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[7],{
 
-/***/ 453:
+/***/ 464:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,15 +13,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(92);
+var _reactRedux = __webpack_require__(95);
 
-var _NotePane = _interopRequireDefault(__webpack_require__(586));
+var _NotePane = _interopRequireDefault(__webpack_require__(593));
 
-var _notes = __webpack_require__(197);
+var _notes = __webpack_require__(116);
 
-var _noteState = _interopRequireDefault(__webpack_require__(588));
+var _noteState = _interopRequireDefault(__webpack_require__(595));
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var noteId = _ref.noteId;
@@ -51,7 +51,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 586:
+/***/ 593:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72,7 +72,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -82,21 +82,21 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _DoneOutlineRounded = _interopRequireDefault(__webpack_require__(454));
+var _DoneOutlineRounded = _interopRequireDefault(__webpack_require__(465));
 
-var _EditRounded = _interopRequireDefault(__webpack_require__(440));
+var _EditRounded = _interopRequireDefault(__webpack_require__(451));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _reactMarkdown = _interopRequireDefault(__webpack_require__(455));
+var _reactMarkdown = _interopRequireDefault(__webpack_require__(466));
 
-__webpack_require__(587);
+__webpack_require__(594);
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(157));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var BrowserUtils = _interopRequireWildcard(__webpack_require__(20));
+var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -241,7 +241,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 587:
+/***/ 594:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -251,7 +251,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 588:
+/***/ 595:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -262,7 +262,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _notes = __webpack_require__(205);
+var _notes = __webpack_require__(210);
 
 var noteStateSelector = function noteStateSelector(state, noteId) {
   return state.notes[noteId] || _notes.initialState;

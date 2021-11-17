@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[12],{
 
-/***/ 479:
+/***/ 489:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,19 +13,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _panes = __webpack_require__(53);
+var _panes = __webpack_require__(57);
 
 var _state = __webpack_require__(3);
 
-var _ViewsPane = _interopRequireDefault(__webpack_require__(646));
+var _ViewsPane = _interopRequireDefault(__webpack_require__(653));
 
-var _views = __webpack_require__(649);
+var _views = __webpack_require__(656);
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
+
+var _config = _interopRequireDefault(__webpack_require__(49));
 
 function mapStateToProps(state) {
   return {
     entries: state.views,
+    isReadOnly: (0, _config["default"])(state).readOnly,
     key: state.views.length
   };
 }
@@ -62,7 +65,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 485:
+/***/ 495:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75,23 +78,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _panes = __webpack_require__(53);
+var _panes = __webpack_require__(57);
 
-var _SelectionPane = _interopRequireDefault(__webpack_require__(650));
+var _SelectionPane = _interopRequireDefault(__webpack_require__(657));
 
 var _constants = __webpack_require__(12);
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(521));
+var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 
 var _state = __webpack_require__(3);
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(21));
+var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(94));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(97));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(102));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 function mapStateToProps(state) {
   var _selectedRowsSelector;
@@ -126,7 +129,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 487:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -141,7 +144,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(50));
+var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -170,34 +173,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 490:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reselect = __webpack_require__(11);
-
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(158));
-
-var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
-  return (0, _selectedIdsList["default"])(state);
-}, function (selectedIds) {
-  return new Set(selectedIds);
-});
-var _default = selectedIdsSetSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 520:
+/***/ 528:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -212,11 +188,11 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Typography = _interopRequireDefault(__webpack_require__(75));
+var _Typography = _interopRequireDefault(__webpack_require__(76));
 
-var _WorkOutline = _interopRequireDefault(__webpack_require__(484));
+var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
-__webpack_require__(648);
+__webpack_require__(655);
 
 /* eslint-disable class-methods-use-this */
 function UiEmptyState(props) {
@@ -241,67 +217,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 521:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reselect = __webpack_require__(11);
-
-var _rows = _interopRequireDefault(__webpack_require__(17));
-
-var _selectedIdsSet = _interopRequireDefault(__webpack_require__(490));
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var selectedRowsSelector = (0, _reselect.createSelector)(function (state) {
-  return (0, _rows["default"])(state);
-}, function (state) {
-  return (0, _selectedIdsSet["default"])(state);
-}, function (allRows, selectedId) {
-  if (selectedId && selectedId.size) {
-    var rows = [];
-
-    var _iterator = _createForOfIteratorHelper(allRows),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var row = _step.value;
-
-        if (selectedId.has(row[0])) {
-          rows.push(row);
-        }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    return rows;
-  } else {
-    return undefined;
-  }
-});
-var _default = selectedRowsSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 646:
+/***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -320,7 +236,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -334,33 +250,33 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _AddCircleTwoTone = _interopRequireDefault(__webpack_require__(480));
+var _AddCircleTwoTone = _interopRequireDefault(__webpack_require__(490));
 
-var _CircularProgress = _interopRequireDefault(__webpack_require__(188));
+var _CircularProgress = _interopRequireDefault(__webpack_require__(192));
 
-var _ViewCompact = _interopRequireDefault(__webpack_require__(481));
+var _ViewCompact = _interopRequireDefault(__webpack_require__(491));
 
-var _MoreVert = _interopRequireDefault(__webpack_require__(482));
+var _MoreVert = _interopRequireDefault(__webpack_require__(492));
 
-var _reactHashchange = _interopRequireDefault(__webpack_require__(483));
+var _reactHashchange = _interopRequireDefault(__webpack_require__(493));
 
-var _reactSortableHoc = __webpack_require__(441);
+var _reactSortableHoc = __webpack_require__(452);
 
-__webpack_require__(647);
+__webpack_require__(654);
 
-var BrowserUtils = _interopRequireWildcard(__webpack_require__(20));
+var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
 
-var _UiEmptyState = _interopRequireDefault(__webpack_require__(520));
+var _UiEmptyState = _interopRequireDefault(__webpack_require__(528));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(165));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(491));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(157));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var _arrays = __webpack_require__(26);
+var _arrays = __webpack_require__(23);
 
 var _html = __webpack_require__(35);
 
@@ -406,8 +322,8 @@ SortableItem.displayName = "ViewListItem";
 SortableItem.propTypes = {
   item: _propTypes["default"].object.isRequired,
   onRenameView: _propTypes["default"].func.isRequired,
-  onResaveView: _propTypes["default"].func.isRequired,
-  onDownloadView: _propTypes["default"].func.isRequired
+  onResaveView: _propTypes["default"].func.isRequired // onDownloadView: PropTypes.func.isRequired,
+
 }; // const SortableItem = SortableElement(
 //   (props) => {
 //     return (
@@ -457,8 +373,8 @@ var SortableList = (0, _reactSortableHoc.sortableContainer)(function (props) {
       item: item,
       currentViewId: props.currentViewId,
       onRenameView: props.onRenameView,
-      onResaveView: props.onResaveView,
-      onDownloadView: props.onDownloadView,
+      onResaveView: props.onResaveView // onDownloadView={props.onDownloadView}
+      ,
       onDeleteView: props.onDeleteView,
       onLoadView: props.onLoadView
     });
@@ -542,7 +458,7 @@ var ViewsPane = /*#__PURE__*/function (_React$PureComponent) {
       if (props.entries.length === 0 && !state.isSaving) {
         return /*#__PURE__*/_react["default"].createElement(_UiEmptyState["default"] // title="No Views"
         , {
-          subtitle: "You can add a new view by clicking the plus button",
+          subtitle: props.isReadOnly ? "You cannot add a new view to this project" : "You can add a new view by clicking the plus button",
           icon: /*#__PURE__*/_react["default"].createElement(_ViewCompact["default"], null)
         });
       }
@@ -565,7 +481,7 @@ var ViewsPane = /*#__PURE__*/function (_React$PureComponent) {
       }, /*#__PURE__*/_react["default"].createElement(_UiSidePaneHeader["default"], {
         onClose: props.onClose,
         title: "Views"
-      }, /*#__PURE__*/_react["default"].createElement(_UiIconButton["default"], {
+      }, !props.isReadOnly && /*#__PURE__*/_react["default"].createElement(_UiIconButton["default"], {
         onClick: this.handleCreateView,
         disabled: state.isSaving
       }, /*#__PURE__*/_react["default"].createElement(_AddCircleTwoTone["default"], null))), this.renderContent());
@@ -577,6 +493,7 @@ var ViewsPane = /*#__PURE__*/function (_React$PureComponent) {
 ViewsPane.displayName = "ViewsPane";
 ViewsPane.propTypes = {
   entries: _propTypes["default"].array.isRequired,
+  isReadOnly: _propTypes["default"].bool.isRequired,
   onClose: _propTypes["default"].func.isRequired,
   onCreateView: _propTypes["default"].func.isRequired,
   onDeleteView: _propTypes["default"].func.isRequired,
@@ -590,7 +507,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 647:
+/***/ 654:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -600,7 +517,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 648:
+/***/ 655:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -610,7 +527,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 649:
+/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -629,9 +546,9 @@ exports.resaveView = resaveView;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _hash = __webpack_require__(57);
+var _hash = __webpack_require__(45);
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -723,7 +640,7 @@ function resaveView(view) {
 
 /***/ }),
 
-/***/ 650:
+/***/ 657:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -742,7 +659,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -752,35 +669,35 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
-var _DonutSmall = _interopRequireDefault(__webpack_require__(486));
+var _DonutSmall = _interopRequireDefault(__webpack_require__(496));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Typography = _interopRequireDefault(__webpack_require__(75));
+var _Typography = _interopRequireDefault(__webpack_require__(76));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(164));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
-__webpack_require__(651);
+__webpack_require__(658);
 
-var _drawing = __webpack_require__(169);
+var _drawing = __webpack_require__(172);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(511));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(520));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(509));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(518));
 
-var _UiEmptyState = _interopRequireDefault(__webpack_require__(520));
+var _UiEmptyState = _interopRequireDefault(__webpack_require__(528));
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(491));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
-var _SelectionChart = _interopRequireDefault(__webpack_require__(652));
+var _SelectionChart = _interopRequireDefault(__webpack_require__(659));
 
-var _UiCombobox = _interopRequireDefault(__webpack_require__(27));
+var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
-var _LegendsList = _interopRequireDefault(__webpack_require__(508));
+var _LegendsList = _interopRequireDefault(__webpack_require__(517));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -979,10 +896,11 @@ var SelectionPane = /*#__PURE__*/function (_React$PureComponent) {
       return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_UiCombobox["default"], {
         label: "Details Column",
         onChange: function onChange(item) {
-          return props.onBreakdownFieldChange(item.name);
+          return props.onBreakdownFieldChange(item === null || item === void 0 ? void 0 : item.name);
         },
         options: props.fullDatasetColumns,
-        value: props.breakdownField
+        value: props.breakdownField,
+        clearable: true
       }), /*#__PURE__*/_react["default"].createElement(_SelectionChart["default"], {
         signalListeners: this.signalListeners
       }));
@@ -1066,7 +984,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 651:
+/***/ 658:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1076,7 +994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 652:
+/***/ 659:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1089,11 +1007,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactVega = __webpack_require__(436);
+var _reactVega = __webpack_require__(447);
 
-var _selectionChartSpec = _interopRequireDefault(__webpack_require__(653));
+var _selectionChartSpec = _interopRequireDefault(__webpack_require__(660));
 
-var _selectionChartData = _interopRequireDefault(__webpack_require__(654));
+var _selectionChartData = _interopRequireDefault(__webpack_require__(661));
 
 var _state = __webpack_require__(3);
 
@@ -1124,7 +1042,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 653:
+/***/ 660:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1139,17 +1057,17 @@ exports["default"] = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
-var _charts = __webpack_require__(156);
+var _charts = __webpack_require__(161);
 
-var _config = _interopRequireDefault(__webpack_require__(48));
+var _config = _interopRequireDefault(__webpack_require__(49));
 
-var _paneSize = _interopRequireDefault(__webpack_require__(487));
+var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(94));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(97));
 
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(52));
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -1326,7 +1244,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 654:
+/***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1339,15 +1257,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
 var _constants = __webpack_require__(12);
 
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(52));
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(166));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(521));
+var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 
 var selectionChartDataSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedRows["default"])(state);

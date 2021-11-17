@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[5],{
 
-/***/ 448:
+/***/ 459:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,17 +13,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
 
 var _state = __webpack_require__(3);
 
-var _PanePlaceholder = _interopRequireDefault(__webpack_require__(488));
+var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _MapPane = _interopRequireDefault(__webpack_require__(547));
+var _MapPane = _interopRequireDefault(__webpack_require__(554));
 
-var _isValidMap = _interopRequireDefault(__webpack_require__(571));
+var _isValidMap = _interopRequireDefault(__webpack_require__(578));
 
-var _geodataFile = _interopRequireDefault(__webpack_require__(189));
+var _geodataFile = _interopRequireDefault(__webpack_require__(193));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var mapId = _ref.mapId;
@@ -50,7 +50,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 487:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65,7 +65,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(50));
+var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -94,7 +94,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 488:
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115,13 +115,13 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(489);
+__webpack_require__(499);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(49));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(161));
+var _FileLoader = _interopRequireDefault(__webpack_require__(165));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -170,7 +170,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 489:
+/***/ 499:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -180,34 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 490:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reselect = __webpack_require__(11);
-
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(158));
-
-var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
-  return (0, _selectedIdsList["default"])(state);
-}, function (selectedIds) {
-  return new Set(selectedIds);
-});
-var _default = selectedIdsSetSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 492:
+/***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -229,7 +202,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 493:
+/***/ 502:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -254,7 +227,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _SvgIcon = _interopRequireDefault(__webpack_require__(47));
+var _SvgIcon = _interopRequireDefault(__webpack_require__(53));
 
 var _excluded = ["active"];
 
@@ -310,7 +283,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 494:
+/***/ 503:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -323,7 +296,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(492));
+var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(501));
 
 var maxScaledMarkerRadiusSelector = function maxScaledMarkerRadiusSelector(state, mapId) {
   var _state$maps$mapId$max;
@@ -336,7 +309,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 512:
+/***/ 521:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -361,7 +334,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 513:
+/***/ 522:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -374,7 +347,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _hasGeojsonData = _interopRequireDefault(__webpack_require__(514));
+var _hasGeojsonData = _interopRequireDefault(__webpack_require__(523));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
@@ -388,7 +361,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 514:
+/***/ 523:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -401,7 +374,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(98));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
 
 var hasGeojsonDataSelector = function hasGeojsonDataSelector(state, mapId) {
   return !!(0, _geojsonLayerData["default"])(state, mapId);
@@ -412,7 +385,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 515:
+/***/ 524:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -425,19 +398,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _d3Scale = __webpack_require__(109);
+var _d3Scale = __webpack_require__(115);
 
-var _d3Array = __webpack_require__(190);
+var _d3Array = __webpack_require__(194);
 
-var _arrays = __webpack_require__(26);
+var _arrays = __webpack_require__(23);
 
 var _state = __webpack_require__(3);
 
-var _rowsByRegion = _interopRequireDefault(__webpack_require__(176));
+var _rowsByRegion = _interopRequireDefault(__webpack_require__(181));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _colourPalettes = _interopRequireDefault(__webpack_require__(177));
+var _colourPalettes = _interopRequireDefault(__webpack_require__(182));
 
 // import randomcolor from "randomcolor";
 var computeColourMethods = {
@@ -521,7 +494,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 547:
+/***/ 554:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -534,23 +507,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _maps = __webpack_require__(70);
+var _maps = __webpack_require__(71);
 
-var _config = _interopRequireDefault(__webpack_require__(48));
+var _config = _interopRequireDefault(__webpack_require__(49));
 
-var _hasMarkerSizeLegend = _interopRequireDefault(__webpack_require__(512));
+var _hasMarkerSizeLegend = _interopRequireDefault(__webpack_require__(521));
 
-var _hasRegionColourLegend = _interopRequireDefault(__webpack_require__(513));
+var _hasRegionColourLegend = _interopRequireDefault(__webpack_require__(522));
 
-var _mapboxStyle = _interopRequireDefault(__webpack_require__(548));
+var _mapboxStyle = _interopRequireDefault(__webpack_require__(555));
 
-var _mapViewport = _interopRequireDefault(__webpack_require__(549));
+var _mapViewport = _interopRequireDefault(__webpack_require__(556));
 
-var _MapPane = _interopRequireDefault(__webpack_require__(550));
+var _MapPane = _interopRequireDefault(__webpack_require__(557));
 
-var _markersLayerData = _interopRequireDefault(__webpack_require__(163));
+var _markersLayerData = _interopRequireDefault(__webpack_require__(167));
 
 var _state = __webpack_require__(3);
 
@@ -594,7 +567,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 548:
+/***/ 555:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -609,7 +582,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _config = _interopRequireDefault(__webpack_require__(48));
+var _config = _interopRequireDefault(__webpack_require__(49));
 
 // const categories = [ "labels", "roads", "buildings", "parks", "water", "background" ];
 // const layerSelector = {
@@ -811,7 +784,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 549:
+/***/ 556:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -824,15 +797,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactMapGl = __webpack_require__(437);
+var _reactMapGl = __webpack_require__(448);
 
 var _state = __webpack_require__(3);
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
-var _markersLayerData = _interopRequireDefault(__webpack_require__(163));
+var _markersLayerData = _interopRequireDefault(__webpack_require__(167));
 
-var _paneSize = _interopRequireDefault(__webpack_require__(487));
+var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -856,7 +829,7 @@ var defaultViewportSelector = (0, _state.createKeyedStateSelector)(function (sta
     altitude: 1.5
   });
 
-  if (markers.length) {
+  if (markers !== null && markers !== void 0 && markers.length) {
     //#region Find a bounding box which fits all markers
     var north = markers[0];
     var south = markers[0];
@@ -939,7 +912,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 550:
+/***/ 557:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -958,7 +931,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -976,33 +949,33 @@ var _classnames = _interopRequireDefault(__webpack_require__(13));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _reactMapGl = _interopRequireWildcard(__webpack_require__(437));
+var _reactMapGl = _interopRequireWildcard(__webpack_require__(448));
 
-var _lodash = _interopRequireDefault(__webpack_require__(438));
+var _lodash = _interopRequireDefault(__webpack_require__(449));
 
-__webpack_require__(551);
+__webpack_require__(558);
 
-var _ZoomControls = _interopRequireDefault(__webpack_require__(175));
+var _ZoomControls = _interopRequireDefault(__webpack_require__(180));
 
-var _MapMarkersLayer = _interopRequireDefault(__webpack_require__(552));
+var _MapMarkersLayer = _interopRequireDefault(__webpack_require__(559));
 
-var _MapLassoLayer = _interopRequireDefault(__webpack_require__(554));
+var _MapLassoLayer = _interopRequireDefault(__webpack_require__(561));
 
-var _MapControls = _interopRequireDefault(__webpack_require__(556));
+var _MapControls = _interopRequireDefault(__webpack_require__(563));
 
-var _MapGeojsonLayer = _interopRequireDefault(__webpack_require__(560));
+var _MapGeojsonLayer = _interopRequireDefault(__webpack_require__(567));
 
-var _MapLegend = _interopRequireDefault(__webpack_require__(563));
+var _MapLegend = _interopRequireDefault(__webpack_require__(570));
 
-var _MapTooltip = _interopRequireDefault(__webpack_require__(569));
+var _MapTooltip = _interopRequireDefault(__webpack_require__(576));
 
-var _downloads = __webpack_require__(68);
+var _downloads = __webpack_require__(52);
 
 var _propTypes2 = __webpack_require__(14);
 
 var HtmlUtils = _interopRequireWildcard(__webpack_require__(35));
 
-var _events = __webpack_require__(104);
+var _events = __webpack_require__(110);
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1358,7 +1331,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 551:
+/***/ 558:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1368,7 +1341,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 552:
+/***/ 559:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1381,17 +1354,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _MapMarkersLayer = _interopRequireDefault(__webpack_require__(553));
+var _MapMarkersLayer = _interopRequireDefault(__webpack_require__(560));
 
 var _state = __webpack_require__(3);
 
-var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(494));
+var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(503));
 
-var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(492));
+var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(501));
 
-var _selectedIdsSet = _interopRequireDefault(__webpack_require__(490));
+var _selectedIdsSet = _interopRequireDefault(__webpack_require__(174));
 
-var _markersLayerData = _interopRequireDefault(__webpack_require__(163));
+var _markersLayerData = _interopRequireDefault(__webpack_require__(167));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var mapId = _ref.mapId;
@@ -1419,7 +1392,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 553:
+/***/ 560:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1438,7 +1411,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -1452,11 +1425,11 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _reactMapGl = __webpack_require__(437);
+var _reactMapGl = __webpack_require__(448);
 
-var _drawing = __webpack_require__(169);
+var _drawing = __webpack_require__(172);
 
-var _defaults = _interopRequireDefault(__webpack_require__(39));
+var _defaults = _interopRequireDefault(__webpack_require__(40));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -1582,7 +1555,7 @@ MapMarkersLayer.defaultProps = {
 
 /***/ }),
 
-/***/ 554:
+/***/ 561:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1595,9 +1568,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _maps = __webpack_require__(70);
+var _maps = __webpack_require__(71);
 
-var _MapLassoLayer = _interopRequireDefault(__webpack_require__(555));
+var _MapLassoLayer = _interopRequireDefault(__webpack_require__(562));
 
 var _state = __webpack_require__(3);
 
@@ -1625,7 +1598,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 555:
+/***/ 562:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1644,7 +1617,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -1658,9 +1631,9 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _reactMapGl = __webpack_require__(437);
+var _reactMapGl = __webpack_require__(448);
 
-var _geometry = __webpack_require__(99);
+var _geometry = __webpack_require__(103);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -1893,7 +1866,7 @@ MapLassoOverlay.defaultProps = {
 
 /***/ }),
 
-/***/ 556:
+/***/ 563:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1906,25 +1879,27 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _maps = __webpack_require__(70);
+var _maps = __webpack_require__(71);
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(21));
+var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _ui = __webpack_require__(25);
+var _ui = __webpack_require__(27);
 
-var _MapControls = _interopRequireDefault(__webpack_require__(557));
+var _MapControls = _interopRequireDefault(__webpack_require__(564));
 
-var _regionsColourMethodType = _interopRequireDefault(__webpack_require__(559));
+var _regionsColourMethodType = _interopRequireDefault(__webpack_require__(566));
 
-var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(494));
+var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(503));
 
-var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(492));
+var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(501));
 
-var _hasGeojsonData = _interopRequireDefault(__webpack_require__(514));
+var _hasGeojsonData = _interopRequireDefault(__webpack_require__(523));
 
-var _colourPalettes = _interopRequireDefault(__webpack_require__(177));
+var _colourPalettes = _interopRequireDefault(__webpack_require__(182));
 
 var _state = __webpack_require__(3);
+
+var _config = _interopRequireDefault(__webpack_require__(49));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var mapId = _ref.mapId;
@@ -1935,6 +1910,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     dataFields: (0, _dataColumns["default"])(state),
     groupMarkersByRegion: mapState.groupMarkersByRegion,
     hasGeojsonData: (0, _hasGeojsonData["default"])(state, mapId),
+    isReadOnly: (0, _config["default"])(state).readOnly,
     lasso: mapState.lasso,
     markersOpacity: mapState.markersOpacity,
     maxNodeSize: mapState.maxNodeSize,
@@ -2030,7 +2006,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 557:
+/***/ 564:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2047,41 +2023,41 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Divider = _interopRequireDefault(__webpack_require__(93));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
-var _Menu = _interopRequireDefault(__webpack_require__(160));
+var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _CropFreeOutlined = _interopRequireDefault(__webpack_require__(449));
+var _CropFreeOutlined = _interopRequireDefault(__webpack_require__(460));
 
-var _Box = _interopRequireDefault(__webpack_require__(23));
+var _Box = _interopRequireDefault(__webpack_require__(24));
 
-__webpack_require__(558);
+__webpack_require__(565);
 
-var _Animation = _interopRequireDefault(__webpack_require__(162));
+var _Animation = _interopRequireDefault(__webpack_require__(166));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(159));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
-var _LassoButton = _interopRequireDefault(__webpack_require__(493));
+var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(56));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
-var _UiToggleSlider = _interopRequireDefault(__webpack_require__(174));
+var _UiToggleSlider = _interopRequireDefault(__webpack_require__(179));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(101));
 
-var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(200));
+var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(205));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _UiTabs = _interopRequireDefault(__webpack_require__(116));
+var _UiTabs = _interopRequireDefault(__webpack_require__(123));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(157));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var _UiSlider = _interopRequireDefault(__webpack_require__(173));
+var _UiSlider = _interopRequireDefault(__webpack_require__(178));
 
-var _UiToggleButtons = _interopRequireDefault(__webpack_require__(115));
+var _UiToggleButtons = _interopRequireDefault(__webpack_require__(122));
 
 var mapStyles = [{
   value: "microreact",
@@ -2154,9 +2130,9 @@ var MapControls = /*#__PURE__*/_react["default"].memo(function (props) {
   }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"], {
     button: _UiControlsButton["default"],
     icon: /*#__PURE__*/_react["default"].createElement(_Menu["default"], null)
-  }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+  }, !props.isReadOnly && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
     onClick: props.onEditPane
-  }, "Edit Map"), /*#__PURE__*/_react["default"].createElement(_Divider["default"], null), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+  }, "Edit Map"), /*#__PURE__*/_react["default"].createElement(_Divider["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
     key: "png",
     onClick: props.onDownloadPNG
   }, "Download as PNG image")), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
@@ -2302,6 +2278,7 @@ MapControls.propTypes = {
   dataFields: _propTypes["default"].arrayOf(_propTypes2.DataColumn).isRequired,
   groupMarkersByRegion: _propTypes["default"].bool,
   hasGeojsonData: _propTypes["default"].bool,
+  isReadOnly: _propTypes["default"].bool.isRequired,
   lasso: _propTypes["default"].bool.isRequired,
   mapId: _propTypes["default"].string,
   markersOpacity: _propTypes["default"].number,
@@ -2351,7 +2328,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 558:
+/***/ 565:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2361,7 +2338,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 559:
+/***/ 566:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2395,7 +2372,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 560:
+/***/ 567:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2408,13 +2385,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(92);
+var _reactRedux = __webpack_require__(95);
 
-var _MapGeojsonLayer = _interopRequireDefault(__webpack_require__(561));
+var _MapGeojsonLayer = _interopRequireDefault(__webpack_require__(568));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(98));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
 
-var _geojsonLayerStyle = _interopRequireDefault(__webpack_require__(562));
+var _geojsonLayerStyle = _interopRequireDefault(__webpack_require__(569));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var mapId = _ref.mapId;
@@ -2446,7 +2423,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 561:
+/***/ 568:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2463,7 +2440,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _reactMapGl = __webpack_require__(437);
+var _reactMapGl = __webpack_require__(448);
 
 var MapGeojsonLayer = /*#__PURE__*/_react["default"].memo(function (props) {
   if (props.showRegions && props.layerData) {
@@ -2492,7 +2469,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 562:
+/***/ 569:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2507,11 +2484,11 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(98));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
-var _regionsColoursMap = _interopRequireDefault(__webpack_require__(515));
+var _regionsColoursMap = _interopRequireDefault(__webpack_require__(524));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -2625,7 +2602,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 563:
+/***/ 570:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2638,29 +2615,29 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(92);
+var _reactRedux = __webpack_require__(95);
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _maps = __webpack_require__(70);
+var _maps = __webpack_require__(71);
 
-var _markerSizeLegendItems = _interopRequireDefault(__webpack_require__(564));
+var _markerSizeLegendItems = _interopRequireDefault(__webpack_require__(571));
 
-var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(494));
+var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(503));
 
-var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(492));
+var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(501));
 
-var _MapLegend = _interopRequireDefault(__webpack_require__(565));
+var _MapLegend = _interopRequireDefault(__webpack_require__(572));
 
-var _scaleMarkersField = _interopRequireDefault(__webpack_require__(567));
+var _scaleMarkersField = _interopRequireDefault(__webpack_require__(574));
 
-var _markersLayerData = _interopRequireDefault(__webpack_require__(163));
+var _markersLayerData = _interopRequireDefault(__webpack_require__(167));
 
-var _regionColourLegendItems = _interopRequireDefault(__webpack_require__(568));
+var _regionColourLegendItems = _interopRequireDefault(__webpack_require__(575));
 
-var _hasMarkerSizeLegend = _interopRequireDefault(__webpack_require__(512));
+var _hasMarkerSizeLegend = _interopRequireDefault(__webpack_require__(521));
 
-var _hasRegionColourLegend = _interopRequireDefault(__webpack_require__(513));
+var _hasRegionColourLegend = _interopRequireDefault(__webpack_require__(522));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var mapId = _ref.mapId;
@@ -2701,7 +2678,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 564:
+/***/ 571:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2716,13 +2693,13 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _markersLayerData = _interopRequireDefault(__webpack_require__(163));
+var _markersLayerData = _interopRequireDefault(__webpack_require__(167));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
-var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(494));
+var _maxScaledMarkerSize = _interopRequireDefault(__webpack_require__(503));
 
-var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(492));
+var _minScaledMarkerSize = _interopRequireDefault(__webpack_require__(501));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -2799,7 +2776,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 565:
+/***/ 572:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2816,7 +2793,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -2826,21 +2803,21 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _CloseRounded = _interopRequireDefault(__webpack_require__(41));
+var _CloseRounded = _interopRequireDefault(__webpack_require__(46));
 
-var _MapTwoTone = _interopRequireDefault(__webpack_require__(450));
+var _MapTwoTone = _interopRequireDefault(__webpack_require__(461));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(566);
+__webpack_require__(573);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(43));
+var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(44));
 
-var _UiSlider = _interopRequireDefault(__webpack_require__(173));
+var _UiSlider = _interopRequireDefault(__webpack_require__(178));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -3035,7 +3012,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 566:
+/***/ 573:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3045,7 +3022,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 567:
+/***/ 574:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3080,7 +3057,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 568:
+/***/ 575:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3095,7 +3072,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _regionsColoursMap = _interopRequireDefault(__webpack_require__(515));
+var _regionsColoursMap = _interopRequireDefault(__webpack_require__(524));
 
 var regionColourLegendItemsSelector = (0, _state.createKeyedStateSelector)(function (state, mapId) {
   return (0, _regionsColoursMap["default"])(state, mapId);
@@ -3109,7 +3086,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 569:
+/***/ 576:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3122,9 +3099,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _rowsByRegion = _interopRequireDefault(__webpack_require__(176));
+var _rowsByRegion = _interopRequireDefault(__webpack_require__(181));
 
-var _MapTooltip = _interopRequireDefault(__webpack_require__(570));
+var _MapTooltip = _interopRequireDefault(__webpack_require__(577));
 
 var _state = __webpack_require__(3);
 
@@ -3141,7 +3118,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 570:
+/***/ 577:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3206,7 +3183,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 571:
+/***/ 578:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

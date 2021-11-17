@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[3],{
 
-/***/ 445:
+/***/ 456:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,15 +13,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(45);
+var _filters = __webpack_require__(50);
 
-var _panes = __webpack_require__(53);
+var _panes = __webpack_require__(57);
 
-var _styles = __webpack_require__(80);
+var _styles = __webpack_require__(81);
 
-var _LegendPane = _interopRequireDefault(__webpack_require__(537));
+var _LegendPane = _interopRequireDefault(__webpack_require__(544));
 
-var _legends = _interopRequireDefault(__webpack_require__(544));
+var _legends = _interopRequireDefault(__webpack_require__(551));
 
 var _state = __webpack_require__(3);
 
@@ -52,7 +52,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 537:
+/***/ 544:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73,7 +73,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(10));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -83,33 +83,33 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _clsx = _interopRequireDefault(__webpack_require__(112));
+var _clsx = _interopRequireDefault(__webpack_require__(119));
 
-var _Divider = _interopRequireDefault(__webpack_require__(93));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
-var _htmlsvg = _interopRequireDefault(__webpack_require__(446));
+var _htmlsvg = _interopRequireDefault(__webpack_require__(457));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(164));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(508);
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(165));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
 
 var _constants = __webpack_require__(12);
 
-var _LegendsList = _interopRequireDefault(__webpack_require__(508));
+var _LegendsList = _interopRequireDefault(__webpack_require__(517));
 
 var _html = __webpack_require__(35);
 
-var _downloads = __webpack_require__(68);
+var _downloads = __webpack_require__(52);
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(491));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -232,7 +232,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 544:
+/***/ 551:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -245,13 +245,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reselect = __webpack_require__(11);
+var _reselect = __webpack_require__(10);
 
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(52));
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(102));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
-var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(545));
+var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(552));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -296,8 +296,9 @@ var legendsSelector = (0, _reselect.createSelector)(function (state) {
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var field = _step.value;
+      var dataColumn = columnsByFieldMapSelector.get(field);
 
-      if (field !== (colourColumn === null || colourColumn === void 0 ? void 0 : colourColumn.name)) {
+      if (dataColumn && field !== (colourColumn === null || colourColumn === void 0 ? void 0 : colourColumn.name)) {
         legends.push({
           field: field,
           type: "colours",
@@ -319,7 +320,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 545:
+/***/ 552:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -334,11 +335,17 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(40);
+var _sets = __webpack_require__(41);
 
-var _metadataFields = _interopRequireDefault(__webpack_require__(546));
+var _metadataFields = _interopRequireDefault(__webpack_require__(553));
 
 var _constants = __webpack_require__(12);
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 var allTreesMetadataFieldsSelector = (0, _state.createCombinedStateSelector)(function (state) {
   return state.trees;
@@ -348,9 +355,36 @@ var allTreesMetadataFieldsSelector = (0, _state.createCombinedStateSelector)(fun
   } else if (arriesOfFields.length === 1) {
     return arriesOfFields[0];
   } else {
-    return Array.from((0, _sets.intersect)(arriesOfFields.map(function (x) {
-      return new Set(x);
-    })));
+    var union = new Set();
+
+    var _iterator = _createForOfIteratorHelper(arriesOfFields),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var array = _step.value;
+
+        var _iterator2 = _createForOfIteratorHelper(array),
+            _step2;
+
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var element = _step2.value;
+            union.add(element);
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    return Array.from(union);
   }
 });
 var _default = allTreesMetadataFieldsSelector;
@@ -358,7 +392,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 546:
+/***/ 553:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -373,7 +407,7 @@ exports["default"] = void 0;
 
 var _constants = __webpack_require__(12);
 
-var _treeState = _interopRequireDefault(__webpack_require__(55));
+var _treeState = _interopRequireDefault(__webpack_require__(59));
 
 var metadataFieldsSelector = function metadataFieldsSelector(state, treeId) {
   return (0, _treeState["default"])(state, treeId).blocks || _constants.emptyArray;
