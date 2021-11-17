@@ -14,25 +14,25 @@ async function storeFilesOnServer(projectJson) {
 export async function saveProjectOnServer(projectJson, linkedProjectId) {
   await storeFilesOnServer(projectJson);
 
-  const project = await Api.saveProject(
+  const savedProjectProps = await Api.saveProject(
     projectJson,
     linkedProjectId,
   );
 
-  window.history.pushState(null, projectJson.meta.name, project.url);
+  window.history.pushState(null, projectJson.meta.name, savedProjectProps.url);
 
-  return project;
+  return savedProjectProps;
 }
 
 export async function updateProjectOnServer(projectId, projectJson) {
   await storeFilesOnServer(projectJson);
 
-  const project = await Api.updateProject(
+  const savedProjectProps = await Api.updateProject(
     projectId,
     projectJson,
   );
 
-  window.history.pushState(null, projectJson.meta.name, project.url);
+  window.history.pushState(null, projectJson.meta.name, savedProjectProps.url);
 
-  return project;
+  return savedProjectProps;
 }

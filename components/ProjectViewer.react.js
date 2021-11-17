@@ -1,13 +1,14 @@
 /* eslint-disable consistent-return */
-import { Provider } from "react-redux";
+import { Provider, connect } from "react-redux";
 
+import clsx from "clsx";
 import IconButton from "@material-ui/core/IconButton";
 import PropTypes from "prop-types";
 import React from "react";
 import SaveRoundedIcon from "@material-ui/icons/SaveRounded";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as ViewerStore, actions as viewerActions } from "microreact-viewer";
+import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as viewerStore, actions as viewerActions } from "microreact-viewer";
 
 import fetcher from "../utils/viewer-fetch-proxy";
 import useLeavePageConfirm from "../hooks/leave-page-confirm";
@@ -26,6 +27,36 @@ const ChangesChecker = (props) => {
   return null;
 };
 
+const SaveButton = React.memo(
+  (props) => {
+    return (
+      <UiIconButton
+        colour="inherit"
+        onClick={props.toggleSaveDialog}
+        title="Save Project"
+        className={
+          clsx(
+            "mr-save-project",
+            { "mr-has-changes": props.hasChanges },
+          )
+        }
+      >
+        <SaveRoundedIcon />
+      </UiIconButton>
+    );
+  }
+);
+
+SaveButton.displayName = "SaveButton";
+
+const mapStateToProps = (state, { chartId }) => {
+  const presentState = viewerSelectors.presentStateSelector(state);
+  return {
+    hasChanges: presentState.config.isDirty,
+  };
+};
+const ConnectedSaveButton = connect(mapStateToProps)(SaveButton);
+
 class ProjectViewer extends React.PureComponent {
 
   constructor(props) {
@@ -40,7 +71,7 @@ class ProjectViewer extends React.PureComponent {
   }
 
   componentWillMount() {
-    ViewerStore.dispatch(
+    viewerStore.dispatch(
       viewerActions.config({
         readOnly: !this.canEdit(),
       })
@@ -66,6 +97,11 @@ class ProjectViewer extends React.PureComponent {
     return (
       this.state.projectProps.isOwner
     );
+  }
+
+  hasChanges = () => {
+    const presentState = viewerSelectors.presentStateSelector(viewerStore.getState());
+    return presentState.config.isDirty;
   }
 
   /**
@@ -101,7 +137,7 @@ class ProjectViewer extends React.PureComponent {
   }
 
   // handleEnableEdit = () => {
-  //   ViewerStore.dispatch(
+  //   viewerStore.dispatch(
   //     viewerActions.config({
   //       readOnly: false,
   //     })
@@ -110,28 +146,43 @@ class ProjectViewer extends React.PureComponent {
   // }
 
   handleMakeCopy = () => {
-    ViewerStore.dispatch(viewerActions.save())
+    viewerStore.dispatch(viewerActions.save())
       .then(Projects.saveProjectOnServer)
       .then((savedProjectProps) => {
-        ViewerStore.dispatch(
+        viewerStore.dispatch(
           viewerActions.config({
             readOnly: false,
           })
         );
-        this.setState(
-          {
-            projectProps: {
-              ...this.state.projectProps,
-              ...savedProjectProps,
-            },
-          }
-        );
+        this.setSavedProjectProps(savedProjectProps);
       });
+  }
+
+  setSavedProjectProps = (
+    savedProjectProps,
+    callback,
+    extraState = {},
+  ) => {
+    viewerStore.dispatch(
+      viewerActions.config({
+        isDirty: false,
+      })
+    );
+    this.setState(
+      {
+        ...extraState,
+        projectProps: {
+          ...this.state.projectProps,
+          ...savedProjectProps,
+        },
+      },
+      callback,
+    );
   }
 
   renderViewerComponents = () => {
     let prependNavButtons = null;
-    const presentState = viewerSelectors.presentStateSelector(ViewerStore.getState());
+    const presentState = viewerSelectors.presentStateSelector(viewerStore.getState());
     if (presentState.config.readOnly) {
       prependNavButtons = (
         <EditOffMenu
@@ -180,13 +231,9 @@ class ProjectViewer extends React.PureComponent {
             )
           }
 
-          <UiIconButton
-            colour="inherit"
-            onClick={this.toggleSaveDialog}
-            title="Save Project"
-          >
-            <SaveRoundedIcon />
-          </UiIconButton>
+          <ConnectedSaveButton
+            toggleSaveDialog={this.toggleSaveDialog}
+          />
         </React.Fragment>
       ),
     };
@@ -212,22 +259,22 @@ class ProjectViewer extends React.PureComponent {
         <ProjectSaveDialog
           projectProps={this.state.projectProps}
           onClose={
+            () => this.setState({ isSaveDialogOpen: false })
+          }
+          onSavedOnServer={
             (savedProjectProps) => {
-              if (savedProjectProps?.isOwner) {
-                this.setState(
-                  {
-                    isAccessDialogOpen: true,
-                    projectProps: {
-                      ...this.state.projectProps,
-                      ...savedProjectProps,
-                    },
-                  },
-                  () => this.setState({ isSaveDialogOpen: false }),
-                );
-              }
-              else {
-                this.setState({ isSaveDialogOpen: false });
-              }
+              this.setSavedProjectProps(
+                savedProjectProps,
+                () => this.setState({ isSaveDialogOpen: false }),
+                { isAccessDialogOpen: true },
+              );
+            }
+          }
+          onUpdatedOnServer={
+            (savedProjectProps) => {
+              this.setSavedProjectProps(
+                savedProjectProps,
+              );
             }
           }
         />
@@ -237,7 +284,7 @@ class ProjectViewer extends React.PureComponent {
 
   render() {
     return (
-      <Provider store={ViewerStore}>
+      <Provider store={viewerStore}>
         <MicroreactViewer
           components={this.renderViewerComponents()}
           disableThemeProvider

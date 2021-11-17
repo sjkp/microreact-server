@@ -6,6 +6,18 @@ div.mr-ui-dialog .MuiDialog-paper {
   margin: 0;
 }
 
+.MuiIconButton-root.mr-save-project.mr-has-changes::after {
+  overflow: hidden;
+  position: absolute;
+  display: inline-block;
+  content: " ";
+  width: 24px;
+  height: 2px;
+  bottom: 0;
+  background-color: var(--primary-contrast);
+  border-radius: 0 0 2px 2px;
+}
+
 /* div.mr-ui-dialog .MuiDialog-paper.MuiPaper-rounded {
   border: 1px solid transparent;
   border-radius: 8px;

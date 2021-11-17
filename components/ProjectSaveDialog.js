@@ -187,8 +187,8 @@ class ProjectSaveDialog extends React.PureComponent {
     this.createProjectDocument()
       .then((projectJson) => {
         return Projects.saveProjectOnServer(projectJson)
-          .then((projectProps) => {
-            this.props.onClose(projectProps);
+          .then((savedProjectProps) => {
+            this.props.onSavedOnServer(savedProjectProps);
           });
       })
       .catch((error) => {
@@ -206,11 +206,12 @@ class ProjectSaveDialog extends React.PureComponent {
     this.createProjectDocument()
       .then((projectJson) => {
         return Projects.updateProjectOnServer(this.props.projectProps.id, projectJson)
-          .then((project) => {
+          .then((savedProjectProps) => {
             this.setState({
-              projectUrl: project.url,
+              projectUrl: savedProjectProps.url,
               savingMode: "done",
             });
+            this.props.onUpdatedOnServer(savedProjectProps);
           });
       })
       .catch((error) => {
@@ -329,6 +330,9 @@ class ProjectSaveDialog extends React.PureComponent {
 }
 
 ProjectSaveDialog.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  onSavedOnServer: PropTypes.func.isRequired,
+  onUpdatedOnServer: PropTypes.func.isRequired,
   projectProps: PropTypes.object,
 };
 
