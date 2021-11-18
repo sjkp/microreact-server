@@ -146,6 +146,9 @@ class ProjectSaveDialog extends React.PureComponent {
 
   handleDownloadFile = () => {
     this.createProjectDocument()
+      .then((doc) => {
+        viewerUtils.files.serialiseBlobs(doc.files).then(() => doc);
+      })
       .then((data) => {
         viewerUtils.downloads.downloadDataUrl(
           JSON.stringify(

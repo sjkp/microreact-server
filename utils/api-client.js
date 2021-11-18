@@ -35,9 +35,9 @@ export function storeFile(fileInput) {
     method: "post",
     url: "/files/store",
     data: fileInput,
-    headers: {
-      "content-type": fileInput.type || "application/octet-stream",
-    },
+    // headers: {
+    //   "content-type": fileInput.type || "application/octet-stream",
+    // },
   });
 }
 
