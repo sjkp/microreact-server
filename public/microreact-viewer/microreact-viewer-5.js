@@ -65,7 +65,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(39));
+var _layoutModel = _interopRequireDefault(__webpack_require__(40));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -107,7 +107,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
 
 var _Button = _interopRequireDefault(__webpack_require__(29));
 
@@ -215,7 +215,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
 
 var _extends2 = _interopRequireDefault(__webpack_require__(22));
 
@@ -1429,7 +1429,7 @@ var _reactMapGl = __webpack_require__(448);
 
 var _drawing = __webpack_require__(172);
 
-var _defaults = _interopRequireDefault(__webpack_require__(40));
+var _defaults = _interopRequireDefault(__webpack_require__(41));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -2039,7 +2039,7 @@ var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
 var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
 
 var _UiToggleSlider = _interopRequireDefault(__webpack_require__(179));
 
@@ -2799,7 +2799,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _CloseRounded = _interopRequireDefault(__webpack_require__(46));
+var _CloseRounded = _interopRequireDefault(__webpack_require__(47));
 
 var _MapTwoTone = _interopRequireDefault(__webpack_require__(461));
 
@@ -2811,7 +2811,7 @@ __webpack_require__(573);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(44));
+var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(45));
 
 var _UiSlider = _interopRequireDefault(__webpack_require__(178));
 
