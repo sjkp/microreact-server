@@ -144,7 +144,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(40));
+var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -458,7 +458,7 @@ var ViewsPane = /*#__PURE__*/function (_React$PureComponent) {
       if (props.entries.length === 0 && !state.isSaving) {
         return /*#__PURE__*/_react["default"].createElement(_UiEmptyState["default"] // title="No Views"
         , {
-          subtitle: props.isReadOnly ? "You cannot add a new view to this project" : "You can add a new view by clicking the plus button",
+          subtitle: props.isReadOnly ? "You cannot add a new view to this project because you are not the owner." : "You can add a new view by clicking the plus button",
           icon: /*#__PURE__*/_react["default"].createElement(_ViewCompact["default"], null)
         });
       }
@@ -546,7 +546,7 @@ exports.resaveView = resaveView;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _hash = __webpack_require__(46);
+var _hash = __webpack_require__(45);
 
 var _ui = __webpack_require__(27);
 

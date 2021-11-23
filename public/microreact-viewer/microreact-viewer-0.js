@@ -564,7 +564,7 @@ var _reselect = __webpack_require__(10);
 
 var _text = __webpack_require__(70);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
@@ -791,7 +791,7 @@ var _arrays = __webpack_require__(23);
 
 var _text = __webpack_require__(70);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 

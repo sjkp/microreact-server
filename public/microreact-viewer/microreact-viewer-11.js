@@ -65,7 +65,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(40));
+var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -107,7 +107,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
 
 var _Button = _interopRequireDefault(__webpack_require__(29));
 
@@ -193,7 +193,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
 
 var _extends2 = _interopRequireDefault(__webpack_require__(22));
 
@@ -2882,7 +2882,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _UiToggleSlider = _interopRequireDefault(__webpack_require__(179));
 

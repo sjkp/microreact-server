@@ -64,7 +64,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(40));
+var _layoutModel = _interopRequireDefault(__webpack_require__(39));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -106,7 +106,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
 
 var _Button = _interopRequireDefault(__webpack_require__(29));
 
@@ -194,7 +194,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(41);
 
 var _text = __webpack_require__(70);
 
