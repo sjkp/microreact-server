@@ -2220,13 +2220,9 @@ function save() {
                 doc.config = undefined; // Serialise file blobs and remove file loaded content
 
                 doc.files = (0, _files.clearLoadedContent)(doc.files);
-                _context4.next = 11;
-                return (0, _files.serialiseBlobs)(doc.files);
-
-              case 11:
                 return _context4.abrupt("return", doc);
 
-              case 12:
+              case 10:
               case "end":
                 return _context4.stop();
             }
