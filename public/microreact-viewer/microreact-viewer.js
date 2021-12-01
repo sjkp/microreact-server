@@ -23208,7 +23208,7 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
           for (_iterator.s(); !(_step = _iterator.n()).done;) {
             var row = _step.value;
             var value = row[dataColumn.name];
-            uniqueValues.add(value.toString());
+            uniqueValues.add(value === null || value === void 0 ? void 0 : value.toString());
           }
         } catch (err) {
           _iterator.e(err);
@@ -23255,6 +23255,28 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
         },
         options: props.dataColumns,
         value: slicerState.field
+      }), /*#__PURE__*/_react["default"].createElement(_UiSelect["default"], {
+        label: "Slicer Type",
+        variant: "outlined",
+        size: "small",
+        value: slicerState.slicerType,
+        onChange: function onChange(value) {
+          return props.onSlicerPropChange("slicerType", value);
+        },
+        options: [{
+          label: "Filter Chart",
+          // secondary: "Metadata include a column for ISO 3166-1 or 3166-2 codes",
+          value: "chart"
+        }, {
+          label: "Filter by values",
+          // secondary: "Metadata include a column for ISO 3166-1 or 3166-2 codes",
+          value: "values"
+        } // {
+        //   label: "Filter by condition",
+        //   // secondary: "Metadata include a column for ISO 3166-1 or 3166-2 codes",
+        //   value: "condition",
+        // },
+        ]
       }), /*#__PURE__*/_react["default"].createElement(_Box["default"], {
         display: "flex",
         justifyContent: "space-between"
@@ -23275,7 +23297,7 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
           label: "Top N values",
           value: "top"
         }, {
-          label: "Choose which values to include",
+          label: "Choose which values to include (Filter Chart only)",
           value: "custom"
         }],
         style: _constants.fullSizeStyle
@@ -23305,28 +23327,6 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
         value: ((_slicerState$dataValu = slicerState.dataValues) === null || _slicerState$dataValu === void 0 ? void 0 : _slicerState$dataValu.length) > 0 ? this.uniqueDataValues(props).filter(function (x) {
           return slicerState.dataValues.includes(x.name);
         }) : []
-      }), /*#__PURE__*/_react["default"].createElement(_UiSelect["default"], {
-        label: "Slicer Type",
-        variant: "outlined",
-        size: "small",
-        value: slicerState.slicerType,
-        onChange: function onChange(value) {
-          return props.onSlicerPropChange("slicerType", value);
-        },
-        options: [{
-          label: "Filter Chart",
-          // secondary: "Metadata include a column for ISO 3166-1 or 3166-2 codes",
-          value: "chart"
-        }, {
-          label: "Filter by values",
-          // secondary: "Metadata include a column for ISO 3166-1 or 3166-2 codes",
-          value: "values"
-        } // {
-        //   label: "Filter by condition",
-        //   // secondary: "Metadata include a column for ISO 3166-1 or 3166-2 codes",
-        //   value: "condition",
-        // },
-        ]
       }), slicerState.slicerType === "chart" && /*#__PURE__*/_react["default"].createElement(_ChartDataTypeSelect["default"], {
         value: slicerState.chartAxisType,
         onChange: function onChange(value) {
@@ -24240,6 +24240,14 @@ var reducer = function reducer() {
         }
 
         if (action.payload.operator) {
+          if (action.payload.operator === "in") {
+            for (var valueIndex = 0; valueIndex < action.payload.value.length; valueIndex++) {
+              if (action.payload.value[valueIndex] === null) {
+                action.payload.value[valueIndex] = undefined;
+              }
+            }
+          }
+
           dataFilters[index] = _objectSpread(_objectSpread({}, dataFilters[index]), {}, {
             operator: action.payload.operator,
             value: action.payload.value
