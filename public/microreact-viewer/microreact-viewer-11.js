@@ -272,7 +272,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = canvasLasso;
 
-var _geometry = __webpack_require__(103);
+var _geometry = __webpack_require__(100);
 
 /* eslint-disable prefer-object-spread */
 
@@ -1358,6 +1358,8 @@ var _canvasLasso = _interopRequireDefault(__webpack_require__(509));
 
 var _convertState = _interopRequireDefault(__webpack_require__(639));
 
+var _geometry = __webpack_require__(100);
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -1423,7 +1425,7 @@ function _default(treePane) {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var leaf = _step.value;
 
-                if (tree.lasso.isPointInside(leaf, path)) {
+                if ((0, _geometry.isPointInPolygon)(tree.absolutePointToRelativePoint([leaf.x, leaf.y]), path)) {
                   ids.push(leaf.id);
                 }
               }
@@ -1442,11 +1444,11 @@ function _default(treePane) {
         translateToCanvas: function translateToCanvas(points) {
           var scale = zoomToScale(tree.getZoom());
           return points.map(function (x) {
-            return tree.projectPoint(x, scale);
+            return tree.projectPoint(tree.relativePointToAbsolutePoint(x), scale);
           });
         },
         translateFromCanvas: function translateFromCanvas(x, y) {
-          return tree.unprojectPoint([x, y]);
+          return tree.absolutePointToRelativePoint(tree.unprojectPoint([x, y]));
         }
       });
       tree.deck.setProps({
@@ -1477,9 +1479,9 @@ function _default(treePane) {
       key: "handleClick",
       value: function handleClick(info, event) {
         var tree = this;
+        var node = tree.pickNodeFromLayer(info);
 
         if (event.rightButton) {
-          var node = tree.pickNodeFromLayer(info);
           event.preventDefault();
           treePane.setState({
             contextMenuPosition: {
@@ -1488,8 +1490,22 @@ function _default(treePane) {
             },
             contextMenuNode: node
           });
+        } else if (node && event.srcEvent.shiftKey && this.props.selectedIds && this.props.selectedIds.length) {
+          var lastSelectedNode = this.findNodeById(this.props.selectedIds[this.props.selectedIds.length - 1]);
+          var nodes = this.getGraphAfterLayout();
+          var lastSelectedNodeIndex = nodes.leaves.indexOf(lastSelectedNode);
+          var clickedNodeIndex = nodes.leaves.indexOf(node);
+          var first = Math.min(lastSelectedNodeIndex + 1, clickedNodeIndex);
+          var last = Math.max(lastSelectedNodeIndex - 1, clickedNodeIndex);
+          var ids = [];
+
+          for (var index = first; index <= last; index++) {
+            ids.push(nodes.leaves[index].id);
+          }
+
+          this.selectLeafNodes(ids, true);
         } else {
-          (0, _get2["default"])((0, _getPrototypeOf2["default"])(Phylocanvas.prototype), "handleClick", this).call(this, info, event);
+          this.selectNode(node, event.srcEvent.metaKey || event.srcEvent.ctrlKey);
         }
       }
     }, {
@@ -1616,6 +1632,30 @@ function _default(treePane) {
       key: "zoomOut",
       value: function zoomOut() {
         this.setZoom(this.getZoom() - 0.1);
+      }
+    }, {
+      key: "absolutePointToRelativePoint",
+      value: function absolutePointToRelativePoint(_ref4) {
+        var _ref5 = (0, _slicedToArray2["default"])(_ref4, 2),
+            pointX = _ref5[0],
+            pointY = _ref5[1];
+
+        var _this$getGraphAfterLa = this.getGraphAfterLayout(),
+            root = _this$getGraphAfterLa.root;
+
+        return [(pointX - root.x) / this.getBranchScale(), (pointY - root.y) / this.getStepScale()];
+      }
+    }, {
+      key: "relativePointToAbsolutePoint",
+      value: function relativePointToAbsolutePoint(_ref6) {
+        var _ref7 = (0, _slicedToArray2["default"])(_ref6, 2),
+            pointX = _ref7[0],
+            pointY = _ref7[1];
+
+        var _this$getGraphAfterLa2 = this.getGraphAfterLayout(),
+            root = _this$getGraphAfterLa2.root;
+
+        return [pointX * this.getBranchScale() + root.x, pointY * this.getStepScale() + root.y];
       } // Moved to componentDidMount to avoid updating the store when tree loads
       // tree.setProps = (updater) => {
       //   // console.debug('setState', Object.keys(updater));
@@ -2679,7 +2719,7 @@ var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
 
 var _UiSlider = _interopRequireDefault(__webpack_require__(178));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(100));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
 
 var TreeMetadataMenu = /*#__PURE__*/_react["default"].memo(function (props) {
   return /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {

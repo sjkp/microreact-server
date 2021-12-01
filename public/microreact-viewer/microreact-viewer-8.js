@@ -359,7 +359,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(100));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
 
 var _constants = __webpack_require__(12);
 

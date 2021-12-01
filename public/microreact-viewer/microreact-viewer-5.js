@@ -374,7 +374,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
 
 var hasGeojsonDataSelector = function hasGeojsonDataSelector(state, mapId) {
   return !!(0, _geojsonLayerData["default"])(state, mapId);
@@ -1633,7 +1633,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _reactMapGl = __webpack_require__(448);
 
-var _geometry = __webpack_require__(103);
+var _geometry = __webpack_require__(100);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -2043,7 +2043,7 @@ var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _UiToggleSlider = _interopRequireDefault(__webpack_require__(179));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(101));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
 
 var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(205));
 
@@ -2380,7 +2380,7 @@ var _reactRedux = __webpack_require__(95);
 
 var _MapGeojsonLayer = _interopRequireDefault(__webpack_require__(568));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
 
 var _geojsonLayerStyle = _interopRequireDefault(__webpack_require__(569));
 
@@ -2475,7 +2475,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 

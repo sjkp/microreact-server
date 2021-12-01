@@ -7574,6 +7574,44 @@ exports["default"] = _default;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isPointInPolygon = isPointInPolygon;
+
+/* eslint-disable no-plusplus */
+function isPointInPolygon(point, vs) {
+  var _point$x, _point$y;
+
+  // ray-casting algorithm based on
+  // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+  // https://web.archive.org/web/20180115151705/https://wrf.ecse.rpi.edu//Research/Short_Notes/pnpoly.html
+  var x = (_point$x = point.x) !== null && _point$x !== void 0 ? _point$x : point[0];
+  var y = (_point$y = point.y) !== null && _point$y !== void 0 ? _point$y : point[1];
+  var inside = false;
+
+  for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+    var xi = vs[i][0];
+    var yi = vs[i][1];
+    var xj = vs[j][0];
+    var yj = vs[j][1];
+    var intersect = yi > y !== yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
+
+    if (intersect) {
+      inside = !inside;
+    }
+  }
+
+  return inside;
+}
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _interopRequireDefault = __webpack_require__(0);
 
 Object.defineProperty(exports, "__esModule", {
@@ -7743,7 +7781,7 @@ var _default = UiFloatingFilter;
 exports["default"] = _default;
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7827,7 +7865,7 @@ var _default = UiRadioList;
 exports["default"] = _default;
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7895,44 +7933,6 @@ var geojsonLayerDataSelector = (0, _state.createKeyedStateSelector)(function (st
 });
 var _default = geojsonLayerDataSelector;
 exports["default"] = _default;
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.isPointInPolygon = isPointInPolygon;
-
-/* eslint-disable no-plusplus */
-function isPointInPolygon(point, vs) {
-  var _point$x, _point$y;
-
-  // ray-casting algorithm based on
-  // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
-  // https://web.archive.org/web/20180115151705/https://wrf.ecse.rpi.edu//Research/Short_Notes/pnpoly.html
-  var x = (_point$x = point.x) !== null && _point$x !== void 0 ? _point$x : point[0];
-  var y = (_point$y = point.y) !== null && _point$y !== void 0 ? _point$y : point[1];
-  var inside = false;
-
-  for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
-    var xi = vs[i][0];
-    var yi = vs[i][1];
-    var xj = vs[j][0];
-    var yj = vs[j][1];
-    var intersect = yi > y !== yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
-
-    if (intersect) {
-      inside = !inside;
-    }
-  }
-
-  return inside;
-}
 
 /***/ }),
 /* 104 */
@@ -8393,9 +8393,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(100));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(101));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
 
 __webpack_require__(369);
 
@@ -10646,7 +10646,7 @@ var _state = __webpack_require__(3);
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
@@ -11760,7 +11760,7 @@ var _state = __webpack_require__(3);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(102));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
@@ -15725,7 +15725,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geometry = __webpack_require__(103);
+var _geometry = __webpack_require__(100);
 
 var _state = __webpack_require__(3);
 
@@ -16017,7 +16017,7 @@ var _state = __webpack_require__(3);
 
 var _sets = __webpack_require__(41);
 
-var _geometry = __webpack_require__(103);
+var _geometry = __webpack_require__(100);
 
 var _layout = _interopRequireDefault(__webpack_require__(185));
 
@@ -25966,7 +25966,7 @@ var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(100));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
 
 var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
 
@@ -25978,7 +25978,7 @@ var _UiPopover = _interopRequireDefault(__webpack_require__(150));
 
 var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(44));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(101));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
 

@@ -308,7 +308,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = canvasLasso;
 
-var _geometry = __webpack_require__(103);
+var _geometry = __webpack_require__(100);
 
 /* eslint-disable prefer-object-spread */
 
