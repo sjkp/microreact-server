@@ -12,8 +12,8 @@ import RestoreFromTrashOutlinedIcon from "@material-ui/icons/RestoreFromTrashOut
 import EditTwoToneIcon from "@material-ui/icons/EditTwoTone";
 import dynamic from "next/dynamic";
 
-import ManageAccountsIcon from "./ManageAccountsIcon";
 import UiLoadingBar from "./UiLoadingBar";
+import ProjectAccessTrigger from "./ProjectAccessTrigger";
 
 import { root as rootClassName } from "../styles/account-project-card.module.css";
 
@@ -100,12 +100,9 @@ function AccountProjectCard(props) {
               onMove={props.onMove}
             />
 
-            <IconButton
-              title="Edit Project Access"
-              onClick={props.onAccess}
-            >
-              <ManageAccountsIcon />
-            </IconButton>
+            <ProjectAccessTrigger
+              projectId={props.id}
+            />
 
             <IconButton
               component="a"
@@ -140,7 +137,6 @@ AccountProjectCard.propTypes = {
   binned: PropTypes.bool,
   folder: PropTypes.string,
   id: PropTypes.string.isRequired,
-  onAccess: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
   onLoading: PropTypes.func.isRequired,
   onMove: PropTypes.func.isRequired,

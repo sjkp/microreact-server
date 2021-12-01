@@ -23,6 +23,7 @@ const shareSchema = new mongoose.Schema(
 );
 
 const projectSchema = new mongoose.Schema({
+  alias: { type: String },
   access: {
     type: Number,
     default: 0,
@@ -36,7 +37,7 @@ const projectSchema = new mongoose.Schema({
     unique: true,
   },
   json: { type: Object },
-  linkedProjectId: { type: String },
+  // linkedProjectId: { type: String },
   owner: { type: ObjectId, ref: "User" },
   shares: [ shareSchema ],
   starred: { type: Boolean },

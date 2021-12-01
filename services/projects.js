@@ -89,9 +89,16 @@ async function findProjectDocuments(query, user) {
 export async function getProjectDocument(projectIdOrSlug, user) {
   const db = await databaseService();
 
-  const id = projectSlugToId(projectIdOrSlug);
+  const identifier = projectSlugToId(projectIdOrSlug);
 
-  const projectDocument = await db.models.Project.findOne({ id });
+  const projectDocument = await db.models.Project.findOne(
+    {
+      $or: [
+        { id: identifier },
+        { alias: identifier },
+      ],
+    }
+  );
 
   // Check that the project do exist
   if (!projectDocument) {

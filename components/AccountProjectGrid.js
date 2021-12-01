@@ -1,7 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import React from "react";
 import PropTypes from "prop-types";
-import dynamic from "next/dynamic";
 import Skeleton from "@material-ui/lab/Skeleton";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
@@ -13,13 +12,6 @@ import AccountProjectCard from "./AccountProjectCard";
 import * as DataHooks from "../utils/data-hooks";
 import * as ApiClient from "../utils/api-client";
 
-const ProjectAccessDialog = dynamic(
-  () => import("./ProjectAccessDialog"),
-  {
-    loading: UiLoadingBar,
-    ssr: false,
-  },
-);
 
 async function handleStarProject(data, projectId, isStarred) {
   const projects = [ ...data ];
@@ -96,8 +88,6 @@ function SkeletonGrid() {
 
 function AccountProjectGrid(props) {
   const { data, error } = props.apiEndpoint();
-
-  const [ isAccessDialogOpen, setAccessDialogOpen ] = React.useState(undefined);
 
   const [ searchFilter, setSearchFilter ] = React.useState("");
 
@@ -177,7 +167,6 @@ function AccountProjectGrid(props) {
                   folder={item.folder}
                   id={item.id}
                   name={item.name}
-                  onAccess={() => setAccessDialogOpen(item.id)}
                   onDelete={() => handleDeleteProject(data, item.id, !item.binned)}
                   onLoading={setLoading}
                   onMove={(folderId, allFolders) => handleMoveProject(data, item.id, folderId, allFolders)}
@@ -188,19 +177,6 @@ function AccountProjectGrid(props) {
                 />
               </Grid>
             )
-          )
-        }
-        {
-          (isAccessDialogOpen) && (
-            <ProjectAccessDialog
-              onClose={
-                () => {
-                  setAccessDialogOpen(undefined);
-                  DataHooks.userProjectsMutation();
-                }
-              }
-              projectId={isAccessDialogOpen}
-            />
           )
         }
       </Grid>
