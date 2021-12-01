@@ -12,7 +12,6 @@ import AccountProjectCard from "./AccountProjectCard";
 import * as DataHooks from "../utils/data-hooks";
 import * as ApiClient from "../utils/api-client";
 
-
 async function handleStarProject(data, projectId, isStarred) {
   const projects = [ ...data ];
   const projectIndex = projects.findIndex((x) => x.id === projectId);
