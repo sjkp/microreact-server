@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import dynamic from "next/dynamic";
 import Skeleton from "@material-ui/lab/Skeleton";
 import Grid from "@material-ui/core/Grid";
-import TextField from '@material-ui/core/TextField';
-import SearchIcon from '@material-ui/icons/Search';
+import TextField from "@material-ui/core/TextField";
+import SearchIcon from "@material-ui/icons/Search";
 
 import UiLoadingBar from "./UiLoadingBar";
 import UiEmptyState from "./UiEmptyState";
