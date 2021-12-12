@@ -77,6 +77,28 @@ async function findProjectDocuments(query, user) {
 }
 
 /**
+ * Checks if a project alias is available.
+ * @param  {string} projectAlias - The alias to check
+ * @param  {UserModel} user - The signed-in user, or null for anonymous users
+ * @return {Boolean} True if the alias is available, otherwise False.
+*/
+export async function checkProjectAlias(projectAlias, user) {
+  const db = await databaseService();
+
+  const projectDocument = await db.models.Project.findOne(
+    {
+      $or: [
+        { alias: projectAlias },
+        { id: projectAlias },
+      ],
+    },
+    { id: 1 },
+  );
+
+  return !projectDocument;
+}
+
+/**
  * Finds a project documents by project ID or project slug.
  * @param  {string} projectIdOrSlug - The shortened v4 UUID of the project, or its slug
  * @param  {UserModel} user - The signed-in user, or null for anonymous users

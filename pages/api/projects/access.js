@@ -62,8 +62,10 @@ export default async function (req, res) {
     return res.json({
       id: projectModel.id,
       access: projectModel.access,
+      alias: projectModel.alias,
       shares,
       url: projectModel.url(),
+      aliasUrl: projectModel.alias && projectModel.aliasUrl(),
     });
   }
 

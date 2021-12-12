@@ -29,3 +29,24 @@
 .root :global section.users :global .send-invitation button :global .MuiCircularProgress-root {
   position: absolute;
 }
+
+
+.root :global .mr-project-alias {
+  margin-top: 8px;
+  background: var(--background-main);
+}
+
+.root :global .mr-project-alias :global small {
+  font-size: 13px;
+  letter-spacing: -0.066em;
+  opacity: 0.67;
+}
+
+.root :global .mr-project-alias :global .MuiInputAdornment-root.MuiInputAdornment-positionStart {
+  margin-right: 0px;
+}
+
+.root :global .mr-project-alias :global .MuiFormHelperText-root {
+  position: absolute;
+  bottom: 0px;
+}

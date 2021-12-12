@@ -4,14 +4,13 @@ import React from "react";
 
 import { UiDialog } from "microreact-viewer";
 
-import UiCopyTextfield from "./UiCopyTextfield";
-
 import { root as dialogClassname } from "../styles/project-dialog.module.css";
 import { root as rootClassname } from "../styles/project-access-dialog.module.css";
 
 import UiDataHook from "./UiDataHook";
 import ProjectAccessLevelSection from "./ProjectAccessLevelSection";
 import ProjectAccessSharingSection from "./ProjectAccessSharingSection";
+import ProjectAccessLinkSection from "./ProjectAccessLinkSection";
 
 import * as DataHooks from "../utils/data-hooks";
 
@@ -39,12 +38,9 @@ class ProjectAccessDialog extends React.PureComponent {
               ({ data: projectAccessData }) => {
                 return (
                   <React.Fragment>
-                    <section className="project-link">
-                      <UiCopyTextfield
-                        label="Project Link"
-                        value={projectAccessData.url}
-                      />
-                    </section>
+                    <ProjectAccessLinkSection
+                      projectAccessData={projectAccessData}
+                    />
 
                     <ProjectAccessLevelSection
                       projectAccessData={projectAccessData}

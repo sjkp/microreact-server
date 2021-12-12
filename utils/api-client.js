@@ -86,6 +86,15 @@ export function updateProjectAccess(projectId, access) {
   });
 }
 
+export function updateProjectAlias(projectId, alias) {
+  return apiRequest({
+    method: "post",
+    url: "/projects/alias",
+    data: { alias },
+    params: { project: projectId },
+  });
+}
+
 export function updateProjectFolder(projectId, folder) {
   return apiRequest({
     method: "post",

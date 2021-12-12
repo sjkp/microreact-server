@@ -39,6 +39,7 @@ class UiCopyTextfield extends React.PureComponent {
             color="primary"
             endAdornment={
               <InputAdornment position="end">
+                { props.children }
                 <IconButton
                   aria-label="Copy"
                   edge="end"
@@ -59,6 +60,8 @@ UiCopyTextfield.displayName = "UiCopyTextfield";
 
 UiCopyTextfield.propTypes = {
   label: PropTypes.string,
+  size: PropTypes.string,
+  title: PropTypes.string,
   value: PropTypes.string.isRequired,
 };
 

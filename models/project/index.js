@@ -15,6 +15,9 @@ schema.methods.updateStats = require("./update-stats");
 schema.methods.url = function url() {
   return schema.statics.projectUrl(this.version, this.id, this.json.meta.name);
 };
+schema.methods.aliasUrl = function aliasUrl() {
+  return schema.statics.projectUrl(this.version, this.alias);
+};
 schema.methods.getViews = require("./get-views");
 
 module.exports = mongoose.models.Project || mongoose.model("Project", schema);
