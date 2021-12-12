@@ -2936,6 +2936,24 @@ var FileKinds = [{
 }];
 exports.FileKinds = FileKinds;
 
+function base64ToBlob(base64) {
+  return fetch(base64).then(function (res) {
+    return res.blob();
+  });
+}
+
+function blobToBase64(blob) {
+  return new Promise(function (resolve, _) {
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      return resolve(reader.result);
+    };
+
+    reader.readAsDataURL(blob);
+  });
+}
+
 function clearLoadedContent(docFiles) {
   var files = {};
 
@@ -3076,9 +3094,13 @@ function _loadFile() {
             loadedFile.blob = input.blob || input;
 
             if (loadedFile.blob && typeof loadedFile.blob === "string") {
-              loadedFile.blob = new Blob([loadedFile.blob], {
-                type: input.format
-              });
+              if (/^data:.*\/.*;base64,/i.test(loadedFile.blob)) {
+                loadedFile.blob = base64ToBlob(loadedFile.blob);
+              } else {
+                loadedFile.blob = new Blob([loadedFile.blob], {
+                  type: input.format
+                });
+              }
             }
 
             _context.next = 19;
@@ -3216,18 +3238,6 @@ function _loadFiles() {
     }, _callee3);
   }));
   return _loadFiles.apply(this, arguments);
-}
-
-function blobToBase64(blob) {
-  return new Promise(function (resolve, _) {
-    var reader = new FileReader();
-
-    reader.onloadend = function () {
-      return resolve(reader.result);
-    };
-
-    reader.readAsDataURL(blob);
-  });
 }
 
 function serialiseBlobs(_x5) {
