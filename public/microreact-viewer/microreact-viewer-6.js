@@ -63,7 +63,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
 
 var _Button = _interopRequireDefault(__webpack_require__(29));
 
@@ -149,7 +149,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(38));
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
 
 var _extends2 = _interopRequireDefault(__webpack_require__(22));
 
@@ -1346,7 +1346,7 @@ exports.edgeRenderer = exports.nodeRenderer = void 0;
 
 var _drawing = __webpack_require__(172);
 
-var _defaults = _interopRequireDefault(__webpack_require__(40));
+var _defaults = _interopRequireDefault(__webpack_require__(41));
 
 /* eslint max-params: 0 */
 
@@ -1542,7 +1542,7 @@ var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
 var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
 
@@ -1968,7 +1968,7 @@ var _state = __webpack_require__(2);
 
 var _baseGraph = _interopRequireDefault(__webpack_require__(173));
 
-var _defaults = _interopRequireDefault(__webpack_require__(40));
+var _defaults = _interopRequireDefault(__webpack_require__(41));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 

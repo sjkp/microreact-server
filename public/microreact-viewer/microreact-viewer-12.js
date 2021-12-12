@@ -144,7 +144,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(39));
+var _layoutModel = _interopRequireDefault(__webpack_require__(40));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -546,7 +546,7 @@ exports.resaveView = resaveView;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _hash = __webpack_require__(45);
+var _hash = __webpack_require__(46);
 
 var _ui = __webpack_require__(27);
 
