@@ -19,9 +19,9 @@ var _state = __webpack_require__(2);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _SlicerPane = _interopRequireDefault(__webpack_require__(596));
+var _SlicerPane = _interopRequireDefault(__webpack_require__(598));
 
-var _isValidSlicer = _interopRequireDefault(__webpack_require__(602));
+var _isValidSlicer = _interopRequireDefault(__webpack_require__(604));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var slicerId = _ref.slicerId;
@@ -120,7 +120,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(165));
+var _FileLoader = _interopRequireDefault(__webpack_require__(166));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -355,16 +355,23 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
+var _Button = _interopRequireDefault(__webpack_require__(29));
+
+var _Box = _interopRequireDefault(__webpack_require__(23));
+
+var _Divider = _interopRequireDefault(__webpack_require__(97));
+
 var _propTypes2 = __webpack_require__(14);
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
 var _constants = __webpack_require__(12);
 
 var DataColumnFilterByValues = /*#__PURE__*/_react["default"].memo(function (props) {
   var valuesFilter = props.filter && props.filter.operator === "in" ? props.filter : undefined;
+  var selectedValues = valuesFilter ? valuesFilter.value : _constants.emptyArray;
   return /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
     items: props.uniqueValues,
     label: "Search",
@@ -372,40 +379,51 @@ var DataColumnFilterByValues = /*#__PURE__*/_react["default"].memo(function (pro
       var _x$label, _x$label$toString;
 
       return (_x$label = x.label) === null || _x$label === void 0 ? void 0 : (_x$label$toString = _x$label.toString()) === null || _x$label$toString === void 0 ? void 0 : _x$label$toString.toLowerCase();
-    }
-  }, function (items) {
-    var _props$height;
+    },
+    renderItems: function renderItems(items) {
+      var _props$height;
 
-    return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"] // boxed={false}
-    , {
-      items: items,
-      onChange: function onChange(selection) {
-        props.onColumnFilterChange(selection.length ? "in" : null, selection);
-      },
-      value: valuesFilter ? valuesFilter.value : _constants.emptyArray,
-      selectAll: true,
-      selectOnly: true,
-      style: {
-        height: 40 + props.uniqueValues.length * 28,
-        maxHeight: (_props$height = props.height) !== null && _props$height !== void 0 ? _props$height : "max(144px, calc(60vh - 256px))"
-      }
-    });
-  });
+      return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"] // boxed={false}
+      , {
+        disableSelectAll: true,
+        items: items,
+        onChange: function onChange(selection) {
+          props.onColumnFilterChange(selection.length > 0 ? "in" : null, selection);
+        },
+        style: {
+          height: 40 + props.uniqueValues.length * 28,
+          maxHeight: (_props$height = props.height) !== null && _props$height !== void 0 ? _props$height : "max(144px, calc(60vh - 256px))"
+        },
+        value: selectedValues
+      });
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Divider["default"], null), /*#__PURE__*/_react["default"].createElement(_Box["default"], {
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "row-reverse",
+    justifyContent: "space-between"
+  }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+    color: "primary",
+    disabled: selectedValues.length === 0,
+    onClick: function onClick() {
+      return props.onColumnFilterChange(null);
+    }
+  }, "Clear")));
 });
 
 DataColumnFilterByValues.displayName = "DataColumnFilterByValues";
 DataColumnFilterByValues.propTypes = {
   filter: _propTypes2.DataFilter,
+  height: _propTypes["default"].number,
   onColumnFilterChange: _propTypes["default"].func.isRequired,
-  uniqueValues: _propTypes["default"].array,
-  height: _propTypes["default"].number
+  uniqueValues: _propTypes["default"].array
 };
 var _default = DataColumnFilterByValues;
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ 596:
+/***/ 598:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -418,23 +436,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _SlicerPane = _interopRequireDefault(__webpack_require__(597));
+var _SlicerPane = _interopRequireDefault(__webpack_require__(599));
 
 var _filters = __webpack_require__(50);
 
 var _chartAxisType = _interopRequireDefault(__webpack_require__(190));
 
-var _chartData = _interopRequireDefault(__webpack_require__(600));
+var _chartData = _interopRequireDefault(__webpack_require__(602));
 
-var _chartSpec = _interopRequireDefault(__webpack_require__(601));
+var _chartSpec = _interopRequireDefault(__webpack_require__(603));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(107));
+var _dataColumn = _interopRequireDefault(__webpack_require__(108));
 
 var _state = __webpack_require__(2);
 
 var _ui = __webpack_require__(27);
 
-var _slicerState = _interopRequireDefault(__webpack_require__(73));
+var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
@@ -471,7 +489,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 597:
+/***/ 599:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -514,15 +532,15 @@ var _reactVega = __webpack_require__(447);
 
 var _lodash = _interopRequireDefault(__webpack_require__(449));
 
-__webpack_require__(598);
+__webpack_require__(600);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _downloads = __webpack_require__(52);
 
 var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(511));
 
-var _SlicerControls = _interopRequireDefault(__webpack_require__(599));
+var _SlicerControls = _interopRequireDefault(__webpack_require__(601));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -755,7 +773,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 598:
+/***/ 600:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -765,7 +783,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 599:
+/***/ 601:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -782,13 +800,13 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Menu = _interopRequireDefault(__webpack_require__(163));
+var _Menu = _interopRequireDefault(__webpack_require__(164));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
 
 var SlicerControls = /*#__PURE__*/_react["default"].memo(function (props) {
   var isChart = props.slicerType === "chart";
@@ -820,7 +838,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 600:
+/***/ 602:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -835,9 +853,9 @@ exports["default"] = void 0;
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(107));
+var _dataColumn = _interopRequireDefault(__webpack_require__(108));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(73));
+var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
 var _state = __webpack_require__(2);
 
@@ -877,7 +895,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 601:
+/***/ 603:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -892,17 +910,17 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(107));
+var _dataColumn = _interopRequireDefault(__webpack_require__(108));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _chartAxisType = _interopRequireDefault(__webpack_require__(190));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(73));
+var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
 var chartSpecSelector = (0, _state.createKeyedStateSelector)(function (state, slicerId) {
   return (0, _dataColumn["default"])(state, slicerId);
@@ -1048,7 +1066,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 602:
+/***/ 604:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1061,7 +1079,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _slicerState = _interopRequireDefault(__webpack_require__(73));
+var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
 function isValidSlicerSelector(state, slicerId) {
   var slicerState = (0, _slicerState["default"])(state, slicerId);

@@ -19,11 +19,11 @@ var _state = __webpack_require__(2);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _NetworkPane = _interopRequireDefault(__webpack_require__(579));
+var _NetworkPane = _interopRequireDefault(__webpack_require__(581));
 
 var _isValidNetwork = _interopRequireDefault(__webpack_require__(202));
 
-var _networkFile = _interopRequireDefault(__webpack_require__(78));
+var _networkFile = _interopRequireDefault(__webpack_require__(79));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var networkId = _ref.networkId;
@@ -77,7 +77,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(165));
+var _FileLoader = _interopRequireDefault(__webpack_require__(166));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -308,7 +308,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = canvasLasso;
 
-var _geometry = __webpack_require__(100);
+var _geometry = __webpack_require__(102);
 
 /* eslint-disable prefer-object-spread */
 
@@ -519,7 +519,7 @@ var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(109));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -581,7 +581,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 579:
+/***/ 581:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -594,17 +594,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _NetworkPane = _interopRequireDefault(__webpack_require__(580));
+var _NetworkPane = _interopRequireDefault(__webpack_require__(582));
 
 var _filters = __webpack_require__(50);
 
-var _networks = __webpack_require__(77);
+var _networks = __webpack_require__(78);
 
-var _graph = _interopRequireDefault(__webpack_require__(590));
+var _graph = _interopRequireDefault(__webpack_require__(592));
 
-var _hasLayout = _interopRequireDefault(__webpack_require__(592));
+var _hasLayout = _interopRequireDefault(__webpack_require__(594));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var networkId = _ref.networkId;
@@ -656,7 +656,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 580:
+/***/ 582:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -691,9 +691,9 @@ var _classnames = _interopRequireDefault(__webpack_require__(13));
 
 var _lodash = _interopRequireDefault(__webpack_require__(449));
 
-var _lasso = _interopRequireDefault(__webpack_require__(581));
+var _lasso = _interopRequireDefault(__webpack_require__(583));
 
-var _renderers = __webpack_require__(583);
+var _renderers = __webpack_require__(585);
 
 var _downloads = __webpack_require__(52);
 
@@ -701,7 +701,7 @@ var _networks = __webpack_require__(208);
 
 var _ZoomControls = _interopRequireDefault(__webpack_require__(180));
 
-var _NetworkControls = _interopRequireDefault(__webpack_require__(584));
+var _NetworkControls = _interopRequireDefault(__webpack_require__(586));
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -1208,7 +1208,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 581:
+/***/ 583:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1223,7 +1223,7 @@ exports["default"] = _default;
 
 var _canvasLasso = _interopRequireDefault(__webpack_require__(509));
 
-var _sigma = __webpack_require__(582);
+var _sigma = __webpack_require__(584);
 
 function _default(sigmaInst, options) {
   var renderer = sigmaInst.renderers[0];
@@ -1258,7 +1258,7 @@ function _default(sigmaInst, options) {
 
 /***/ }),
 
-/***/ 582:
+/***/ 584:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1331,7 +1331,7 @@ function translateGraphToCanvas(sigmaInst, points) {
 
 /***/ }),
 
-/***/ 583:
+/***/ 585:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1413,7 +1413,7 @@ exports.edgeRenderer = edgeRenderer;
 
 /***/ }),
 
-/***/ 584:
+/***/ 586:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1426,21 +1426,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _networks = __webpack_require__(77);
+var _networks = __webpack_require__(78);
 
 var _ui = __webpack_require__(27);
 
 var _state = __webpack_require__(2);
 
-var _NetworkControls = _interopRequireDefault(__webpack_require__(585));
+var _NetworkControls = _interopRequireDefault(__webpack_require__(587));
 
-var _edgeColourAttributes = _interopRequireDefault(__webpack_require__(586));
+var _edgeColourAttributes = _interopRequireDefault(__webpack_require__(588));
 
-var _edgeLabelAttributes = _interopRequireDefault(__webpack_require__(587));
+var _edgeLabelAttributes = _interopRequireDefault(__webpack_require__(589));
 
-var _edgeLineStyleAttributes = _interopRequireDefault(__webpack_require__(588));
+var _edgeLineStyleAttributes = _interopRequireDefault(__webpack_require__(590));
 
-var _edgeLineWidthAttributes = _interopRequireDefault(__webpack_require__(589));
+var _edgeLineWidthAttributes = _interopRequireDefault(__webpack_require__(591));
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
@@ -1509,7 +1509,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 585:
+/***/ 587:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1528,23 +1528,23 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _ShuffleRounded = _interopRequireDefault(__webpack_require__(463));
 
-var _Slider = _interopRequireDefault(__webpack_require__(112));
+var _Slider = _interopRequireDefault(__webpack_require__(113));
 
-var _Menu = _interopRequireDefault(__webpack_require__(163));
+var _Menu = _interopRequireDefault(__webpack_require__(164));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
-var _Animation = _interopRequireDefault(__webpack_require__(166));
+var _Animation = _interopRequireDefault(__webpack_require__(167));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
 
 var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
 
 var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
 
-var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
+var _UiFieldsList = _interopRequireDefault(__webpack_require__(112));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -1699,7 +1699,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 586:
+/***/ 588:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1729,7 +1729,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 587:
+/***/ 589:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1762,7 +1762,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 588:
+/***/ 590:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1792,7 +1792,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 589:
+/***/ 591:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1822,7 +1822,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 590:
+/***/ 592:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1845,7 +1845,7 @@ var _filteredIds = _interopRequireDefault(__webpack_require__(58));
 
 var _baseGraph = _interopRequireDefault(__webpack_require__(173));
 
-var _edgeStyles = _interopRequireDefault(__webpack_require__(591));
+var _edgeStyles = _interopRequireDefault(__webpack_require__(593));
 
 var _layout = _interopRequireDefault(__webpack_require__(185));
 
@@ -1951,7 +1951,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 591:
+/***/ 593:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2022,7 +2022,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 592:
+/***/ 594:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

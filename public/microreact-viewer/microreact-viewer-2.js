@@ -13,13 +13,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _reduxUndo = __webpack_require__(113);
+var _reduxUndo = __webpack_require__(114);
 
 var _panes = __webpack_require__(57);
 
-var _HistoryPane = _interopRequireDefault(__webpack_require__(542));
+var _HistoryPane = _interopRequireDefault(__webpack_require__(544));
 
 var mapStateToProps = function mapStateToProps(rootState) {
   return {
@@ -65,7 +65,7 @@ exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 542:
+/***/ 544:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -136,13 +136,13 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _List = _interopRequireDefault(__webpack_require__(121));
+var _List = _interopRequireDefault(__webpack_require__(122));
 
 var _ListItem = _interopRequireDefault(__webpack_require__(61));
 
 var _ListItemIcon = _interopRequireDefault(__webpack_require__(213));
 
-var _ListItemText = _interopRequireDefault(__webpack_require__(83));
+var _ListItemText = _interopRequireDefault(__webpack_require__(84));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
@@ -154,7 +154,7 @@ var _UndoRounded = _interopRequireDefault(__webpack_require__(203));
 
 var _reselect = __webpack_require__(10);
 
-__webpack_require__(543);
+__webpack_require__(545);
 
 var _shortcuts = __webpack_require__(191);
 
@@ -286,7 +286,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 543:
+/***/ 545:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

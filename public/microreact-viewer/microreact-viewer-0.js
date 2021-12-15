@@ -15,7 +15,7 @@ exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -65,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 517:
+/***/ 519:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88,15 +88,15 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(545));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(547));
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(548));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(550));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -153,7 +153,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 518:
+/***/ 520:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -182,7 +182,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 __webpack_require__(508);
 
-var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(546));
+var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(548));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -238,7 +238,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 519:
+/***/ 521:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -254,7 +254,7 @@ exports.linearGradientImage = linearGradientImage;
 
 var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(458));
 
-var _phylocanvas = __webpack_require__(98);
+var _phylocanvas = __webpack_require__(100);
 
 /* eslint-disable no-lonely-if */
 
@@ -293,7 +293,7 @@ function linearGradientImage(width, height, startColour, stopColour) {
 
 /***/ }),
 
-/***/ 520:
+/***/ 522:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -322,7 +322,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 __webpack_require__(508);
 
-var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(549));
+var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(551));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -417,7 +417,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 545:
+/***/ 547:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -434,9 +434,9 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _filters = __webpack_require__(50);
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(518));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(520));
 
-var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(547));
+var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(549));
 
 var _state = __webpack_require__(2);
 
@@ -462,7 +462,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 546:
+/***/ 548:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -489,7 +489,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _svg = __webpack_require__(519);
+var _svg = __webpack_require__(521);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -545,7 +545,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 547:
+/***/ 549:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -647,7 +647,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 548:
+/***/ 550:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -664,9 +664,9 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _filters = __webpack_require__(50);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(520));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(522));
 
-var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(550));
+var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(552));
 
 var _state = __webpack_require__(2);
 
@@ -698,7 +698,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 549:
+/***/ 551:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -725,7 +725,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _svg = __webpack_require__(519);
+var _svg = __webpack_require__(521);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -770,7 +770,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 550:
+/***/ 552:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -787,7 +787,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _reselect = __webpack_require__(10);
 
-var _arrays = __webpack_require__(23);
+var _arrays = __webpack_require__(24);
 
 var _text = __webpack_require__(70);
 
@@ -795,7 +795,7 @@ var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(97));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 

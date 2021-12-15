@@ -17,11 +17,11 @@ var _filters = __webpack_require__(50);
 
 var _panes = __webpack_require__(57);
 
-var _styles = __webpack_require__(81);
+var _styles = __webpack_require__(82);
 
-var _LegendPane = _interopRequireDefault(__webpack_require__(544));
+var _LegendPane = _interopRequireDefault(__webpack_require__(546));
 
-var _legends = _interopRequireDefault(__webpack_require__(551));
+var _legends = _interopRequireDefault(__webpack_require__(553));
 
 var _state = __webpack_require__(2);
 
@@ -52,7 +52,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 544:
+/***/ 546:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83,13 +83,13 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _clsx = _interopRequireDefault(__webpack_require__(119));
+var _clsx = _interopRequireDefault(__webpack_require__(120));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _htmlsvg = _interopRequireDefault(__webpack_require__(457));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(168));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
@@ -103,7 +103,7 @@ var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
 
 var _constants = __webpack_require__(12);
 
-var _LegendsList = _interopRequireDefault(__webpack_require__(517));
+var _LegendsList = _interopRequireDefault(__webpack_require__(519));
 
 var _html = __webpack_require__(35);
 
@@ -232,7 +232,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 551:
+/***/ 553:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -249,9 +249,9 @@ var _reselect = __webpack_require__(10);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(110));
 
-var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(552));
+var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -320,7 +320,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 552:
+/***/ 554:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -337,7 +337,7 @@ var _state = __webpack_require__(2);
 
 var _sets = __webpack_require__(42);
 
-var _metadataFields = _interopRequireDefault(__webpack_require__(553));
+var _metadataFields = _interopRequireDefault(__webpack_require__(555));
 
 var _constants = __webpack_require__(12);
 
@@ -392,7 +392,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 553:
+/***/ 555:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

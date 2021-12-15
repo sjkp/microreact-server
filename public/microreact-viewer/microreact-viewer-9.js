@@ -13,13 +13,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _ui = __webpack_require__(27);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _TablePane = _interopRequireDefault(__webpack_require__(603));
+var _TablePane = _interopRequireDefault(__webpack_require__(605));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableId = _ref.tableId;
@@ -76,7 +76,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(165));
+var _FileLoader = _interopRequireDefault(__webpack_require__(166));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -311,16 +311,23 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
+var _Button = _interopRequireDefault(__webpack_require__(29));
+
+var _Box = _interopRequireDefault(__webpack_require__(23));
+
+var _Divider = _interopRequireDefault(__webpack_require__(97));
+
 var _propTypes2 = __webpack_require__(14);
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
 var _constants = __webpack_require__(12);
 
 var DataColumnFilterByValues = /*#__PURE__*/_react["default"].memo(function (props) {
   var valuesFilter = props.filter && props.filter.operator === "in" ? props.filter : undefined;
+  var selectedValues = valuesFilter ? valuesFilter.value : _constants.emptyArray;
   return /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
     items: props.uniqueValues,
     label: "Search",
@@ -328,50 +335,51 @@ var DataColumnFilterByValues = /*#__PURE__*/_react["default"].memo(function (pro
       var _x$label, _x$label$toString;
 
       return (_x$label = x.label) === null || _x$label === void 0 ? void 0 : (_x$label$toString = _x$label.toString()) === null || _x$label$toString === void 0 ? void 0 : _x$label$toString.toLowerCase();
-    }
-  }, function (items) {
-    var _props$height;
+    },
+    renderItems: function renderItems(items) {
+      var _props$height;
 
-    return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"] // boxed={false}
-    , {
-      items: items,
-      onChange: function onChange(selection) {
-        props.onColumnFilterChange(selection.length ? "in" : null, selection);
-      },
-      value: valuesFilter ? valuesFilter.value : _constants.emptyArray,
-      selectAll: true,
-      selectOnly: true,
-      style: {
-        height: 40 + props.uniqueValues.length * 28,
-        maxHeight: (_props$height = props.height) !== null && _props$height !== void 0 ? _props$height : "max(144px, calc(60vh - 256px))"
-      }
-    });
-  });
+      return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"] // boxed={false}
+      , {
+        disableSelectAll: true,
+        items: items,
+        onChange: function onChange(selection) {
+          props.onColumnFilterChange(selection.length > 0 ? "in" : null, selection);
+        },
+        style: {
+          height: 40 + props.uniqueValues.length * 28,
+          maxHeight: (_props$height = props.height) !== null && _props$height !== void 0 ? _props$height : "max(144px, calc(60vh - 256px))"
+        },
+        value: selectedValues
+      });
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Divider["default"], null), /*#__PURE__*/_react["default"].createElement(_Box["default"], {
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "row-reverse",
+    justifyContent: "space-between"
+  }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+    color: "primary",
+    disabled: selectedValues.length === 0,
+    onClick: function onClick() {
+      return props.onColumnFilterChange(null);
+    }
+  }, "Clear")));
 });
 
 DataColumnFilterByValues.displayName = "DataColumnFilterByValues";
 DataColumnFilterByValues.propTypes = {
   filter: _propTypes2.DataFilter,
+  height: _propTypes["default"].number,
   onColumnFilterChange: _propTypes["default"].func.isRequired,
-  uniqueValues: _propTypes["default"].array,
-  height: _propTypes["default"].number
+  uniqueValues: _propTypes["default"].array
 };
 var _default = DataColumnFilterByValues;
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ 525:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 603:
+/***/ 513:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -384,13 +392,106 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _classnames = _interopRequireDefault(__webpack_require__(13));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
+
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
+
+var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
+
+__webpack_require__(514);
+
+var _propTypes2 = __webpack_require__(14);
+
+var groupBy = function groupBy(item) {
+  var _item$group;
+
+  return (_item$group = item.group) !== null && _item$group !== void 0 ? _item$group : "";
+};
+
+var MultipleDataColumnsSelect = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
+    className: (0, _classnames["default"])("mr-multiple-data-columns-select", props.className),
+    items: props.dataColumns,
+    label: "Search columns",
+    style: props.style,
+    renderItems: function renderItems(items) {
+      return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"], {
+        items: items,
+        onChange: props.onChange,
+        value: props.value,
+        groupItem: groupBy,
+        selectOnly: true,
+        style: {
+          height: 40 + props.dataColumns.length * 28,
+          maxHeight: "calc(100vh - ".concat(props.maxHeightOffset, ")")
+        }
+      });
+    }
+  });
+});
+
+MultipleDataColumnsSelect.displayName = "MultipleDataColumnsSelect";
+MultipleDataColumnsSelect.propTypes = {
+  className: _propTypes["default"].string,
+  dataColumns: _propTypes["default"].arrayOf(_propTypes2.DataColumn),
+  maxHeightOffset: _propTypes["default"].string,
+  multiple: _propTypes["default"].bool,
+  onChange: _propTypes["default"].func,
+  style: _propTypes["default"].object,
+  value: _propTypes["default"].array
+};
+MultipleDataColumnsSelect.defaultProps = {};
+var _default = MultipleDataColumnsSelect;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 514:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 527:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 605:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _reactRedux = __webpack_require__(96);
 
 var _filters = __webpack_require__(50);
 
-var _tables = __webpack_require__(74);
+var _tables = __webpack_require__(75);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(107));
 
 var _sortState = _interopRequireDefault(__webpack_require__(200));
 
@@ -398,7 +499,7 @@ var _tableData = _interopRequireDefault(__webpack_require__(199));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _TablePane = _interopRequireDefault(__webpack_require__(604));
+var _TablePane = _interopRequireDefault(__webpack_require__(606));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableId = _ref.tableId;
@@ -445,7 +546,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 604:
+/***/ 606:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -482,17 +583,17 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _reselect = __webpack_require__(10);
 
-var _lib = _interopRequireDefault(__webpack_require__(82));
+var _lib = _interopRequireDefault(__webpack_require__(83));
 
-__webpack_require__(525);
+__webpack_require__(527);
 
 var _browser = __webpack_require__(19);
 
 var TextUtils = _interopRequireWildcard(__webpack_require__(70));
 
-var _TableComponents = _interopRequireWildcard(__webpack_require__(605));
+var _TableComponents = _interopRequireWildcard(__webpack_require__(607));
 
-var _TableControls = _interopRequireDefault(__webpack_require__(613));
+var _TableControls = _interopRequireDefault(__webpack_require__(615));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -585,6 +686,7 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
               minWidth: 40,
               resizable: true,
               sort: col.sort,
+              group: dataColumn.group,
               sortable: true,
               tableId: _this.props.tableId,
               title: col.label || dataColumn.label || dataColumn.name,
@@ -621,6 +723,72 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "renderTableHeaderRow", function (_ref) {
       var cells = _ref.cells,
           columns = _ref.columns;
+      // if (columns?.length === 1 && columns?.[0]?.frozen) {
+      //   return null;
+      // }
+      // if (headerIndex === 0) {
+      //   if (columns?.length === 1) {
+      //     return null;
+      //   }
+      //   // return (
+      //   //   columns.map(
+      //   //     (x) => (
+      //   //       <div
+      //   //         role="gridcell"
+      //   //         className="BaseTable__header-cell"
+      //   //         key={x.dataKey}
+      //   //         style={
+      //   //           { width: x.width }
+      //   //         }
+      //   //       >
+      //   //         <div
+      //   //           className="BaseTable__header-cell-text">
+      //   //             { x.group || null }
+      //   //         </div>
+      //   //       </div>
+      //   //     )
+      //   //   )
+      //   // );
+      //   const groupCells = [];
+      //   groupCells.push(
+      //     <div
+      //       role="gridcell"
+      //       className="BaseTable__header-cell"
+      //       key={columns[0].dataKey}
+      //       style={
+      //         { width: columns[0].width }
+      //       }
+      //     >
+      //       <div className="BaseTable__header-cell-text" />
+      //     </div>
+      //   );
+      //   let previousColumn = columns[1];
+      //   let width = 0;
+      //   for (let index = 1; index < columns.length; index++) {
+      //     const column = columns[index];
+      //     if (column.group !== previousColumn.group) {
+      //       groupCells.push(
+      //         <div
+      //           role="gridcell"
+      //           className="BaseTable__header-cell mr-group-cell"
+      //           key={previousColumn.dataKey}
+      //           style={
+      //             { width }
+      //           }
+      //         >
+      //           <div
+      //             className="BaseTable__header-cell-text">
+      //               { previousColumn.group || null }
+      //           </div>
+      //         </div>
+      //       );
+      //       width = 0;
+      //     }
+      //     width += column.width;
+      //     previousColumn = column;
+      //   }
+      //   return groupCells;
+      // }
       return /*#__PURE__*/_react["default"].createElement(_TableComponents.SortableContainer, {
         axis: "x",
         useDragHandle: true,
@@ -671,7 +839,8 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
             tagName: _TableComponents.HeaderCellComponent
           };
         },
-        headerHeight: 40,
+        headerHeight: 40 // headerHeight={[ 32, 40 ]}
+        ,
         headerRenderer: this.renderTableHeaderRow,
         height: props.height - 24,
         onColumnExpand: function onColumnExpand(column) {
@@ -726,7 +895,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 605:
+/***/ 607:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -753,9 +922,9 @@ var _CheckBoxTwoTone = _interopRequireDefault(__webpack_require__(470));
 
 var _CheckBoxOutlineBlankTwoTone = _interopRequireDefault(__webpack_require__(471));
 
-__webpack_require__(525);
+__webpack_require__(527);
 
-var _TableColumnMenu = _interopRequireDefault(__webpack_require__(606));
+var _TableColumnMenu = _interopRequireDefault(__webpack_require__(608));
 
 var _excluded = ["index", "children"];
 var SortableItem = (0, _reactSortableHoc.sortableElement)(function (_ref) {
@@ -843,7 +1012,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 606:
+/***/ 608:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -860,7 +1029,7 @@ var _dataFieldFilter = _interopRequireDefault(__webpack_require__(169));
 
 var _state = __webpack_require__(2);
 
-var _TableHeaderMenu = _interopRequireDefault(__webpack_require__(607));
+var _TableHeaderMenu = _interopRequireDefault(__webpack_require__(609));
 
 function mapStateToProps(state, _ref) {
   var tableColumn = _ref.tableColumn;
@@ -875,7 +1044,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 607:
+/***/ 609:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -912,11 +1081,11 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(608);
+__webpack_require__(610);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _TableColumnControls = _interopRequireDefault(__webpack_require__(609));
+var _TableColumnControls = _interopRequireDefault(__webpack_require__(611));
 
 var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(45));
 
@@ -981,7 +1150,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 608:
+/***/ 610:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -991,7 +1160,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 609:
+/***/ 611:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1004,7 +1173,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _tables = __webpack_require__(74);
+var _tables = __webpack_require__(75);
 
 var _filterableValues = _interopRequireDefault(__webpack_require__(505));
 
@@ -1014,7 +1183,7 @@ var _dataFieldFilter = _interopRequireDefault(__webpack_require__(169));
 
 var _state = __webpack_require__(2);
 
-var _TableHeaderMenuContent = _interopRequireDefault(__webpack_require__(610));
+var _TableHeaderMenuContent = _interopRequireDefault(__webpack_require__(612));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableColumn = _ref.tableColumn;
@@ -1048,7 +1217,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 610:
+/***/ 612:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1095,33 +1264,33 @@ var _AccordionSummary = _interopRequireDefault(__webpack_require__(475));
 
 var _AccordionDetails = _interopRequireDefault(__webpack_require__(476));
 
-var _Typography = _interopRequireDefault(__webpack_require__(76));
+var _Typography = _interopRequireDefault(__webpack_require__(77));
 
 var _PlayArrow = _interopRequireDefault(__webpack_require__(477));
 
 var _TextField = _interopRequireDefault(__webpack_require__(60));
 
-var _MenuItem = _interopRequireDefault(__webpack_require__(79));
+var _MenuItem = _interopRequireDefault(__webpack_require__(80));
 
 var _ToggleButton = _interopRequireDefault(__webpack_require__(206));
 
 var _ToggleButtonGroup = _interopRequireDefault(__webpack_require__(207));
 
-var _js = __webpack_require__(118);
+var _js = __webpack_require__(119);
 
-var _Box = _interopRequireDefault(__webpack_require__(24));
+var _Box = _interopRequireDefault(__webpack_require__(23));
 
-__webpack_require__(611);
+__webpack_require__(613);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _MdiIcon = _interopRequireDefault(__webpack_require__(80));
+var _MdiIcon = _interopRequireDefault(__webpack_require__(81));
 
 var _browser = __webpack_require__(19);
 
 var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(511));
 
-var _SortByAlphaInverseRoundedIcon = _interopRequireDefault(__webpack_require__(612));
+var _SortByAlphaInverseRoundedIcon = _interopRequireDefault(__webpack_require__(614));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -1418,7 +1587,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 611:
+/***/ 613:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1428,7 +1597,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 612:
+/***/ 614:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1453,7 +1622,7 @@ function SortByAlphaInverseRoundedIcon(props) {
 
 /***/ }),
 
-/***/ 613:
+/***/ 615:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1466,17 +1635,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _tables = __webpack_require__(74);
+var _tables = __webpack_require__(75);
 
 var _ui = __webpack_require__(27);
 
-var _TableControls = _interopRequireDefault(__webpack_require__(614));
+var _TableControls = _interopRequireDefault(__webpack_require__(616));
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _visibleFields = _interopRequireDefault(__webpack_require__(615));
+var _visibleFields = _interopRequireDefault(__webpack_require__(617));
 
 var _state = __webpack_require__(3);
 
@@ -1527,7 +1696,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 614:
+/***/ 616:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1540,27 +1709,25 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
-var _Menu = _interopRequireDefault(__webpack_require__(163));
+var _Menu = _interopRequireDefault(__webpack_require__(164));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Animation = _interopRequireDefault(__webpack_require__(166));
+var _Animation = _interopRequireDefault(__webpack_require__(167));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(101));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
-
-var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
+var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(513));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -1607,20 +1774,11 @@ var TableColumns = /*#__PURE__*/_react["default"].memo(function (props) {
     value: props.displayMode
   })), /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
     title: "Columns"
-  }, /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
-    items: props.dataFields,
-    label: "Search columns"
-  }, function (items) {
-    return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"], {
-      items: items,
-      onChange: props.onVisibleFieldsChange,
-      value: props.visibleFields,
-      selectAll: true,
-      style: {
-        height: 40 + props.dataFields.length * 28,
-        maxHeight: "calc(100vh - 216px)"
-      }
-    });
+  }, /*#__PURE__*/_react["default"].createElement(_MultipleDataColumnsSelect["default"], {
+    dataColumns: props.dataFields,
+    maxHeightOffset: "216px",
+    onChange: props.onVisibleFieldsChange,
+    value: props.visibleFields
   }))));
 });
 
@@ -1643,7 +1801,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 615:
+/***/ 617:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

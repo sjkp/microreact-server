@@ -13,13 +13,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _NotePane = _interopRequireDefault(__webpack_require__(593));
+var _NotePane = _interopRequireDefault(__webpack_require__(595));
 
-var _notes = __webpack_require__(116);
+var _notes = __webpack_require__(117);
 
-var _noteState = _interopRequireDefault(__webpack_require__(595));
+var _noteState = _interopRequireDefault(__webpack_require__(597));
 
 var _ui = __webpack_require__(27);
 
@@ -51,7 +51,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 593:
+/***/ 595:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92,9 +92,9 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _reactMarkdown = _interopRequireDefault(__webpack_require__(466));
 
-__webpack_require__(594);
+__webpack_require__(596);
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
 
 var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
 
@@ -241,7 +241,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 594:
+/***/ 596:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -251,7 +251,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 595:
+/***/ 597:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

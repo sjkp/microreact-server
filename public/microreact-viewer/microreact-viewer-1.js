@@ -13,15 +13,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _ChartPane = _interopRequireDefault(__webpack_require__(529));
+var _ChartPane = _interopRequireDefault(__webpack_require__(531));
 
 var _charts = __webpack_require__(187);
 
-var _chartData = _interopRequireDefault(__webpack_require__(534));
+var _chartData = _interopRequireDefault(__webpack_require__(536));
 
-var _vegaSpec = _interopRequireDefault(__webpack_require__(535));
+var _vegaSpec = _interopRequireDefault(__webpack_require__(537));
 
 var _chartType = _interopRequireDefault(__webpack_require__(175));
 
@@ -95,7 +95,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 515:
+/***/ 517:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -125,7 +125,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 516:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -180,7 +180,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 529:
+/***/ 531:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -221,13 +221,13 @@ var _vegaTooltip = __webpack_require__(450);
 
 var _reactVega = __webpack_require__(447);
 
-__webpack_require__(530);
+__webpack_require__(532);
 
-var _ChartControls = _interopRequireDefault(__webpack_require__(531));
+var _ChartControls = _interopRequireDefault(__webpack_require__(533));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _downloads = __webpack_require__(52);
 
@@ -410,7 +410,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 530:
+/***/ 532:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -420,7 +420,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 531:
+/***/ 533:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -439,15 +439,15 @@ var _chartState = _interopRequireDefault(__webpack_require__(51));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _dataFileUrl = _interopRequireDefault(__webpack_require__(532));
+var _dataFileUrl = _interopRequireDefault(__webpack_require__(534));
 
-var _seriesStacking = _interopRequireDefault(__webpack_require__(515));
+var _seriesStacking = _interopRequireDefault(__webpack_require__(517));
 
 var _state = __webpack_require__(2);
 
-var _ChartControls = _interopRequireDefault(__webpack_require__(533));
+var _ChartControls = _interopRequireDefault(__webpack_require__(535));
 
-var _mainAxisEncoding = _interopRequireDefault(__webpack_require__(516));
+var _mainAxisEncoding = _interopRequireDefault(__webpack_require__(518));
 
 var _seriesField = _interopRequireDefault(__webpack_require__(176));
 
@@ -545,7 +545,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 532:
+/***/ 534:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -575,7 +575,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 533:
+/***/ 535:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -604,15 +604,15 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _Box = _interopRequireDefault(__webpack_require__(24));
+var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _EditRounded = _interopRequireDefault(__webpack_require__(451));
 
 var _IconButton = _interopRequireDefault(__webpack_require__(21));
 
-var _Menu = _interopRequireDefault(__webpack_require__(163));
+var _Menu = _interopRequireDefault(__webpack_require__(164));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
@@ -622,17 +622,17 @@ var _propTypes2 = __webpack_require__(14);
 
 var Downloads = _interopRequireWildcard(__webpack_require__(52));
 
-var Charts = _interopRequireWildcard(__webpack_require__(161));
+var Charts = _interopRequireWildcard(__webpack_require__(162));
 
-var _Animation = _interopRequireDefault(__webpack_require__(166));
+var _Animation = _interopRequireDefault(__webpack_require__(167));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
@@ -1127,7 +1127,7 @@ ChartControls.propTypes = {
 
 /***/ }),
 
-/***/ 534:
+/***/ 536:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1142,7 +1142,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
 
 // import activeRowsSelector from "../filters/active-rows";
 // import chartStateSelector from "./chart-state";
@@ -1167,7 +1167,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 535:
+/***/ 537:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1184,11 +1184,11 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _chartState = _interopRequireDefault(__webpack_require__(51));
 
-var _defaultSpec = _interopRequireDefault(__webpack_require__(536));
+var _defaultSpec = _interopRequireDefault(__webpack_require__(538));
 
 var _chartType = _interopRequireDefault(__webpack_require__(175));
 
@@ -1248,7 +1248,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 536:
+/***/ 538:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1265,11 +1265,11 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _state = __webpack_require__(2);
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(97));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
 var _chartState = _interopRequireDefault(__webpack_require__(51));
 
-var _seriesStacking = _interopRequireDefault(__webpack_require__(515));
+var _seriesStacking = _interopRequireDefault(__webpack_require__(517));
 
 var _xAxisField = _interopRequireDefault(__webpack_require__(188));
 
@@ -1277,11 +1277,11 @@ var _yAxisField = _interopRequireDefault(__webpack_require__(189));
 
 var _seriesField = _interopRequireDefault(__webpack_require__(176));
 
-var _xAxisType = _interopRequireDefault(__webpack_require__(537));
+var _xAxisType = _interopRequireDefault(__webpack_require__(539));
 
-var _yAxisType = _interopRequireDefault(__webpack_require__(538));
+var _yAxisType = _interopRequireDefault(__webpack_require__(540));
 
-var _seriesType = _interopRequireDefault(__webpack_require__(539));
+var _seriesType = _interopRequireDefault(__webpack_require__(541));
 
 var _chartType = _interopRequireDefault(__webpack_require__(175));
 
@@ -1291,11 +1291,11 @@ var _rows = _interopRequireDefault(__webpack_require__(17));
 
 var _filteredIds = _interopRequireDefault(__webpack_require__(58));
 
-var _yAxisMode = _interopRequireDefault(__webpack_require__(540));
+var _yAxisMode = _interopRequireDefault(__webpack_require__(542));
 
-var _xAxisMode = _interopRequireDefault(__webpack_require__(541));
+var _xAxisMode = _interopRequireDefault(__webpack_require__(543));
 
-var _mainAxisEncoding = _interopRequireDefault(__webpack_require__(516));
+var _mainAxisEncoding = _interopRequireDefault(__webpack_require__(518));
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -1747,7 +1747,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 537:
+/***/ 539:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1762,7 +1762,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _chartState = _interopRequireDefault(__webpack_require__(51));
 
@@ -1784,7 +1784,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 538:
+/***/ 540:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1799,7 +1799,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _chartState = _interopRequireDefault(__webpack_require__(51));
 
@@ -1821,7 +1821,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 539:
+/***/ 541:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1836,7 +1836,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _chartState = _interopRequireDefault(__webpack_require__(51));
 
@@ -1858,7 +1858,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 540:
+/***/ 542:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1905,7 +1905,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 541:
+/***/ 543:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

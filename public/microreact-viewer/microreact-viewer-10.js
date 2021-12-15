@@ -15,13 +15,13 @@ exports["default"] = void 0;
 
 var _ui = __webpack_require__(27);
 
-var _isValidTimeline = _interopRequireDefault(__webpack_require__(616));
+var _isValidTimeline = _interopRequireDefault(__webpack_require__(618));
 
 var _state = __webpack_require__(3);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _TimelinePane = _interopRequireDefault(__webpack_require__(617));
+var _TimelinePane = _interopRequireDefault(__webpack_require__(619));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var timelineId = _ref.timelineId;
@@ -119,7 +119,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(165));
+var _FileLoader = _interopRequireDefault(__webpack_require__(166));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -197,7 +197,7 @@ var _state = __webpack_require__(3);
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _dataExtent = _interopRequireDefault(__webpack_require__(624));
+var _dataExtent = _interopRequireDefault(__webpack_require__(626));
 
 var autoUnitSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
   return (0, _dataExtent["default"])(state, timelineId);
@@ -223,7 +223,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 513:
+/***/ 515:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,7 +248,7 @@ var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(106));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -333,7 +333,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 514:
+/***/ 516:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -348,7 +348,7 @@ exports["default"] = void 0;
 
 var _bounds = _interopRequireDefault(__webpack_require__(198));
 
-var _fullRangeExtent = _interopRequireDefault(__webpack_require__(526));
+var _fullRangeExtent = _interopRequireDefault(__webpack_require__(528));
 
 function filteredRangeExtentSelector(state, timelineId) {
   return (0, _bounds["default"])(state, timelineId) || (0, _fullRangeExtent["default"])(state, timelineId);
@@ -359,7 +359,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 526:
+/***/ 528:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -374,7 +374,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(513));
+var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
 
 var fullRangeExtentSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
   return (0, _fullRangeChartData["default"])(state, timelineId);
@@ -392,7 +392,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 616:
+/***/ 618:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -417,7 +417,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 617:
+/***/ 619:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -430,13 +430,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _TimelinePane = _interopRequireDefault(__webpack_require__(618));
+var _TimelinePane = _interopRequireDefault(__webpack_require__(620));
 
-var _timelines = __webpack_require__(75);
+var _timelines = __webpack_require__(76);
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(514));
+var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
@@ -473,7 +473,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 618:
+/***/ 620:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -518,23 +518,23 @@ var _Paper = _interopRequireDefault(__webpack_require__(36));
 
 var _InputBase = _interopRequireDefault(__webpack_require__(479));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
-__webpack_require__(619);
+__webpack_require__(621);
 
 var Datetime = _interopRequireWildcard(__webpack_require__(55));
 
 var _downloads = __webpack_require__(52);
 
-var _TimelineSlider = _interopRequireDefault(__webpack_require__(620));
+var _TimelineSlider = _interopRequireDefault(__webpack_require__(622));
 
-var _TimelineControls = _interopRequireDefault(__webpack_require__(623));
+var _TimelineControls = _interopRequireDefault(__webpack_require__(625));
 
-var _TimelineFullRangeChart = _interopRequireDefault(__webpack_require__(626));
+var _TimelineFullRangeChart = _interopRequireDefault(__webpack_require__(628));
 
-var _TimelineFilteredRangeChart = _interopRequireDefault(__webpack_require__(628));
+var _TimelineFilteredRangeChart = _interopRequireDefault(__webpack_require__(630));
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -713,7 +713,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 619:
+/***/ 621:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -723,7 +723,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 620:
+/***/ 622:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -736,15 +736,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _timelines = __webpack_require__(75);
+var _timelines = __webpack_require__(76);
 
-var _TimelineSlider = _interopRequireDefault(__webpack_require__(621));
+var _TimelineSlider = _interopRequireDefault(__webpack_require__(623));
 
-var _fullRangeExtent = _interopRequireDefault(__webpack_require__(526));
+var _fullRangeExtent = _interopRequireDefault(__webpack_require__(528));
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(514));
+var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var timelineId = _ref.timelineId;
@@ -773,7 +773,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 621:
+/***/ 623:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -812,7 +812,7 @@ var _lodash = _interopRequireDefault(__webpack_require__(449));
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-__webpack_require__(622);
+__webpack_require__(624);
 
 var Datetime = _interopRequireWildcard(__webpack_require__(55));
 
@@ -1156,7 +1156,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 622:
+/***/ 624:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1166,7 +1166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 623:
+/***/ 625:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1179,21 +1179,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _timelines = __webpack_require__(75);
+var _timelines = __webpack_require__(76);
 
 var _ui = __webpack_require__(27);
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(513));
+var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(514));
+var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
 var _state = __webpack_require__(3);
 
-var _TimelineControls = _interopRequireDefault(__webpack_require__(625));
+var _TimelineControls = _interopRequireDefault(__webpack_require__(627));
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
@@ -1253,7 +1253,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 624:
+/***/ 626:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1268,9 +1268,9 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(106));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -1323,7 +1323,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 625:
+/***/ 627:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1368,11 +1368,11 @@ var _SkipNextRounded = _interopRequireDefault(__webpack_require__(485));
 
 var _SkipPreviousRounded = _interopRequireDefault(__webpack_require__(486));
 
-var _Slider = _interopRequireDefault(__webpack_require__(112));
+var _Slider = _interopRequireDefault(__webpack_require__(113));
 
-var _Menu = _interopRequireDefault(__webpack_require__(163));
+var _Menu = _interopRequireDefault(__webpack_require__(164));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _reselect = __webpack_require__(10);
 
@@ -1380,15 +1380,15 @@ var _constants = __webpack_require__(12);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _Animation = _interopRequireDefault(__webpack_require__(166));
+var _Animation = _interopRequireDefault(__webpack_require__(167));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
 
-var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
+var _UiFieldsList = _interopRequireDefault(__webpack_require__(112));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -1745,7 +1745,7 @@ TimelineControls.propTypes = {
 
 /***/ }),
 
-/***/ 626:
+/***/ 628:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1758,13 +1758,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _reactVega = __webpack_require__(447);
 
-var _fullRangeChartSpec = _interopRequireDefault(__webpack_require__(627));
+var _fullRangeChartSpec = _interopRequireDefault(__webpack_require__(629));
 
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(513));
+var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
 
 var onError = function onError(err) {
   return console.error("Timeline", err);
@@ -1795,7 +1795,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 627:
+/***/ 629:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1926,7 +1926,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 628:
+/***/ 630:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1943,9 +1943,9 @@ var _reactVega = __webpack_require__(447);
 
 var _vegaTooltip = __webpack_require__(450);
 
-var _filteredRangeChartData = _interopRequireDefault(__webpack_require__(629));
+var _filteredRangeChartData = _interopRequireDefault(__webpack_require__(631));
 
-var _filteredRangeChartSpec = _interopRequireDefault(__webpack_require__(630));
+var _filteredRangeChartSpec = _interopRequireDefault(__webpack_require__(632));
 
 var _state = __webpack_require__(3);
 
@@ -1981,7 +1981,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 629:
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2000,11 +2000,11 @@ var _state = __webpack_require__(3);
 
 var _selectedIdsSet = _interopRequireDefault(__webpack_require__(174));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(106));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
 
 var _datetime = __webpack_require__(55);
 
@@ -2106,7 +2106,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 630:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2121,13 +2121,13 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _charts = __webpack_require__(161);
+var _charts = __webpack_require__(162);
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _laneField = _interopRequireDefault(__webpack_require__(631));
+var _laneField = _interopRequireDefault(__webpack_require__(633));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
@@ -2249,7 +2249,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 631:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
