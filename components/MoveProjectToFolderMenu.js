@@ -47,8 +47,7 @@ const MoveProjectToFolderContent = React.memo(
               };
             }
           }
-        >
-          {
+          renderItems={
             (items) => (
               <UiRadioList
                 boxed={false}
@@ -62,7 +61,7 @@ const MoveProjectToFolderContent = React.memo(
               />
             )
           }
-        </UiFloatingFilter>
+        />
       </React.Fragment>
     );
   }
