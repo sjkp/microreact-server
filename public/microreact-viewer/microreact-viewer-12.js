@@ -17,9 +17,9 @@ var _panes = __webpack_require__(57);
 
 var _state = __webpack_require__(3);
 
-var _ViewsPane = _interopRequireDefault(__webpack_require__(655));
+var _ViewsPane = _interopRequireDefault(__webpack_require__(654));
 
-var _views = __webpack_require__(658);
+var _views = __webpack_require__(657);
 
 var _ui = __webpack_require__(27);
 
@@ -82,7 +82,7 @@ var _filters = __webpack_require__(50);
 
 var _panes = __webpack_require__(57);
 
-var _SelectionPane = _interopRequireDefault(__webpack_require__(659));
+var _SelectionPane = _interopRequireDefault(__webpack_require__(658));
 
 var _constants = __webpack_require__(12);
 
@@ -94,7 +94,7 @@ var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
 var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(110));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 function mapStateToProps(state) {
   var _selectedRowsSelector;
@@ -192,7 +192,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(77));
 
 var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
-__webpack_require__(657);
+__webpack_require__(656);
 
 /* eslint-disable class-methods-use-this */
 function UiEmptyState(props) {
@@ -217,7 +217,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 655:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -262,7 +262,7 @@ var _reactHashchange = _interopRequireDefault(__webpack_require__(493));
 
 var _reactSortableHoc = __webpack_require__(452);
 
-__webpack_require__(656);
+__webpack_require__(655);
 
 var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
 
@@ -507,6 +507,16 @@ exports["default"] = _default;
 
 /***/ }),
 
+/***/ 655:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ 656:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -518,16 +528,6 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 657:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -640,7 +640,7 @@ function resaveView(view) {
 
 /***/ }),
 
-/***/ 659:
+/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -681,7 +681,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(77));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
-__webpack_require__(660);
+__webpack_require__(659);
 
 var _drawing = __webpack_require__(172);
 
@@ -693,7 +693,7 @@ var _UiEmptyState = _interopRequireDefault(__webpack_require__(530));
 
 var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
-var _SelectionChart = _interopRequireDefault(__webpack_require__(661));
+var _SelectionChart = _interopRequireDefault(__webpack_require__(660));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
@@ -984,7 +984,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 660:
+/***/ 659:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -994,7 +994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 661:
+/***/ 660:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1009,9 +1009,9 @@ exports["default"] = void 0;
 
 var _reactVega = __webpack_require__(447);
 
-var _selectionChartSpec = _interopRequireDefault(__webpack_require__(662));
+var _selectionChartSpec = _interopRequireDefault(__webpack_require__(661));
 
-var _selectionChartData = _interopRequireDefault(__webpack_require__(663));
+var _selectionChartData = _interopRequireDefault(__webpack_require__(662));
 
 var _state = __webpack_require__(3);
 
@@ -1042,7 +1042,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 662:
+/***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1244,7 +1244,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 663:
+/***/ 662:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

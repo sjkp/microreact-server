@@ -6290,9 +6290,9 @@ var _filters = __webpack_require__(50);
 
 var _style = _interopRequireDefault(__webpack_require__(267));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(106));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(109));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -7628,7 +7628,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _reselect = __webpack_require__(10);
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(109));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 var _filteredIds = _interopRequireDefault(__webpack_require__(58));
 
@@ -7995,33 +7995,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _fileDescriptor = _interopRequireDefault(__webpack_require__(65));
-
-var _treeState = _interopRequireDefault(__webpack_require__(59));
-
-function treeFileSelector(state, treeId) {
-  var _treeStateSelector;
-
-  return (0, _fileDescriptor["default"])(state, (_treeStateSelector = (0, _treeState["default"])(state, treeId)) === null || _treeStateSelector === void 0 ? void 0 : _treeStateSelector.file);
-}
-
-var _default = treeFileSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
 var _constants = __webpack_require__(12);
 
 var _state = __webpack_require__(3);
@@ -8172,7 +8145,7 @@ var _default = rowsWithDateFieldSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8206,7 +8179,7 @@ var _default = selectedIdsListSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8240,7 +8213,7 @@ var _default = dataColumnSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8261,7 +8234,7 @@ var _labelsDataColumn = _interopRequireDefault(__webpack_require__(115));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(110));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
@@ -8346,7 +8319,7 @@ var _default = rowsWithStyleFieldsSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8388,6 +8361,33 @@ var shapesDataColumnSelector = (0, _reselect.createSelector)(function (state) {
   }
 });
 var _default = shapesDataColumnSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _fileDescriptor = _interopRequireDefault(__webpack_require__(65));
+
+var _treeState = _interopRequireDefault(__webpack_require__(59));
+
+function treeFileSelector(state, treeId) {
+  var _treeStateSelector;
+
+  return (0, _fileDescriptor["default"])(state, (_treeStateSelector = (0, _treeState["default"])(state, treeId)) === null || _treeStateSelector === void 0 ? void 0 : _treeStateSelector.file);
+}
+
+var _default = treeFileSelector;
 exports["default"] = _default;
 
 /***/ }),
@@ -11662,7 +11662,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(107));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -12734,7 +12734,7 @@ exports["default"] = void 0;
 
 var _charts = __webpack_require__(162);
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(108));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
@@ -16122,7 +16122,7 @@ var _trees = __webpack_require__(88);
 
 var _rowsByLabel = _interopRequireDefault(__webpack_require__(184));
 
-var _treeFile = _interopRequireDefault(__webpack_require__(105));
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -16416,7 +16416,7 @@ var _bounds2 = _interopRequireDefault(__webpack_require__(198));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(106));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -18743,7 +18743,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(107));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var numberOfSelectedRowsSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -19113,7 +19113,7 @@ var _labelsDataColumn = _interopRequireDefault(__webpack_require__(115));
 
 var _shapableDataFields = _interopRequireDefault(__webpack_require__(341));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(110));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 var _StylesMenuContent = _interopRequireDefault(__webpack_require__(342));
 
@@ -23028,7 +23028,7 @@ var _treeState = _interopRequireDefault(__webpack_require__(59));
 
 var _fullDataset = _interopRequireDefault(__webpack_require__(25));
 
-var _treeFile = _interopRequireDefault(__webpack_require__(105));
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
 var _state = __webpack_require__(3);
 
@@ -23302,7 +23302,7 @@ var _SlicerPaneEditor = _interopRequireDefault(__webpack_require__(406));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(108));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var slicerId = _ref.slicerId;

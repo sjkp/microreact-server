@@ -446,7 +446,7 @@ var _chartData = _interopRequireDefault(__webpack_require__(602));
 
 var _chartSpec = _interopRequireDefault(__webpack_require__(603));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(108));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _state = __webpack_require__(2);
 
@@ -853,7 +853,7 @@ exports["default"] = void 0;
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(108));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
@@ -914,7 +914,7 @@ var _charts = __webpack_require__(162);
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(108));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 

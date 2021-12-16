@@ -23,7 +23,7 @@ var _TreePane = _interopRequireDefault(__webpack_require__(634));
 
 var _isValidTree = _interopRequireDefault(__webpack_require__(201));
 
-var _treeFile = _interopRequireDefault(__webpack_require__(105));
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
@@ -483,7 +483,7 @@ var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(109));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -707,11 +707,11 @@ var _filters = __webpack_require__(50);
 
 var _trees = __webpack_require__(73);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(107));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var _phylocanvasProps = _interopRequireDefault(__webpack_require__(635));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(639));
+var _TreePane = _interopRequireDefault(__webpack_require__(638));
 
 var _ui = __webpack_require__(27);
 
@@ -793,15 +793,15 @@ var _rowsByLabel = _interopRequireDefault(__webpack_require__(184));
 
 var _rowStyles = _interopRequireDefault(__webpack_require__(510));
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(107));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
 var _metadataBlocks = _interopRequireDefault(__webpack_require__(637));
 
-var _treeFile = _interopRequireDefault(__webpack_require__(105));
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
-var _phylocanvasSource = _interopRequireDefault(__webpack_require__(638));
+var _constants = __webpack_require__(12);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -843,7 +843,8 @@ var nodeStylesSelector = (0, _state.createKeyedStateSelector)(function (state, t
         fillColour: rowStyle.colour,
         strokeColour: rowStyle.colour,
         shape: isActive ? rowStyle.shape : noShape,
-        label: rowStyle.label
+        // label: rowStyle.label,
+        label: isActive ? rowStyle.label : _constants.emptyString
       };
     }
   } catch (err) {
@@ -1098,46 +1099,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
-
-var _treeFile = _interopRequireDefault(__webpack_require__(105));
-
-var phylocanvasSourceSelector = (0, _state.createKeyedStateSelector)(function (state, treeId) {
-  var _treeFileSelector;
-
-  return (_treeFileSelector = (0, _treeFile["default"])(state, treeId)) === null || _treeFileSelector === void 0 ? void 0 : _treeFileSelector._content;
-}, function (state, treeId) {
-  return state.trees[treeId];
-}, function (treeFileContent, phylocanvasProps) {
-  var originalSource = phylocanvasProps === null || phylocanvasProps === void 0 ? void 0 : phylocanvasProps.source;
-
-  while ((_originalSource = originalSource) !== null && _originalSource !== void 0 && _originalSource.original) {
-    var _originalSource;
-
-    originalSource = originalSource.original;
-  }
-
-  var source = originalSource === treeFileContent ? phylocanvasProps === null || phylocanvasProps === void 0 ? void 0 : phylocanvasProps.source : treeFileContent;
-  return source;
-});
-var _default = phylocanvasSourceSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 639:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
@@ -1158,19 +1119,19 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _Menu = _interopRequireDefault(__webpack_require__(211));
 
-var _phylocanvas = _interopRequireDefault(__webpack_require__(640));
+var _phylocanvas = _interopRequireDefault(__webpack_require__(639));
 
 var _downloads = __webpack_require__(52);
 
 var _propTypes2 = __webpack_require__(14);
 
-__webpack_require__(642);
+__webpack_require__(641);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(643));
+var _TreeControls = _interopRequireDefault(__webpack_require__(642));
 
-var _TreeZoomControls = _interopRequireDefault(__webpack_require__(653));
+var _TreeZoomControls = _interopRequireDefault(__webpack_require__(652));
 
-var _TreeContextMenu = _interopRequireDefault(__webpack_require__(654));
+var _TreeContextMenu = _interopRequireDefault(__webpack_require__(653));
 
 var _browser = __webpack_require__(19);
 
@@ -1404,7 +1365,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 640:
+/***/ 639:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1439,7 +1400,7 @@ var _phylocanvas = _interopRequireWildcard(__webpack_require__(100));
 
 var _canvasLasso = _interopRequireDefault(__webpack_require__(509));
 
-var _convertState = _interopRequireDefault(__webpack_require__(641));
+var _convertState = _interopRequireDefault(__webpack_require__(640));
 
 var _geometry = __webpack_require__(102);
 
@@ -1752,7 +1713,7 @@ function _default(treePane) {
 
 /***/ }),
 
-/***/ 641:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2337,7 +2298,7 @@ function _default(tree) {
 
 /***/ }),
 
-/***/ 642:
+/***/ 641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2347,7 +2308,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 643:
+/***/ 642:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2366,7 +2327,7 @@ var _ui = __webpack_require__(27);
 
 var _state = __webpack_require__(3);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(644));
+var _TreeControls = _interopRequireDefault(__webpack_require__(643));
 
 var _config = _interopRequireDefault(__webpack_require__(49));
 
@@ -2401,7 +2362,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 644:
+/***/ 643:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2426,21 +2387,21 @@ var _propTypes2 = __webpack_require__(14);
 
 var _Animation = _interopRequireDefault(__webpack_require__(167));
 
-var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(645));
+var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(644));
 
-var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(646));
+var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(645));
 
-var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(647));
+var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(646));
 
 var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
-var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(648));
+var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(647));
 
 var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(118));
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(649));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(648));
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(651));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(650));
 
 var _UiSpeedDial = _interopRequireDefault(__webpack_require__(214));
 
@@ -2528,7 +2489,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 645:
+/***/ 644:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2564,7 +2525,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 646:
+/***/ 645:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2603,7 +2564,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 647:
+/***/ 646:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2666,7 +2627,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 648:
+/***/ 647:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2702,7 +2663,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 649:
+/***/ 648:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2717,7 +2678,7 @@ exports["default"] = void 0;
 
 var _trees = __webpack_require__(73);
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(650));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(649));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
@@ -2771,7 +2732,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 650:
+/***/ 649:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2872,7 +2833,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 651:
+/***/ 650:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2889,7 +2850,7 @@ var _reactRedux = __webpack_require__(96);
 
 var _trees = __webpack_require__(73);
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(652));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(651));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
@@ -2971,7 +2932,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 652:
+/***/ 651:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3092,7 +3053,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 653:
+/***/ 652:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3266,7 +3227,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 654:
+/***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

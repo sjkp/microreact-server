@@ -249,7 +249,7 @@ var _reselect = __webpack_require__(10);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(110));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
 

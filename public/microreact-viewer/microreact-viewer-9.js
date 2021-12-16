@@ -491,7 +491,7 @@ var _filters = __webpack_require__(50);
 
 var _tables = __webpack_require__(75);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(107));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var _sortState = _interopRequireDefault(__webpack_require__(200));
 
