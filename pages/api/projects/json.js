@@ -1,4 +1,5 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
+import logger from "cgps-application-server/logger";
 
 import getUserMiddleware from "cgps-application-server/middleware/get-user";
 
@@ -27,6 +28,8 @@ export default async function (req, res) {
 
   const [ projectId, stateId ] = req.query?.project.split("/");
   const projectModel = await ProjectsService.getProjectDocument(projectId, user);
+
+  logger.info("project access", { project: projectModel.id }, { user, req, res });
 
   // Legacy projects (version 1) may have state documents
   if (projectModel.version === 1 && stateId) {

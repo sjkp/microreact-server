@@ -1,5 +1,6 @@
 import bytes from "bytes";
 import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
+import logger from "cgps-application-server/logger";
 
 import FileStorage from "../../../services/file-storage";
 
@@ -13,7 +14,7 @@ export const config = {
 
 export default async function (req, res) {
   // Only logged in users can save files
-  await requireUserMiddlewarefrom(req, res);
+  const user = await requireUserMiddlewarefrom(req, res);
 
   const fileHash = await FileStorage.storeStream(
     req,
@@ -21,6 +22,8 @@ export default async function (req, res) {
   );
 
   const fileUri = FileStorage.uri(fileHash);
+
+  logger.info("file saved", { fileHash }, { user, req, res });
 
   res.json({
     hash: fileHash,

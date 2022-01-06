@@ -1,5 +1,6 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
 import requireUserMiddleware from "cgps-application-server/middleware/require-user";
+import logger from "cgps-application-server/logger";
 
 import * as ProjectsService from "../../../services/projects";
 
@@ -19,6 +20,8 @@ export default async function (req, res) {
   projectModel.folder = folderDocument._id;
 
   await projectModel.save();
+
+  logger.info("project moved to folder", { project: projectModel.id, folder: folderDocument._id }, { user, req, res });
 
   return res.json(true);
 }

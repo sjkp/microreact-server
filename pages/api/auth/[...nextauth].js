@@ -2,6 +2,7 @@
 
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
+import logger from "cgps-application-server/logger";
 
 import "cgps-application-server/nextjs/auth/with-custom-css";
 
@@ -59,6 +60,7 @@ const options = {
      *                           Return `false` to deny access
      */
     signIn: async (user, account, profile) => {
+      logger.info("user signin", { email: profile?.email || undefined, username: profile?.username || undefined, provider: account?.provider || undefined }, { user });
       return true;
     },
 

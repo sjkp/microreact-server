@@ -1,4 +1,5 @@
 import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
+import logger from "cgps-application-server/logger";
 
 import dataabse from "../../../services/dataabse";
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
@@ -34,6 +35,8 @@ export default async function (req, res) {
   }
 
   await projectModel.saveJson(req.body);
+
+  logger.info("project created", { project: projectModel.id }, { user, req, res });
 
   return res.json({
     isOwner: true,
