@@ -151,4 +151,20 @@ if (serverRuntimeConfig.auth.ldap) {
   );
 }
 
+if (serverRuntimeConfig.auth.openid) {
+  options.providers.push(
+    {
+      ...serverRuntimeConfig.auth.openid,
+      id: "openid",
+      profile(profile) {
+        return {
+          id: profile[serverRuntimeConfig.auth.openid.idAttribute ?? "id"],
+          name: profile[serverRuntimeConfig.auth.openid.nameAttribute ?? "name"],
+          email: profile[serverRuntimeConfig.auth.openid.emailAttribute ?? "email"],
+        };
+      },
+    }
+  );
+}
+
 export default (req, res) => NextAuth(req, res, options);
