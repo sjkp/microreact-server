@@ -20,7 +20,9 @@ WORKDIR /microreact
 # install produciton deps
 RUN npm install --only=production
 
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 
 FROM backend AS frontend
 
@@ -30,7 +32,9 @@ RUN npm install
 # runs webpack build
 RUN npm run build
 
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 
 FROM node:fermium-alpine
 
