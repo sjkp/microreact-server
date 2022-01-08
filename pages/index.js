@@ -194,9 +194,11 @@ export default function Home() {
             />
           </a>
         </p>
+        {/*
         <p className={defaultStyles["cgps-copyright"]}>
           © 2018 Centre for Genomic Pathogen Surveillance
         </p>
+        */}
       </footer>
 
     </div>
