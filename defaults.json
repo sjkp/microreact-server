@@ -2,8 +2,6 @@
   "accessToken": false,
 
   "auth": {
-    "database": "mongodb://localhost:27017/database",
-
     "email": {
       "server": {
         "host": "smtp",
