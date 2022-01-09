@@ -83,7 +83,6 @@ async function getGoogleDriveStream(fileId) {
     },
     { responseType: "stream" },
   );
-  console.log(response.data);
   return { stream: response.data };
 }
 
