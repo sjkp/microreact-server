@@ -1,5 +1,5 @@
 import React from "react";
-import { signin, useSession } from "next-auth/client";
+import { signin, useSession } from "next-auth/react";
 
 import Link from "components/Link";
 
@@ -11,7 +11,8 @@ import styles from "styles/my-projects-link.module.css";
  * rendering, and avoids any flash incorrect content on initial page load.
  **/
 const SignInOrOutLink = () => {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession();
+  const loading = (status === "loading");
 
   const classname = `nojs-show ${!session && loading ? styles.loading : styles.loaded}`;
 

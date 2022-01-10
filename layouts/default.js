@@ -17,7 +17,7 @@ import React from "react";
 import Toolbar from "@material-ui/core/Toolbar";
 import VpnKeyTwoToneIcon from "@material-ui/icons/VpnKeyTwoTone";
 import ContactSupportTwoToneIcon from "@material-ui/icons/ContactSupportTwoTone";
-import { signout, useSession } from "next-auth/client";
+import { signOut, useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 
 import Link from "../components/Link";
@@ -36,7 +36,8 @@ const Feedback = dynamic(
 );
 
 const SignInOrOutLink = () => {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession();
+  const loading = (status === "loading");
 
   if (!loading) {
     if (session) {
@@ -47,7 +48,7 @@ const SignInOrOutLink = () => {
           href="/api/auth/signout"
           onClick={(e) => {
             e.preventDefault();
-            signout({ callbackUrl: "/" });
+            signOut({ callbackUrl: "/" });
           }}
         >
           <ListItemIcon>

@@ -1,4 +1,4 @@
-body > .page > div > :not(.error):first-child::before {
+/* body > .page > div > :not(.error):first-child::before {
   background-image: url("/images/logos/microreact.svg");
   background-repeat: no-repeat;
   background-position: top center;
@@ -11,52 +11,45 @@ body > .page > div > :not(.error):first-child::before {
   font-weight: 400;
   line-height: 1.3333;
   color: var(--color-primary);
-}
-
-body > .page > div.signin > :not(.error):first-child::before {
-  content: "Sign in";
-}
-
-body .page .signin .provider:last-child::after {
-  content: "By signing in, you are agreeing to our cookies policy.";
-  font-size: 12px;
-}
-
-body label[for="input-email-for-email-provider"] {
-  position: relative;
-  top: 40px;
-  left: 16px;
-  z-index: 1;
-  margin-top: -16px;
-}
-
-/* body label[for="input-email-for-email-provider"]::before {
-  content: "Enter an ";
 } */
 
-body input#input-email-for-email-provider {
-  z-index: 2;
-  position: relative;
-}
-body input#input-email-for-email-provider::placeholder {
-  opacity: 0;
-}
-body input#input-email-for-email-provider:placeholder-shown {
-  z-index: 0;
+body > .page .logo {
+  margin-top: 0;
+  margin-bottom: 48px;
 }
 
-body .page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+body > .page .card {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  border: none;
+  padding: 0;
 }
+
+body > .page > div.signin > .card::before {
+  content: "Sign in";
+  position: absolute;
+  width: 100%;
+  top: -40px;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+}
+
+/* body .page .signin .provider:last-child::after {
+  content: "By signing in, you are agreeing to our cookies policy.";
+  font-size: 12px;
+} */
 
 body .page > div {
   min-width: 300px;
   padding: 40px 40px 24px 40px;
   border-radius: 8px;
   border: 1px solid #dadce0;
+}
+
+label[for="input-email-for-email-provider"] {
+  display: none;
 }
 
 body input#input-email-for-email-provider,

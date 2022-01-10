@@ -1,8 +1,13 @@
 /* eslint-disable new-cap */
 
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
+import EmailProvider from "next-auth/providers/email";
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
+import TwitterProvider from "next-auth/providers/twitter";
+import GitHubProvider from "next-auth/providers/github";
 import logger from "cgps-application-server/logger";
+import dbAdapter from "cgps-application-server/nextjs/auth/adapter";
 
 import "cgps-application-server/nextjs/auth/with-custom-css";
 
@@ -16,14 +21,16 @@ const options = {
   ],
 
   // @link https://next-auth.js.org/configuration/databases
-  database: serverRuntimeConfig.mongodb.url,
+  // database: serverRuntimeConfig.mongodb.url,
+  adapter: dbAdapter,
 
   // @link https://next-auth.js.org/configuration/options#session
   session: {
     // Use JSON Web Tokens for session instead of database sessions.
     // This option can be used with or without a database for users/accounts.
     // Note: `jwt` is automatically set to `true` if no database is specified.
-    jwt: true,
+    strategy: "jwt",
+
     // Seconds - How long until an idle session expires and is no longer valid.
     maxAge: 30 * 24 * 60 * 60, // 30 days
     // Seconds - Throttle how frequently to write to database to extend a session.
@@ -59,8 +66,8 @@ const options = {
      * @return {boolean}         Return `true` (or a modified JWT) to allow sign in
      *                           Return `false` to deny access
      */
-    signIn: async (user, account, profile) => {
-      logger.info("user signin", { email: profile?.email || undefined, username: profile?.username || undefined, provider: account?.provider || undefined }, { user });
+    signIn: async ({ user, account, profile, email, credentials }) => {
+      logger.debug("signin", { user, account, profile, email, credentials });
       return true;
     },
 
@@ -71,8 +78,8 @@ const options = {
      *                               JSON Web Token (if not using database sessions)
      * @return {object}              Session that will be returned to the client
      */
-    session: async (session, user) => {
-      session.user.id = user.id;
+    session: async ({ session, token, user }) => {
+      session.user.id = (token || user).id;
       return Promise.resolve(session);
     },
 
@@ -85,7 +92,7 @@ const options = {
      * @param  {boolean} isNewUser True if new user (only available on sign in)
      * @return {object}            JSON Web Token that will be saved
      */
-    jwt: async (token, user, account, profile, isNewUser) => {
+    jwt: async ({ token, user, account, profile, isNewUser }) => {
       const isSignIn = !!user;
       if (isSignIn) {
         token.id = user.id;
@@ -98,7 +105,7 @@ const options = {
      * @param  {string} baseUrl  Default base URL of site (can be used as fallback)
      * @return {string}          URL the client will be redirect to
      */
-    async redirect(url, baseUrl) {
+    async redirect({ url, baseUrl }) {
       if (url.startsWith(baseUrl) || url.startsWith("/")) {
         return url;
       }
@@ -106,7 +113,24 @@ const options = {
         return baseUrl;
       }
     },
+  },
 
+  events: {
+    signIn: ({ user, account, profile, isNewUser, req }) => {
+      logger.info("user signin", { email: profile?.email || undefined, username: profile?.username || undefined, provider: account?.provider || undefined }, { user, req });
+      return true;
+    },
+    signOut({ token, session }) {
+      logger.info("user signout", { token }, {});
+    },
+  },
+
+  // pages: {
+  //   signIn: "/auth/signin",
+  // },
+
+  theme: {
+    logo: "/images/logos/microreact.svg",
   },
 
   // Additional options
@@ -116,55 +140,56 @@ const options = {
 
 if (serverRuntimeConfig.auth.email) {
   options.providers.push(
-    Providers.Email(serverRuntimeConfig.auth.email),
+    EmailProvider(serverRuntimeConfig.auth.email),
   );
 }
 
-if (serverRuntimeConfig.auth.google) {
-  options.providers.push(
-    Providers.Google(serverRuntimeConfig.auth.google)
-  );
-}
+// if (serverRuntimeConfig.auth.google) {
+//   options.providers.push(
+//     GoogleProvider(serverRuntimeConfig.auth.google)
+//   );
+// }
 
-if (serverRuntimeConfig.auth.facebook) {
-  options.providers.push(
-    Providers.Facebook(serverRuntimeConfig.auth.facebook)
-  );
-}
+// if (serverRuntimeConfig.auth.facebook) {
+//   options.providers.push(
+//     FacebookProvider(serverRuntimeConfig.auth.facebook)
+//   );
+// }
 
-if (serverRuntimeConfig.auth.twitter) {
-  options.providers.push(
-    Providers.Twitter(serverRuntimeConfig.auth.twitter)
-  );
-}
+// if (serverRuntimeConfig.auth.twitter) {
+//   options.providers.push(
+//     TwitterProvider(serverRuntimeConfig.auth.twitter)
+//   );
+// }
 
-if (serverRuntimeConfig.auth.github) {
-  options.providers.push(
-    Providers.GitHub(serverRuntimeConfig.auth.github)
-  );
-}
+// if (serverRuntimeConfig.auth.github) {
+//   options.providers.push(
+//     GitHubProvider(serverRuntimeConfig.auth.github)
+//   );
+// }
 
-if (serverRuntimeConfig.auth.ldap) {
-  const createLdapProvider = require("cgps-application-server/nextjs/auth/ldap");
-  options.providers.push(
-    createLdapProvider(serverRuntimeConfig.auth.ldap)
-  );
-}
+// if (serverRuntimeConfig.auth.ldap) {
+//   const createLdapProvider = require("cgps-application-server/nextjs/auth/ldap");
+//   options.providers.push(
+//     createLdapProvider(serverRuntimeConfig.auth.ldap)
+//   );
+// }
 
-if (serverRuntimeConfig.auth.openid) {
+if (serverRuntimeConfig.auth.openidconnect) {
   options.providers.push(
     {
-      ...serverRuntimeConfig.auth.openid,
-      id: "openid",
+      ...serverRuntimeConfig.auth.openidconnect,
+      id: "openidconnect",
       profile(profile) {
+        logger.debug("openidconnect profile to user", { profile });
         return {
-          id: profile[serverRuntimeConfig.auth.openid.idAttribute ?? "id"],
-          name: profile[serverRuntimeConfig.auth.openid.nameAttribute ?? "name"],
-          email: profile[serverRuntimeConfig.auth.openid.emailAttribute ?? "email"],
+          id: profile[serverRuntimeConfig.auth.openidconnect.idAttribute ?? "id"],
+          name: profile[serverRuntimeConfig.auth.openidconnect.nameAttribute ?? "name"],
+          email: profile[serverRuntimeConfig.auth.openidconnect.emailAttribute ?? "email"],
         };
       },
     }
   );
 }
 
-export default (req, res) => NextAuth(req, res, options);
+export default NextAuth(options);

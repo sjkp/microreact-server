@@ -7,7 +7,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Skeleton from "@material-ui/lab/Skeleton";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 
 import AccountPageNav from "../../components/AccountPageNav";
 import UiDataHook from "../../components/UiDataHook";
@@ -33,7 +33,8 @@ export async function getServerSideProps(context) {
 }
 
 function ProfileSection() {
-  const [ session, isLoading ] = useSession();
+  const { data: session, status } = useSession();
+  const isLoading = (status === "loading");
 
   if (isLoading) {
     return (<Skeleton />);
@@ -84,7 +85,8 @@ function ApiSection() {
 }
 
 function DeleteAccountSection() {
-  const [ session, isLoading ] = useSession();
+  const { data: session, status } = useSession();
+  const isLoading = (status === "loading");
 
   if (isLoading) {
     return (<Skeleton />);

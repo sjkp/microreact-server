@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 import Button from "@material-ui/core/Button";
 import CheckCircleTwoToneIcon from "@material-ui/icons/CheckCircleTwoTone";
 import clsx from "clsx";
@@ -28,7 +28,8 @@ import { root as dialogClassname } from "../styles/project-dialog.module.css";
 import { root as rootClassname } from "../styles/project-save-dialog.module.css";
 
 function UpdateProjectButton(props) {
-  const [ session, loading ] = useSession();
+  const { data: session, status } = useSession();
+  const loading = (status === "loading");
 
   if (loading) {
     return null;
@@ -59,7 +60,8 @@ function UpdateProjectButton(props) {
 }
 
 function SaveProjectButton(props) {
-  const [ session, loading ] = useSession();
+  const { data: session, status } = useSession();
+  const loading = (status === "loading");
 
   if (loading) {
     return (

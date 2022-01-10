@@ -3,7 +3,7 @@
 import React from "react";
 import Head from "next/head";
 import getUser from "cgps-application-server/middleware/get-user";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Skeleton from "@material-ui/lab/Skeleton";
@@ -33,7 +33,8 @@ export async function getServerSideProps(context) {
 const emptyIcon = (<StarOutlineOutlinedIcon />);
 
 function PageTitle() {
-  const [ session, isLoading ] = useSession();
+  const { data: session, status } = useSession();
+  const isLoading = (status === "loading");
 
   return (
     <Typography variant="h2">

@@ -1,7 +1,7 @@
 import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 
 import { UiIconButtonMenu } from "microreact-viewer";
 
@@ -11,7 +11,8 @@ import EditOffIcon from "./EditOffIcon.react";
 import UiLoadingBar from "./UiLoadingBar";
 
 function EditOffContent(props) {
-  const [ session, loading ] = useSession();
+  const { data: session, status } = useSession();
+  const loading = (status === "loading");
   const [ isCopying, setCopying ] = useState(false);
 
   if (loading) {

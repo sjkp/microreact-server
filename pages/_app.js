@@ -5,7 +5,7 @@ import "../styles/feedback.css";
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import { Provider as AuthProvider } from "next-auth/client";
+import { SessionProvider as AuthSessionProvider } from "next-auth/react";
 import { SnackbarProvider } from "notistack";
 
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -14,9 +14,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import DefaultLayout from "../layouts/default";
 import muiTheme from "../utils/mui-theme";
 
-export default function MyApp(props) {
-  const { Component, pageProps } = props;
-  const { session } = pageProps;
+export default function App(props) {
+  const { Component } = props;
+  const { session, ...pageProps } = props.pageProps;
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -37,20 +37,20 @@ export default function MyApp(props) {
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
 
-        <AuthProvider session={session}>
+        <AuthSessionProvider session={session}>
           <SnackbarProvider>
             <DefaultLayout>
               <Component {...pageProps} />
             </DefaultLayout>
           </SnackbarProvider>
-        </AuthProvider>
+        </AuthSessionProvider>
 
       </ThemeProvider>
     </React.Fragment>
   );
 }
 
-MyApp.propTypes = {
+App.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };
