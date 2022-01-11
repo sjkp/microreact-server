@@ -144,36 +144,36 @@ if (serverRuntimeConfig.auth.email) {
   );
 }
 
-// if (serverRuntimeConfig.auth.google) {
-//   options.providers.push(
-//     GoogleProvider(serverRuntimeConfig.auth.google)
-//   );
-// }
+if (serverRuntimeConfig.auth.google) {
+  options.providers.push(
+    GoogleProvider(serverRuntimeConfig.auth.google)
+  );
+}
 
-// if (serverRuntimeConfig.auth.facebook) {
-//   options.providers.push(
-//     FacebookProvider(serverRuntimeConfig.auth.facebook)
-//   );
-// }
+if (serverRuntimeConfig.auth.facebook) {
+  options.providers.push(
+    FacebookProvider(serverRuntimeConfig.auth.facebook)
+  );
+}
 
-// if (serverRuntimeConfig.auth.twitter) {
-//   options.providers.push(
-//     TwitterProvider(serverRuntimeConfig.auth.twitter)
-//   );
-// }
+if (serverRuntimeConfig.auth.twitter) {
+  options.providers.push(
+    TwitterProvider(serverRuntimeConfig.auth.twitter)
+  );
+}
 
-// if (serverRuntimeConfig.auth.github) {
-//   options.providers.push(
-//     GitHubProvider(serverRuntimeConfig.auth.github)
-//   );
-// }
+if (serverRuntimeConfig.auth.github) {
+  options.providers.push(
+    GitHubProvider(serverRuntimeConfig.auth.github)
+  );
+}
 
-// if (serverRuntimeConfig.auth.ldap) {
-//   const createLdapProvider = require("cgps-application-server/nextjs/auth/ldap");
-//   options.providers.push(
-//     createLdapProvider(serverRuntimeConfig.auth.ldap)
-//   );
-// }
+if (serverRuntimeConfig.auth.ldap) {
+  const createLdapProvider = require("cgps-application-server/nextjs/auth/ldap");
+  options.providers.push(
+    createLdapProvider(serverRuntimeConfig.auth.ldap)
+  );
+}
 
 if (serverRuntimeConfig.auth.openidconnect) {
   options.providers.push(
