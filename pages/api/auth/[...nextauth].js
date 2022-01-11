@@ -9,7 +9,7 @@ import GitHubProvider from "next-auth/providers/github";
 import logger from "cgps-application-server/logger";
 import dbAdapter from "cgps-application-server/nextjs/auth/adapter";
 
-import "cgps-application-server/nextjs/auth/with-custom-css";
+// import "cgps-application-server/nextjs/auth/with-custom-css";
 
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
 
