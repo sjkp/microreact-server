@@ -16,6 +16,8 @@ import serverRuntimeConfig from "../../../utils/server-runtime-config";
 const options = {
   callbackUrl: "/welcome",
 
+  logger,
+
   // @link https://next-auth.js.org/configuration/providers
   providers: [
   ],
