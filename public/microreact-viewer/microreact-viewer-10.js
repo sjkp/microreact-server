@@ -346,7 +346,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _bounds = _interopRequireDefault(__webpack_require__(198));
+var _bounds = _interopRequireDefault(__webpack_require__(199));
 
 var _fullRangeExtent = _interopRequireDefault(__webpack_require__(528));
 
@@ -405,7 +405,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _timelineState = _interopRequireDefault(__webpack_require__(209));
+var _timelineState = _interopRequireDefault(__webpack_require__(210));
 
 function isValidNetworkSelector(state, timelineId) {
   var timelineState = (0, _timelineState["default"])(state, timelineId);
@@ -1270,7 +1270,7 @@ var _state = __webpack_require__(3);
 
 var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -2004,7 +2004,7 @@ var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _datetime = __webpack_require__(55);
 

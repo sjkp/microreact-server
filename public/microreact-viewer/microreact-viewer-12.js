@@ -92,7 +92,7 @@ var _state = __webpack_require__(3);
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
@@ -1065,7 +1065,7 @@ var _config = _interopRequireDefault(__webpack_require__(49));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
@@ -1263,7 +1263,7 @@ var _constants = __webpack_require__(12);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 

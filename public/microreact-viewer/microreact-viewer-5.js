@@ -2045,7 +2045,7 @@ var _UiToggleSlider = _interopRequireDefault(__webpack_require__(179));
 
 var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
-var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(205));
+var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(206));
 
 var _propTypes2 = __webpack_require__(14);
 

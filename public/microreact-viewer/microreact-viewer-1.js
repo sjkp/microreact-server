@@ -1142,7 +1142,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(101));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 // import activeRowsSelector from "../filters/active-rows";
 // import chartStateSelector from "./chart-state";
@@ -1265,7 +1265,7 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _state = __webpack_require__(2);
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _chartState = _interopRequireDefault(__webpack_require__(51));
 

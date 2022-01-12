@@ -254,7 +254,7 @@ exports.linearGradientImage = linearGradientImage;
 
 var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(458));
 
-var _phylocanvas = __webpack_require__(100);
+var _phylocanvas = __webpack_require__(101);
 
 /* eslint-disable no-lonely-if */
 
@@ -566,7 +566,7 @@ var _text = __webpack_require__(70);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
 
-var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
+var _shapeMapByField = _interopRequireDefault(__webpack_require__(196));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 
@@ -783,8 +783,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
-
 var _reselect = __webpack_require__(10);
 
 var _arrays = __webpack_require__(24);
@@ -793,9 +791,13 @@ var _text = __webpack_require__(70);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
 
+var _uniqueValues = _interopRequireDefault(__webpack_require__(195));
+
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+
 var _selectedRows = _interopRequireDefault(__webpack_require__(170));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -822,35 +824,95 @@ function isSelected(rows, field, value) {
   }
 
   return false;
-}
+} // const coloursLegendEntriesSelector = createSelector(
+//   (state) => activeRowsWithStyleFieldsSelector(state),
+//   (state, field) => dataColumnByFieldSelector(state, field),
+//   (state, field) => colourMapForFieldSelector(state, field),
+//   (state) => selectedRowsSelector(state),
+//   (
+//     { rows },
+//     dataColumn,
+//     colourMap,
+//     selectedRows,
+//   ) => {
+//     const entries = [];
+//     if (colourMap.scale === "discrete") {
+//       for (const [ value, colour ] of colourMap.entries()) {
+//         entries.push({
+//           colour,
+//           value,
+//           label: toText(
+//             dataColumn.dataType,
+//             value,
+//           ),
+//           isSelected: (selectedRows) && isSelected(selectedRows, dataColumn.name, value),
+//         });
+//       }
+//       // order the list of groups by label
+//       entries.sort(sortComparator("label"));
+//     }
+//     else if (colourMap.scale === "binned") {
+//       for (let index = 1; index <= colourMap.numberOfBins; index++) {
+//         const start = colourMap.domain[0] + colourMap.binLength * (index - 1);
+//         const end = colourMap.domain[0] + colourMap.binLength * index;
+//         entries.push({
+//           colour: colourMap.colourGetter(index),
+//           value: [ start, end ],
+//           label: `${toText(dataColumn.dataType, start.toFixed(2))} - ${toText(dataColumn.dataType, end.toFixed(2))}`,
+//         });
+//       }
+//     }
+//     else if (colourMap.scale === "continuous") {
+//       entries.push({
+//         colour: colourMap.range[0],
+//         value: colourMap.domain[0],
+//         label: toText(dataColumn.dataType, colourMap.domain[0]),
+//       });
+//       entries.push({
+//         colour: colourMap.range[1],
+//         value: colourMap.domain[1],
+//         label: toText(dataColumn.dataType, colourMap.domain[1]),
+//       });
+//     }
+//     return {
+//       scale: colourMap.scale,
+//       entries,
+//     };
+//   }
+// );
 
-var coloursLegendEntriesSelector = (0, _reselect.createSelector)(function (state, field) {
-  return (0, _dataColumnByField["default"])(state, field);
-}, function (state, field) {
-  return (0, _colourMapForField["default"])(state, field);
-}, function (state) {
-  return (0, _selectedRows["default"])(state);
-}, function (dataColumn, colourMap, selectedRows) {
+
+function coloursLegendEntriesSelector(state, field) {
+  var colourMap = (0, _colourMapForField["default"])(state, field);
+  var dataColumn = (0, _dataColumnByField["default"])(state, field);
   var entries = [];
 
   if (colourMap.scale === "discrete") {
-    var _iterator2 = _createForOfIteratorHelper(colourMap.entries()),
+    var uniqueValues = new Set();
+    var selectedRows = (0, _selectedRows["default"])(state, field);
+
+    var _activeRowsWithStyleF = (0, _activeRowsWithStyleFields["default"])(state),
+        rows = _activeRowsWithStyleF.rows;
+
+    var _iterator2 = _createForOfIteratorHelper(rows),
         _step2;
 
     try {
       for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var _step2$value = (0, _slicedToArray2["default"])(_step2.value, 2),
-            value = _step2$value[0],
-            colour = _step2$value[1];
+        var row = _step2.value;
+        var value = row[field];
 
-        entries.push({
-          colour: colour,
-          value: value,
-          label: (0, _text.toText)(dataColumn.dataType, value),
-          isSelected: selectedRows && isSelected(selectedRows, dataColumn.name, value)
-        });
-      } // order the list of groups by label
-
+        if (!uniqueValues.has(value)) {
+          var colour = colourMap.get(value);
+          entries.push({
+            colour: colour,
+            value: value,
+            label: (0, _text.toText)(dataColumn.dataType, value),
+            isSelected: selectedRows && isSelected(selectedRows, dataColumn.name, value)
+          });
+          uniqueValues.add(value);
+        }
+      }
     } catch (err) {
       _iterator2.e(err);
     } finally {
@@ -858,34 +920,14 @@ var coloursLegendEntriesSelector = (0, _reselect.createSelector)(function (state
     }
 
     entries.sort((0, _arrays.sortComparator)("label"));
-  } else if (colourMap.scale === "binned") {
-    for (var index = 1; index <= colourMap.numberOfBins; index++) {
-      var start = colourMap.domain[0] + colourMap.binLength * (index - 1);
-      var end = colourMap.domain[0] + colourMap.binLength * index;
-      entries.push({
-        colour: colourMap.colourGetter(index),
-        value: [start, end],
-        label: "".concat((0, _text.toText)(dataColumn.dataType, start.toFixed(2)), " - ").concat((0, _text.toText)(dataColumn.dataType, end.toFixed(2)))
-      });
-    }
-  } else if (colourMap.scale === "continuous") {
-    entries.push({
-      colour: colourMap.range[0],
-      value: colourMap.domain[0],
-      label: (0, _text.toText)(dataColumn.dataType, colourMap.domain[0])
-    });
-    entries.push({
-      colour: colourMap.range[1],
-      value: colourMap.domain[1],
-      label: (0, _text.toText)(dataColumn.dataType, colourMap.domain[1])
-    });
   }
 
   return {
     scale: colourMap.scale,
     entries: entries
   };
-});
+}
+
 var _default = coloursLegendEntriesSelector;
 exports["default"] = _default;
 

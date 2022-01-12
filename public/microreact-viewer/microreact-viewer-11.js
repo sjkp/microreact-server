@@ -21,7 +21,7 @@ var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
 var _TreePane = _interopRequireDefault(__webpack_require__(634));
 
-var _isValidTree = _interopRequireDefault(__webpack_require__(201));
+var _isValidTree = _interopRequireDefault(__webpack_require__(202));
 
 var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
@@ -643,7 +643,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _labelColumn = _interopRequireDefault(__webpack_require__(196));
+var _labelColumn = _interopRequireDefault(__webpack_require__(197));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
@@ -935,7 +935,7 @@ var _rowsByLabel = _interopRequireDefault(__webpack_require__(184));
 
 var _treeState = _interopRequireDefault(__webpack_require__(59));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -1117,7 +1117,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _Menu = _interopRequireDefault(__webpack_require__(211));
+var _Menu = _interopRequireDefault(__webpack_require__(212));
 
 var _phylocanvas = _interopRequireDefault(__webpack_require__(639));
 
@@ -1396,7 +1396,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _phylocanvas = _interopRequireWildcard(__webpack_require__(100));
+var _phylocanvas = _interopRequireWildcard(__webpack_require__(101));
 
 var _canvasLasso = _interopRequireDefault(__webpack_require__(509));
 
@@ -1740,7 +1740,7 @@ var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
-var _phylocanvas = __webpack_require__(100);
+var _phylocanvas = __webpack_require__(101);
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -2403,7 +2403,7 @@ var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(648));
 
 var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(650));
 
-var _UiSpeedDial = _interopRequireDefault(__webpack_require__(214));
+var _UiSpeedDial = _interopRequireDefault(__webpack_require__(215));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -3086,7 +3086,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _ControlCameraRounded = _interopRequireDefault(__webpack_require__(488));
 
-var _phylocanvas = __webpack_require__(100);
+var _phylocanvas = __webpack_require__(101);
 
 var _ZoomControls = _interopRequireDefault(__webpack_require__(180));
 
@@ -3244,15 +3244,15 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ZoomInRounded = _interopRequireDefault(__webpack_require__(215));
+var _ZoomInRounded = _interopRequireDefault(__webpack_require__(216));
 
-var _ZoomOutMapRounded = _interopRequireDefault(__webpack_require__(216));
+var _ZoomOutMapRounded = _interopRequireDefault(__webpack_require__(217));
 
-var _ZoomOutRounded = _interopRequireDefault(__webpack_require__(217));
+var _ZoomOutRounded = _interopRequireDefault(__webpack_require__(218));
 
 var _downloads = __webpack_require__(52);
 
-__webpack_require__(212);
+__webpack_require__(213);
 
 /* eslint-disable react/jsx-no-target-blank */
 var Link = /*#__PURE__*/_react["default"].createElement("div", {
