@@ -16,15 +16,13 @@ import serverRuntimeConfig from "../../../utils/server-runtime-config";
 const options = {
   callbackUrl: "/welcome",
 
+  adapter: dbAdapter,
+
   logger,
 
   // @link https://next-auth.js.org/configuration/providers
   providers: [
   ],
-
-  // @link https://next-auth.js.org/configuration/databases
-  // database: serverRuntimeConfig.mongodb.url,
-  adapter: dbAdapter,
 
   // @link https://next-auth.js.org/configuration/options#session
   session: {
