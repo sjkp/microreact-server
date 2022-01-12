@@ -8,6 +8,7 @@ import TwitterProvider from "next-auth/providers/twitter";
 import GitHubProvider from "next-auth/providers/github";
 import logger from "cgps-application-server/logger";
 import dbAdapter from "cgps-application-server/nextjs/auth/adapter";
+import { boolean } from "boolean";
 
 // import "cgps-application-server/nextjs/auth/with-custom-css";
 
@@ -68,6 +69,11 @@ const options = {
      */
     signIn: async ({ user, account, profile, email, credentials }) => {
       logger.debug("signin", { user, account, profile, email, credentials });
+      if (account.provider === "openidconnect" && Array.isArray(serverRuntimeConfig.auth.openidconnect.checks)) {
+        const ckecks = serverRuntimeConfig.auth.openidconnect.checks;
+        const passed = ckecks.every((x) => boolean(profile[x]));
+        return passed;
+      }
       return true;
     },
 
