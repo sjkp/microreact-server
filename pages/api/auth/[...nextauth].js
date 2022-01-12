@@ -183,7 +183,7 @@ if (serverRuntimeConfig.auth.openidconnect) {
       profile(profile) {
         logger.debug("openidconnect profile to user", { profile });
         return {
-          id: profile[serverRuntimeConfig.auth.openidconnect.idAttribute ?? "id"],
+          id: profile[serverRuntimeConfig.auth.openidconnect.idAttribute ?? "sub"],
           name: profile[serverRuntimeConfig.auth.openidconnect.nameAttribute ?? "name"],
           email: profile[serverRuntimeConfig.auth.openidconnect.emailAttribute ?? "email"],
         };
