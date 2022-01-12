@@ -124,7 +124,6 @@ const options = {
   events: {
     signIn: ({ user, account, profile, isNewUser, req }) => {
       logger.info("user signin", { email: profile?.email || undefined, username: profile?.username || undefined, provider: account?.provider || undefined }, { user, req });
-      return true;
     },
     signOut({ token, session }) {
       logger.info("user signout", { token }, {});
