@@ -18,7 +18,7 @@ const options = {
 
   adapter: dbAdapter,
 
-  logger,
+  // logger,
 
   // @link https://next-auth.js.org/configuration/providers
   providers: [
