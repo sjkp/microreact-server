@@ -17,9 +17,9 @@ var _panes = __webpack_require__(57);
 
 var _state = __webpack_require__(3);
 
-var _ViewsPane = _interopRequireDefault(__webpack_require__(654));
+var _ViewsPane = _interopRequireDefault(__webpack_require__(655));
 
-var _views = __webpack_require__(657);
+var _views = __webpack_require__(658);
 
 var _ui = __webpack_require__(27);
 
@@ -55,6 +55,9 @@ function mapDispatchToProps(dispatch) {
     },
     onResaveView: function onResaveView(view) {
       return dispatch((0, _views.resaveView)(view));
+    },
+    onSetDefaultView: function onSetDefaultView(view) {
+      return dispatch((0, _views.setDefaultView)(view));
     }
   };
 }
@@ -82,7 +85,7 @@ var _filters = __webpack_require__(50);
 
 var _panes = __webpack_require__(57);
 
-var _SelectionPane = _interopRequireDefault(__webpack_require__(658));
+var _SelectionPane = _interopRequireDefault(__webpack_require__(659));
 
 var _constants = __webpack_require__(12);
 
@@ -192,7 +195,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(77));
 
 var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
-__webpack_require__(656);
+__webpack_require__(657);
 
 /* eslint-disable class-methods-use-this */
 function UiEmptyState(props) {
@@ -217,7 +220,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 654:
+/***/ 655:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -262,7 +265,7 @@ var _reactHashchange = _interopRequireDefault(__webpack_require__(493));
 
 var _reactSortableHoc = __webpack_require__(452);
 
-__webpack_require__(655);
+__webpack_require__(656);
 
 var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
 
@@ -303,6 +306,10 @@ var SortableItem = (0, _reactSortableHoc.sortableElement)(function (props) {
     }
   }, "Rename View"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
     onClick: function onClick() {
+      return props.onSetDefaultView(props.item);
+    }
+  }, "Set as Default View"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+    onClick: function onClick() {
       return props.onResaveView(props.item);
     }
   }, "Update View"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
@@ -316,7 +323,7 @@ var SortableItem = (0, _reactSortableHoc.sortableElement)(function (props) {
     }
   }, /*#__PURE__*/_react["default"].createElement("img", {
     src: props.item.meta.image
-  }), /*#__PURE__*/_react["default"].createElement("span", null, props.item.meta.name)));
+  }), /*#__PURE__*/_react["default"].createElement("span", null, props.item.isDefault ? "✅ " : "", props.item.meta.name)));
 });
 SortableItem.displayName = "ViewListItem";
 SortableItem.propTypes = {
@@ -373,7 +380,8 @@ var SortableList = (0, _reactSortableHoc.sortableContainer)(function (props) {
       item: item,
       currentViewId: props.currentViewId,
       onRenameView: props.onRenameView,
-      onResaveView: props.onResaveView // onDownloadView={props.onDownloadView}
+      onResaveView: props.onResaveView,
+      onSetDefaultView: props.onSetDefaultView // onDownloadView={props.onDownloadView}
       ,
       onDeleteView: props.onDeleteView,
       onLoadView: props.onLoadView
@@ -444,6 +452,7 @@ var ViewsPane = /*#__PURE__*/function (_React$PureComponent) {
         onDeleteView: props.onDeleteView,
         onRenameView: _this.handleRenameView,
         onResaveView: props.onResaveView,
+        onSetDefaultView: props.onSetDefaultView,
         onSortEnd: _this.handleSortEnd,
         pressDelay: 640,
         helperContainer: _html.getContainerElement,
@@ -507,16 +516,6 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 655:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 656:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -528,6 +527,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 657:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,6 +552,7 @@ exports.deleteView = deleteView;
 exports.renameView = renameView;
 exports.setViewsList = setViewsList;
 exports.resaveView = resaveView;
+exports.setDefaultView = setDefaultView;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
@@ -638,9 +648,16 @@ function resaveView(view) {
   };
 }
 
+function setDefaultView(viewDocument) {
+  return {
+    type: "MICROREACT VIEWER/SET DEFAULT VIEW",
+    payload: viewDocument
+  };
+}
+
 /***/ }),
 
-/***/ 658:
+/***/ 659:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -681,7 +698,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(77));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
-__webpack_require__(659);
+__webpack_require__(660);
 
 var _drawing = __webpack_require__(172);
 
@@ -693,7 +710,7 @@ var _UiEmptyState = _interopRequireDefault(__webpack_require__(530));
 
 var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
-var _SelectionChart = _interopRequireDefault(__webpack_require__(660));
+var _SelectionChart = _interopRequireDefault(__webpack_require__(661));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
@@ -984,7 +1001,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 659:
+/***/ 660:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -994,7 +1011,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 660:
+/***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1009,9 +1026,9 @@ exports["default"] = void 0;
 
 var _reactVega = __webpack_require__(447);
 
-var _selectionChartSpec = _interopRequireDefault(__webpack_require__(661));
+var _selectionChartSpec = _interopRequireDefault(__webpack_require__(662));
 
-var _selectionChartData = _interopRequireDefault(__webpack_require__(662));
+var _selectionChartData = _interopRequireDefault(__webpack_require__(663));
 
 var _state = __webpack_require__(3);
 
@@ -1042,7 +1059,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 661:
+/***/ 662:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1244,7 +1261,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 662:
+/***/ 663:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

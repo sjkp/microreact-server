@@ -2155,7 +2155,11 @@ function load(payload) {
     var loadMainDocumentAction = dispatch(loadDocument(payload));
 
     if (payload.schema && payload.views) {
-      var currentViewId = (0, _browser.getPageHash)();
+      var _payload$views$find, _payload$views$find$m;
+
+      var currentViewId = (0, _browser.getPageHash)() || ((_payload$views$find = payload.views.find(function (x) {
+        return x.isDefault;
+      })) === null || _payload$views$find === void 0 ? void 0 : (_payload$views$find$m = _payload$views$find.meta) === null || _payload$views$find$m === void 0 ? void 0 : _payload$views$find$m.id);
 
       if (currentViewId) {
         var viewDocument = payload.views.find(function (x) {
@@ -25925,6 +25929,19 @@ var _default = function _default() {
         return (0, _arrays.update)(state, function (item) {
           return item.meta.id === action.payload.meta.id;
         }, action.payload);
+      }
+
+    case "MICROREACT VIEWER/SET DEFAULT VIEW":
+      {
+        return (0, _arrays.update)((0, _arrays.remove)(state, function (item) {
+          return item.isDefault;
+        }, {
+          isDefault: false
+        }), function (item) {
+          return item.meta.id === action.payload.meta.id;
+        }, {
+          isDefault: true
+        });
       }
 
     default:

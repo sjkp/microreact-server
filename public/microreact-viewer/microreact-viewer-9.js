@@ -485,8 +485,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(96);
-
 var _filters = __webpack_require__(50);
 
 var _tables = __webpack_require__(75);
@@ -501,6 +499,10 @@ var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
 var _TablePane = _interopRequireDefault(__webpack_require__(606));
 
+var _fileContent = _interopRequireDefault(__webpack_require__(618));
+
+var _state = __webpack_require__(3);
+
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableId = _ref.tableId;
   var tableState = state.tables[tableId];
@@ -513,7 +515,8 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     selectedIds: selectedIds,
     displayMode: tableState.displayMode,
     columns: tableState.columns,
-    fieldsMap: (0, _dataColumnsByFieldMap["default"])(state)
+    fieldsMap: (0, _dataColumnsByFieldMap["default"])(state),
+    dataFileContent: (0, _fileContent["default"])(state, tableState === null || tableState === void 0 ? void 0 : tableState.file)
   };
 };
 
@@ -538,9 +541,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
   };
 };
 
-var _default = (0, _reactRedux.connect)(function (state, props) {
-  return mapStateToProps(state.present, props);
-}, mapDispatchToProps)(_TablePane["default"]);
+var _default = (0, _state.connectToPresentState)(_TablePane["default"], mapStateToProps, mapDispatchToProps);
 
 exports["default"] = _default;
 
@@ -663,8 +664,11 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
       return props.columns;
     }, function (props) {
       return props.fieldsMap;
-    }, function (columns, fieldsMap) {
+    }, function (props) {
+      return props.dataFileContent;
+    }, function (columns, fieldsMap, dataFileContent) {
       var tableColumns = [];
+      var fields = new Set();
 
       var _iterator = _createForOfIteratorHelper(columns),
           _step;
@@ -672,24 +676,26 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var col = _step.value;
-          var dataColumn = fieldsMap.get(col.field);
 
-          if (dataColumn) {
+          var _dataColumn = fieldsMap.get(col.field);
+
+          if (_dataColumn) {
+            fields.add(col.field);
             tableColumns.push({
-              dataColumn: dataColumn,
+              dataColumn: _dataColumn,
               dataKey: col.field,
-              dataType: dataColumn.dataType,
-              field: dataColumn.name,
+              dataType: _dataColumn.dataType,
+              field: _dataColumn.name,
               frozen: col.fixed,
               hidden: col.hidden || false,
               key: "data-".concat(col.field),
               minWidth: 40,
               resizable: true,
               sort: col.sort,
-              group: dataColumn.group,
+              group: _dataColumn.group,
               sortable: true,
               tableId: _this.props.tableId,
-              title: col.label || dataColumn.label || dataColumn.name,
+              title: col.label || _dataColumn.label || _dataColumn.name,
               width: col.width || 100,
               dataGetter: dataGetter
             });
@@ -699,6 +705,40 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
         _iterator.e(err);
       } finally {
         _iterator.f();
+      }
+
+      if (dataFileContent !== null && dataFileContent !== void 0 && dataFileContent.columns) {
+        var _iterator2 = _createForOfIteratorHelper(dataFileContent.columns),
+            _step2;
+
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var dataColumn = _step2.value;
+
+            if (!fields.has(dataColumn.name)) {
+              tableColumns.push({
+                dataColumn: dataColumn,
+                dataKey: dataColumn.name,
+                dataType: dataColumn.dataType,
+                field: dataColumn.name,
+                hidden: false,
+                key: "data-".concat(dataColumn.name),
+                minWidth: 40,
+                resizable: true,
+                group: dataColumn.group,
+                sortable: true,
+                tableId: _this.props.tableId,
+                title: dataColumn.label || dataColumn.name,
+                width: 100,
+                dataGetter: dataGetter
+              });
+            }
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
       }
 
       return tableColumns;
@@ -1845,6 +1885,28 @@ var visibleFieldsSelector = (0, _state.createKeyedStateSelector)(function (state
   return visibleColumns;
 });
 var _default = visibleFieldsSelector;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 618:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var fileContentSelector = function fileContentSelector(state, fileId) {
+  var _state$files$fileId;
+
+  return (_state$files$fileId = state.files[fileId]) === null || _state$files$fileId === void 0 ? void 0 : _state$files$fileId._content;
+};
+
+var _default = fileContentSelector;
 exports["default"] = _default;
 
 /***/ })
