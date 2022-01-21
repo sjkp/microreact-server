@@ -14,8 +14,9 @@ function getServerRuntimeConfig() {
 
   const serverRuntimeConfig = require("./defaults.json");
 
-  if (fs.existsSync(path.resolve(__dirname, "config.json"))) {
-    return mergeOptions(serverRuntimeConfig, require("./config.json"));
+  const configFilePath = process.env.CONFIG_FILE || path.resolve(__dirname, "config.json");
+  if (fs.existsSync(configFilePath)) {
+    return mergeOptions(serverRuntimeConfig, require(configFilePath));
   }
   else {
     return serverRuntimeConfig;
