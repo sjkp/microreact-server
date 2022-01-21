@@ -13,17 +13,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(96);
+var _reactRedux = __webpack_require__(95);
 
 var _ChartPane = _interopRequireDefault(__webpack_require__(531));
 
-var _charts = __webpack_require__(187);
+var _charts = __webpack_require__(186);
 
 var _chartData = _interopRequireDefault(__webpack_require__(536));
 
 var _vegaSpec = _interopRequireDefault(__webpack_require__(537));
 
-var _chartType = _interopRequireDefault(__webpack_require__(175));
+var _chartType = _interopRequireDefault(__webpack_require__(174));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var chartId = _ref.chartId;
@@ -108,7 +108,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var seriesStackingSelector = function seriesStackingSelector(state, chartId) {
   var chartState = (0, _chartState["default"])(state, chartId);
@@ -138,7 +138,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var mainAxisEncodingSelector = function mainAxisEncodingSelector(state, chartId) {
   var chartState = (0, _chartState["default"])(state, chartId);
@@ -227,9 +227,9 @@ var _ChartControls = _interopRequireDefault(__webpack_require__(533));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _charts = __webpack_require__(162);
+var _charts = __webpack_require__(161);
 
-var _downloads = __webpack_require__(52);
+var _downloads = __webpack_require__(53);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -433,9 +433,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _charts = __webpack_require__(187);
+var _charts = __webpack_require__(186);
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
@@ -449,7 +449,7 @@ var _ChartControls = _interopRequireDefault(__webpack_require__(535));
 
 var _mainAxisEncoding = _interopRequireDefault(__webpack_require__(518));
 
-var _seriesField = _interopRequireDefault(__webpack_require__(176));
+var _seriesField = _interopRequireDefault(__webpack_require__(175));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var chartId = _ref.chartId;
@@ -606,13 +606,13 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
 var _EditRounded = _interopRequireDefault(__webpack_require__(451));
 
 var _IconButton = _interopRequireDefault(__webpack_require__(21));
 
-var _Menu = _interopRequireDefault(__webpack_require__(164));
+var _Menu = _interopRequireDefault(__webpack_require__(163));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
@@ -620,19 +620,19 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes2 = __webpack_require__(14);
 
-var Downloads = _interopRequireWildcard(__webpack_require__(52));
+var Downloads = _interopRequireWildcard(__webpack_require__(53));
 
-var Charts = _interopRequireWildcard(__webpack_require__(162));
+var Charts = _interopRequireWildcard(__webpack_require__(161));
 
-var _Animation = _interopRequireDefault(__webpack_require__(167));
+var _Animation = _interopRequireDefault(__webpack_require__(166));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
@@ -1142,7 +1142,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
 
 // import activeRowsSelector from "../filters/active-rows";
 // import chartStateSelector from "./chart-state";
@@ -1184,13 +1184,13 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(162);
+var _charts = __webpack_require__(161);
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var _defaultSpec = _interopRequireDefault(__webpack_require__(538));
 
-var _chartType = _interopRequireDefault(__webpack_require__(175));
+var _chartType = _interopRequireDefault(__webpack_require__(174));
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -1265,17 +1265,17 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _state = __webpack_require__(2);
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var _seriesStacking = _interopRequireDefault(__webpack_require__(517));
 
-var _xAxisField = _interopRequireDefault(__webpack_require__(188));
+var _xAxisField = _interopRequireDefault(__webpack_require__(187));
 
-var _yAxisField = _interopRequireDefault(__webpack_require__(189));
+var _yAxisField = _interopRequireDefault(__webpack_require__(188));
 
-var _seriesField = _interopRequireDefault(__webpack_require__(176));
+var _seriesField = _interopRequireDefault(__webpack_require__(175));
 
 var _xAxisType = _interopRequireDefault(__webpack_require__(539));
 
@@ -1283,13 +1283,13 @@ var _yAxisType = _interopRequireDefault(__webpack_require__(540));
 
 var _seriesType = _interopRequireDefault(__webpack_require__(541));
 
-var _chartType = _interopRequireDefault(__webpack_require__(175));
+var _chartType = _interopRequireDefault(__webpack_require__(174));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _filteredIds = _interopRequireDefault(__webpack_require__(58));
+var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
 var _yAxisMode = _interopRequireDefault(__webpack_require__(542));
 
@@ -1762,11 +1762,11 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(162);
+var _charts = __webpack_require__(161);
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
-var _xAxisField = _interopRequireDefault(__webpack_require__(188));
+var _xAxisField = _interopRequireDefault(__webpack_require__(187));
 
 var xAxisTypeSelector = (0, _state.createKeyedStateSelector)(function (state, chartId) {
   return (0, _xAxisField["default"])(state, chartId);
@@ -1799,11 +1799,11 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(162);
+var _charts = __webpack_require__(161);
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
-var _yAxisField = _interopRequireDefault(__webpack_require__(189));
+var _yAxisField = _interopRequireDefault(__webpack_require__(188));
 
 var yAxisTypeSelector = (0, _state.createKeyedStateSelector)(function (state, chartId) {
   return (0, _yAxisField["default"])(state, chartId);
@@ -1836,11 +1836,11 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _charts = __webpack_require__(162);
+var _charts = __webpack_require__(161);
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
-var _seriesField = _interopRequireDefault(__webpack_require__(176));
+var _seriesField = _interopRequireDefault(__webpack_require__(175));
 
 var seriesTypeSelector = (0, _state.createKeyedStateSelector)(function (state, chartId) {
   return (0, _seriesField["default"])(state, chartId);
@@ -1871,7 +1871,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var yAxisModeSelector = function yAxisModeSelector(state, chartId) {
   var chartState = (0, _chartState["default"])(state, chartId);
@@ -1918,7 +1918,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _chartState = _interopRequireDefault(__webpack_require__(51));
+var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var xAxisModeSelector = function xAxisModeSelector(state, chartId) {
   var _chartState$xAxisMode;

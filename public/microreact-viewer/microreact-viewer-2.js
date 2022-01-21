@@ -13,11 +13,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(96);
+var _reactRedux = __webpack_require__(95);
 
-var _reduxUndo = __webpack_require__(114);
+var _reduxUndo = __webpack_require__(113);
 
-var _panes = __webpack_require__(57);
+var _panes = __webpack_require__(58);
 
 var _HistoryPane = _interopRequireDefault(__webpack_require__(544));
 
@@ -136,11 +136,11 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _List = _interopRequireDefault(__webpack_require__(122));
+var _List = _interopRequireDefault(__webpack_require__(121));
 
-var _ListItem = _interopRequireDefault(__webpack_require__(61));
+var _ListItem = _interopRequireDefault(__webpack_require__(62));
 
-var _ListItemIcon = _interopRequireDefault(__webpack_require__(214));
+var _ListItemIcon = _interopRequireDefault(__webpack_require__(213));
 
 var _ListItemText = _interopRequireDefault(__webpack_require__(84));
 
@@ -150,17 +150,17 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _RedoRounded = _interopRequireDefault(__webpack_require__(455));
 
-var _UndoRounded = _interopRequireDefault(__webpack_require__(204));
+var _UndoRounded = _interopRequireDefault(__webpack_require__(203));
 
 var _reselect = __webpack_require__(10);
 
 __webpack_require__(545);
 
-var _shortcuts = __webpack_require__(191);
+var _shortcuts = __webpack_require__(190);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(55));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(176));
 
 var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 

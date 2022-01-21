@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _panes = __webpack_require__(57);
+var _panes = __webpack_require__(58);
 
 var _state = __webpack_require__(3);
 
@@ -23,7 +23,7 @@ var _views = __webpack_require__(658);
 
 var _ui = __webpack_require__(27);
 
-var _config = _interopRequireDefault(__webpack_require__(49));
+var _config = _interopRequireDefault(__webpack_require__(50));
 
 function mapStateToProps(state) {
   return {
@@ -81,23 +81,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
-var _panes = __webpack_require__(57);
+var _panes = __webpack_require__(58);
 
 var _SelectionPane = _interopRequireDefault(__webpack_require__(659));
 
 var _constants = __webpack_require__(12);
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
 var _state = __webpack_require__(3);
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
 
 function mapStateToProps(state) {
   var _selectedRowsSelector;
@@ -255,7 +255,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _AddCircleTwoTone = _interopRequireDefault(__webpack_require__(490));
 
-var _CircularProgress = _interopRequireDefault(__webpack_require__(192));
+var _CircularProgress = _interopRequireDefault(__webpack_require__(191));
 
 var _ViewCompact = _interopRequireDefault(__webpack_require__(491));
 
@@ -271,13 +271,13 @@ var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
 
 var _UiEmptyState = _interopRequireDefault(__webpack_require__(530));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(176));
 
 var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
 var _arrays = __webpack_require__(24);
 
@@ -700,7 +700,7 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 __webpack_require__(660);
 
-var _drawing = __webpack_require__(172);
+var _drawing = __webpack_require__(171);
 
 var _ColoursLegend = _interopRequireDefault(__webpack_require__(522));
 
@@ -1076,15 +1076,15 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _reselect = __webpack_require__(10);
 
-var _charts = __webpack_require__(162);
+var _charts = __webpack_require__(161);
 
-var _config = _interopRequireDefault(__webpack_require__(49));
+var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -1278,11 +1278,11 @@ var _reselect = __webpack_require__(10);
 
 var _constants = __webpack_require__(12);
 
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
 var selectionChartDataSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedRows["default"])(state);

@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(96);
+var _reactRedux = __webpack_require__(95);
 
 var _ui = __webpack_require__(27);
 
@@ -74,9 +74,9 @@ __webpack_require__(499);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(55));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(166));
+var _FileLoader = _interopRequireDefault(__webpack_require__(165));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -156,11 +156,11 @@ var _text = __webpack_require__(70);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _filteredFieldIds = _interopRequireDefault(__webpack_require__(186));
+var _filteredFieldIds = _interopRequireDefault(__webpack_require__(185));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _filteredNonDataIds = _interopRequireDefault(__webpack_require__(183));
+var _filteredNonDataIds = _interopRequireDefault(__webpack_require__(182));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -263,9 +263,9 @@ exports["default"] = void 0;
 
 var _filterableValues = _interopRequireDefault(__webpack_require__(505));
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
-var _dataFieldFilter = _interopRequireDefault(__webpack_require__(169));
+var _dataFieldFilter = _interopRequireDefault(__webpack_require__(168));
 
 var _state = __webpack_require__(2);
 
@@ -315,13 +315,13 @@ var _Button = _interopRequireDefault(__webpack_require__(29));
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(170));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
 
 var _constants = __webpack_require__(12);
 
@@ -398,11 +398,11 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
 
-var _UiSelectList = _interopRequireDefault(__webpack_require__(171));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(170));
 
 __webpack_require__(514);
 
@@ -485,15 +485,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
 var _tables = __webpack_require__(75);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
 
-var _sortState = _interopRequireDefault(__webpack_require__(201));
+var _sortState = _interopRequireDefault(__webpack_require__(200));
 
-var _tableData = _interopRequireDefault(__webpack_require__(200));
+var _tableData = _interopRequireDefault(__webpack_require__(199));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -1065,7 +1065,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _dataFieldFilter = _interopRequireDefault(__webpack_require__(169));
+var _dataFieldFilter = _interopRequireDefault(__webpack_require__(168));
 
 var _state = __webpack_require__(2);
 
@@ -1113,7 +1113,7 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-var _FilterListRounded = _interopRequireDefault(__webpack_require__(205));
+var _FilterListRounded = _interopRequireDefault(__webpack_require__(204));
 
 var _IconButton = _interopRequireDefault(__webpack_require__(21));
 
@@ -1217,9 +1217,9 @@ var _tables = __webpack_require__(75);
 
 var _filterableValues = _interopRequireDefault(__webpack_require__(505));
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
-var _dataFieldFilter = _interopRequireDefault(__webpack_require__(169));
+var _dataFieldFilter = _interopRequireDefault(__webpack_require__(168));
 
 var _state = __webpack_require__(2);
 
@@ -1308,15 +1308,15 @@ var _Typography = _interopRequireDefault(__webpack_require__(77));
 
 var _PlayArrow = _interopRequireDefault(__webpack_require__(477));
 
-var _TextField = _interopRequireDefault(__webpack_require__(60));
+var _TextField = _interopRequireDefault(__webpack_require__(61));
 
 var _MenuItem = _interopRequireDefault(__webpack_require__(80));
 
-var _ToggleButton = _interopRequireDefault(__webpack_require__(207));
+var _ToggleButton = _interopRequireDefault(__webpack_require__(206));
 
-var _ToggleButtonGroup = _interopRequireDefault(__webpack_require__(208));
+var _ToggleButtonGroup = _interopRequireDefault(__webpack_require__(207));
 
-var _js = __webpack_require__(119);
+var _js = __webpack_require__(118);
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
@@ -1652,7 +1652,7 @@ exports["default"] = SortByAlphaInverseRoundedIcon;
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _SvgIcon = _interopRequireDefault(__webpack_require__(53));
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
 
 function SortByAlphaInverseRoundedIcon(props) {
   return /*#__PURE__*/_react["default"].createElement(_SvgIcon["default"], props, /*#__PURE__*/_react["default"].createElement("path", {
@@ -1681,7 +1681,7 @@ var _ui = __webpack_require__(27);
 
 var _TableControls = _interopRequireDefault(__webpack_require__(616));
 
-var _config = _interopRequireDefault(__webpack_require__(49));
+var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(20));
 
@@ -1749,23 +1749,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
-var _Menu = _interopRequireDefault(__webpack_require__(164));
+var _Menu = _interopRequireDefault(__webpack_require__(163));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Animation = _interopRequireDefault(__webpack_require__(167));
+var _Animation = _interopRequireDefault(__webpack_require__(166));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
 
 var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(513));
 

@@ -254,7 +254,7 @@ exports.linearGradientImage = linearGradientImage;
 
 var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(458));
 
-var _phylocanvas = __webpack_require__(101);
+var _phylocanvas = __webpack_require__(100);
 
 /* eslint-disable no-lonely-if */
 
@@ -432,7 +432,7 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
 var _ShapesLegend = _interopRequireDefault(__webpack_require__(520));
 
@@ -566,9 +566,9 @@ var _text = __webpack_require__(70);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
 
-var _shapeMapByField = _interopRequireDefault(__webpack_require__(196));
+var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -662,7 +662,7 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
 var _ColoursLegend = _interopRequireDefault(__webpack_require__(522));
 
@@ -791,13 +791,13 @@ var _text = __webpack_require__(70);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
 
-var _uniqueValues = _interopRequireDefault(__webpack_require__(195));
+var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 

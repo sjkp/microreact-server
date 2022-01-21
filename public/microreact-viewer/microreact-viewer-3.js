@@ -13,9 +13,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
-var _panes = __webpack_require__(57);
+var _panes = __webpack_require__(58);
 
 var _styles = __webpack_require__(82);
 
@@ -83,9 +83,9 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _clsx = _interopRequireDefault(__webpack_require__(120));
+var _clsx = _interopRequireDefault(__webpack_require__(119));
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
 var _htmlsvg = _interopRequireDefault(__webpack_require__(457));
 
@@ -99,7 +99,7 @@ __webpack_require__(508);
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(177));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(176));
 
 var _constants = __webpack_require__(12);
 
@@ -107,7 +107,7 @@ var _LegendsList = _interopRequireDefault(__webpack_require__(519));
 
 var _html = __webpack_require__(35);
 
-var _downloads = __webpack_require__(52);
+var _downloads = __webpack_require__(53);
 
 var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
@@ -247,9 +247,9 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(56));
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
 
 var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
 
@@ -407,7 +407,7 @@ exports["default"] = void 0;
 
 var _constants = __webpack_require__(12);
 
-var _treeState = _interopRequireDefault(__webpack_require__(59));
+var _treeState = _interopRequireDefault(__webpack_require__(60));
 
 var metadataFieldsSelector = function metadataFieldsSelector(state, treeId) {
   return (0, _treeState["default"])(state, treeId).blocks || _constants.emptyArray;

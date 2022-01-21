@@ -21,7 +21,7 @@ var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
 var _NetworkPane = _interopRequireDefault(__webpack_require__(581));
 
-var _isValidNetwork = _interopRequireDefault(__webpack_require__(203));
+var _isValidNetwork = _interopRequireDefault(__webpack_require__(202));
 
 var _networkFile = _interopRequireDefault(__webpack_require__(79));
 
@@ -75,9 +75,9 @@ __webpack_require__(499);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _PaneIcon = _interopRequireDefault(__webpack_require__(54));
+var _PaneIcon = _interopRequireDefault(__webpack_require__(55));
 
-var _FileLoader = _interopRequireDefault(__webpack_require__(166));
+var _FileLoader = _interopRequireDefault(__webpack_require__(165));
 
 var _excluded = ["PaneComponent", "isEmpty", "file"];
 
@@ -161,7 +161,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _SvgIcon = _interopRequireDefault(__webpack_require__(53));
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
 
 var _excluded = ["active"];
 
@@ -232,7 +232,7 @@ exports["default"] = exports.anyPostfix = void 0;
 
 var _state = __webpack_require__(2);
 
-var _baseGraph = _interopRequireDefault(__webpack_require__(173));
+var _baseGraph = _interopRequireDefault(__webpack_require__(172));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -308,7 +308,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = canvasLasso;
 
-var _geometry = __webpack_require__(102);
+var _geometry = __webpack_require__(101);
 
 /* eslint-disable prefer-object-spread */
 
@@ -519,7 +519,7 @@ var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(107));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -594,11 +594,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(96);
+var _reactRedux = __webpack_require__(95);
 
 var _NetworkPane = _interopRequireDefault(__webpack_require__(582));
 
-var _filters = __webpack_require__(50);
+var _filters = __webpack_require__(51);
 
 var _networks = __webpack_require__(78);
 
@@ -695,11 +695,11 @@ var _lasso = _interopRequireDefault(__webpack_require__(583));
 
 var _renderers = __webpack_require__(585);
 
-var _downloads = __webpack_require__(52);
+var _downloads = __webpack_require__(53);
 
-var _networks = __webpack_require__(209);
+var _networks = __webpack_require__(208);
 
-var _ZoomControls = _interopRequireDefault(__webpack_require__(180));
+var _ZoomControls = _interopRequireDefault(__webpack_require__(179));
 
 var _NetworkControls = _interopRequireDefault(__webpack_require__(586));
 
@@ -1344,7 +1344,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.edgeRenderer = exports.nodeRenderer = void 0;
 
-var _drawing = __webpack_require__(172);
+var _drawing = __webpack_require__(171);
 
 var _defaults = _interopRequireDefault(__webpack_require__(41));
 
@@ -1442,7 +1442,7 @@ var _edgeLineStyleAttributes = _interopRequireDefault(__webpack_require__(590));
 
 var _edgeLineWidthAttributes = _interopRequireDefault(__webpack_require__(591));
 
-var _config = _interopRequireDefault(__webpack_require__(49));
+var _config = _interopRequireDefault(__webpack_require__(50));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var networkId = _ref.networkId;
@@ -1528,23 +1528,23 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _ShuffleRounded = _interopRequireDefault(__webpack_require__(463));
 
-var _Slider = _interopRequireDefault(__webpack_require__(113));
+var _Slider = _interopRequireDefault(__webpack_require__(112));
 
-var _Menu = _interopRequireDefault(__webpack_require__(164));
+var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _Divider = _interopRequireDefault(__webpack_require__(96));
 
-var _Animation = _interopRequireDefault(__webpack_require__(167));
+var _Animation = _interopRequireDefault(__webpack_require__(166));
 
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(165));
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
 var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(163));
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
 var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
 
-var _UiFieldsList = _interopRequireDefault(__webpack_require__(112));
+var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -1839,17 +1839,17 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _state = __webpack_require__(2);
 
-var _selectedIdsSet = _interopRequireDefault(__webpack_require__(174));
+var _selectedIdsSet = _interopRequireDefault(__webpack_require__(173));
 
-var _filteredIds = _interopRequireDefault(__webpack_require__(58));
+var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
-var _baseGraph = _interopRequireDefault(__webpack_require__(173));
+var _baseGraph = _interopRequireDefault(__webpack_require__(172));
 
 var _edgeStyles = _interopRequireDefault(__webpack_require__(593));
 
-var _layout = _interopRequireDefault(__webpack_require__(185));
+var _layout = _interopRequireDefault(__webpack_require__(184));
 
-var _rowsByNodeId = _interopRequireDefault(__webpack_require__(198));
+var _rowsByNodeId = _interopRequireDefault(__webpack_require__(197));
 
 var _rowStyles = _interopRequireDefault(__webpack_require__(510));
 
@@ -1966,7 +1966,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _baseGraph = _interopRequireDefault(__webpack_require__(173));
+var _baseGraph = _interopRequireDefault(__webpack_require__(172));
 
 var _defaults = _interopRequireDefault(__webpack_require__(41));
 
@@ -2035,7 +2035,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _layout = _interopRequireDefault(__webpack_require__(185));
+var _layout = _interopRequireDefault(__webpack_require__(184));
 
 var hasLayoutSelector = function hasLayoutSelector(state, networkId) {
   return (0, _layout["default"])(state, networkId) !== null;
