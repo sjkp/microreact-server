@@ -12759,12 +12759,16 @@ var shapeMapByFieldSelector = (0, _state.createKeyedStateSelector)(function (sta
 }, function (state) {
   return (0, _shapePalettes["default"])(state);
 }, function (dataColumn, shapePalettes) {
-  if (dataColumn && dataColumn.shapePalette) {
-    var palette = shapePalettes.find(function (x) {
-      return x.name === dataColumn.shapePalette;
-    });
-    var shapesMap = new Map(palette.entries);
-    return shapesMap;
+  if (dataColumn) {
+    if (dataColumn.shapePalette) {
+      var palette = shapePalettes.find(function (x) {
+        return x.name === dataColumn.shapePalette;
+      });
+      var shapesMap = new Map(palette.entries);
+      return shapesMap;
+    } else {
+      return new Map();
+    }
   } else {
     return undefined;
   }
