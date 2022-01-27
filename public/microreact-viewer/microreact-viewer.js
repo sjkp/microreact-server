@@ -814,7 +814,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -885,12 +885,95 @@ exports["default"] = _default;
 
 /***/ }),
 /* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _reselect = __webpack_require__(10);
+
+var _fullDataset = _interopRequireDefault(__webpack_require__(25));
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var groupSeparator = "::";
+var dataColumnsSelector = (0, _reselect.createSelector)(function (state) {
+  return (0, _fullDataset["default"])(state);
+}, function (dataset) {
+  var columns = [];
+
+  if (dataset !== null && dataset !== void 0 && dataset.columns) {
+    var _iterator = _createForOfIteratorHelper(dataset.columns),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var item = _step.value;
+        var rawDataType = item.type === "date" || item.type === "timestamp" ? "date" : item.type === "integer" || item.type === "real" || item.type === "percent" || item.type === "currency" ? "number" : "text";
+        var dataType = item.userDataType || rawDataType;
+        var normalisedName = item.name.trim().toLowerCase();
+        var label = item.name;
+        var group = null;
+
+        if (item.label) {
+          label = item.label;
+        } else if (item.name.toLowerCase().endsWith("__autocolour")) {
+          label = item.name.substring(0, item.name.length - 12);
+        } else if (item.name.toLowerCase().endsWith("__autocolor")) {
+          label = item.name.substring(0, item.name.length - 11);
+        }
+
+        if (label.includes(groupSeparator)) {
+          var strings = label.split(groupSeparator);
+          group = strings[0];
+          label = strings[1];
+        }
+
+        columns.push({
+          label: label,
+          group: group,
+          name: item.name,
+          format: item.format,
+          normalised: normalisedName,
+          dataType: dataType,
+          rawDataType: rawDataType,
+          isNumeric: dataType === "number",
+          colourPalette: item.colourPalette,
+          shapePalette: item.shapePalette,
+          urlField: item.urlField
+        });
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
+
+  return columns;
+});
+var _default = dataColumnsSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/toConsumableArray");
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -985,89 +1068,6 @@ function setPageHash(id, title) {
 }
 
 /***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reselect = __webpack_require__(10);
-
-var _fullDataset = _interopRequireDefault(__webpack_require__(25));
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var groupSeparator = "::";
-var dataColumnsSelector = (0, _reselect.createSelector)(function (state) {
-  return (0, _fullDataset["default"])(state);
-}, function (dataset) {
-  var columns = [];
-
-  if (dataset !== null && dataset !== void 0 && dataset.columns) {
-    var _iterator = _createForOfIteratorHelper(dataset.columns),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var item = _step.value;
-        var rawDataType = item.type === "date" || item.type === "timestamp" ? "date" : item.type === "integer" || item.type === "real" || item.type === "percent" || item.type === "currency" ? "number" : "text";
-        var dataType = item.userDataType || rawDataType;
-        var normalisedName = item.name.trim().toLowerCase();
-        var label = item.name;
-        var group = null;
-
-        if (item.label) {
-          label = item.label;
-        } else if (item.name.toLowerCase().endsWith("__autocolour")) {
-          label = item.name.substring(0, item.name.length - 12);
-        } else if (item.name.toLowerCase().endsWith("__autocolor")) {
-          label = item.name.substring(0, item.name.length - 11);
-        }
-
-        if (label.includes(groupSeparator)) {
-          var strings = label.split(groupSeparator);
-          group = strings[0];
-          label = strings[1];
-        }
-
-        columns.push({
-          label: label,
-          group: group,
-          name: item.name,
-          format: item.format,
-          normalised: normalisedName,
-          dataType: dataType,
-          rawDataType: rawDataType,
-          isNumeric: dataType === "number",
-          colourPalette: item.colourPalette,
-          shapePalette: item.shapePalette,
-          urlField: item.urlField
-        });
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-  }
-
-  return columns;
-});
-var _default = dataColumnsSelector;
-exports["default"] = _default;
-
-/***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
@@ -1111,7 +1111,7 @@ exports.update = update;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
@@ -1625,7 +1625,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
 
@@ -1671,7 +1671,7 @@ var _isValidNetwork = _interopRequireDefault(__webpack_require__(202));
 
 var _constants = __webpack_require__(12);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var _panes = __webpack_require__(68);
 
@@ -3946,7 +3946,7 @@ var _html = __webpack_require__(35);
 
 var _constants = __webpack_require__(12);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -4907,7 +4907,7 @@ var _reselect = __webpack_require__(10);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _idDataField = _interopRequireDefault(__webpack_require__(128));
 
@@ -5282,7 +5282,7 @@ exports.createBasicDataset = createBasicDataset;
 exports.createFullDataset = createFullDataset;
 exports.mergeBasicDatasets = mergeBasicDatasets;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _arrayJoin = __webpack_require__(221);
 
@@ -5524,7 +5524,7 @@ exports.addMissingPaneTabs = addMissingPaneTabs;
 
 var _flexlayoutReact = _interopRequireDefault(__webpack_require__(90));
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -8206,7 +8206,7 @@ var _reselect = __webpack_require__(10);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -10161,7 +10161,7 @@ exports.vegaEditorSpecToDataUrl = vegaEditorSpecToDataUrl;
 
 var _regenerator = _interopRequireDefault(__webpack_require__(31));
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
 
@@ -12635,7 +12635,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.keyMap = exports.CommandKey = void 0;
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 // import { configure } from "react-hotkeys";
 // configure({
@@ -13104,7 +13104,7 @@ var _UiSelect = _interopRequireDefault(__webpack_require__(37));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var _ColourPaletteList = _interopRequireDefault(__webpack_require__(147));
 
@@ -13637,7 +13637,7 @@ var _TabPanel = _interopRequireDefault(__webpack_require__(441));
 
 __webpack_require__(442);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -14309,7 +14309,7 @@ __webpack_require__(231);
 
 var _shortcuts = __webpack_require__(190);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var _state = __webpack_require__(3);
 
@@ -15442,7 +15442,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DEFAULT_COLOR_RANGE = exports.COLOR_RANGES = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
@@ -15943,7 +15943,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _reselect = __webpack_require__(10);
 
@@ -16519,7 +16519,7 @@ var _reselect = __webpack_require__(10);
 
 var _expressions = __webpack_require__(131);
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
@@ -16978,7 +16978,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
@@ -19132,7 +19132,7 @@ var _colourableDataFields = _interopRequireDefault(__webpack_require__(340));
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _labelsDataColumn = _interopRequireDefault(__webpack_require__(114));
 
@@ -19198,7 +19198,7 @@ var _constants = __webpack_require__(12);
 
 var _arrays = __webpack_require__(24);
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -19261,7 +19261,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var shapableDataFieldsSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _dataColumns["default"])(state);
@@ -19662,7 +19662,7 @@ var _colourPaletteForField = _interopRequireDefault(__webpack_require__(85));
 
 var _colourModeForField = _interopRequireDefault(__webpack_require__(87));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _state = __webpack_require__(3);
 
@@ -19900,7 +19900,7 @@ var _colours = __webpack_require__(86);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var _ColourPaletteList = _interopRequireDefault(__webpack_require__(147));
 
@@ -20170,7 +20170,7 @@ exports["default"] = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
@@ -20206,7 +20206,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _ColourPicker = _interopRequireDefault(__webpack_require__(359));
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -20769,7 +20769,7 @@ __webpack_require__(372);
 
 var _components = __webpack_require__(373);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var _constants = __webpack_require__(12);
 
@@ -21560,7 +21560,7 @@ var _maps = __webpack_require__(72);
 
 var _MapPaneEditor = _interopRequireDefault(__webpack_require__(379));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
@@ -21760,7 +21760,7 @@ var _EditTwoTone = _interopRequireDefault(__webpack_require__(142));
 
 __webpack_require__(156);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -22290,7 +22290,7 @@ var _datasets = __webpack_require__(125);
 
 var _TablePaneEditor = _interopRequireDefault(__webpack_require__(390));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(63));
 
@@ -22894,7 +22894,7 @@ var _timelines = __webpack_require__(76);
 
 var _TimelinePaneEditor = _interopRequireDefault(__webpack_require__(395));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _timelineState = _interopRequireDefault(__webpack_require__(209));
 
@@ -23299,7 +23299,7 @@ var _state = __webpack_require__(3);
 
 var _slicerState = _interopRequireDefault(__webpack_require__(74));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _chartAxisType = _interopRequireDefault(__webpack_require__(189));
 
@@ -24296,7 +24296,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
@@ -25158,7 +25158,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
@@ -25322,7 +25322,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
@@ -25898,7 +25898,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _arrays = __webpack_require__(24);
 
@@ -25972,7 +25972,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = delayDispatchMiddleware;
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 /* eslint-disable consistent-return */
 // const dispatch = store.dispatch;

@@ -96,7 +96,7 @@ __webpack_require__(596);
 
 var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var BrowserUtils = _interopRequireWildcard(__webpack_require__(19));
+var BrowserUtils = _interopRequireWildcard(__webpack_require__(20));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 

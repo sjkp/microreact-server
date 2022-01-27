@@ -437,7 +437,7 @@ var _charts = __webpack_require__(186);
 
 var _chartState = _interopRequireDefault(__webpack_require__(52));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _dataFileUrl = _interopRequireDefault(__webpack_require__(534));
 

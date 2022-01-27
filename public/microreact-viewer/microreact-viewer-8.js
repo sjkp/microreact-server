@@ -508,7 +508,7 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 

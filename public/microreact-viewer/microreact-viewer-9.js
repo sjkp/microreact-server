@@ -499,9 +499,9 @@ var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
 var _TablePane = _interopRequireDefault(__webpack_require__(606));
 
-var _fileContent = _interopRequireDefault(__webpack_require__(618));
-
 var _state = __webpack_require__(3);
+
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableId = _ref.tableId;
@@ -516,7 +516,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     displayMode: tableState.displayMode,
     columns: tableState.columns,
     fieldsMap: (0, _dataColumnsByFieldMap["default"])(state),
-    dataFileContent: (0, _fileContent["default"])(state, tableState === null || tableState === void 0 ? void 0 : tableState.file)
+    dataColumns: (0, _dataColumns["default"])(state)
   };
 };
 
@@ -562,7 +562,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
@@ -588,7 +588,7 @@ var _lib = _interopRequireDefault(__webpack_require__(83));
 
 __webpack_require__(527);
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var TextUtils = _interopRequireWildcard(__webpack_require__(70));
 
@@ -665,8 +665,8 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
     }, function (props) {
       return props.fieldsMap;
     }, function (props) {
-      return props.dataFileContent;
-    }, function (columns, fieldsMap, dataFileContent) {
+      return props.dataColumns;
+    }, function (columns, fieldsMap, dataColumns) {
       var tableColumns = [];
       var fields = new Set();
 
@@ -676,26 +676,25 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var col = _step.value;
+          var dataColumn = fieldsMap.get(col.field);
 
-          var _dataColumn = fieldsMap.get(col.field);
-
-          if (_dataColumn) {
+          if (dataColumn) {
             fields.add(col.field);
             tableColumns.push({
-              dataColumn: _dataColumn,
+              dataColumn: dataColumn,
               dataKey: col.field,
-              dataType: _dataColumn.dataType,
-              field: _dataColumn.name,
+              dataType: dataColumn.dataType,
+              field: dataColumn.name,
               frozen: col.fixed,
               hidden: col.hidden || false,
               key: "data-".concat(col.field),
               minWidth: 40,
               resizable: true,
               sort: col.sort,
-              group: _dataColumn.group,
+              group: dataColumn.group,
               sortable: true,
               tableId: _this.props.tableId,
-              title: col.label || _dataColumn.label || _dataColumn.name,
+              title: col.label || dataColumn.label || dataColumn.name,
               width: col.width || 100,
               dataGetter: dataGetter
             });
@@ -707,38 +706,36 @@ var TablePane = /*#__PURE__*/function (_React$PureComponent) {
         _iterator.f();
       }
 
-      if (dataFileContent !== null && dataFileContent !== void 0 && dataFileContent.columns) {
-        var _iterator2 = _createForOfIteratorHelper(dataFileContent.columns),
-            _step2;
+      var _iterator2 = _createForOfIteratorHelper(dataColumns),
+          _step2;
 
-        try {
-          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-            var dataColumn = _step2.value;
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var _dataColumn = _step2.value;
 
-            if (!fields.has(dataColumn.name)) {
-              tableColumns.push({
-                dataColumn: dataColumn,
-                dataKey: dataColumn.name,
-                dataType: dataColumn.dataType,
-                field: dataColumn.name,
-                hidden: false,
-                key: "data-".concat(dataColumn.name),
-                minWidth: 40,
-                resizable: true,
-                group: dataColumn.group,
-                sortable: true,
-                tableId: _this.props.tableId,
-                title: dataColumn.label || dataColumn.name,
-                width: 100,
-                dataGetter: dataGetter
-              });
-            }
+          if (!fields.has(_dataColumn.name)) {
+            tableColumns.push({
+              dataColumn: _dataColumn,
+              dataKey: _dataColumn.name,
+              dataType: _dataColumn.dataType,
+              field: _dataColumn.name,
+              hidden: false,
+              key: "data-".concat(_dataColumn.name),
+              minWidth: 40,
+              resizable: true,
+              group: _dataColumn.group,
+              sortable: true,
+              tableId: _this.props.tableId,
+              title: _dataColumn.label || _dataColumn.name,
+              width: 100,
+              dataGetter: dataGetter
+            });
           }
-        } catch (err) {
-          _iterator2.e(err);
-        } finally {
-          _iterator2.f();
         }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
       }
 
       return tableColumns;
@@ -1270,7 +1267,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(18));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
@@ -1326,7 +1323,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _MdiIcon = _interopRequireDefault(__webpack_require__(81));
 
-var _browser = __webpack_require__(19);
+var _browser = __webpack_require__(20);
 
 var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(511));
 
@@ -1683,7 +1680,7 @@ var _TableControls = _interopRequireDefault(__webpack_require__(616));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
-var _dataColumns = _interopRequireDefault(__webpack_require__(20));
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _visibleFields = _interopRequireDefault(__webpack_require__(617));
 
@@ -1885,28 +1882,6 @@ var visibleFieldsSelector = (0, _state.createKeyedStateSelector)(function (state
   return visibleColumns;
 });
 var _default = visibleFieldsSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 618:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var fileContentSelector = function fileContentSelector(state, fileId) {
-  var _state$files$fileId;
-
-  return (_state$files$fileId = state.files[fileId]) === null || _state$files$fileId === void 0 ? void 0 : _state$files$fileId._content;
-};
-
-var _default = fileContentSelector;
 exports["default"] = _default;
 
 /***/ })
