@@ -19,7 +19,7 @@ var _ui = __webpack_require__(27);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _TablePane = _interopRequireDefault(__webpack_require__(605));
+var _TablePane = _interopRequireDefault(__webpack_require__(606));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableId = _ref.tableId;
@@ -150,7 +150,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _text = __webpack_require__(70);
 
@@ -472,7 +472,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 605:
+/***/ 606:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -497,7 +497,7 @@ var _tableData = _interopRequireDefault(__webpack_require__(199));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _TablePane = _interopRequireDefault(__webpack_require__(606));
+var _TablePane = _interopRequireDefault(__webpack_require__(607));
 
 var _state = __webpack_require__(3);
 
@@ -547,7 +547,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 606:
+/***/ 607:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -592,9 +592,9 @@ var _browser = __webpack_require__(20);
 
 var TextUtils = _interopRequireWildcard(__webpack_require__(70));
 
-var _TableComponents = _interopRequireWildcard(__webpack_require__(607));
+var _TableComponents = _interopRequireWildcard(__webpack_require__(608));
 
-var _TableControls = _interopRequireDefault(__webpack_require__(615));
+var _TableControls = _interopRequireDefault(__webpack_require__(616));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -932,7 +932,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 607:
+/***/ 608:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -961,7 +961,7 @@ var _CheckBoxOutlineBlankTwoTone = _interopRequireDefault(__webpack_require__(47
 
 __webpack_require__(527);
 
-var _TableColumnMenu = _interopRequireDefault(__webpack_require__(608));
+var _TableColumnMenu = _interopRequireDefault(__webpack_require__(609));
 
 var _excluded = ["index", "children"];
 var SortableItem = (0, _reactSortableHoc.sortableElement)(function (_ref) {
@@ -1049,7 +1049,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 608:
+/***/ 609:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1066,7 +1066,7 @@ var _dataFieldFilter = _interopRequireDefault(__webpack_require__(168));
 
 var _state = __webpack_require__(2);
 
-var _TableHeaderMenu = _interopRequireDefault(__webpack_require__(609));
+var _TableHeaderMenu = _interopRequireDefault(__webpack_require__(610));
 
 function mapStateToProps(state, _ref) {
   var tableColumn = _ref.tableColumn;
@@ -1081,7 +1081,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 609:
+/***/ 610:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1118,11 +1118,11 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(610);
+__webpack_require__(611);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _TableColumnControls = _interopRequireDefault(__webpack_require__(611));
+var _TableColumnControls = _interopRequireDefault(__webpack_require__(612));
 
 var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(45));
 
@@ -1187,7 +1187,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 610:
+/***/ 611:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1197,7 +1197,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 611:
+/***/ 612:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1220,7 +1220,7 @@ var _dataFieldFilter = _interopRequireDefault(__webpack_require__(168));
 
 var _state = __webpack_require__(2);
 
-var _TableHeaderMenuContent = _interopRequireDefault(__webpack_require__(612));
+var _TableHeaderMenuContent = _interopRequireDefault(__webpack_require__(613));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var tableColumn = _ref.tableColumn;
@@ -1254,7 +1254,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 612:
+/***/ 613:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1317,7 +1317,7 @@ var _js = __webpack_require__(118);
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-__webpack_require__(613);
+__webpack_require__(614);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -1327,7 +1327,7 @@ var _browser = __webpack_require__(20);
 
 var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(511));
 
-var _SortByAlphaInverseRoundedIcon = _interopRequireDefault(__webpack_require__(614));
+var _SortByAlphaInverseRoundedIcon = _interopRequireDefault(__webpack_require__(615));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -1624,7 +1624,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 613:
+/***/ 614:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1634,7 +1634,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 614:
+/***/ 615:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1659,7 +1659,7 @@ function SortByAlphaInverseRoundedIcon(props) {
 
 /***/ }),
 
-/***/ 615:
+/***/ 616:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1676,13 +1676,13 @@ var _tables = __webpack_require__(75);
 
 var _ui = __webpack_require__(27);
 
-var _TableControls = _interopRequireDefault(__webpack_require__(616));
+var _TableControls = _interopRequireDefault(__webpack_require__(617));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
-var _visibleFields = _interopRequireDefault(__webpack_require__(617));
+var _visibleFields = _interopRequireDefault(__webpack_require__(618));
 
 var _state = __webpack_require__(3);
 
@@ -1733,7 +1733,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 616:
+/***/ 617:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1838,7 +1838,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 617:
+/***/ 618:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

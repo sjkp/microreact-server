@@ -19,9 +19,9 @@ var _state = __webpack_require__(2);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _SlicerPane = _interopRequireDefault(__webpack_require__(598));
+var _SlicerPane = _interopRequireDefault(__webpack_require__(599));
 
-var _isValidSlicer = _interopRequireDefault(__webpack_require__(604));
+var _isValidSlicer = _interopRequireDefault(__webpack_require__(605));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var slicerId = _ref.slicerId;
@@ -194,7 +194,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _text = __webpack_require__(70);
 
@@ -423,7 +423,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 598:
+/***/ 599:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -436,15 +436,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _SlicerPane = _interopRequireDefault(__webpack_require__(599));
+var _SlicerPane = _interopRequireDefault(__webpack_require__(600));
 
 var _filters = __webpack_require__(51);
 
 var _chartAxisType = _interopRequireDefault(__webpack_require__(189));
 
-var _chartData = _interopRequireDefault(__webpack_require__(602));
+var _chartData = _interopRequireDefault(__webpack_require__(603));
 
-var _chartSpec = _interopRequireDefault(__webpack_require__(603));
+var _chartSpec = _interopRequireDefault(__webpack_require__(604));
 
 var _dataColumn = _interopRequireDefault(__webpack_require__(106));
 
@@ -489,7 +489,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 599:
+/***/ 600:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -532,7 +532,7 @@ var _reactVega = __webpack_require__(447);
 
 var _lodash = _interopRequireDefault(__webpack_require__(449));
 
-__webpack_require__(600);
+__webpack_require__(601);
 
 var _charts = __webpack_require__(161);
 
@@ -540,7 +540,7 @@ var _downloads = __webpack_require__(53);
 
 var _DataColumnFilterByValues = _interopRequireDefault(__webpack_require__(511));
 
-var _SlicerControls = _interopRequireDefault(__webpack_require__(601));
+var _SlicerControls = _interopRequireDefault(__webpack_require__(602));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -773,7 +773,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 600:
+/***/ 601:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -783,7 +783,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 601:
+/***/ 602:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -838,7 +838,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 602:
+/***/ 603:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -895,7 +895,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 603:
+/***/ 604:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1066,7 +1066,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 604:
+/***/ 605:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

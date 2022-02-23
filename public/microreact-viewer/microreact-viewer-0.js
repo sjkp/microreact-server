@@ -564,7 +564,7 @@ var _reselect = __webpack_require__(10);
 
 var _text = __webpack_require__(70);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
@@ -789,7 +789,7 @@ var _arrays = __webpack_require__(24);
 
 var _text = __webpack_require__(70);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
@@ -920,6 +920,27 @@ function coloursLegendEntriesSelector(state, field) {
     }
 
     entries.sort((0, _arrays.sortComparator)("label"));
+  } else if (colourMap.scale === "binned") {
+    for (var index = 1; index <= colourMap.numberOfBins; index++) {
+      var start = colourMap.domain[0] + colourMap.binLength * (index - 1);
+      var end = colourMap.domain[0] + colourMap.binLength * index;
+      entries.push({
+        colour: colourMap.colourGetter(index),
+        value: [start, end],
+        label: "".concat((0, _text.toText)(dataColumn.dataType, start.toFixed(2)), " - ").concat((0, _text.toText)(dataColumn.dataType, end.toFixed(2)))
+      });
+    }
+  } else if (colourMap.scale === "continuous") {
+    entries.push({
+      colour: colourMap.range[0],
+      value: colourMap.domain[0],
+      label: (0, _text.toText)(dataColumn.dataType, colourMap.domain[0])
+    });
+    entries.push({
+      colour: colourMap.range[1],
+      value: colourMap.domain[1],
+      label: (0, _text.toText)(dataColumn.dataType, colourMap.domain[1])
+    });
   }
 
   return {

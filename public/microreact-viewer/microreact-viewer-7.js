@@ -15,11 +15,11 @@ exports["default"] = void 0;
 
 var _reactRedux = __webpack_require__(95);
 
-var _NotePane = _interopRequireDefault(__webpack_require__(595));
+var _NotePane = _interopRequireDefault(__webpack_require__(596));
 
 var _notes = __webpack_require__(116);
 
-var _noteState = _interopRequireDefault(__webpack_require__(597));
+var _noteState = _interopRequireDefault(__webpack_require__(598));
 
 var _ui = __webpack_require__(27);
 
@@ -51,7 +51,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 595:
+/***/ 596:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92,7 +92,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _reactMarkdown = _interopRequireDefault(__webpack_require__(466));
 
-__webpack_require__(596);
+__webpack_require__(597);
 
 var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
@@ -241,7 +241,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 596:
+/***/ 597:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -251,7 +251,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 597:
+/***/ 598:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

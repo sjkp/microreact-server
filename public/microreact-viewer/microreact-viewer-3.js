@@ -253,6 +253,8 @@ var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
 
 var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
 
+var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(556));
+
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
@@ -268,23 +270,27 @@ var legendsSelector = (0, _reselect.createSelector)(function (state) {
 }, function (state) {
   return (0, _allTreesMetadataFields["default"])(state);
 }, function (state) {
+  return (0, _allChartSeriesFields["default"])(state);
+}, function (state) {
   return (0, _dataColumnsByFieldMap["default"])(state);
-}, function (colourColumn, shapeColumn, treesMetadataFields, columnsByFieldMapSelector) {
+}, function (colourColumn, shapeColumn, treesMetadataFields, chartColourSeriesFields, columnsByFieldMapSelector) {
   var legends = [];
+  var otherColourFields = new Set();
 
   if (colourColumn) {
     legends.push({
       field: colourColumn.name,
-      title: "Colours by ".concat(columnsByFieldMapSelector.get(colourColumn.name).label),
+      title: "Colours by ".concat(colourColumn.label),
       type: "colours",
       id: "".concat(colourColumn.name, "-colours")
     });
+    otherColourFields.add(colourColumn.name);
   }
 
   if (shapeColumn) {
     legends.push({
       field: shapeColumn.name,
-      title: "Shapes by ".concat(columnsByFieldMapSelector.get(shapeColumn.name).label),
+      title: "Shapes by ".concat(shapeColumn.label),
       type: "shapes",
       id: "".concat(colourColumn.name, "-shapes")
     });
@@ -296,21 +302,49 @@ var legendsSelector = (0, _reselect.createSelector)(function (state) {
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var field = _step.value;
-      var dataColumn = columnsByFieldMapSelector.get(field);
-
-      if (dataColumn && field !== (colourColumn === null || colourColumn === void 0 ? void 0 : colourColumn.name)) {
-        legends.push({
-          field: field,
-          type: "colours",
-          title: "Colours by ".concat(columnsByFieldMapSelector.get(field).label),
-          id: "".concat(field, "-colours")
-        });
-      }
+      otherColourFields.add(field);
     }
   } catch (err) {
     _iterator.e(err);
   } finally {
     _iterator.f();
+  }
+
+  var _iterator2 = _createForOfIteratorHelper(chartColourSeriesFields),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var _field = _step2.value;
+      otherColourFields.add(_field);
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+
+  var _iterator3 = _createForOfIteratorHelper(otherColourFields),
+      _step3;
+
+  try {
+    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+      var _field2 = _step3.value;
+      var dataColumn = columnsByFieldMapSelector.get(_field2);
+
+      if (dataColumn && _field2 !== (colourColumn === null || colourColumn === void 0 ? void 0 : colourColumn.name)) {
+        legends.push({
+          field: _field2,
+          type: "colours",
+          title: "Colours by ".concat(dataColumn.label),
+          id: "".concat(_field2, "-colours")
+        });
+      }
+    }
+  } catch (err) {
+    _iterator3.e(err);
+  } finally {
+    _iterator3.f();
   }
 
   return legends;
@@ -334,8 +368,6 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
-
-var _sets = __webpack_require__(42);
 
 var _metadataFields = _interopRequireDefault(__webpack_require__(555));
 
@@ -414,6 +446,37 @@ var metadataFieldsSelector = function metadataFieldsSelector(state, treeId) {
 };
 
 var _default = metadataFieldsSelector;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 556:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _constants = __webpack_require__(12);
+
+var _state = __webpack_require__(3);
+
+var _chartState = _interopRequireDefault(__webpack_require__(52));
+
+var allChartsSeriesFieldsSelector = (0, _state.createCombinedStateSelector)(function (state) {
+  return state.charts;
+}, function (state, chartId) {
+  return (0, _chartState["default"])(state, chartId).seriesField;
+}, function (fields) {
+  return Array.from(new Set(fields || _constants.emptyArray));
+});
+var _default = allChartsSeriesFieldsSelector;
 exports["default"] = _default;
 
 /***/ })

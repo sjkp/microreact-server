@@ -112,12 +112,7 @@ var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var seriesStackingSelector = function seriesStackingSelector(state, chartId) {
   var chartState = (0, _chartState["default"])(state, chartId);
-  return chartState.seriesStacking || "off"; // if (chartState.seriesField) {
-  //   return chartState.seriesStacking || "off";
-  // }
-  // else {
-  //   return "off";
-  // }
+  return chartState.seriesStacking || "stacked";
 };
 
 var _default = seriesStackingSelector;
@@ -501,7 +496,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
       return dispatch((0, _charts.update)(chartId, "seriesOrder", value));
     },
     onSeriesStackingChange: function onSeriesStackingChange(value) {
-      return dispatch((0, _charts.update)(chartId, "seriesStacking", value || "off"));
+      return dispatch((0, _charts.update)(chartId, "seriesStacking", value));
     },
     onSeriesTypeChange: function onSeriesTypeChange(value) {
       return dispatch((0, _charts.update)(chartId, "seriesType", value));
@@ -823,10 +818,8 @@ var chartTypes = [{
   label: "Custom",
   value: "custom"
 }];
-var stackingTypes = [{
-  label: "None",
-  value: "off"
-}, {
+var stackingTypes = [// { label: "None", value: "off" },
+{
   label: "Stacked view",
   value: "stacked"
 }, {
@@ -916,8 +909,7 @@ var ChartControls = /*#__PURE__*/function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var _this2 = this,
-          _props$seriesDataColu,
-          _props$seriesStacking;
+          _props$seriesDataColu;
 
       var props = this.props;
       var isStandardChartType = props.chartType && props.chartType !== "custom";
@@ -978,10 +970,10 @@ var ChartControls = /*#__PURE__*/function (_React$PureComponent) {
         onAxisOrderChange: props.onSeriesOrderChange,
         onAxisReset: props.seriesField && props.onSeriesFieldChage,
         onAxisTypeChange: props.onSeriesTypeChange,
-        title: "Series"
+        title: "Colour Series"
       }, /*#__PURE__*/_react["default"].createElement(_UiSelect["default"], {
         label: "Stacking",
-        value: (_props$seriesStacking = props.seriesStacking) !== null && _props$seriesStacking !== void 0 ? _props$seriesStacking : "off",
+        value: props.seriesStacking,
         onChange: props.onSeriesStackingChange,
         options: stackingTypes
       })), isStandardChartType && (!props.mainAxisEncoding || props.mainAxisEncoding === "y") ? /*#__PURE__*/_react["default"].createElement(MainAxisMenu, {
@@ -1638,14 +1630,14 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
       value: 0
     };
 
-    if (seriesStacking === "off") {
-      vlSpec.encoding[secondaryAxis.encoding].stack = false;
-    } else if (seriesStacking === "facet" || seriesStacking === "overlapping") {
+    if (seriesStacking === "facet" || seriesStacking === "overlapping") {
       vlSpec.encoding[secondaryAxis.encoding].stack = false;
       vlSpec.encoding[secondaryAxis.encoding].axis = null;
     } else if (seriesStacking === "normalised") {
       vlSpec.encoding[secondaryAxis.encoding].stack = "normalize";
     } else if (seriesStacking === "stacked") {
+      vlSpec.encoding[secondaryAxis.encoding].stack = true;
+    } else {
       vlSpec.encoding[secondaryAxis.encoding].stack = true;
     }
   } //#endregion
@@ -1653,6 +1645,7 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
 
 
   if (seriesDataColumn) {
+    vlSpec.encoding[mainAxis.encoding].axis.title += " (coloured by ".concat(seriesDataColumn.label, ")");
     vlSpec.transform[0].groupby.push(seriesDataColumn.name);
     vlSpec.encoding.tooltip.push({
       field: seriesDataColumn.name,

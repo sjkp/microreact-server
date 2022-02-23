@@ -15,13 +15,13 @@ exports["default"] = void 0;
 
 var _ui = __webpack_require__(27);
 
-var _isValidTimeline = _interopRequireDefault(__webpack_require__(618));
+var _isValidTimeline = _interopRequireDefault(__webpack_require__(619));
 
 var _state = __webpack_require__(3);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _TimelinePane = _interopRequireDefault(__webpack_require__(619));
+var _TimelinePane = _interopRequireDefault(__webpack_require__(620));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var timelineId = _ref.timelineId;
@@ -197,7 +197,7 @@ var _state = __webpack_require__(3);
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _dataExtent = _interopRequireDefault(__webpack_require__(626));
+var _dataExtent = _interopRequireDefault(__webpack_require__(627));
 
 var autoUnitSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
   return (0, _dataExtent["default"])(state, timelineId);
@@ -392,7 +392,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 618:
+/***/ 619:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -417,7 +417,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 619:
+/***/ 620:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -432,7 +432,7 @@ exports["default"] = void 0;
 
 var _reactRedux = __webpack_require__(95);
 
-var _TimelinePane = _interopRequireDefault(__webpack_require__(620));
+var _TimelinePane = _interopRequireDefault(__webpack_require__(621));
 
 var _timelines = __webpack_require__(76);
 
@@ -473,7 +473,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 620:
+/***/ 621:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -520,19 +520,19 @@ var _InputBase = _interopRequireDefault(__webpack_require__(479));
 
 var _Divider = _interopRequireDefault(__webpack_require__(96));
 
-__webpack_require__(621);
+__webpack_require__(622);
 
 var Datetime = _interopRequireWildcard(__webpack_require__(56));
 
 var _downloads = __webpack_require__(53);
 
-var _TimelineSlider = _interopRequireDefault(__webpack_require__(622));
+var _TimelineSlider = _interopRequireDefault(__webpack_require__(623));
 
-var _TimelineControls = _interopRequireDefault(__webpack_require__(625));
+var _TimelineControls = _interopRequireDefault(__webpack_require__(626));
 
-var _TimelineFullRangeChart = _interopRequireDefault(__webpack_require__(628));
+var _TimelineFullRangeChart = _interopRequireDefault(__webpack_require__(629));
 
-var _TimelineFilteredRangeChart = _interopRequireDefault(__webpack_require__(630));
+var _TimelineFilteredRangeChart = _interopRequireDefault(__webpack_require__(631));
 
 var _charts = __webpack_require__(161);
 
@@ -713,7 +713,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 621:
+/***/ 622:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -723,7 +723,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 622:
+/***/ 623:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -740,7 +740,7 @@ var _reactRedux = __webpack_require__(95);
 
 var _timelines = __webpack_require__(76);
 
-var _TimelineSlider = _interopRequireDefault(__webpack_require__(623));
+var _TimelineSlider = _interopRequireDefault(__webpack_require__(624));
 
 var _fullRangeExtent = _interopRequireDefault(__webpack_require__(528));
 
@@ -773,7 +773,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 623:
+/***/ 624:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -812,7 +812,7 @@ var _lodash = _interopRequireDefault(__webpack_require__(449));
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-__webpack_require__(624);
+__webpack_require__(625);
 
 var Datetime = _interopRequireWildcard(__webpack_require__(56));
 
@@ -1156,7 +1156,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 624:
+/***/ 625:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1166,7 +1166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 625:
+/***/ 626:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1193,7 +1193,7 @@ var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
 var _state = __webpack_require__(3);
 
-var _TimelineControls = _interopRequireDefault(__webpack_require__(627));
+var _TimelineControls = _interopRequireDefault(__webpack_require__(628));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -1253,7 +1253,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 626:
+/***/ 627:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1323,7 +1323,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 627:
+/***/ 628:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1745,7 +1745,7 @@ TimelineControls.propTypes = {
 
 /***/ }),
 
-/***/ 628:
+/***/ 629:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1762,7 +1762,7 @@ var _reactRedux = __webpack_require__(95);
 
 var _reactVega = __webpack_require__(447);
 
-var _fullRangeChartSpec = _interopRequireDefault(__webpack_require__(629));
+var _fullRangeChartSpec = _interopRequireDefault(__webpack_require__(630));
 
 var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
 
@@ -1795,7 +1795,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 629:
+/***/ 630:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1926,7 +1926,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 630:
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1943,9 +1943,9 @@ var _reactVega = __webpack_require__(447);
 
 var _vegaTooltip = __webpack_require__(450);
 
-var _filteredRangeChartData = _interopRequireDefault(__webpack_require__(631));
+var _filteredRangeChartData = _interopRequireDefault(__webpack_require__(632));
 
-var _filteredRangeChartSpec = _interopRequireDefault(__webpack_require__(632));
+var _filteredRangeChartSpec = _interopRequireDefault(__webpack_require__(633));
 
 var _state = __webpack_require__(3);
 
@@ -1981,7 +1981,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 631:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2106,7 +2106,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 632:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2127,7 +2127,7 @@ var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _laneField = _interopRequireDefault(__webpack_require__(633));
+var _laneField = _interopRequireDefault(__webpack_require__(634));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
@@ -2249,7 +2249,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 633:
+/***/ 634:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

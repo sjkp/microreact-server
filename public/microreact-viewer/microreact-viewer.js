@@ -3735,6 +3735,84 @@ var _interopRequireDefault = __webpack_require__(0);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = void 0;
+
+var _classnames = _interopRequireDefault(__webpack_require__(13));
+
+var _FormControlLabel = _interopRequireDefault(__webpack_require__(94));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _Switch = _interopRequireDefault(__webpack_require__(152));
+
+__webpack_require__(363);
+
+var UiToggleSwitch = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_FormControlLabel["default"], {
+    className: (0, _classnames["default"])("mr-ui-switch", "MuiFormControl-root", props.className),
+    control: /*#__PURE__*/_react["default"].createElement(_Switch["default"], {
+      checked: props.value,
+      color: "primary",
+      onChange: function onChange(event) {
+        return props.onChange(event.target.checked);
+      }
+    }),
+    label: props.label,
+    labelPlacement: props.labelPlacement
+  });
+});
+
+UiToggleSwitch.displayName = "UiToggleSwitch";
+UiToggleSwitch.propTypes = {
+  className: _propTypes["default"].string,
+  label: _propTypes["default"].string.isRequired,
+  labelPlacement: _propTypes["default"].string,
+  onChange: _propTypes["default"].func.isRequired,
+  value: _propTypes["default"].bool.isRequired
+};
+UiToggleSwitch.defaultProps = {
+  labelPlacement: "start"
+};
+var _default = UiToggleSwitch;
+exports["default"] = _default;
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
+
+var dataColumnByFieldSelector = function dataColumnByFieldSelector(state, field) {
+  return (0, _dataColumnsByFieldMap["default"])(state).get(field);
+};
+
+var _default = dataColumnByFieldSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.intersect = intersect;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
@@ -3821,84 +3899,6 @@ function intersect(sets) {
 
   return res;
 }
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _classnames = _interopRequireDefault(__webpack_require__(13));
-
-var _FormControlLabel = _interopRequireDefault(__webpack_require__(94));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
-
-var _react = _interopRequireDefault(__webpack_require__(1));
-
-var _Switch = _interopRequireDefault(__webpack_require__(152));
-
-__webpack_require__(363);
-
-var UiToggleSwitch = /*#__PURE__*/_react["default"].memo(function (props) {
-  return /*#__PURE__*/_react["default"].createElement(_FormControlLabel["default"], {
-    className: (0, _classnames["default"])("mr-ui-switch", "MuiFormControl-root", props.className),
-    control: /*#__PURE__*/_react["default"].createElement(_Switch["default"], {
-      checked: props.value,
-      color: "primary",
-      onChange: function onChange(event) {
-        return props.onChange(event.target.checked);
-      }
-    }),
-    label: props.label,
-    labelPlacement: props.labelPlacement
-  });
-});
-
-UiToggleSwitch.displayName = "UiToggleSwitch";
-UiToggleSwitch.propTypes = {
-  className: _propTypes["default"].string,
-  label: _propTypes["default"].string.isRequired,
-  labelPlacement: _propTypes["default"].string,
-  onChange: _propTypes["default"].func.isRequired,
-  value: _propTypes["default"].bool.isRequired
-};
-UiToggleSwitch.defaultProps = {
-  labelPlacement: "start"
-};
-var _default = UiToggleSwitch;
-exports["default"] = _default;
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
-
-var dataColumnByFieldSelector = function dataColumnByFieldSelector(state, field) {
-  return (0, _dataColumnsByFieldMap["default"])(state).get(field);
-};
-
-var _default = dataColumnByFieldSelector;
-exports["default"] = _default;
 
 /***/ }),
 /* 45 */
@@ -6772,7 +6772,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _colourPalettes = _interopRequireDefault(__webpack_require__(181));
 
@@ -7410,7 +7410,7 @@ var _colourPaletteForField = _interopRequireDefault(__webpack_require__(85));
 
 var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _colourModeForField = _interopRequireDefault(__webpack_require__(87));
 
@@ -9155,7 +9155,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var initialState = {
   controls: true,
   interpolate: "linear",
-  seriesStacking: "off",
+  seriesStacking: "stacked",
   showSelection: false
 };
 exports.initialState = initialState;
@@ -11061,7 +11061,7 @@ var _DoneRounded = _interopRequireDefault(__webpack_require__(153));
 
 __webpack_require__(436);
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _UiList = _interopRequireDefault(__webpack_require__(160));
 
@@ -11583,7 +11583,7 @@ var _chartState = _interopRequireDefault(__webpack_require__(52));
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var seriesFieldSelector = function seriesFieldSelector(state, chartId) {
   var _chartStateSelector = (0, _chartState["default"])(state, chartId),
@@ -12748,7 +12748,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _shapePalettes = _interopRequireDefault(__webpack_require__(252));
 
@@ -13110,7 +13110,7 @@ var _ColourPaletteList = _interopRequireDefault(__webpack_require__(147));
 
 var _CustomColourPaletteEditor = _interopRequireDefault(__webpack_require__(148));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -15985,7 +15985,7 @@ var _geometry = __webpack_require__(101);
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _rowsWithPositionField = _interopRequireDefault(__webpack_require__(129));
 
@@ -16141,7 +16141,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _trees = __webpack_require__(88);
 
@@ -16271,7 +16271,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _geometry = __webpack_require__(101);
 
@@ -16435,7 +16435,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _bounds2 = _interopRequireDefault(__webpack_require__(198));
 
@@ -16602,7 +16602,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _sets = __webpack_require__(42);
+var _sets = __webpack_require__(44);
 
 var _filteredFieldIds = _interopRequireDefault(__webpack_require__(185));
 
@@ -19666,7 +19666,7 @@ var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
 var _state = __webpack_require__(3);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(44));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 function mapStateToProps(state, _ref) {
   var field = _ref.field;
@@ -19908,7 +19908,7 @@ var _CustomColourPaletteEditor = _interopRequireDefault(__webpack_require__(148)
 
 var _UiSelect = _interopRequireDefault(__webpack_require__(37));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -23107,7 +23107,7 @@ var _MiniTable = _interopRequireDefault(__webpack_require__(157));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -25940,11 +25940,19 @@ var _default = function _default() {
 
     case "MICROREACT VIEWER/SET DEFAULT VIEW":
       {
-        return (0, _arrays.update)((0, _arrays.remove)(state, function (item) {
+        var nextState = state;
+
+        if (state.find(function (item) {
           return item.isDefault;
-        }, {
-          isDefault: false
-        }), function (item) {
+        })) {
+          nextState = (0, _arrays.update)(state, function (item) {
+            return item.isDefault;
+          }, {
+            isDefault: false
+          });
+        }
+
+        return (0, _arrays.update)(nextState, function (item) {
           return item.meta.id === action.payload.meta.id;
         }, {
           isDefault: true
@@ -26248,7 +26256,7 @@ var _UiToggleButtons = _interopRequireDefault(__webpack_require__(122));
 
 var _UiToggleSlider = _interopRequireDefault(__webpack_require__(178));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _ZoomControls = _interopRequireDefault(__webpack_require__(179));
 

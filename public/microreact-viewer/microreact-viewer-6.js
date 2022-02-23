@@ -19,7 +19,7 @@ var _state = __webpack_require__(2);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _NetworkPane = _interopRequireDefault(__webpack_require__(581));
+var _NetworkPane = _interopRequireDefault(__webpack_require__(582));
 
 var _isValidNetwork = _interopRequireDefault(__webpack_require__(202));
 
@@ -581,7 +581,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 581:
+/***/ 582:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -596,15 +596,15 @@ exports["default"] = void 0;
 
 var _reactRedux = __webpack_require__(95);
 
-var _NetworkPane = _interopRequireDefault(__webpack_require__(582));
+var _NetworkPane = _interopRequireDefault(__webpack_require__(583));
 
 var _filters = __webpack_require__(51);
 
 var _networks = __webpack_require__(78);
 
-var _graph = _interopRequireDefault(__webpack_require__(592));
+var _graph = _interopRequireDefault(__webpack_require__(593));
 
-var _hasLayout = _interopRequireDefault(__webpack_require__(594));
+var _hasLayout = _interopRequireDefault(__webpack_require__(595));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var networkId = _ref.networkId;
@@ -656,7 +656,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 582:
+/***/ 583:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -691,9 +691,9 @@ var _classnames = _interopRequireDefault(__webpack_require__(13));
 
 var _lodash = _interopRequireDefault(__webpack_require__(449));
 
-var _lasso = _interopRequireDefault(__webpack_require__(583));
+var _lasso = _interopRequireDefault(__webpack_require__(584));
 
-var _renderers = __webpack_require__(585);
+var _renderers = __webpack_require__(586);
 
 var _downloads = __webpack_require__(53);
 
@@ -701,7 +701,7 @@ var _networks = __webpack_require__(208);
 
 var _ZoomControls = _interopRequireDefault(__webpack_require__(179));
 
-var _NetworkControls = _interopRequireDefault(__webpack_require__(586));
+var _NetworkControls = _interopRequireDefault(__webpack_require__(587));
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -1208,7 +1208,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 583:
+/***/ 584:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1223,7 +1223,7 @@ exports["default"] = _default;
 
 var _canvasLasso = _interopRequireDefault(__webpack_require__(509));
 
-var _sigma = __webpack_require__(584);
+var _sigma = __webpack_require__(585);
 
 function _default(sigmaInst, options) {
   var renderer = sigmaInst.renderers[0];
@@ -1258,7 +1258,7 @@ function _default(sigmaInst, options) {
 
 /***/ }),
 
-/***/ 584:
+/***/ 585:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1331,7 +1331,7 @@ function translateGraphToCanvas(sigmaInst, points) {
 
 /***/ }),
 
-/***/ 585:
+/***/ 586:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1413,7 +1413,7 @@ exports.edgeRenderer = edgeRenderer;
 
 /***/ }),
 
-/***/ 586:
+/***/ 587:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1432,15 +1432,15 @@ var _ui = __webpack_require__(27);
 
 var _state = __webpack_require__(2);
 
-var _NetworkControls = _interopRequireDefault(__webpack_require__(587));
+var _NetworkControls = _interopRequireDefault(__webpack_require__(588));
 
-var _edgeColourAttributes = _interopRequireDefault(__webpack_require__(588));
+var _edgeColourAttributes = _interopRequireDefault(__webpack_require__(589));
 
-var _edgeLabelAttributes = _interopRequireDefault(__webpack_require__(589));
+var _edgeLabelAttributes = _interopRequireDefault(__webpack_require__(590));
 
-var _edgeLineStyleAttributes = _interopRequireDefault(__webpack_require__(590));
+var _edgeLineStyleAttributes = _interopRequireDefault(__webpack_require__(591));
 
-var _edgeLineWidthAttributes = _interopRequireDefault(__webpack_require__(591));
+var _edgeLineWidthAttributes = _interopRequireDefault(__webpack_require__(592));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -1509,7 +1509,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 587:
+/***/ 588:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1542,7 +1542,7 @@ var _LassoButton = _interopRequireDefault(__webpack_require__(502));
 
 var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
 
@@ -1699,7 +1699,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 588:
+/***/ 589:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1729,7 +1729,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 589:
+/***/ 590:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1762,7 +1762,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 590:
+/***/ 591:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1792,7 +1792,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 591:
+/***/ 592:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1822,7 +1822,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 592:
+/***/ 593:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1845,7 +1845,7 @@ var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
 var _baseGraph = _interopRequireDefault(__webpack_require__(172));
 
-var _edgeStyles = _interopRequireDefault(__webpack_require__(593));
+var _edgeStyles = _interopRequireDefault(__webpack_require__(594));
 
 var _layout = _interopRequireDefault(__webpack_require__(184));
 
@@ -1951,7 +1951,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 593:
+/***/ 594:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2022,7 +2022,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 594:
+/***/ 595:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
