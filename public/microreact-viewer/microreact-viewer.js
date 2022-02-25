@@ -3014,20 +3014,23 @@ function normaliseFilename(input) {
 }
 
 function guessFileFormat(fileName) {
-  if (/\.(microreact)$/i.test(fileName)) {
-    return "application/json";
-  } else if (/\.(csv|tsv)$/i.test(fileName)) {
-    return "text/csv";
-  } else if (/\.(xlsx|xlsm|xlam|xlsb|xls|xla|ods|dbf)$/i.test(fileName)) {
-    return "application/x-speadsheet";
-  } else if (/\.(nwk|newick|tree|tre|nexus)$/i.test(fileName)) {
-    return "text/x-nh";
-  } else if (/\.(dot|graph)$/i.test(fileName)) {
-    return "text/vnd.graphviz";
-  } else if (/\.(geojson|geo\.json)$/i.test(fileName)) {
-    return "application/geo+json";
-  } else if (/\.(md)$/i.test(fileName)) {
-    return "text/markdown";
+  var _iterator = _createForOfIteratorHelper(FileKinds),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var _step$value = _step.value,
+          nameValidator = _step$value.nameValidator,
+          format = _step$value.format;
+
+      if (nameValidator.test(fileName)) {
+        return format;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
 
   return undefined;
@@ -3172,25 +3175,25 @@ function processFiles(_x3) {
 
 function _processFiles() {
   _processFiles = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(files) {
-    var processedFiles, _iterator, _step, file, processedFile;
+    var processedFiles, _iterator2, _step2, file, processedFile;
 
     return _regenerator["default"].wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             processedFiles = [];
-            _iterator = _createForOfIteratorHelper(files);
+            _iterator2 = _createForOfIteratorHelper(files);
             _context2.prev = 2;
 
-            _iterator.s();
+            _iterator2.s();
 
           case 4:
-            if ((_step = _iterator.n()).done) {
+            if ((_step2 = _iterator2.n()).done) {
               _context2.next = 12;
               break;
             }
 
-            file = _step.value;
+            file = _step2.value;
             _context2.next = 8;
             return loadFile(file);
 
@@ -3210,12 +3213,12 @@ function _processFiles() {
             _context2.prev = 14;
             _context2.t0 = _context2["catch"](2);
 
-            _iterator.e(_context2.t0);
+            _iterator2.e(_context2.t0);
 
           case 17:
             _context2.prev = 17;
 
-            _iterator.f();
+            _iterator2.f();
 
             return _context2.finish(17);
 
@@ -3663,6 +3666,9 @@ var _default = {
   }, {
     kind: "tree",
     extension: "nexus"
+  }, {
+    kind: "tree",
+    extension: "nhx"
   }, {
     kind: "network",
     extension: "dot"
