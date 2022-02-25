@@ -196,7 +196,7 @@ var _state = __webpack_require__(2);
 
 var _sets = __webpack_require__(44);
 
-var _text = __webpack_require__(70);
+var _text = __webpack_require__(71);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -359,13 +359,13 @@ var _Button = _interopRequireDefault(__webpack_require__(29));
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _propTypes2 = __webpack_require__(14);
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(170));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
 var _constants = __webpack_require__(12);
 
@@ -446,13 +446,13 @@ var _chartData = _interopRequireDefault(__webpack_require__(603));
 
 var _chartSpec = _interopRequireDefault(__webpack_require__(604));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(106));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _state = __webpack_require__(2);
 
 var _ui = __webpack_require__(27);
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -802,7 +802,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -853,9 +853,9 @@ exports["default"] = void 0;
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(106));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 var _state = __webpack_require__(2);
 
@@ -914,13 +914,13 @@ var _charts = __webpack_require__(161);
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(106));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _chartAxisType = _interopRequireDefault(__webpack_require__(189));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 var chartSpecSelector = (0, _state.createKeyedStateSelector)(function (state, slicerId) {
   return (0, _dataColumn["default"])(state, slicerId);
@@ -1079,7 +1079,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 function isValidSlicerSelector(state, slicerId) {
   var slicerState = (0, _slicerState["default"])(state, slicerId);

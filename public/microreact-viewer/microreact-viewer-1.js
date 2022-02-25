@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _ChartPane = _interopRequireDefault(__webpack_require__(531));
 
@@ -601,11 +601,11 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _EditRounded = _interopRequireDefault(__webpack_require__(451));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _Menu = _interopRequireDefault(__webpack_require__(163));
 
@@ -627,7 +627,7 @@ var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
@@ -1134,7 +1134,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 // import activeRowsSelector from "../filters/active-rows";
 // import chartStateSelector from "./chart-state";
@@ -1257,7 +1257,7 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _state = __webpack_require__(2);
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _chartState = _interopRequireDefault(__webpack_require__(52));
 
@@ -1476,7 +1476,7 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
       timeUnit: mainAxis.type === "temporal" ? "yearmonthdate" : undefined,
       sort: xAxisOrder
     };
-    vlSpec.encoding.tooltip.push({
+    vlSpec.encoding.tooltip.unshift({
       field: mainAxis.dataColumn.name,
       title: mainAxis.dataColumn.label,
       type: mainAxis.type
@@ -1616,7 +1616,7 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
   }
 
   if (vlSpec.encoding[secondaryAxis.encoding]) {
-    vlSpec.encoding.tooltip.push({
+    vlSpec.encoding.tooltip.unshift({
       field: vlSpec.encoding[secondaryAxis.encoding].field,
       type: vlSpec.encoding[secondaryAxis.encoding].type,
       title: vlSpec.encoding[secondaryAxis.encoding].axis.title
@@ -1647,7 +1647,7 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
   if (seriesDataColumn) {
     vlSpec.encoding[mainAxis.encoding].axis.title += " (coloured by ".concat(seriesDataColumn.label, ")");
     vlSpec.transform[0].groupby.push(seriesDataColumn.name);
-    vlSpec.encoding.tooltip.push({
+    vlSpec.encoding.tooltip.unshift({
       field: seriesDataColumn.name,
       title: seriesDataColumn.label,
       type: seriesFieldType
@@ -1680,6 +1680,20 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
       scale: seriesScale,
       legend: false
     };
+    vlSpec.transform[0].groupby.push("--mr-frequency-2");
+    vlSpec.transform.unshift({
+      joinaggregate: [{
+        op: "sum",
+        field: "--mr-scalar",
+        as: "--mr-frequency-2"
+      }],
+      groupby: [vlSpec.encoding[mainAxis.encoding].field]
+    });
+    vlSpec.encoding.tooltip.push({
+      field: "--mr-frequency-2",
+      title: " Number of entries",
+      type: "quantitative"
+    });
   } else {
     vlSpec.encoding.color = {
       value: defaultColourRange[0],

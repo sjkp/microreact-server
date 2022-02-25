@@ -313,7 +313,7 @@ exports.getPresentState = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _reReselect = _interopRequireDefault(__webpack_require__(228));
 
@@ -974,6 +974,12 @@ module.exports = require("@babel/runtime/helpers/toConsumableArray");
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/IconButton");
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1066,12 +1072,6 @@ function setPageHash(id, title) {
 
   window.location.hash = hash;
 }
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/IconButton");
 
 /***/ }),
 /* 22 */
@@ -1390,9 +1390,9 @@ var _reselect = __webpack_require__(10);
 
 var _idFieldName = _interopRequireDefault(__webpack_require__(123));
 
-var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(63));
+var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
 
-var _datasets = __webpack_require__(64);
+var _datasets = __webpack_require__(65);
 
 var _constants = __webpack_require__(12);
 
@@ -1635,33 +1635,33 @@ var _datasets = __webpack_require__(125);
 
 var _files2 = __webpack_require__(126);
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
-var _networks = __webpack_require__(78);
+var _networks = __webpack_require__(79);
 
-var _tables = __webpack_require__(75);
+var _tables = __webpack_require__(76);
 
-var _trees = __webpack_require__(73);
+var _trees = __webpack_require__(74);
 
 var _notes = __webpack_require__(116);
 
-var _timelines = __webpack_require__(76);
+var _timelines = __webpack_require__(77);
 
-var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(63));
+var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
 
-var _datasets2 = __webpack_require__(64);
+var _datasets2 = __webpack_require__(65);
 
 var _html = __webpack_require__(35);
 
 var _state = __webpack_require__(3);
 
-var _text = __webpack_require__(70);
+var _text = __webpack_require__(71);
 
-var _events = __webpack_require__(110);
+var _events = __webpack_require__(61);
 
 var _hash = __webpack_require__(46);
 
-var _trees2 = __webpack_require__(88);
+var _trees2 = __webpack_require__(89);
 
 var _schema = _interopRequireWildcard(__webpack_require__(132));
 
@@ -1671,9 +1671,9 @@ var _isValidNetwork = _interopRequireDefault(__webpack_require__(202));
 
 var _constants = __webpack_require__(12);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
-var _panes = __webpack_require__(68);
+var _panes = __webpack_require__(69);
 
 var _layoutModel = _interopRequireDefault(__webpack_require__(40));
 
@@ -2405,7 +2405,7 @@ var _Paper = _interopRequireDefault(__webpack_require__(36));
 
 var _Popper = _interopRequireDefault(__webpack_require__(344));
 
-var _TextField = _interopRequireDefault(__webpack_require__(61));
+var _TextField = _interopRequireDefault(__webpack_require__(62));
 
 var _Autocomplete = _interopRequireDefault(__webpack_require__(345));
 
@@ -2617,7 +2617,7 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _MenuItem = _interopRequireDefault(__webpack_require__(80));
+var _MenuItem = _interopRequireDefault(__webpack_require__(81));
 
 var _MenuList = _interopRequireDefault(__webpack_require__(316));
 
@@ -2689,7 +2689,7 @@ exports.exportHtmlElementAsDataUrl = exportHtmlElementAsDataUrl;
 exports.getContainerElement = getContainerElement;
 exports.canvasPixelRatio = canvasPixelRatio;
 
-var _html2canvas = _interopRequireDefault(__webpack_require__(268));
+var _html2canvas = _interopRequireDefault(__webpack_require__(269));
 
 function exportHtmlElementAsDataUrl(domElement) {
   var resize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -2780,7 +2780,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Select = _interopRequireDefault(__webpack_require__(362));
 
-var _MenuItem = _interopRequireDefault(__webpack_require__(80));
+var _MenuItem = _interopRequireDefault(__webpack_require__(81));
 
 var _InputLabel = _interopRequireDefault(__webpack_require__(150));
 
@@ -2788,7 +2788,7 @@ var _FormControl = _interopRequireDefault(__webpack_require__(151));
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _Typography = _interopRequireDefault(__webpack_require__(77));
+var _Typography = _interopRequireDefault(__webpack_require__(78));
 
 var _excluded = ["size", "variant", "style", "options"];
 
@@ -2931,8 +2931,8 @@ var FileKinds = [{
   name: "Data (Excel or ODS Speadsheet)",
   linkable: true
 }, {
-  extensions: ["nwk", "newick", "tree", "tre", "nexus"],
-  nameValidator: /\.(nwk|newick|tree|tre|nexus)$/i,
+  extensions: ["nwk", "newick", "tree", "tre", "nexus", "nhx"],
+  nameValidator: /\.(nwk|newick|tree|tre|nexus|nhx)$/i,
   format: "text/x-nh",
   type: "tree",
   name: "Tree (Newick)",
@@ -3335,9 +3335,9 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _flexlayoutReact = _interopRequireDefault(__webpack_require__(90));
+var _flexlayoutReact = _interopRequireDefault(__webpack_require__(91));
 
-var _panes = __webpack_require__(68);
+var _panes = __webpack_require__(69);
 
 var borders = [{
   type: "border",
@@ -3739,7 +3739,7 @@ exports["default"] = void 0;
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-var _FormControlLabel = _interopRequireDefault(__webpack_require__(94));
+var _FormControlLabel = _interopRequireDefault(__webpack_require__(95));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -3932,9 +3932,9 @@ var _classnames = _interopRequireDefault(__webpack_require__(13));
 
 var _CloseRounded = _interopRequireDefault(__webpack_require__(47));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
-var _Popover = _interopRequireDefault(__webpack_require__(93));
+var _Popover = _interopRequireDefault(__webpack_require__(94));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -3946,7 +3946,7 @@ var _html = __webpack_require__(35);
 
 var _constants = __webpack_require__(12);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -4150,15 +4150,15 @@ exports["default"] = void 0;
 
 var _ClearRounded = _interopRequireDefault(__webpack_require__(288));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
-var _InputAdornment = _interopRequireDefault(__webpack_require__(92));
+var _InputAdornment = _interopRequireDefault(__webpack_require__(93));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _TextField = _interopRequireDefault(__webpack_require__(61));
+var _TextField = _interopRequireDefault(__webpack_require__(62));
 
 __webpack_require__(135);
 
@@ -4590,7 +4590,7 @@ var _js = __webpack_require__(118);
 
 var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
 
-var _MdiIcon = _interopRequireDefault(__webpack_require__(81));
+var _MdiIcon = _interopRequireDefault(__webpack_require__(82));
 
 var _FilterAltIcon = _interopRequireDefault(__webpack_require__(315));
 
@@ -4958,23 +4958,23 @@ exports.setSidePane = setSidePane;
 
 var _layoutModel = _interopRequireDefault(__webpack_require__(40));
 
-var _panes = __webpack_require__(68);
+var _panes = __webpack_require__(69);
 
 var _state = __webpack_require__(3);
 
 var _charts = __webpack_require__(186);
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
-var _networks = __webpack_require__(78);
+var _networks = __webpack_require__(79);
 
 var _notes = __webpack_require__(116);
 
-var _tables = __webpack_require__(75);
+var _tables = __webpack_require__(76);
 
-var _timelines = __webpack_require__(76);
+var _timelines = __webpack_require__(77);
 
-var _trees = __webpack_require__(73);
+var _trees = __webpack_require__(74);
 
 var _slicers = __webpack_require__(134);
 
@@ -5219,18 +5219,48 @@ exports["default"] = _default;
 
 /***/ }),
 /* 61 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("@material-ui/core/TextField");
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.subscribe = subscribe;
+exports.publish = publish;
+
+var _postal = _interopRequireDefault(__webpack_require__(266));
+
+var channel = _postal["default"].channel();
+
+function subscribe(event, callback) {
+  var subscription = channel.subscribe(event, callback);
+  return function () {
+    return subscription.unsubscribe();
+  };
+}
+
+function publish(event, data) {
+  return channel.publish(event, data);
+}
 
 /***/ }),
 /* 62 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/ListItem");
+module.exports = require("@material-ui/core/TextField");
 
 /***/ }),
 /* 63 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItem");
+
+/***/ }),
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5266,7 +5296,7 @@ var _default = mainDatasetConfigSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5461,13 +5491,13 @@ function mergeBasicDatasets(masterDataset, linkedDataset, masterFieldName, linkF
 }
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = require("@loaders.gl/core");
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5486,7 +5516,7 @@ var _default = fileDescriptorSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5505,7 +5535,7 @@ var _default = networkStateSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5522,9 +5552,9 @@ exports.removeTabFromModel = removeTabFromModel;
 exports.createNewTab = createNewTab;
 exports.addMissingPaneTabs = addMissingPaneTabs;
 
-var _flexlayoutReact = _interopRequireDefault(__webpack_require__(90));
+var _flexlayoutReact = _interopRequireDefault(__webpack_require__(91));
 
-var _browser = __webpack_require__(20);
+var _events = __webpack_require__(61);
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -5539,12 +5569,7 @@ var metrics = {
 };
 
 function addTab(label, tab) {
-  if (window.MicroreactViewerPanes.current) {
-    window.MicroreactViewerPanes.current.addTabWithDragAndDrop("".concat(label, "<button onclick=\"window.MicroreactViewerPanes.current.onCancelAdd()\"></button>"), tab);
-    (0, _browser.nextFrame)(function () {
-      return _flexlayoutReact["default"].DragDrop.instance._glass.focus();
-    });
-  }
+  (0, _events.publish)("add-new-pane", [label, tab]);
 }
 
 function cloneModel(model) {
@@ -5633,7 +5658,7 @@ function addMissingPaneTabs(model, orphanPanes) {
 }
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5648,7 +5673,7 @@ exports["default"] = void 0;
 
 var _ui = __webpack_require__(27);
 
-var _fileDescriptor = _interopRequireDefault(__webpack_require__(66));
+var _fileDescriptor = _interopRequireDefault(__webpack_require__(67));
 
 var _state = __webpack_require__(3);
 
@@ -5676,7 +5701,7 @@ var _default = (0, _state.connectToPresentState)(_FileEditor["default"], mapStat
 exports["default"] = _default;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5755,13 +5780,13 @@ function toText(dataType, value) {
 }
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/ListSubheader");
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5920,7 +5945,7 @@ function update(mapId, key, value) {
 }
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6032,7 +6057,7 @@ function update(treeId, key, value) {
 }
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6051,7 +6076,7 @@ var _default = slicerStateSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6081,13 +6106,13 @@ var _papaparse = _interopRequireDefault(__webpack_require__(264));
 
 var _fullDataset = _interopRequireDefault(__webpack_require__(25));
 
-var _tableState = _interopRequireDefault(__webpack_require__(89));
+var _tableState = _interopRequireDefault(__webpack_require__(90));
 
 var _paneName = _interopRequireDefault(__webpack_require__(265));
 
 var _state = __webpack_require__(3);
 
-var _text = __webpack_require__(70);
+var _text = __webpack_require__(71);
 
 var _files = __webpack_require__(38);
 
@@ -6265,7 +6290,7 @@ function update(tableId, key, value) {
 }
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6295,11 +6320,11 @@ var _state = __webpack_require__(3);
 
 var _filters = __webpack_require__(51);
 
-var _style = _interopRequireDefault(__webpack_require__(267));
+var _style = _interopRequireDefault(__webpack_require__(268));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(107));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -6422,13 +6447,13 @@ function update(timelineId, key, value) {
 }
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Typography");
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6449,13 +6474,13 @@ exports.update = update;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _networkState = _interopRequireDefault(__webpack_require__(67));
+var _networkState = _interopRequireDefault(__webpack_require__(68));
 
 var _state = __webpack_require__(3);
 
 var _downloads = __webpack_require__(53);
 
-var _networkFile = _interopRequireDefault(__webpack_require__(79));
+var _networkFile = _interopRequireDefault(__webpack_require__(80));
 
 function addNetwork(paneId, title, file, nodeFieldName) {
   return {
@@ -6554,7 +6579,7 @@ function update(networkId, key, value) {
 }
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6567,9 +6592,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _fileDescriptor = _interopRequireDefault(__webpack_require__(66));
+var _fileDescriptor = _interopRequireDefault(__webpack_require__(67));
 
-var _networkState = _interopRequireDefault(__webpack_require__(67));
+var _networkState = _interopRequireDefault(__webpack_require__(68));
 
 function networkFileSelector(state, networkId) {
   var _networkStateSelector;
@@ -6581,13 +6606,13 @@ var _default = networkFileSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/MenuItem");
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6626,7 +6651,7 @@ var _default = MdiIcon;
 exports["default"] = _default;
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6747,19 +6772,19 @@ function updateColourPalette(palette) {
 }
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-base-table/lib");
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/ListItemText");
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6822,7 +6847,7 @@ var _default = colourPaletteForFieldSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6927,7 +6952,7 @@ var colourSteps = Array.from(steps).sort(function (a, b) {
 exports.colourSteps = colourSteps;
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6940,7 +6965,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _colourPaletteForField = _interopRequireDefault(__webpack_require__(85));
+var _colourPaletteForField = _interopRequireDefault(__webpack_require__(86));
 
 /**
  * Returns the colour palette used for a field
@@ -6967,7 +6992,7 @@ var _default = colourModeForFieldSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6978,7 +7003,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.newickLabels = newickLabels;
 
-var _phylocanvas = __webpack_require__(100);
+var _phylocanvas = __webpack_require__(101);
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -7018,7 +7043,7 @@ function newickLabels(source) {
 }
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7037,13 +7062,13 @@ var _default = tableStateSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports = require("flexlayout-react");
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7082,7 +7107,7 @@ var _DialogContent = _interopRequireDefault(__webpack_require__(284));
 
 var _DialogTitle = _interopRequireDefault(__webpack_require__(285));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _LinearProgress = _interopRequireDefault(__webpack_require__(286));
 
@@ -7186,37 +7211,37 @@ var _default = UiDialog;
 exports["default"] = _default;
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/InputAdornment");
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Popover");
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/FormControlLabel");
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-redux");
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Divider");
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7231,7 +7256,7 @@ exports["default"] = void 0;
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-var _FormControlLabel = _interopRequireDefault(__webpack_require__(94));
+var _FormControlLabel = _interopRequireDefault(__webpack_require__(95));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -7300,7 +7325,7 @@ var _default = UiRadioList;
 exports["default"] = _default;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7317,7 +7342,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _reselect = __webpack_require__(10);
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(107));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
@@ -7387,7 +7412,7 @@ var _default = activeRowsWithStyleFieldsSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7406,13 +7431,13 @@ var _d3Array = __webpack_require__(193);
 
 var _state = __webpack_require__(3);
 
-var _colourPaletteForField = _interopRequireDefault(__webpack_require__(85));
+var _colourPaletteForField = _interopRequireDefault(__webpack_require__(86));
 
 var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
-var _colourModeForField = _interopRequireDefault(__webpack_require__(87));
+var _colourModeForField = _interopRequireDefault(__webpack_require__(88));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -7562,13 +7587,13 @@ var _default = colourMapForFieldSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports = require("@phylocanvas/phylocanvas.gl");
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7606,7 +7631,7 @@ function isPointInPolygon(point, vs) {
 }
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7639,9 +7664,9 @@ var _Backspace = _interopRequireDefault(__webpack_require__(364));
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
-var _InputAdornment = _interopRequireDefault(__webpack_require__(92));
+var _InputAdornment = _interopRequireDefault(__webpack_require__(93));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -7649,7 +7674,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _SearchRounded = _interopRequireDefault(__webpack_require__(144));
 
-var _TextField = _interopRequireDefault(__webpack_require__(61));
+var _TextField = _interopRequireDefault(__webpack_require__(62));
 
 __webpack_require__(365);
 
@@ -7782,7 +7807,7 @@ var _default = UiFloatingFilter;
 exports["default"] = _default;
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7852,7 +7877,7 @@ var _default = geojsonLayerDataSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8015,7 +8040,7 @@ var _default = rowsWithDateFieldSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8049,7 +8074,7 @@ var _default = selectedIdsListSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8064,7 +8089,7 @@ exports["default"] = void 0;
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 function dataColumnSelector(state, slicerId) {
   var fieldsMap = (0, _dataColumnsByFieldMap["default"])(state);
@@ -8083,7 +8108,7 @@ var _default = dataColumnSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8104,9 +8129,9 @@ var _labelsDataColumn = _interopRequireDefault(__webpack_require__(114));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
@@ -8189,7 +8214,7 @@ var _default = rowsWithStyleFieldsSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8234,7 +8259,7 @@ var _default = shapesDataColumnSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8247,7 +8272,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _fileDescriptor = _interopRequireDefault(__webpack_require__(66));
+var _fileDescriptor = _interopRequireDefault(__webpack_require__(67));
 
 var _treeState = _interopRequireDefault(__webpack_require__(60));
 
@@ -8259,36 +8284,6 @@ function treeFileSelector(state, treeId) {
 
 var _default = treeFileSelector;
 exports["default"] = _default;
-
-/***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.subscribe = subscribe;
-exports.publish = publish;
-
-var _postal = _interopRequireDefault(__webpack_require__(269));
-
-var channel = _postal["default"].channel();
-
-function subscribe(event, callback) {
-  var subscription = channel.subscribe(event, callback);
-  return function () {
-    return subscription.unsubscribe();
-  };
-}
-
-function publish(event, data) {
-  return channel.publish(event, data);
-}
 
 /***/ }),
 /* 111 */
@@ -8310,9 +8305,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -8613,7 +8608,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(63));
+var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
 
 var idFieldNameSelector = function idFieldNameSelector(state) {
   var masterDataset = (0, _mainDatasetConfig["default"])(state);
@@ -9381,7 +9376,7 @@ exports["default"] = void 0;
 
 var _ColourSettingsMenu = _interopRequireDefault(__webpack_require__(350));
 
-var _colourModeForField = _interopRequireDefault(__webpack_require__(87));
+var _colourModeForField = _interopRequireDefault(__webpack_require__(88));
 
 var _state = __webpack_require__(3);
 
@@ -9425,9 +9420,9 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _List = _interopRequireDefault(__webpack_require__(121));
 
-var _ListItem = _interopRequireDefault(__webpack_require__(62));
+var _ListItem = _interopRequireDefault(__webpack_require__(63));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -9548,9 +9543,9 @@ var _state = __webpack_require__(3);
 
 var _CustomColourPaletteEditor = _interopRequireDefault(__webpack_require__(357));
 
-var _styles = __webpack_require__(82);
+var _styles = __webpack_require__(83);
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 function mapStateToProps(state, _ref) {
   var bins = _ref.bins,
@@ -9603,9 +9598,9 @@ var _classnames = _interopRequireDefault(__webpack_require__(13));
 
 var _CloseRounded = _interopRequireDefault(__webpack_require__(47));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
-var _Popover = _interopRequireDefault(__webpack_require__(93));
+var _Popover = _interopRequireDefault(__webpack_require__(94));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -9747,7 +9742,7 @@ var _extends2 = _interopRequireDefault(__webpack_require__(22));
 
 var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(39));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -9829,7 +9824,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _AutoSizer = _interopRequireDefault(__webpack_require__(158));
 
-var _lib = _interopRequireDefault(__webpack_require__(83));
+var _lib = _interopRequireDefault(__webpack_require__(84));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -9976,11 +9971,11 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ListItem = _interopRequireDefault(__webpack_require__(62));
+var _ListItem = _interopRequireDefault(__webpack_require__(63));
 
-var _ListItemText = _interopRequireDefault(__webpack_require__(84));
+var _ListItemText = _interopRequireDefault(__webpack_require__(85));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 var _reactWindow = __webpack_require__(432);
 
@@ -10683,9 +10678,9 @@ var _state = __webpack_require__(3);
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _rowsWithPositionField = _interopRequireDefault(__webpack_require__(129));
 
@@ -11045,13 +11040,13 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ListItem = _interopRequireDefault(__webpack_require__(62));
+var _ListItem = _interopRequireDefault(__webpack_require__(63));
 
 var _ListItemIcon = _interopRequireDefault(__webpack_require__(213));
 
-var _ListItemText = _interopRequireDefault(__webpack_require__(84));
+var _ListItemText = _interopRequireDefault(__webpack_require__(85));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 var _Checkbox = _interopRequireDefault(__webpack_require__(145));
 
@@ -11271,7 +11266,7 @@ exports.getGroupedColours = getGroupedColours;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _phylocanvas = __webpack_require__(100);
+var _phylocanvas = __webpack_require__(101);
 
 var _defaults = _interopRequireDefault(__webpack_require__(41));
 
@@ -11446,7 +11441,7 @@ var _dotparser = _interopRequireDefault(__webpack_require__(130));
 
 var _state = __webpack_require__(3);
 
-var _networkFile = _interopRequireDefault(__webpack_require__(79));
+var _networkFile = _interopRequireDefault(__webpack_require__(80));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -11532,7 +11527,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -11613,7 +11608,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -11726,7 +11721,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Slider = _interopRequireDefault(__webpack_require__(112));
 
-var _FormControlLabel = _interopRequireDefault(__webpack_require__(94));
+var _FormControlLabel = _interopRequireDefault(__webpack_require__(95));
 
 var _Switch = _interopRequireDefault(__webpack_require__(152));
 
@@ -11858,7 +11853,7 @@ var _state = __webpack_require__(3);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
@@ -12035,7 +12030,7 @@ var _reselect = __webpack_require__(10);
 
 var _constants = __webpack_require__(12);
 
-var _colours = __webpack_require__(86);
+var _colours = __webpack_require__(87);
 
 var _fullDataset = _interopRequireDefault(__webpack_require__(25));
 
@@ -12604,9 +12599,9 @@ exports["default"] = void 0;
 
 var _charts = __webpack_require__(161);
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(106));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 function chartAxisTypeSelector(state, slicerId) {
   var _slicerStateSelector = (0, _slicerState["default"])(state, slicerId),
@@ -12635,7 +12630,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.keyMap = exports.CommandKey = void 0;
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 // import { configure } from "react-hotkeys";
 // configure({
@@ -12679,7 +12674,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _fileDescriptor = _interopRequireDefault(__webpack_require__(66));
+var _fileDescriptor = _interopRequireDefault(__webpack_require__(67));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
@@ -12906,17 +12901,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _lodash = _interopRequireDefault(__webpack_require__(266));
+var _lodash = _interopRequireDefault(__webpack_require__(267));
 
 var _state = __webpack_require__(3);
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
 var _sortState = _interopRequireDefault(__webpack_require__(200));
 
-var _tableState = _interopRequireDefault(__webpack_require__(89));
+var _tableState = _interopRequireDefault(__webpack_require__(90));
 
 var dataSelector = function dataSelector(state, tableId) {
   var tableState = (0, _tableState["default"])(state, tableId);
@@ -13040,7 +13035,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _networkState = _interopRequireDefault(__webpack_require__(67));
+var _networkState = _interopRequireDefault(__webpack_require__(68));
 
 function isValidNetworkSelector(state, networkId) {
   var networkState = (0, _networkState["default"])(state, networkId);
@@ -13098,13 +13093,13 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _reselect = __webpack_require__(10);
 
-var _colours = __webpack_require__(86);
+var _colours = __webpack_require__(87);
 
 var _UiSelect = _interopRequireDefault(__webpack_require__(37));
 
 var _propTypes2 = __webpack_require__(14);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 var _ColourPaletteList = _interopRequireDefault(__webpack_require__(147));
 
@@ -13637,7 +13632,7 @@ var _TabPanel = _interopRequireDefault(__webpack_require__(441));
 
 __webpack_require__(442);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -13833,7 +13828,7 @@ Object.keys(_components).forEach(function (key) {
   });
 });
 
-var events = _interopRequireWildcard(__webpack_require__(110));
+var events = _interopRequireWildcard(__webpack_require__(61));
 
 var downloads = _interopRequireWildcard(__webpack_require__(53));
 
@@ -14309,7 +14304,7 @@ __webpack_require__(231);
 
 var _shortcuts = __webpack_require__(190);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 var _state = __webpack_require__(3);
 
@@ -14626,11 +14621,11 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
 
 var _asyncIterator2 = _interopRequireDefault(__webpack_require__(124));
 
-var _core = __webpack_require__(65);
+var _core = __webpack_require__(66);
 
 var _csv = __webpack_require__(240);
 
-var _datasets = __webpack_require__(64);
+var _datasets = __webpack_require__(65);
 
 var _proxy = __webpack_require__(48);
 
@@ -14942,7 +14937,7 @@ var _regenerator = _interopRequireDefault(__webpack_require__(31));
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
 
-var _core = __webpack_require__(65);
+var _core = __webpack_require__(66);
 
 var _json = __webpack_require__(242);
 
@@ -15083,7 +15078,7 @@ var _wrapAsyncGenerator2 = _interopRequireDefault(__webpack_require__(245));
 
 var _asyncIterator2 = _interopRequireDefault(__webpack_require__(124));
 
-var _core = __webpack_require__(65);
+var _core = __webpack_require__(66);
 
 var _proxy = __webpack_require__(48);
 
@@ -15340,11 +15335,11 @@ var _regenerator = _interopRequireDefault(__webpack_require__(31));
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
 
-var _core = __webpack_require__(65);
+var _core = __webpack_require__(66);
 
 var _proxy = __webpack_require__(48);
 
-var _datasets = __webpack_require__(64);
+var _datasets = __webpack_require__(65);
 
 // import { ExcelLoader } from "@loaders.gl/excel";
 function readSpeadsheetFile(arrayBuffer, options) {
@@ -15981,7 +15976,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geometry = __webpack_require__(101);
+var _geometry = __webpack_require__(102);
 
 var _state = __webpack_require__(3);
 
@@ -16143,11 +16138,11 @@ var _state = __webpack_require__(3);
 
 var _sets = __webpack_require__(44);
 
-var _trees = __webpack_require__(88);
+var _trees = __webpack_require__(89);
 
 var _rowsByLabel = _interopRequireDefault(__webpack_require__(183));
 
-var _treeFile = _interopRequireDefault(__webpack_require__(109));
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -16273,7 +16268,7 @@ var _state = __webpack_require__(3);
 
 var _sets = __webpack_require__(44);
 
-var _geometry = __webpack_require__(101);
+var _geometry = __webpack_require__(102);
 
 var _layout = _interopRequireDefault(__webpack_require__(184));
 
@@ -16441,7 +16436,7 @@ var _bounds2 = _interopRequireDefault(__webpack_require__(198));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -16659,10 +16654,16 @@ exports["default"] = _default;
 /* 266 */
 /***/ (function(module, exports) {
 
-module.exports = require("lodash.orderby");
+module.exports = require("postal");
 
 /***/ }),
 /* 267 */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash.orderby");
+
+/***/ }),
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16681,16 +16682,10 @@ var _default = styleSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 268 */
-/***/ (function(module, exports) {
-
-module.exports = require("html2canvas");
-
-/***/ }),
 /* 269 */
 /***/ (function(module, exports) {
 
-module.exports = require("postal");
+module.exports = require("html2canvas");
 
 /***/ }),
 /* 270 */
@@ -16998,7 +16993,7 @@ var _reselect = __webpack_require__(10);
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
-var _MenuItem = _interopRequireDefault(__webpack_require__(80));
+var _MenuItem = _interopRequireDefault(__webpack_require__(81));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -17016,7 +17011,7 @@ var _TableHead = _interopRequireDefault(__webpack_require__(278));
 
 var _TableRow = _interopRequireDefault(__webpack_require__(279));
 
-var _TextField = _interopRequireDefault(__webpack_require__(61));
+var _TextField = _interopRequireDefault(__webpack_require__(62));
 
 var _Button = _interopRequireDefault(__webpack_require__(29));
 
@@ -17028,7 +17023,7 @@ var _files = __webpack_require__(38);
 
 var _hash = __webpack_require__(46);
 
-var _UiDialog = _interopRequireDefault(__webpack_require__(91));
+var _UiDialog = _interopRequireDefault(__webpack_require__(92));
 
 var _UiTextfield = _interopRequireDefault(__webpack_require__(49));
 
@@ -17582,7 +17577,7 @@ var _js = __webpack_require__(118);
 
 __webpack_require__(299);
 
-var _MdiIcon = _interopRequireDefault(__webpack_require__(81));
+var _MdiIcon = _interopRequireDefault(__webpack_require__(82));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -17892,7 +17887,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Toolbar = _interopRequireDefault(__webpack_require__(305));
 
-var _Typography = _interopRequireDefault(__webpack_require__(77));
+var _Typography = _interopRequireDefault(__webpack_require__(78));
 
 __webpack_require__(141);
 
@@ -18022,11 +18017,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _EditTwoTone = _interopRequireDefault(__webpack_require__(142));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -18034,7 +18029,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 __webpack_require__(141);
 
-var _panes = __webpack_require__(68);
+var _panes = __webpack_require__(69);
 
 var _PaneIcon = _interopRequireDefault(__webpack_require__(55));
 
@@ -18227,7 +18222,7 @@ exports["default"] = void 0;
 
 var _GetAppRounded = _interopRequireDefault(__webpack_require__(319));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -18449,13 +18444,13 @@ var _reselect = __webpack_require__(10);
 
 var _InfoTwoTone = _interopRequireDefault(__webpack_require__(324));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Typography = _interopRequireDefault(__webpack_require__(77));
+var _Typography = _interopRequireDefault(__webpack_require__(78));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
@@ -18570,7 +18565,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _filters = __webpack_require__(51);
 
@@ -18768,7 +18763,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var numberOfSelectedRowsSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -19126,7 +19121,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _styles = __webpack_require__(82);
+var _styles = __webpack_require__(83);
 
 var _colourableDataFields = _interopRequireDefault(__webpack_require__(340));
 
@@ -19138,7 +19133,7 @@ var _labelsDataColumn = _interopRequireDefault(__webpack_require__(114));
 
 var _shapableDataFields = _interopRequireDefault(__webpack_require__(341));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 var _StylesMenuContent = _interopRequireDefault(__webpack_require__(342));
 
@@ -19301,7 +19296,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 __webpack_require__(343);
 
@@ -19656,11 +19651,11 @@ exports["default"] = void 0;
 
 var _ColourSettingsContent = _interopRequireDefault(__webpack_require__(352));
 
-var _styles = __webpack_require__(82);
+var _styles = __webpack_require__(83);
 
-var _colourPaletteForField = _interopRequireDefault(__webpack_require__(85));
+var _colourPaletteForField = _interopRequireDefault(__webpack_require__(86));
 
-var _colourModeForField = _interopRequireDefault(__webpack_require__(87));
+var _colourModeForField = _interopRequireDefault(__webpack_require__(88));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
@@ -19896,11 +19891,11 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _reselect = __webpack_require__(10);
 
-var _colours = __webpack_require__(86);
+var _colours = __webpack_require__(87);
 
 var _propTypes2 = __webpack_require__(14);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 var _ColourPaletteList = _interopRequireDefault(__webpack_require__(147));
 
@@ -20186,7 +20181,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _lib = _interopRequireDefault(__webpack_require__(83));
+var _lib = _interopRequireDefault(__webpack_require__(84));
 
 var _Box = _interopRequireDefault(__webpack_require__(23));
 
@@ -20206,7 +20201,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _ColourPicker = _interopRequireDefault(__webpack_require__(359));
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -20759,7 +20754,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _flexlayoutReact = _interopRequireDefault(__webpack_require__(90));
+var _flexlayoutReact = _interopRequireDefault(__webpack_require__(91));
 
 var _classnames = _interopRequireDefault(__webpack_require__(13));
 
@@ -20769,9 +20764,11 @@ __webpack_require__(372);
 
 var _components = __webpack_require__(373);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 var _constants = __webpack_require__(12);
+
+var _events = __webpack_require__(61);
 
 var _UiSpinningLoader = _interopRequireDefault(__webpack_require__(140));
 
@@ -20981,7 +20978,19 @@ var LayoutManager = /*#__PURE__*/function (_React$PureComponent2) {
   (0, _createClass2["default"])(LayoutManager, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      window.MicroreactViewerPanes = this.elRef;
+      var _this4 = this;
+
+      this.addNewPaneUnsubscribe = (0, _events.subscribe)("add-new-pane", function (_ref4) {
+        var _ref5 = (0, _slicedToArray2["default"])(_ref4, 2),
+            label = _ref5[0],
+            tab = _ref5[1];
+
+        _this4.elRef.current.addTabWithDragAndDrop("".concat(label, "<br />(Esc to cancel)"), tab);
+
+        (0, _browser.nextFrame)(function () {
+          return _flexlayoutReact["default"].DragDrop.instance._glass.focus();
+        });
+      });
       this.props.onLayoutModelChange(this.props.layoutModel);
       window.addEventListener("resize", this.updateRect);
     } // componentDidUpdate(prevProps, prevState) {
@@ -20994,7 +21003,7 @@ var LayoutManager = /*#__PURE__*/function (_React$PureComponent2) {
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      window.MicroreactViewerPanes = undefined;
+      this === null || this === void 0 ? void 0 : this.addNewPaneUnsubscribe();
       window.removeEventListener("resize", this.updateRect);
     }
   }, {
@@ -21257,9 +21266,9 @@ var _Box = _interopRequireDefault(__webpack_require__(23));
 
 var _List = _interopRequireDefault(__webpack_require__(121));
 
-var _ListItem = _interopRequireDefault(__webpack_require__(62));
+var _ListItem = _interopRequireDefault(__webpack_require__(63));
 
-var _ListItemText = _interopRequireDefault(__webpack_require__(84));
+var _ListItemText = _interopRequireDefault(__webpack_require__(85));
 
 var _ListItemAvatar = _interopRequireDefault(__webpack_require__(376));
 
@@ -21285,7 +21294,7 @@ var _TreePaneEditor = _interopRequireDefault(__webpack_require__(396));
 
 var _SlicerPaneEditor = _interopRequireDefault(__webpack_require__(398));
 
-var _UiDialog = _interopRequireDefault(__webpack_require__(91));
+var _UiDialog = _interopRequireDefault(__webpack_require__(92));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -21556,7 +21565,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
 var _MapPaneEditor = _interopRequireDefault(__webpack_require__(379));
 
@@ -21609,7 +21618,7 @@ var _UiSelect = _interopRequireDefault(__webpack_require__(37));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
-var _FileEditor = _interopRequireDefault(__webpack_require__(69));
+var _FileEditor = _interopRequireDefault(__webpack_require__(70));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -21734,9 +21743,9 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _FormControl = _interopRequireDefault(__webpack_require__(151));
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
-var _InputAdornment = _interopRequireDefault(__webpack_require__(92));
+var _InputAdornment = _interopRequireDefault(__webpack_require__(93));
 
 var _InputLabel = _interopRequireDefault(__webpack_require__(150));
 
@@ -21760,7 +21769,7 @@ var _EditTwoTone = _interopRequireDefault(__webpack_require__(142));
 
 __webpack_require__(156);
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -22039,15 +22048,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _networks = __webpack_require__(78);
+var _networks = __webpack_require__(79);
 
 var _state = __webpack_require__(3);
 
 var _fullDataset = _interopRequireDefault(__webpack_require__(25));
 
-var _networkFile = _interopRequireDefault(__webpack_require__(79));
+var _networkFile = _interopRequireDefault(__webpack_require__(80));
 
-var _networkState = _interopRequireDefault(__webpack_require__(67));
+var _networkState = _interopRequireDefault(__webpack_require__(68));
 
 var _NetworkPaneEditor = _interopRequireDefault(__webpack_require__(387));
 
@@ -22115,7 +22124,7 @@ var _networks = __webpack_require__(208);
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
-var _FileEditor = _interopRequireDefault(__webpack_require__(69));
+var _FileEditor = _interopRequireDefault(__webpack_require__(70));
 
 var _MiniTable = _interopRequireDefault(__webpack_require__(157));
 
@@ -22284,7 +22293,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _tables = __webpack_require__(75);
+var _tables = __webpack_require__(76);
 
 var _datasets = __webpack_require__(125);
 
@@ -22292,9 +22301,9 @@ var _TablePaneEditor = _interopRequireDefault(__webpack_require__(390));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
-var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(63));
+var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
 
-var _tableState = _interopRequireDefault(__webpack_require__(89));
+var _tableState = _interopRequireDefault(__webpack_require__(90));
 
 var _dataFiles = _interopRequireDefault(__webpack_require__(393));
 
@@ -22394,7 +22403,7 @@ var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
 var _DataColumnsEditor = _interopRequireDefault(__webpack_require__(391));
 
-var _FileEditor = _interopRequireDefault(__webpack_require__(69));
+var _FileEditor = _interopRequireDefault(__webpack_require__(70));
 
 var _constants = __webpack_require__(12);
 
@@ -22694,7 +22703,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _AutoSizer = _interopRequireDefault(__webpack_require__(158));
 
-var _lib = _interopRequireDefault(__webpack_require__(83));
+var _lib = _interopRequireDefault(__webpack_require__(84));
 
 var _ColourSettingsMenu = _interopRequireDefault(__webpack_require__(146));
 
@@ -22890,7 +22899,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _timelines = __webpack_require__(76);
+var _timelines = __webpack_require__(77);
 
 var _TimelinePaneEditor = _interopRequireDefault(__webpack_require__(395));
 
@@ -23027,13 +23036,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _trees = __webpack_require__(73);
+var _trees = __webpack_require__(74);
 
 var _treeState = _interopRequireDefault(__webpack_require__(60));
 
 var _fullDataset = _interopRequireDefault(__webpack_require__(25));
 
-var _treeFile = _interopRequireDefault(__webpack_require__(109));
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
 var _state = __webpack_require__(3);
 
@@ -23099,9 +23108,9 @@ var _reselect = __webpack_require__(10);
 
 var _constants = __webpack_require__(12);
 
-var _trees = __webpack_require__(88);
+var _trees = __webpack_require__(89);
 
-var _FileEditor = _interopRequireDefault(__webpack_require__(69));
+var _FileEditor = _interopRequireDefault(__webpack_require__(70));
 
 var _MiniTable = _interopRequireDefault(__webpack_require__(157));
 
@@ -23297,7 +23306,7 @@ var _slicers = __webpack_require__(134);
 
 var _state = __webpack_require__(3);
 
-var _slicerState = _interopRequireDefault(__webpack_require__(74));
+var _slicerState = _interopRequireDefault(__webpack_require__(75));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
@@ -23307,7 +23316,7 @@ var _SlicerPaneEditor = _interopRequireDefault(__webpack_require__(401));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _dataColumn = _interopRequireDefault(__webpack_require__(106));
+var _dataColumn = _interopRequireDefault(__webpack_require__(107));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var slicerId = _ref.slicerId;
@@ -23385,7 +23394,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var _constants = __webpack_require__(12);
 
-var _text = __webpack_require__(70);
+var _text = __webpack_require__(71);
 
 var _UiSelect = _interopRequireDefault(__webpack_require__(37));
 
@@ -25980,7 +25989,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = delayDispatchMiddleware;
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 /* eslint-disable consistent-return */
 // const dispatch = store.dispatch;
@@ -26222,13 +26231,13 @@ var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
 var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
-var _UiDialog = _interopRequireDefault(__webpack_require__(91));
+var _UiDialog = _interopRequireDefault(__webpack_require__(92));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
 var _UiIconButton = _interopRequireDefault(__webpack_require__(176));
 
@@ -26240,7 +26249,7 @@ var _UiPopover = _interopRequireDefault(__webpack_require__(149));
 
 var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(45));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(170));
 
@@ -26260,7 +26269,7 @@ var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _ZoomControls = _interopRequireDefault(__webpack_require__(179));
 
-var _MdiIcon = _interopRequireDefault(__webpack_require__(81));
+var _MdiIcon = _interopRequireDefault(__webpack_require__(82));
 
 /***/ }),
 /* 426 */
@@ -26276,7 +26285,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _IconButton = _interopRequireDefault(__webpack_require__(21));
+var _IconButton = _interopRequireDefault(__webpack_require__(20));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -26343,7 +26352,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Menu = _interopRequireDefault(__webpack_require__(211));
 
-var _Popover = _interopRequireDefault(__webpack_require__(93));
+var _Popover = _interopRequireDefault(__webpack_require__(94));
 
 __webpack_require__(212);
 

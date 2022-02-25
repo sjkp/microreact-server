@@ -248,7 +248,7 @@ var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -430,11 +430,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _TimelinePane = _interopRequireDefault(__webpack_require__(621));
 
-var _timelines = __webpack_require__(76);
+var _timelines = __webpack_require__(77);
 
 var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
 
@@ -518,7 +518,7 @@ var _Paper = _interopRequireDefault(__webpack_require__(36));
 
 var _InputBase = _interopRequireDefault(__webpack_require__(479));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 __webpack_require__(622);
 
@@ -736,9 +736,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
-var _timelines = __webpack_require__(76);
+var _timelines = __webpack_require__(77);
 
 var _TimelineSlider = _interopRequireDefault(__webpack_require__(624));
 
@@ -816,7 +816,7 @@ __webpack_require__(625);
 
 var Datetime = _interopRequireWildcard(__webpack_require__(56));
 
-var _browser = __webpack_require__(20);
+var _browser = __webpack_require__(21);
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1179,7 +1179,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _timelines = __webpack_require__(76);
+var _timelines = __webpack_require__(77);
 
 var _ui = __webpack_require__(27);
 
@@ -1268,9 +1268,9 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -1372,7 +1372,7 @@ var _Slider = _interopRequireDefault(__webpack_require__(112));
 
 var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _reselect = __webpack_require__(10);
 
@@ -1384,7 +1384,7 @@ var _Animation = _interopRequireDefault(__webpack_require__(166));
 
 var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
@@ -1758,7 +1758,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _reactVega = __webpack_require__(447);
 
@@ -2000,11 +2000,11 @@ var _state = __webpack_require__(3);
 
 var _selectedIdsSet = _interopRequireDefault(__webpack_require__(173));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _datetime = __webpack_require__(56);
 

@@ -15,7 +15,7 @@ exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
@@ -88,7 +88,7 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
@@ -254,7 +254,7 @@ exports.linearGradientImage = linearGradientImage;
 
 var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(458));
 
-var _phylocanvas = __webpack_require__(100);
+var _phylocanvas = __webpack_require__(101);
 
 /* eslint-disable no-lonely-if */
 
@@ -562,7 +562,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
 var _reselect = __webpack_require__(10);
 
-var _text = __webpack_require__(70);
+var _text = __webpack_require__(71);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
@@ -787,17 +787,17 @@ var _reselect = __webpack_require__(10);
 
 var _arrays = __webpack_require__(24);
 
-var _text = __webpack_require__(70);
+var _text = __webpack_require__(71);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
 
 var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 

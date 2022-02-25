@@ -23,7 +23,7 @@ var _NetworkPane = _interopRequireDefault(__webpack_require__(582));
 
 var _isValidNetwork = _interopRequireDefault(__webpack_require__(202));
 
-var _networkFile = _interopRequireDefault(__webpack_require__(79));
+var _networkFile = _interopRequireDefault(__webpack_require__(80));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var networkId = _ref.networkId;
@@ -308,7 +308,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = canvasLasso;
 
-var _geometry = __webpack_require__(101);
+var _geometry = __webpack_require__(102);
 
 /* eslint-disable prefer-object-spread */
 
@@ -519,7 +519,7 @@ var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(107));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -594,13 +594,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _NetworkPane = _interopRequireDefault(__webpack_require__(583));
 
 var _filters = __webpack_require__(51);
 
-var _networks = __webpack_require__(78);
+var _networks = __webpack_require__(79);
 
 var _graph = _interopRequireDefault(__webpack_require__(593));
 
@@ -1426,7 +1426,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _networks = __webpack_require__(78);
+var _networks = __webpack_require__(79);
 
 var _ui = __webpack_require__(27);
 
@@ -1532,7 +1532,7 @@ var _Slider = _interopRequireDefault(__webpack_require__(112));
 
 var _Menu = _interopRequireDefault(__webpack_require__(163));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _Animation = _interopRequireDefault(__webpack_require__(166));
 

@@ -17,7 +17,7 @@ var _filters = __webpack_require__(51);
 
 var _panes = __webpack_require__(58);
 
-var _styles = __webpack_require__(82);
+var _styles = __webpack_require__(83);
 
 var _LegendPane = _interopRequireDefault(__webpack_require__(546));
 
@@ -85,11 +85,11 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _clsx = _interopRequireDefault(__webpack_require__(119));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _htmlsvg = _interopRequireDefault(__webpack_require__(457));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
@@ -249,7 +249,7 @@ var _reselect = __webpack_require__(10);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
 

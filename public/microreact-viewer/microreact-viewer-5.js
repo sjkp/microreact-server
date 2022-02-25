@@ -374,7 +374,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
 var hasGeojsonDataSelector = function hasGeojsonDataSelector(state, mapId) {
   return !!(0, _geojsonLayerData["default"])(state, mapId);
@@ -509,7 +509,7 @@ exports["default"] = void 0;
 
 var _filters = __webpack_require__(51);
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -975,7 +975,7 @@ var _propTypes2 = __webpack_require__(14);
 
 var HtmlUtils = _interopRequireWildcard(__webpack_require__(35));
 
-var _events = __webpack_require__(110);
+var _events = __webpack_require__(61);
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1568,7 +1568,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
 var _MapLassoLayer = _interopRequireDefault(__webpack_require__(565));
 
@@ -1633,7 +1633,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _reactMapGl = __webpack_require__(448);
 
-var _geometry = __webpack_require__(101);
+var _geometry = __webpack_require__(102);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -1879,7 +1879,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
@@ -2023,7 +2023,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Divider = _interopRequireDefault(__webpack_require__(96));
+var _Divider = _interopRequireDefault(__webpack_require__(97));
 
 var _Menu = _interopRequireDefault(__webpack_require__(163));
 
@@ -2043,7 +2043,7 @@ var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(42));
 
 var _UiToggleSlider = _interopRequireDefault(__webpack_require__(178));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(97));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(205));
 
@@ -2376,11 +2376,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _MapGeojsonLayer = _interopRequireDefault(__webpack_require__(571));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
 var _geojsonLayerStyle = _interopRequireDefault(__webpack_require__(572));
 
@@ -2475,7 +2475,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
 var _mapState = _interopRequireDefault(__webpack_require__(30));
 
@@ -2584,8 +2584,14 @@ var geojsonLayerStyleSelector = (0, _state.createKeyedStateSelector)(function (s
   var style = {
     "fill-color": color,
     "fill-opacity": regionsColourOpacity / 100,
-    "fill-outline-color": showRegionOutlines ? "rgba(0, 0, 0, 0.24)" : color
+    "fill-outline-color": showRegionOutlines ? "rgba(0, 0, 0, 1)" : color
   };
+
+  if (regionsColourOpacity === 0) {
+    style["fill-opacity"] = 100;
+    style["fill-color"] = "rgba(0, 0, 0, 0)";
+  }
+
   return style;
 });
 var _default = geojsonLayerStyleSelector;
@@ -2606,11 +2612,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _filters = __webpack_require__(51);
 
-var _maps = __webpack_require__(72);
+var _maps = __webpack_require__(73);
 
 var _markerSizeLegendItems = _interopRequireDefault(__webpack_require__(574));
 

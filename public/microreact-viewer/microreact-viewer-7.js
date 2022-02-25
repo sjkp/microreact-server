@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(95);
+var _reactRedux = __webpack_require__(96);
 
 var _NotePane = _interopRequireDefault(__webpack_require__(596));
 
@@ -96,7 +96,7 @@ __webpack_require__(597);
 
 var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
 
-var BrowserUtils = _interopRequireWildcard(__webpack_require__(20));
+var BrowserUtils = _interopRequireWildcard(__webpack_require__(21));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 

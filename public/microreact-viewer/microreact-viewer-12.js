@@ -95,9 +95,9 @@ var _state = __webpack_require__(3);
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(108));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 function mapStateToProps(state) {
   var _selectedRowsSelector;
@@ -191,7 +191,7 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Typography = _interopRequireDefault(__webpack_require__(77));
+var _Typography = _interopRequireDefault(__webpack_require__(78));
 
 var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
@@ -267,7 +267,7 @@ var _reactSortableHoc = __webpack_require__(452);
 
 __webpack_require__(656);
 
-var BrowserUtils = _interopRequireWildcard(__webpack_require__(20));
+var BrowserUtils = _interopRequireWildcard(__webpack_require__(21));
 
 var _UiEmptyState = _interopRequireDefault(__webpack_require__(530));
 
@@ -694,9 +694,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Typography = _interopRequireDefault(__webpack_require__(77));
+var _Typography = _interopRequireDefault(__webpack_require__(78));
 
-var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
+var _ListSubheader = _interopRequireDefault(__webpack_require__(72));
 
 __webpack_require__(660);
 
@@ -1082,7 +1082,7 @@ var _config = _interopRequireDefault(__webpack_require__(50));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(99));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
@@ -1280,7 +1280,7 @@ var _constants = __webpack_require__(12);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(98));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
 var _selectedRows = _interopRequireDefault(__webpack_require__(169));
 
