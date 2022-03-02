@@ -147,7 +147,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(40));
+var _layoutModel = _interopRequireDefault(__webpack_require__(41));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);

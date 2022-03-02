@@ -564,7 +564,7 @@ var _reselect = __webpack_require__(10);
 
 var _text = __webpack_require__(71);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(36));
 
 var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
@@ -789,7 +789,7 @@ var _arrays = __webpack_require__(24);
 
 var _text = __webpack_require__(71);
 
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(43));
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(36));
 
 var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
@@ -900,7 +900,7 @@ function coloursLegendEntriesSelector(state, field) {
     try {
       for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
         var row = _step2.value;
-        var value = row[field];
+        var value = dataColumn.dataType === "date" ? row[field].valueOf() : row[field];
 
         if (!uniqueValues.has(value)) {
           var colour = colourMap.get(value);
@@ -919,7 +919,7 @@ function coloursLegendEntriesSelector(state, field) {
       _iterator2.f();
     }
 
-    entries.sort((0, _arrays.sortComparator)("label"));
+    entries.sort((0, _arrays.sortComparator)("value"));
   } else if (colourMap.scale === "binned") {
     for (var index = 1; index <= colourMap.numberOfBins; index++) {
       var start = colourMap.domain[0] + colourMap.binLength * (index - 1);

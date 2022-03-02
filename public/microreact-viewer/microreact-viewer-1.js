@@ -66,7 +66,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(2);
 
-var _layoutModel = _interopRequireDefault(__webpack_require__(40));
+var _layoutModel = _interopRequireDefault(__webpack_require__(41));
 
 var paneWidthSelector = function paneWidthSelector(state, paneId) {
   var model = (0, _layoutModel["default"])(state);
@@ -464,10 +464,12 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     showSelection: chartState.showSelection,
     spec: chartState.spec,
     xAxisField: chartState.xAxisField,
+    xAxisLabelAngle: chartState.xAxisLabelAngle,
     xAxisMode: chartState.xAxisMode,
     xAxisOrder: chartState.xAxisOrder,
     xAxisType: chartState.xAxisType,
     yAxisField: chartState.yAxisField,
+    yAxisLabelAngle: chartState.yAxisLabelAngle,
     yAxisMode: chartState.yAxisMode,
     yAxisOrder: chartState.yAxisOrder,
     yAxisType: chartState.yAxisType
@@ -510,6 +512,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     onXAxisFieldChage: function onXAxisFieldChage(value) {
       return dispatch((0, _charts.update)(chartId, "xAxisField", value));
     },
+    onXAxisLabelAngleChange: function onXAxisLabelAngleChange(value) {
+      return dispatch((0, _charts.update)(chartId, "xAxisLabelAngle", value));
+    },
     onXAxisModeChange: function onXAxisModeChange(value) {
       return dispatch((0, _charts.update)(chartId, "xAxisMode", value));
     },
@@ -521,6 +526,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     },
     onYAxisFieldChage: function onYAxisFieldChage(value) {
       return dispatch((0, _charts.update)(chartId, "yAxisField", value));
+    },
+    onYAxisLabelAngleChange: function onYAxisLabelAngleChange(value) {
+      return dispatch((0, _charts.update)(chartId, "yAxisLabelAngle", value));
     },
     onYAxisModeChange: function onYAxisModeChange(value) {
       return dispatch((0, _charts.update)(chartId, "yAxisMode", value));
@@ -631,7 +639,7 @@ var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(28));
 
-var _UiSelect = _interopRequireDefault(__webpack_require__(37));
+var _UiSelect = _interopRequireDefault(__webpack_require__(38));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -657,6 +665,23 @@ var options = [{
 }, {
   label: "Nominal",
   value: "nominal"
+}];
+var axisSortOptions = [{
+  label: "Ascending order",
+  value: "ascending"
+}, {
+  label: "Descending order",
+  value: "descending"
+}];
+var axisLabelAngleOptions = [{
+  label: "Horizontal",
+  value: 0
+}, {
+  label: "Diagonal",
+  value: -45
+}, {
+  label: "Vertical",
+  value: -90
 }];
 
 var ChartDataTypeSelect = /*#__PURE__*/_react["default"].memo(function (props) {
@@ -709,13 +734,14 @@ var MainAxisMenu = /*#__PURE__*/_react["default"].forwardRef(function (props, re
     onChange: function onChange(value) {
       return props.onAxisOrderChange(value);
     },
-    options: [{
-      label: "Ascending order",
-      value: "ascending"
-    }, {
-      label: "Descending order",
-      value: "descending"
-    }]
+    options: axisSortOptions
+  }), typeof props.axisLabelAngle === "number" && /*#__PURE__*/_react["default"].createElement(_UiSelect["default"], {
+    label: "Label angle",
+    value: props.axisLabelAngle,
+    onChange: function onChange(value) {
+      return props.onAxisLabelAngleChange(value);
+    },
+    options: axisLabelAngleOptions
   }), props.children);
 });
 
@@ -723,11 +749,13 @@ MainAxisMenu.displayName = "MainAxisMenu";
 MainAxisMenu.propTypes = {
   axisBins: _propTypes["default"].number,
   axisField: _propTypes["default"].string,
+  axisLabelAngle: _propTypes["default"].number,
   axisOrder: _propTypes["default"].string,
   axisType: _propTypes["default"].string,
   children: _propTypes["default"].node,
   fullDatasetColumns: _propTypes["default"].arrayOf(_propTypes2.DataColumn).isRequired,
   onAxisFieldChange: _propTypes["default"].func.isRequired,
+  onAxisLabelAngleChange: _propTypes["default"].func.isRequired,
   onAxisOrderChange: _propTypes["default"].func.isRequired,
   onAxisReset: _propTypes["default"].func,
   onAxisTypeChange: _propTypes["default"].func.isRequired,
@@ -909,7 +937,9 @@ var ChartControls = /*#__PURE__*/function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var _this2 = this,
-          _props$seriesDataColu;
+          _props$seriesDataColu,
+          _props$yAxisLabelAngl,
+          _props$xAxisLabelAngl;
 
       var props = this.props;
       var isStandardChartType = props.chartType && props.chartType !== "custom";
@@ -978,12 +1008,14 @@ var ChartControls = /*#__PURE__*/function (_React$PureComponent) {
         options: stackingTypes
       })), isStandardChartType && (!props.mainAxisEncoding || props.mainAxisEncoding === "y") ? /*#__PURE__*/_react["default"].createElement(MainAxisMenu, {
         axisField: props.yAxisField,
+        axisLabelAngle: (_props$yAxisLabelAngl = props.yAxisLabelAngle) !== null && _props$yAxisLabelAngl !== void 0 ? _props$yAxisLabelAngl : 0,
         axisOrder: props.yAxisOrder,
         axisType: props.yAxisType,
         fullDatasetColumns: props.fullDatasetColumns,
         onAxisFieldChange: function onAxisFieldChange(field) {
           return props.onMainAxisFieldChange("yAxisField", field);
         },
+        onAxisLabelAngleChange: props.onYAxisLabelAngleChange,
         onAxisOrderChange: props.onYAxisOrderChange,
         onAxisReset: function onAxisReset() {
           return props.onMainAxisFieldChange("yAxisField");
@@ -1006,12 +1038,14 @@ var ChartControls = /*#__PURE__*/function (_React$PureComponent) {
         title: "Y Axis"
       }), isStandardChartType && (!props.mainAxisEncoding || props.mainAxisEncoding === "x") ? /*#__PURE__*/_react["default"].createElement(MainAxisMenu, {
         axisField: props.xAxisField,
+        axisLabelAngle: (_props$xAxisLabelAngl = props.xAxisLabelAngle) !== null && _props$xAxisLabelAngl !== void 0 ? _props$xAxisLabelAngl : -90,
         axisOrder: props.xAxisOrder,
         axisType: props.xAxisType,
         fullDatasetColumns: props.fullDatasetColumns,
         onAxisFieldChange: function onAxisFieldChange(field) {
           return props.onMainAxisFieldChange("xAxisField", field);
         },
+        onAxisLabelAngleChange: props.onXAxisLabelAngleChange,
         onAxisOrderChange: props.onXAxisOrderChange,
         onAxisReset: function onAxisReset() {
           return props.onMainAxisFieldChange("xAxisField");
@@ -1092,10 +1126,12 @@ ChartControls.propTypes = {
   onShowSelecttionChange: _propTypes["default"].func.isRequired,
   onSpecChange: _propTypes["default"].func.isRequired,
   onXAxisFieldChage: _propTypes["default"].func.isRequired,
+  onXAxisLabelAngleChange: _propTypes["default"].func.isRequired,
   onXAxisModeChange: _propTypes["default"].func.isRequired,
   onXAxisOrderChange: _propTypes["default"].func.isRequired,
   onXAxisTypeChange: _propTypes["default"].func.isRequired,
   onYAxisFieldChage: _propTypes["default"].func.isRequired,
+  onYAxisLabelAngleChange: _propTypes["default"].func.isRequired,
   onYAxisModeChange: _propTypes["default"].func.isRequired,
   onYAxisOrderChange: _propTypes["default"].func.isRequired,
   onYAxisTypeChange: _propTypes["default"].func.isRequired,
@@ -1108,10 +1144,12 @@ ChartControls.propTypes = {
   spec: _propTypes["default"].string,
   xAxisBins: _propTypes["default"].number,
   xAxisField: _propTypes["default"].string,
+  xAxisLabelAngle: _propTypes["default"].number,
   xAxisMode: _propTypes2.ChartAxisMode,
   xAxisOrder: _propTypes["default"].string,
   xAxisType: _propTypes["default"].string,
   yAxisField: _propTypes["default"].string,
+  yAxisLabelAngle: _propTypes["default"].number,
   yAxisMode: _propTypes2.ChartAxisMode,
   yAxisOrder: _propTypes["default"].string,
   yAxisType: _propTypes["default"].string
@@ -1391,8 +1429,9 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
 }, function (state, chartId) {
   return (0, _chartState["default"])(state, chartId).xAxisOrder;
 }, function (state, chartId) {
-  return (0, _chartState["default"])(state, chartId).xAxisBins;
-}, function (state, chartId) {
+  return (0, _chartState["default"])(state, chartId).xAxisLabelAngle;
+}, // (state, chartId) => chartStateSelector(state, chartId).xAxisBins,
+function (state, chartId) {
   return (0, _yAxisMode["default"])(state, chartId);
 }, function (state, chartId) {
   return (0, _yAxisField["default"])(state, chartId);
@@ -1400,6 +1439,8 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
   return (0, _yAxisType["default"])(state, chartId);
 }, function (state, chartId) {
   return (0, _chartState["default"])(state, chartId).yAxisOrder;
+}, function (state, chartId) {
+  return (0, _chartState["default"])(state, chartId).yAxisLabelAngle;
 }, function (state, chartId) {
   return (0, _seriesField["default"])(state, chartId);
 }, function (state, chartId) {
@@ -1412,7 +1453,8 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
   return (0, _seriesStacking["default"])(state, chartId);
 }, function (state, chartId) {
   return seriesScaleSelector(state, chartId);
-}, function (chartType, interpolateType, mainAxisEncoding, xAxisMode, xAxisDataColumn, xAxisType, xAxisOrder, xAxisBins, yAxisMode, yAxisDataColumn, yAxisType, yAxisOrder, seriesDataColumn, seriesFieldType, seriesOrder, seriesStacking, seriesScale) {
+}, function (chartType, interpolateType, mainAxisEncoding, xAxisMode, xAxisDataColumn, xAxisType, xAxisOrder, xAxisLabelAngle, // xAxisBins,
+yAxisMode, yAxisDataColumn, yAxisType, yAxisOrder, yAxisLabelAngle, seriesDataColumn, seriesFieldType, seriesOrder, seriesStacking, seriesScale) {
   var vlSpec = {
     $schema: "https://vega.github.io/schema/vega-lite",
     transform: [{
@@ -1434,18 +1476,20 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
 
   };
   var xAxis = {
-    mode: xAxisMode,
     dataColumn: xAxisDataColumn,
-    type: xAxisType,
+    encoding: "x",
+    labelAngle: xAxisLabelAngle,
+    mode: xAxisMode,
     order: xAxisOrder,
-    encoding: "x"
+    type: xAxisType
   };
   var yAxis = {
-    mode: yAxisMode,
     dataColumn: yAxisDataColumn,
-    type: yAxisType,
+    encoding: "y",
+    labelAngle: yAxisLabelAngle,
+    mode: yAxisMode,
     order: yAxisOrder,
-    encoding: "y"
+    type: yAxisType
   };
   var mainAxis;
   var secondaryAxis;
@@ -1471,7 +1515,8 @@ var defaultSpecSelector = (0, _state.createKeyedStateSelector)(function (state, 
       type: mainAxis.type,
       axis: {
         title: mainAxis.dataColumn.label,
-        format: mainAxis.type === "temporal" ? "%Y-%m-%d" : undefined
+        format: mainAxis.type === "temporal" ? "%Y-%m-%d" : undefined,
+        labelAngle: mainAxis.labelAngle
       },
       timeUnit: mainAxis.type === "temporal" ? "yearmonthdate" : undefined,
       sort: xAxisOrder

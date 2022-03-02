@@ -43,6 +43,10 @@ export default async function (req, res) {
 
   const jsonDocument = await ProjectsService.toViewerJson(projectModel);
 
+  jsonDocument.meta = jsonDocument.meta || {};
+  jsonDocument.meta.createdAt = projectModel.createdAt.toISOString();
+  jsonDocument.meta.updatedAt = projectModel.updatedAt.toISOString();
+
   jsonDocument._ = {};
   jsonDocument._.id = projectModel.id;
   jsonDocument._.version = projectModel.version;
