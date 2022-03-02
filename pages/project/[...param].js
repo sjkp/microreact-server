@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
     props.title = metadata.name || null;
     props.description = metadata.description || null;
     if (metadata.image) {
-      props.image = UrlService.UrlService(`api/projects/image?project=${projectId}`);
+      props.image = UrlService.absolute(`api/projects/image?project=${projectId}`);
     }
   }
   return { props };
