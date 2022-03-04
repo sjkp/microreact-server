@@ -7487,7 +7487,8 @@ var discreteValueToColourMapSelector = (0, _state.createKeyedStateSelector)(func
     try {
       for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
         var rawValue = _step2.value;
-        var value = rawValue.valueOf();
+        // console.log({rawValue})
+        var value = rawValue === null || rawValue === void 0 ? void 0 : rawValue.valueOf();
 
         if ((value !== null && value !== void 0 ? value : undefined) !== undefined) {
           var colour = palette.entries[index % palette.entries.length];
