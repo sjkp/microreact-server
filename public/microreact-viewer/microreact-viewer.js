@@ -7580,6 +7580,10 @@ function colourMapForFieldSelector(state, field) {
   var colourPalette = (0, _colourPaletteForField["default"])(state, field);
   var colourMode = (0, _colourModeForField["default"])(state, field);
 
+  if (!dataColumn) {
+    return new Map();
+  }
+
   if (colourPalette && dataColumn !== null && dataColumn !== void 0 && dataColumn.isNumeric && colourMode === "gradient") {
     if (colourPalette.bins > 0 || colourPalette.entries.length > 2) {
       return binnedValueToColourMapSelector(state, field);
