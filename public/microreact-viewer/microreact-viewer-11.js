@@ -899,6 +899,8 @@ var phylocanvasPropsSelector = (0, _state.createKeyedStateSelector)(function (_,
     scalebar: true,
     selectedIds: selectedIds,
     shapeBorderAlpha: 0.56,
+    branchLengthsFormat: phylocanvasProps.roundBranchLengths ? "decimal" : "scientific",
+    branchLengthsDigits: phylocanvasProps.roundBranchLengths ? phylocanvasProps.branchLengthsDigits : 1,
     size: size,
     source: source,
     strokeColour: "#222",
@@ -2856,23 +2858,25 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
   return {
     alignLabels: state.trees[treeId].alignLabels,
+    branchLengthsDigits: state.trees[treeId].branchLengthsDigits,
     fontSize: state.trees[treeId].fontSize,
     maxFontSize: 64,
     maxNodeSize: 64,
     minFontSize: 4,
     minNodeSize: 1,
     nodeSize: state.trees[treeId].nodeSize,
+    roundBranchLengths: state.trees[treeId].roundBranchLengths,
+    scaleLineAlpha: state.trees[treeId].scaleLineAlpha,
     showBranchLengths: state.trees[treeId].showBranchLengths,
     showInternalLabels: state.trees[treeId].showInternalLabels,
     showLeafLabels: state.trees[treeId].showLeafLabels,
+    showPiecharts: state.trees[treeId].showPiecharts,
     showShapeBorders: state.trees[treeId].showShapeBorders,
     showShapes: state.trees[treeId].showShapes,
-    showPiecharts: state.trees[treeId].showPiecharts,
     styleLeafLabels: state.trees[treeId].styleLeafLabels,
     styleLeafNodes: state.trees[treeId].styleLeafNodes,
     styleNodeEdges: state.trees[treeId].styleNodeEdges,
-    styleNodeLines: state.trees[treeId].styleNodeLines,
-    scaleLineAlpha: state.trees[treeId].scaleLineAlpha
+    styleNodeLines: state.trees[treeId].styleNodeLines
   };
 };
 
@@ -2888,6 +2892,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     onNodeSizeChange: function onNodeSizeChange(value) {
       return dispatch((0, _trees.update)(treeId, "nodeSize", value));
     },
+    onRoundBranchLengthsChange: function onRoundBranchLengthsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "roundBranchLengths", value));
+    },
+    onRoundBranchLengthsDigitsChange: function onRoundBranchLengthsDigitsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "branchLengthsDigits", value));
+    },
+    onScaleLineAlphaChange: function onScaleLineAlphaChange(value) {
+      return dispatch((0, _trees.update)(treeId, "scaleLineAlpha", value));
+    },
     onShowBranchLengthsChange: function onShowBranchLengthsChange(value) {
       return dispatch((0, _trees.update)(treeId, "showBranchLengths", value));
     },
@@ -2897,14 +2910,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     onShowLeafLabelsChange: function onShowLeafLabelsChange(value) {
       return dispatch((0, _trees.update)(treeId, "showLeafLabels", value));
     },
+    onShowPiechartsChange: function onShowPiechartsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showPiecharts", value));
+    },
     onShowShapeBordersChange: function onShowShapeBordersChange(value) {
       return dispatch((0, _trees.update)(treeId, "showShapeBorders", value));
     },
     onShowShapesChange: function onShowShapesChange(value) {
       return dispatch((0, _trees.update)(treeId, "showShapes", value));
-    },
-    onShowPiechartsChange: function onShowPiechartsChange(value) {
-      return dispatch((0, _trees.update)(treeId, "showPiecharts", value));
     },
     onStyleLeafLabelsChange: function onStyleLeafLabelsChange(value) {
       return dispatch((0, _trees.update)(treeId, "styleLeafLabels", value));
@@ -2917,9 +2930,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     },
     onStyleNodeLinesChange: function onStyleNodeLinesChange(value) {
       return dispatch((0, _trees.update)(treeId, "styleNodeLines", value));
-    },
-    onScaleLineAlphaChange: function onScaleLineAlphaChange(value) {
-      return dispatch((0, _trees.update)(treeId, "scaleLineAlpha", value));
     }
   };
 };
@@ -3000,16 +3010,25 @@ var TreeStylesMenu = /*#__PURE__*/_react["default"].memo(function (props) {
     label: "Show Internal Labels",
     onChange: props.onShowInternalLabelsChange,
     value: props.showInternalLabels
-  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
     label: "Show Branch Lengths",
     onChange: props.onShowBranchLengthsChange,
     value: props.showBranchLengths
-  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+  }), props.showBranchLengths && /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    checked: props.roundBranchLengths,
+    label: "Rounding digits",
+    max: 16,
+    min: 0,
+    onChange: props.onRoundBranchLengthsDigitsChange,
+    onCheckedChange: props.onRoundBranchLengthsChange,
+    unit: "",
+    value: props.branchLengthsDigits
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
     label: "Colour Internal Edges",
     onChange: props.onStyleNodeEdgesChange,
     value: props.styleNodeEdges
   }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
-    label: "Opaque Edges",
+    label: "Solid Edges",
     onChange: function onChange(value) {
       return props.onScaleLineAlphaChange(!value);
     },
@@ -3020,6 +3039,7 @@ var TreeStylesMenu = /*#__PURE__*/_react["default"].memo(function (props) {
 TreeStylesMenu.displayName = "TreeStylesMenu";
 TreeStylesMenu.propTypes = {
   alignLabels: _propTypes["default"].bool.isRequired,
+  branchLengthsDigits: _propTypes["default"].number.isRequired,
   className: _propTypes["default"].string,
   fontSize: _propTypes["default"].number.isRequired,
   maxFontSize: _propTypes["default"].number.isRequired,
@@ -3030,6 +3050,9 @@ TreeStylesMenu.propTypes = {
   onAlignLabelsChange: _propTypes["default"].func.isRequired,
   onFontSizeChange: _propTypes["default"].func.isRequired,
   onNodeSizeChange: _propTypes["default"].func.isRequired,
+  onRoundBranchLengthsChange: _propTypes["default"].func.isRequired,
+  onRoundBranchLengthsDigitsChange: _propTypes["default"].func.isRequired,
+  onScaleLineAlphaChange: _propTypes["default"].func.isRequired,
   onShowBranchLengthsChange: _propTypes["default"].func.isRequired,
   onShowInternalLabelsChange: _propTypes["default"].func.isRequired,
   onShowLeafLabelsChange: _propTypes["default"].func.isRequired,
@@ -3038,6 +3061,8 @@ TreeStylesMenu.propTypes = {
   onShowShapesChange: _propTypes["default"].func.isRequired,
   onStyleLeafLabelsChange: _propTypes["default"].func.isRequired,
   onStyleNodeEdgesChange: _propTypes["default"].func.isRequired,
+  roundBranchLengths: _propTypes["default"].bool.isRequired,
+  scaleLineAlpha: _propTypes["default"].bool.isRequired,
   showBranchLengths: _propTypes["default"].bool.isRequired,
   showInternalLabels: _propTypes["default"].bool.isRequired,
   showLeafLabels: _propTypes["default"].bool.isRequired,

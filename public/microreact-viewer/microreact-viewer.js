@@ -1479,7 +1479,10 @@ var fullDatasetSelector = (0, _reselect.createSelector)(function (state) {
       var column = finalDataset.columns.find(function (x) {
         return x.name === field;
       });
-      column.label = mainDatasetConfig.labels[field];
+
+      if (column) {
+        column.label = mainDatasetConfig.labels[field];
+      }
     };
 
     for (var _i2 = 0, _Object$keys = Object.keys(mainDatasetConfig.labels || _constants.emptyObject); _i2 < _Object$keys.length; _i2++) {
@@ -25702,18 +25705,21 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var initialState = {
-  controls: false,
-  ids: null,
-  lasso: false,
-  path: null,
-  subtreeIds: null,
   alignLabels: true,
   blockHeaderFontSize: 13,
-  blockSize: 14,
   blockPadding: 0,
   blocks: [],
+  blockSize: 14,
+  branchLengthsDigits: 4,
+  controls: false,
   fontSize: 16,
+  hideOrphanDataRows: false,
+  ids: null,
+  lasso: false,
   nodeSize: 14,
+  path: null,
+  roundBranchLengths: true,
+  scaleLineAlpha: true,
   showBlockHeaders: true,
   showBlockLabels: false,
   showBranchLengths: false,
@@ -25724,11 +25730,10 @@ var initialState = {
   showPiecharts: true,
   showShapeBorders: true,
   showShapes: true,
-  scaleLineAlpha: true,
   styleLeafLabels: false,
   styleNodeEdges: false,
-  type: "rc",
-  hideOrphanDataRows: false
+  subtreeIds: null,
+  type: "rc"
 };
 var queryPropMap = {
   controls: {
