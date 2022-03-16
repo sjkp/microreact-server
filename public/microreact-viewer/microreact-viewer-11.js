@@ -1642,9 +1642,16 @@ function _default(treePane) {
             var nodes = tree.getLeafNodes(node, {
               includeHidden: true
             });
-            treePane.props.onFilterChange(nodes.map(function (x) {
-              return x.id;
-            }));
+
+            if (isAppend) {
+              treePane.props.onSelectRows(nodes.map(function (x) {
+                return x.id;
+              }), isAppend);
+            } else {
+              treePane.props.onFilterChange(nodes.map(function (x) {
+                return x.id;
+              }));
+            }
           } else if (!isAppend) {
             if (treePane.props.selectedIds.length) {
               treePane.props.onSelectRows();
