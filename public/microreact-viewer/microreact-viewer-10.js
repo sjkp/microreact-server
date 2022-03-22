@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[10],{
 
-/***/ 478:
+/***/ 487:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15,29 +15,31 @@ exports["default"] = void 0;
 
 var _ui = __webpack_require__(27);
 
-var _isValidTimeline = _interopRequireDefault(__webpack_require__(619));
-
 var _state = __webpack_require__(3);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _TimelinePane = _interopRequireDefault(__webpack_require__(620));
+var _TreePane = _interopRequireDefault(__webpack_require__(635));
+
+var _isValidTree = _interopRequireDefault(__webpack_require__(201));
+
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
-  var timelineId = _ref.timelineId;
+  var treeId = _ref.treeId;
   return {
-    componentName: "Timeline",
-    isEmpty: !(0, _isValidTimeline["default"])(state, timelineId),
-    PaneComponent: _TimelinePane["default"],
-    paneId: timelineId
+    componentName: "Tree",
+    file: (0, _treeFile["default"])(state, treeId),
+    isEmpty: !(0, _isValidTree["default"])(state, treeId),
+    PaneComponent: _TreePane["default"]
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
-  var timelineId = _ref2.timelineId;
+  var treeId = _ref2.treeId;
   return {
     onEditPane: function onEditPane() {
-      return dispatch((0, _ui.openPaneEditor)(timelineId));
+      return dispatch((0, _ui.openPaneEditor)(treeId));
     }
   };
 };
@@ -178,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 506:
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -191,35 +193,274 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _datetime = __webpack_require__(56);
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(40));
 
-var _state = __webpack_require__(3);
+var _extends2 = _interopRequireDefault(__webpack_require__(22));
 
-var _paneSize = _interopRequireDefault(__webpack_require__(497));
+var _classnames = _interopRequireDefault(__webpack_require__(13));
 
-var _dataExtent = _interopRequireDefault(__webpack_require__(627));
+var _Button = _interopRequireDefault(__webpack_require__(29));
 
-var autoUnitSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _dataExtent["default"])(state, timelineId);
-}, function (state, timelineId) {
-  return (0, _paneSize["default"])(state, timelineId);
-}, function (filterExtent, size) {
-  if (filterExtent) {
-    var unit = (0, _datetime.unitFromRange)(filterExtent, size.width / 4);
-    return unit;
-  }
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-  return null;
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
+
+var _excluded = ["active"];
+
+var LassoIcon = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_SvgIcon["default"], (0, _extends2["default"])({}, props, {
+    viewBox: "0 0 22 22"
+  }), /*#__PURE__*/_react["default"].createElement("g", {
+    transform: "translate(593 387)"
+  }, /*#__PURE__*/_react["default"].createElement("g", {
+    opacity: "0.375"
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M -1.89315e-07 0L 0.123997 -0.992283L -1.35966 -1.17768L -0.964432 0.264332L -1.89315e-07 0ZM 4.01985 14.6667L 3.05542 14.931L 3.31413 15.8749L 4.26338 15.6366L 4.01985 14.6667ZM 14.6402 12L 14.8837 12.9699L 15.4278 12.8333L 15.5948 12.2977L 14.6402 12ZM 10.794 0.341051L 0.123997 -0.992283L -0.123997 0.992283L 10.546 2.32562L 10.794 0.341051ZM -0.964432 0.264332L 3.05542 14.931L 4.98428 14.4023L 0.964432 -0.264332L -0.964432 0.264332ZM 4.26338 15.6366L 14.8837 12.9699L 14.3967 11.0301L 3.77632 13.6968L 4.26338 15.6366ZM 15.5948 12.2977L 18.2747 3.70515L 16.3654 3.10967L 13.6856 11.7023L 15.5948 12.2977Z",
+    transform: "translate(-589.32 -383.333)"
+  })), /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 2.6799 5.33333C 4.15997 5.33333 5.3598 4.13943 5.3598 2.66667C 5.3598 1.19391 4.15997 0 2.6799 0C 1.19983 0 0 1.19391 0 2.66667C 0 4.13943 1.19983 5.33333 2.6799 5.33333Z",
+    transform: "translate(-592 -386)"
+  })), /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 2.6799 5.33333C 4.15997 5.33333 5.3598 4.13943 5.3598 2.66667C 5.3598 1.19391 4.15997 0 2.6799 0C 1.19983 0 0 1.19391 0 2.66667C 0 4.13943 1.19983 5.33333 2.6799 5.33333Z",
+    transform: "translate(-581.33 -384.667)"
+  })), /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 2.6799 5.33333C 4.15997 5.33333 5.3598 4.13943 5.3598 2.66667C 5.3598 1.19391 4.15997 0 2.6799 0C 1.19983 0 0 1.19391 0 2.66667C 0 4.13943 1.19983 5.33333 2.6799 5.33333Z",
+    transform: "translate(-587.98 -371.333)"
+  })), /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 2.6799 5.33333C 4.15997 5.33333 5.3598 4.13943 5.3598 2.66667C 5.3598 1.19391 4.15997 0 2.6799 0C 1.19983 0 0 1.19391 0 2.66667C 0 4.13943 1.19983 5.33333 2.6799 5.33333Z",
+    transform: "translate(-577.36 -374)"
+  }))));
 });
 
-var filteredRangeUnitSelector = function filteredRangeUnitSelector(state, timelineId) {
-  var _state$timelines$time;
+LassoIcon.displayName = "LassoIcon";
 
-  return (_state$timelines$time = state.timelines[timelineId].unit) !== null && _state$timelines$time !== void 0 ? _state$timelines$time : autoUnitSelector(state, timelineId);
+var LassoButton = /*#__PURE__*/_react["default"].memo(function (props) {
+  var active = props.active,
+      rest = (0, _objectWithoutProperties2["default"])(props, _excluded);
+  return /*#__PURE__*/_react["default"].createElement(_Button["default"], (0, _extends2["default"])({}, rest, {
+    className: (0, _classnames["default"])("mr-controls-button", props.className),
+    color: active ? "primary" : undefined,
+    onClick: props.onClick,
+    size: "small",
+    title: props.title || (active ? "Disable lasso filter" : "Activate lasso filter"),
+    variant: "contained"
+  }), /*#__PURE__*/_react["default"].createElement(LassoIcon, null));
+});
+
+LassoButton.displayName = "LassoButton";
+LassoButton.propTypes = {
+  active: _propTypes["default"].bool,
+  className: _propTypes["default"].string,
+  title: _propTypes["default"].string,
+  onClick: _propTypes["default"].func.isRequired
 };
-
-var _default = filteredRangeUnitSelector;
+var _default = LassoButton;
 exports["default"] = _default;
+
+/***/ }),
+
+/***/ 514:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = canvasLasso;
+
+var _geometry = __webpack_require__(102);
+
+/* eslint-disable prefer-object-spread */
+
+/* eslint no-param-reassign: 0 */
+function drawLines(ctx, coordinates) {
+  ctx.moveTo(coordinates[0][0], coordinates[0][1]);
+
+  for (var i = 1; i < coordinates.length; i++) {
+    ctx.lineTo(coordinates[i][0], coordinates[i][1]);
+  }
+
+  ctx.stroke();
+}
+
+function drawPoints(ctx, coordinates, r, drawLast) {
+  for (var i = 0; i < coordinates.length - (drawLast ? 1 : 0); i++) {
+    ctx.fillRect(coordinates[i][0] - r, coordinates[i][1] - r, r * 2, r * 2);
+    ctx.strokeRect(coordinates[i][0] - r + ctx.lineWidth, coordinates[i][1] - r + ctx.lineWidth, r * 2 - ctx.lineWidth, r * 2 - ctx.lineWidth);
+  }
+}
+
+function canvasLasso(mouseCanvas, drawingCanvas, options) {
+  var lasso = Object.assign({
+    clearBeforeDraw: false,
+    dotsStyle: "#383838",
+    isActive: false,
+    lineWidth: 2,
+    path: null,
+    pointFillStyle: "#ffffff",
+    pointSize: 14,
+    pointStrokeStyle: "#000000",
+    strokeStyle: "#3C7383",
+    clear: function clear() {
+      var ctx = drawingCanvas.getContext("2d");
+
+      if (lasso.clearBeforeDraw) {
+        ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
+      }
+    },
+    draw: function draw() {
+      var ctx = drawingCanvas.getContext("2d");
+
+      if (lasso.clearBeforeDraw) {
+        ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
+      }
+
+      var path = lasso.internalPath || lasso.path;
+
+      if (lasso.isActive) {
+        if (Array.isArray(path) && path.length > 0) {
+          var scale = 1;
+          ctx.strokeStyle = lasso.strokeStyle;
+          ctx.lineWidth = lasso.lineWidth * scale;
+          ctx.beginPath();
+          var points = lasso.translateToCanvas(path);
+          drawLines(ctx, points);
+          ctx.lineWidth = 1 * scale;
+          ctx.fillStyle = lasso.pointFillStyle;
+          ctx.strokeStyle = lasso.pointStrokeStyle;
+          drawPoints(ctx, points, scale * lasso.pointSize / 2, !!lasso.path);
+          ctx.closePath();
+        }
+      }
+
+      lasso.updateCanvas();
+    },
+    destroy: function destroy() {
+      mouseCanvas.removeEventListener("mousedown", handleMousedown);
+      mouseCanvas.removeEventListener("mouseup", handleMouseup);
+    },
+    isPointInside: function isPointInside(point, path) {
+      return (0, _geometry.isPointInPolygon)(point, path || lasso.path);
+    },
+    onPathChange: function onPathChange(path) {
+      lasso.setPath(path);
+    },
+    onRedrawRequested: function onRedrawRequested() {
+      lasso.draw();
+      lasso.updateCanvas();
+    },
+    setActive: function setActive(isActive) {
+      lasso.isActive = isActive;
+      lasso.updateCanvas();
+    },
+    setPath: function setPath(path) {
+      lasso.path = path;
+      lasso.internalPath = null;
+
+      if (lasso.onRedrawRequested) {
+        lasso.onRedrawRequested();
+      }
+    },
+    translateToCanvas: function translateToCanvas(points) {
+      return points;
+    },
+    translateFromCanvas: function translateFromCanvas(x, y) {
+      return {
+        x: x,
+        y: y
+      };
+    },
+    updateCanvas: function updateCanvas() {
+      if (lasso.isActive) {
+        if (!Array.isArray(lasso.path)) {
+          mouseCanvas.style.cursor = "crosshair";
+          mouseCanvas.title = "Click to draw points";
+        } else {
+          mouseCanvas.style.cursor = null;
+          mouseCanvas.title = "Click outside the path to clear";
+        }
+      } else {
+        mouseCanvas.style.cursor = null;
+        mouseCanvas.title = "";
+
+        if (lasso.internalPath) {
+          lasso.internalPath = null;
+        }
+      }
+    }
+  }, options);
+
+  var handleOnClick = function handleOnClick(event) {
+    if (!lasso.isActive) return;
+    var point = lasso.translateFromCanvas(event.offsetX, event.offsetY);
+
+    if (Array.isArray(lasso.path)) {
+      if (!(0, _geometry.isPointInPolygon)(point, lasso.path)) {
+        lasso.onPathChange(null);
+      }
+
+      return;
+    }
+
+    if (!lasso.internalPath) {
+      lasso.internalPath = [];
+    }
+
+    if (lasso.internalPath.length > 0) {
+      var padding = lasso.pointSize;
+      var pointTopLeft = lasso.translateFromCanvas(event.offsetX - padding, event.offsetY - padding);
+      var pointBottomRight = lasso.translateFromCanvas(event.offsetX + padding, event.offsetY + padding);
+
+      if (pointBottomRight[0] >= lasso.internalPath[0][0] && pointTopLeft[0] <= lasso.internalPath[0][0] && (pointBottomRight[1] >= lasso.internalPath[0][1] && pointTopLeft[1] <= lasso.internalPath[0][1] || pointBottomRight[1] <= lasso.internalPath[0][1] && pointTopLeft[1] >= lasso.internalPath[0][1])) {
+        // push the first point to the end of the path to close the polygon
+        // and mark the path as finished
+        var path = lasso.internalPath;
+        path.push(path[0]);
+        lasso.internalPath = null;
+        lasso.onPathChange(path);
+        return;
+      }
+    }
+
+    lasso.internalPath.push(point);
+
+    if (lasso.onRedrawRequested) {
+      lasso.onRedrawRequested();
+    }
+  };
+
+  var offsetX = null;
+  var offsetY = null;
+
+  var handleMousedown = function handleMousedown(event) {
+    offsetX = event.offsetX;
+    offsetY = event.offsetY;
+  };
+
+  var handleMouseup = function handleMouseup(event) {
+    if (event.target.nodeName === "CANVAS") {
+      if (Math.abs(offsetX - event.offsetX) < 5 && Math.abs(offsetY - event.offsetY) < 5) {
+        handleOnClick(event);
+      }
+    }
+
+    offsetX = null;
+    offsetY = null;
+  };
+
+  mouseCanvas.addEventListener("mousedown", handleMousedown, false
+  /* useCapture */
+  );
+  mouseCanvas.addEventListener("mouseup", handleMouseup, false
+  /* useCapture */
+  );
+  lasso.updateCanvas();
+  return lasso;
+}
 
 /***/ }),
 
@@ -238,17 +479,11 @@ exports["default"] = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
 
-var _constants = __webpack_require__(12);
-
-var _datetime = __webpack_require__(56);
-
-var _state = __webpack_require__(3);
-
-var _paneSize = _interopRequireDefault(__webpack_require__(497));
+var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
+var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -256,224 +491,61 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var fullRangeUnitSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _rowsWithDateField["default"])(state, timelineId);
-}, function (state, timelineId) {
-  return (0, _paneSize["default"])(state, timelineId);
-}, function (_ref, size) {
-  var extent = _ref.extent;
-
-  if (extent) {
-    return (0, _datetime.unitFromRange)(extent, size.width / 8);
-  } else {
-    return "day";
-  }
-});
-var fullRangeChartDataSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _rowsWithDateField["default"])(state, timelineId);
-}, function (state, timelineId) {
-  return fullRangeUnitSelector(state, timelineId);
-}, function (state) {
+var baseStylesSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _rows["default"])(state);
-}, function (_ref2, unit, rows) {
-  var dateFieldName = _ref2.dateFieldName;
-  var dataset = _constants.emptyArray;
+}, function (allRows) {
+  var styles = {};
 
-  if (dateFieldName) {
-    var groups = {};
+  var _iterator = _createForOfIteratorHelper(allRows),
+      _step;
 
-    var _iterator = _createForOfIteratorHelper(rows),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var row = _step.value;
-
-        if (row[dateFieldName]) {
-          var _row$MrScalar;
-
-          var rowCount = (_row$MrScalar = row["--mr-scalar"]) !== null && _row$MrScalar !== void 0 ? _row$MrScalar : 1;
-          var unitLabel = (0, _datetime.toUnitString)(row[dateFieldName], unit);
-
-          if (unitLabel in groups) {
-            groups[unitLabel].groupCount += rowCount;
-          } else {
-            var _boundsOf = (0, _datetime.boundsOf)(row[dateFieldName], unit),
-                _boundsOf2 = (0, _slicedToArray2["default"])(_boundsOf, 2),
-                unitStartDate = _boundsOf2[0],
-                unitEndDate = _boundsOf2[1];
-
-            groups[unitLabel] = {
-              unitLabel: unitLabel,
-              unitStartDate: unitStartDate,
-              unitEndDate: unitEndDate,
-              groupCount: rowCount
-            };
-          }
-        }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var row = _step.value;
+      styles[row[0]] = {};
     }
-
-    dataset = Object.values(groups);
-    dataset.sort(function (a, b) {
-      return a.unitStartDate - b.unitStartDate;
-    });
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
 
-  return {
-    dataset: dataset
-  };
+  return styles;
 });
-var _default = fullRangeChartDataSelector;
-exports["default"] = _default;
+var rowStylesSelector = (0, _reselect.createSelector)(function (state) {
+  return (0, _rowsWithStyleFields["default"])(state);
+}, function (state) {
+  return baseStylesSelector(state);
+}, function (_ref, baseStyle) {
+  var _ref2 = (0, _slicedToArray2["default"])(_ref, 1),
+      rows = _ref2[0];
 
-/***/ }),
+  var _iterator2 = _createForOfIteratorHelper(rows),
+      _step2;
 
-/***/ 516:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _bounds = _interopRequireDefault(__webpack_require__(198));
-
-var _fullRangeExtent = _interopRequireDefault(__webpack_require__(528));
-
-function filteredRangeExtentSelector(state, timelineId) {
-  return (0, _bounds["default"])(state, timelineId) || (0, _fullRangeExtent["default"])(state, timelineId);
-}
-
-var _default = filteredRangeExtentSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 528:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _state = __webpack_require__(3);
-
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
-
-var fullRangeExtentSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _fullRangeChartData["default"])(state, timelineId);
-}, function (_ref) {
-  var dataset = _ref.dataset;
-
-  if (dataset && dataset.length) {
-    return [dataset[0].unitStartDate.valueOf(), dataset[dataset.length - 1].unitEndDate.valueOf()];
-  } else {
-    return null;
-  }
-});
-var _default = fullRangeExtentSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 619:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _timelineState = _interopRequireDefault(__webpack_require__(209));
-
-function isValidNetworkSelector(state, timelineId) {
-  var timelineState = (0, _timelineState["default"])(state, timelineId);
-  return timelineState.dataType && (timelineState.yearField || timelineState.valueField);
-}
-
-var _default = isValidNetworkSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 620:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reactRedux = __webpack_require__(96);
-
-var _TimelinePane = _interopRequireDefault(__webpack_require__(621));
-
-var _timelines = __webpack_require__(77);
-
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
-
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
-
-// import chartDataSelector from "../selectors/timelines/chart-data";
-// import chartSpecSelector from "../selectors/timelines/chart-spec";
-var mapStateToProps = function mapStateToProps(state, _ref) {
-  var timelineId = _ref.timelineId;
-  // const timelineState = state.timelines[timelineId];
-  return {
-    // chartData: chartDataSelector(state, timelineId),
-    // chartSpec: chartSpecSelector(state, timelineId),
-    bounds: (0, _filteredRangeExtent["default"])(state, timelineId),
-    unit: (0, _filteredRangeUnit["default"])(state, timelineId)
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
-  var timelineId = _ref2.timelineId;
-  return {
-    onSelectItem: function onSelectItem(item, merge) {
-      return dispatch((0, _timelines.selectItem)(timelineId, item, merge));
-    },
-    onChange: function onChange(bounds) {
-      return dispatch((0, _timelines.setFilter)(timelineId, bounds));
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var row = _step2.value;
+      var style = baseStyle[row[0]];
+      style.label = row["--microreact-label"];
+      style.colour = row["--microreact-colour"];
+      style.colourLabel = row["--microreact-colour-label"];
+      style.shape = row["--microreact-shape"];
     }
-  };
-};
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
 
-var _default = (0, _reactRedux.connect)(function (state, props) {
-  return mapStateToProps(state.present, props);
-}, mapDispatchToProps)(_TimelinePane["default"]);
-
+  return [baseStyle];
+});
+var _default = rowStylesSelector;
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ 621:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -481,239 +553,72 @@ exports["default"] = _default;
 
 var _interopRequireDefault = __webpack_require__(0);
 
-var _typeof = __webpack_require__(33);
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _regenerator = _interopRequireDefault(__webpack_require__(31));
-
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(19));
-
-var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(32));
-
-var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(6));
-
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(7));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8));
-
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
-
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
+var _classnames = _interopRequireDefault(__webpack_require__(13));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _Paper = _interopRequireDefault(__webpack_require__(37));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
-var _InputBase = _interopRequireDefault(__webpack_require__(479));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(169));
 
-__webpack_require__(622);
+__webpack_require__(519);
 
-var Datetime = _interopRequireWildcard(__webpack_require__(56));
+var _propTypes2 = __webpack_require__(14);
 
-var _downloads = __webpack_require__(53);
+var groupBy = function groupBy(item) {
+  var _item$group;
 
-var _TimelineSlider = _interopRequireDefault(__webpack_require__(623));
+  return (_item$group = item.group) !== null && _item$group !== void 0 ? _item$group : "";
+};
 
-var _TimelineControls = _interopRequireDefault(__webpack_require__(626));
-
-var _TimelineFullRangeChart = _interopRequireDefault(__webpack_require__(629));
-
-var _TimelineFilteredRangeChart = _interopRequireDefault(__webpack_require__(631));
-
-var _charts = __webpack_require__(161);
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function formatRange(bounds, unit) {
-  var length = Datetime.rangeLength(bounds, unit);
-  return "".concat(length, " ").concat(unit).concat(length !== 1 ? "s" : "");
-}
-
-var TimelinePane = /*#__PURE__*/function (_React$PureComponent) {
-  (0, _inherits2["default"])(TimelinePane, _React$PureComponent);
-
-  var _super = _createSuper(TimelinePane);
-
-  function TimelinePane() {
-    var _this;
-
-    (0, _classCallCheck2["default"])(this, TimelinePane);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
-      vegaError: null
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "filteredRangeChartRef", /*#__PURE__*/_react["default"].createRef());
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "signalListeners", {
-      onItemSelect: function onItemSelect(_, _ref) {
-        var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-            event = _ref2[0],
-            item = _ref2[1];
-
-        if (item) {
-          _this.props.onSelectItem(item, event.metaKey || event.ctrilKey);
-        } else {
-          _this.props.onSelectItem(false);
-        }
-      }
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "downloadPNG", /*#__PURE__*/(0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
-      var dataUrl;
-      return _regenerator["default"].wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return (0, _charts.exportPNG)(_this.filteredRangeChartRef.current);
-
-            case 2:
-              dataUrl = _context.sent;
-              (0, _downloads.downloadDataUrl)(dataUrl, "timeline.png", "image/png");
-
-            case 4:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    })));
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "downloadSVG", /*#__PURE__*/(0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
-      var dataUrl;
-      return _regenerator["default"].wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              _context2.next = 2;
-              return (0, _charts.exportSVG)(_this.filteredRangeChartRef.current);
-
-            case 2:
-              dataUrl = _context2.sent;
-              (0, _downloads.downloadDataUrl)(dataUrl, "timeline.svg", "image/svg+xml");
-
-            case 4:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    })));
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleMinBoundChange", function (event) {
-      var timestamp = Datetime.ISODateToTimestamp(event.target.value);
-
-      if (Datetime.isTimestamp(timestamp)) {
-        var bounds = (0, _toConsumableArray2["default"])(_this.props.bounds);
-        bounds[0] = timestamp;
-
-        _this.props.onChange(bounds);
-      }
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleMaxBoundChange", function (event) {
-      var timestamp = Datetime.ISODateToTimestamp(event.target.value);
-
-      if (Datetime.isTimestamp(timestamp)) {
-        var bounds = (0, _toConsumableArray2["default"])(_this.props.bounds);
-        bounds[1] = timestamp;
-
-        _this.props.onChange(bounds);
-      }
-    });
-    return _this;
-  }
-
-  (0, _createClass2["default"])(TimelinePane, [{
-    key: "render",
-    value: function render() {
-      var props = this.props;
-
-      if (props.bounds === null) {
-        return false;
-      }
-
-      return /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-timeline-pane",
+var MultipleDataColumnsSelect = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
+    className: (0, _classnames["default"])("mr-multiple-data-columns-select", props.className),
+    items: props.dataColumns,
+    label: "Search columns",
+    style: props.style,
+    renderItems: function renderItems(items) {
+      return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"], {
+        items: items,
+        onChange: props.onChange,
+        value: props.value,
+        groupItem: groupBy,
+        selectOnly: true,
         style: {
-          height: props.height,
-          width: props.width
+          height: 40 + props.dataColumns.length * 28,
+          maxHeight: "calc(100vh - ".concat(props.maxHeightOffset, ")")
         }
-      }, /*#__PURE__*/_react["default"].createElement(_TimelineFilteredRangeChart["default"], {
-        timelineId: props.timelineId,
-        signalListeners: this.signalListeners,
-        ref: this.filteredRangeChartRef
-      }), /*#__PURE__*/_react["default"].createElement(_TimelineFullRangeChart["default"], {
-        timelineId: props.timelineId
-      }), /*#__PURE__*/_react["default"].createElement(_TimelineSlider["default"], {
-        timelineId: props.timelineId,
-        width: props.width - 32,
-        height: 48
-      }), /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-time-range"
-      }, /*#__PURE__*/_react["default"].createElement(_Paper["default"] // className="mr-time-bounds"
-      , null, /*#__PURE__*/_react["default"].createElement(_InputBase["default"], {
-        onChange: this.handleMinBoundChange,
-        type: "date",
-        value: Datetime.timestampToISODate(props.bounds[0])
-      }), /*#__PURE__*/_react["default"].createElement(_Divider["default"], {
-        orientation: "vertical"
-      }), /*#__PURE__*/_react["default"].createElement("span", null, formatRange(props.bounds, props.unit)), /*#__PURE__*/_react["default"].createElement(_Divider["default"], {
-        orientation: "vertical"
-      }), /*#__PURE__*/_react["default"].createElement(_InputBase["default"], {
-        onChange: this.handleMaxBoundChange,
-        type: "date",
-        value: Datetime.timestampToISODate(props.bounds[1])
-      }))), /*#__PURE__*/_react["default"].createElement(_TimelineControls["default"], {
-        onDownloadPNG: this.downloadPNG,
-        onDownloadSVG: this.downloadSVG,
-        timelineId: props.timelineId
-      }));
+      });
     }
-  }]);
-  return TimelinePane;
-}(_react["default"].PureComponent);
-
-(0, _defineProperty2["default"])(TimelinePane, "propTypes", {
-  // chartData: PropTypes.shape({
-  //   dataset: PropTypes.arrayOf(
-  //     PropTypes.object.isRequired,
-  //   ).isRequired,
-  // }).isRequired,
-  timelineId: _propTypes["default"].string.isRequired,
-  className: _propTypes["default"].string,
-  controls: _propTypes["default"].bool,
-  height: _propTypes["default"].number.isRequired,
-  onSelectItem: _propTypes["default"].func.isRequired,
-  chartSpec: _propTypes["default"].object,
-  width: _propTypes["default"].number.isRequired
+  });
 });
-var _default = TimelinePane;
+
+MultipleDataColumnsSelect.displayName = "MultipleDataColumnsSelect";
+MultipleDataColumnsSelect.propTypes = {
+  className: _propTypes["default"].string,
+  dataColumns: _propTypes["default"].arrayOf(_propTypes2.DataColumn),
+  maxHeightOffset: _propTypes["default"].string,
+  multiple: _propTypes["default"].bool,
+  onChange: _propTypes["default"].func,
+  style: _propTypes["default"].object,
+  value: _propTypes["default"].array
+};
+MultipleDataColumnsSelect.defaultProps = {};
+var _default = MultipleDataColumnsSelect;
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ 622:
+/***/ 519:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -723,7 +628,67 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 623:
+/***/ 530:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _state = __webpack_require__(3);
+
+var _labelColumn = _interopRequireDefault(__webpack_require__(196));
+
+var _rows = _interopRequireDefault(__webpack_require__(17));
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var labelsSelector = (0, _state.createKeyedStateSelector)(function (state) {
+  return (0, _rows["default"])(state);
+}, function (state, treeId) {
+  return (0, _labelColumn["default"])(state, treeId);
+}, function (rows, labelColumn) {
+  var labels = [];
+
+  if (labelColumn) {
+    var _iterator = _createForOfIteratorHelper(rows),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var row = _step.value;
+
+        if (row[labelColumn.name]) {
+          var _row$labelColumn$name;
+
+          labels.push((_row$labelColumn$name = row[labelColumn.name]) === null || _row$labelColumn$name === void 0 ? void 0 : _row$labelColumn$name.toString());
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
+
+  return labels;
+});
+var _default = labelsSelector;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 635:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -738,42 +703,64 @@ exports["default"] = void 0;
 
 var _reactRedux = __webpack_require__(96);
 
-var _timelines = __webpack_require__(77);
+var _filters = __webpack_require__(51);
 
-var _TimelineSlider = _interopRequireDefault(__webpack_require__(624));
+var _trees = __webpack_require__(74);
 
-var _fullRangeExtent = _interopRequireDefault(__webpack_require__(528));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
+var _phylocanvasProps = _interopRequireDefault(__webpack_require__(636));
+
+var _TreePane = _interopRequireDefault(__webpack_require__(639));
+
+var _ui = __webpack_require__(27);
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
-  var timelineId = _ref.timelineId;
-  var dataBounds = (0, _fullRangeExtent["default"])(state, timelineId);
+  var treeId = _ref.treeId;
+  var treeState = state.trees[treeId];
   return {
-    max: dataBounds[1],
-    min: dataBounds[0],
-    value: (0, _filteredRangeExtent["default"])(state, timelineId)
+    controls: treeState.controls,
+    isLassoActive: treeState.lasso,
+    lassoPath: treeState.path || null,
+    phylocanvasProps: (0, _phylocanvasProps["default"])(state, treeId),
+    selectedIds: (0, _selectedIdsList["default"])(state),
+    treeType: state.trees[treeId].type
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
-  var timelineId = _ref2.timelineId;
+  var treeId = _ref2.treeId;
   return {
-    onChange: function onChange(bounds) {
-      return dispatch((0, _timelines.setFilter)(timelineId, bounds));
+    onAddHistoryEntry: function onAddHistoryEntry(label) {
+      return dispatch((0, _ui.addHistoryEntry)("Tree", label));
+    },
+    onAlignLabelsChange: function onAlignLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "alignLabels", value));
+    },
+    onFilterChange: function onFilterChange(ids, path) {
+      return dispatch((0, _trees.setTreeFilter)(treeId, ids, path));
+    },
+    onPhylocanvasPropsChange: function onPhylocanvasPropsChange(updater, event) {
+      return dispatch((0, _trees.setPhylocanvasProps)(treeId, updater, event));
+    },
+    onSelectRows: function onSelectRows(ids, merge) {
+      return dispatch((0, _filters.selectRows)(ids, merge));
+    },
+    onShowLeafLabelsChange: function onShowLeafLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showLeafLabels", value));
     }
   };
 };
 
 var _default = (0, _reactRedux.connect)(function (state, props) {
   return mapStateToProps(state.present, props);
-}, mapDispatchToProps)(_TimelineSlider["default"]);
+}, mapDispatchToProps)(_TreePane["default"]);
 
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ 624:
+/***/ 636:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -781,7 +768,333 @@ exports["default"] = _default;
 
 var _interopRequireDefault = __webpack_require__(0);
 
-var _typeof = __webpack_require__(33);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
+
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
+
+var _state = __webpack_require__(3);
+
+var _filteredIds = _interopRequireDefault(__webpack_require__(59));
+
+var _labelsDataColumn = _interopRequireDefault(__webpack_require__(114));
+
+var _labels = _interopRequireDefault(__webpack_require__(530));
+
+var _metadataValues = _interopRequireDefault(__webpack_require__(637));
+
+var _paneSize = _interopRequireDefault(__webpack_require__(497));
+
+var _rowsByLabel = _interopRequireDefault(__webpack_require__(183));
+
+var _rowStyles = _interopRequireDefault(__webpack_require__(515));
+
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
+
+var _config = _interopRequireDefault(__webpack_require__(50));
+
+var _metadataBlocks = _interopRequireDefault(__webpack_require__(638));
+
+var _treeFile = _interopRequireDefault(__webpack_require__(110));
+
+var _constants = __webpack_require__(12);
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var noShape = false;
+var nodeStylesSelector = (0, _state.createKeyedStateSelector)(function (state, treeId) {
+  return (0, _labels["default"])(state, treeId);
+}, function (state) {
+  return (0, _rowStyles["default"])(state);
+}, function (state, treeId) {
+  return (0, _rowsByLabel["default"])(state, treeId);
+}, function (state) {
+  return (0, _filteredIds["default"])(state);
+}, function (labels, _ref, rowsByLabel, filteredIds) {
+  var _ref2 = (0, _slicedToArray2["default"])(_ref, 1),
+      rowStyles = _ref2[0];
+
+  var nodeStyles = {};
+
+  var _iterator = _createForOfIteratorHelper(labels),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var label = _step.value;
+      var labelRows = rowsByLabel.get(label);
+      var rowStyle = rowStyles[labelRows[0][0]];
+      var isActive = !filteredIds || labelRows.some(function (row) {
+        return filteredIds.has(row[0]);
+      });
+      nodeStyles[label] = {
+        fillColour: rowStyle.colour,
+        strokeColour: rowStyle.colour,
+        shape: isActive ? rowStyle.shape : noShape,
+        // label: rowStyle.label,
+        label: isActive ? rowStyle.label : _constants.emptyString
+      };
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return nodeStyles;
+});
+var phylocanvasPropsSelector = (0, _state.createKeyedStateSelector)(function (_, treeId) {
+  return treeId;
+}, function (state, treeId) {
+  var _treeFileSelector;
+
+  return (_treeFileSelector = (0, _treeFile["default"])(state, treeId)) === null || _treeFileSelector === void 0 ? void 0 : _treeFileSelector._content;
+}, function (state, treeId) {
+  return state.trees[treeId];
+}, function (state, treeId) {
+  return nodeStylesSelector(state, treeId);
+}, function (state, treeId) {
+  return (0, _paneSize["default"])(state, treeId);
+}, function (state, treeId) {
+  return (0, _metadataBlocks["default"])(state, treeId);
+}, function (state, treeId) {
+  return (0, _metadataValues["default"])(state, treeId);
+}, function (state) {
+  return (0, _selectedIdsList["default"])(state);
+}, function (state) {
+  return (0, _labelsDataColumn["default"])(state);
+}, function (state) {
+  return (0, _config["default"])(state);
+}, function (treeId, treeFileContent, phylocanvasProps, styles, size, metadataBlocks, metadataValues, selectedIds, labelsDataColumn, defaults) {
+  var originalSource = phylocanvasProps === null || phylocanvasProps === void 0 ? void 0 : phylocanvasProps.source;
+
+  while ((_originalSource = originalSource) !== null && _originalSource !== void 0 && _originalSource.original) {
+    var _originalSource;
+
+    originalSource = originalSource.original;
+  }
+
+  var source = originalSource === treeFileContent ? phylocanvasProps === null || phylocanvasProps === void 0 ? void 0 : phylocanvasProps.source : treeFileContent;
+  return _objectSpread(_objectSpread({}, phylocanvasProps), {}, {
+    blocks: metadataBlocks,
+    fontFamily: defaults.fontFamily,
+    id: treeId,
+    interactive: true,
+    labelField: labelsDataColumn ? labelsDataColumn.label : null,
+    metadata: metadataValues,
+    nodeShape: false,
+    padding: 32,
+    scalebar: true,
+    selectedIds: selectedIds,
+    shapeBorderAlpha: 0.56,
+    branchLengthsFormat: phylocanvasProps.roundBranchLengths ? "decimal" : "scientific",
+    branchLengthsDigits: phylocanvasProps.roundBranchLengths ? phylocanvasProps.branchLengthsDigits : 1,
+    size: size,
+    source: source,
+    strokeColour: "#222",
+    styles: styles
+  });
+});
+var _default = phylocanvasPropsSelector;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 637:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _reselect = __webpack_require__(10);
+
+var _constants = __webpack_require__(12);
+
+var _state = __webpack_require__(3);
+
+var _labels = _interopRequireDefault(__webpack_require__(530));
+
+var _rowsByLabel = _interopRequireDefault(__webpack_require__(183));
+
+var _treeState = _interopRequireDefault(__webpack_require__(60));
+
+var _colourMapForField = _interopRequireDefault(__webpack_require__(101));
+
+var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
+
+var _config = _interopRequireDefault(__webpack_require__(50));
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var colourMapsByFieldSelector = (0, _state.createCombinedStateSelector)(function (state, treeId) {
+  return (0, _treeState["default"])(state, treeId).blocks || _constants.emptyArray;
+}, _colourMapForField["default"], function (valueToColourMaps, keys) {
+  var colourMapsByField = {};
+
+  for (var index = 0; index < keys.length; index++) {
+    colourMapsByField[keys[index]] = valueToColourMaps[index];
+  }
+
+  return colourMapsByField;
+});
+var metadataValuesSelector = (0, _reselect.createSelector)(function (state, treeId) {
+  return (0, _labels["default"])(state, treeId);
+}, function (state, treeId) {
+  return (0, _rowsByLabel["default"])(state, treeId);
+}, function (state, treeId) {
+  return colourMapsByFieldSelector(state, treeId);
+}, function (state, treeId) {
+  return (0, _dataColumnsByFieldMap["default"])(state, treeId);
+}, function (state) {
+  return state.styles.defaultColour;
+}, function (state) {
+  return (0, _config["default"])(state);
+}, function (labels, rowsByLabel, colourMapsByField, dataColumnsByFieldMap, defaultColour, mrConfig) {
+  var metadata = {};
+
+  var _iterator = _createForOfIteratorHelper(labels),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var label = _step.value;
+      metadata[label] = {};
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  var _iterator2 = _createForOfIteratorHelper(labels),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var _label = _step2.value;
+      var labelRows = rowsByLabel.get(_label);
+
+      if (labelRows && labelRows.length) {
+        var row = labelRows[0];
+
+        for (var _i = 0, _Object$keys = Object.keys(colourMapsByField); _i < _Object$keys.length; _i++) {
+          var colourFieldName = _Object$keys[_i];
+          var dataColumn = dataColumnsByFieldMap.get(colourFieldName);
+
+          if (dataColumn) {
+            var dataColumnLabel = dataColumn.label || dataColumn.name;
+            var colourMap = colourMapsByField[colourFieldName];
+            var colour = colourMap.get && colourMap.get(row[colourFieldName]) || defaultColour;
+            metadata[_label][dataColumnLabel] = {
+              colour: colour === "transparent" ? mrConfig.theme.background.main : colour,
+              label: row[colourFieldName]
+            };
+          }
+        }
+      }
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+
+  return metadata;
+});
+var _default = metadataValuesSelector;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 638:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _reselect = __webpack_require__(10);
+
+var _constants = __webpack_require__(12);
+
+var _treeState = _interopRequireDefault(__webpack_require__(60));
+
+var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var metadataBlocksSelector = (0, _reselect.createSelector)(function (state, treeId) {
+  return (0, _treeState["default"])(state, treeId).blocks || _constants.emptyArray;
+}, function (state, treeId) {
+  return (0, _dataColumnsByFieldMap["default"])(state, treeId);
+}, function (blocks, dataColumnsByFieldMap) {
+  var labels = [];
+
+  var _iterator = _createForOfIteratorHelper(blocks),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var field = _step.value;
+      var dataColumn = dataColumnsByFieldMap.get(field);
+
+      if (dataColumn) {
+        labels.push(dataColumn.label || dataColumn.name);
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return labels;
+});
+var _default = metadataBlocksSelector;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 639:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -804,27 +1117,2018 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _reactRnd = __webpack_require__(480);
-
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _lodash = _interopRequireDefault(__webpack_require__(449));
+var _Menu = _interopRequireDefault(__webpack_require__(211));
 
-var _classnames = _interopRequireDefault(__webpack_require__(13));
+var _phylocanvas = _interopRequireDefault(__webpack_require__(640));
 
-__webpack_require__(625);
+var _downloads = __webpack_require__(53);
 
-var Datetime = _interopRequireWildcard(__webpack_require__(56));
+var _propTypes2 = __webpack_require__(14);
+
+__webpack_require__(642);
+
+var _TreeControls = _interopRequireDefault(__webpack_require__(643));
+
+var _TreeZoomControls = _interopRequireDefault(__webpack_require__(653));
+
+var _TreeContextMenu = _interopRequireDefault(__webpack_require__(654));
 
 var _browser = __webpack_require__(21);
+
+var _events = __webpack_require__(61);
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+// import { triggerEvent } from "../utils/browser";
+// import UiContextMenu from "./UiContextMenu.react";
+var TreePane = /*#__PURE__*/function (_React$PureComponent) {
+  (0, _inherits2["default"])(TreePane, _React$PureComponent);
+
+  var _super = _createSuper(TreePane);
+
+  function TreePane() {
+    var _this;
+
+    (0, _classCallCheck2["default"])(this, TreePane);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {});
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "canvasRef", /*#__PURE__*/_react["default"].createRef());
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "lassoRef", /*#__PURE__*/_react["default"].createRef());
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleContextMenu", function (event) {
+      event.preventDefault(); // this.setState({
+      //   contextMenuPosition: {
+      //     left: event.clientX,
+      //     top: event.clientY,
+      //   },
+      // });
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleMenuClose", function () {
+      _this.setState({
+        contextMenuPosition: null
+      });
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleTreeTypeChange", function (type) {
+      _this.tree.setTreeType(type);
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleDownloadNewick", function () {
+      (0, _downloads.downloadDataUrl)(_this.tree.exportNewick(), "tree.nwk", "plain/text");
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleDownloadPNG", function () {
+      (0, _downloads.downloadDataUrl)(_this.tree.exportPNG(), "tree.png", "image/png"); // const props = this.tree.props;
+      // this.tree.props = { ...props, scalebar: true };
+      // this.tree.render();
+      // nextTick(
+      //   () => {
+      //     downloadDataUrl(
+      //       this.tree.exportPNG(),
+      //       "tree.png",
+      //       "image/png",
+      //     );
+      //     this.tree.props = props;
+      //     this.tree.render();
+      //   }
+      // );
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleDownloadSVG", function () {
+      (0, _downloads.downloadDataUrl)(_this.tree.exportSVG(), "tree.svg", "image/svg+xml");
+    });
+    return _this;
+  }
+
+  (0, _createClass2["default"])(TreePane, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var PhylocanvasGL = (0, _phylocanvas["default"])(this);
+      this.tree = new PhylocanvasGL(this.canvasRef.current, this.props.phylocanvasProps);
+      this.tree.renderLasso();
+      this.tree.setProps = this.props.onPhylocanvasPropsChange;
+
+      if (this.props.phylocanvasProps.scale && !this.props.phylocanvasProps.transform) {
+        this.tree.view.style.visibility = "hidden";
+        (0, _browser.nextTick)(function () {
+          console.debug("Convert state");
+
+          _this2.tree.convertState();
+
+          _this2.tree.view.style.visibility = "";
+        });
+      }
+
+      this.beforeScreenshotUnsubscribe = (0, _events.subscribe)("before-screenshot", function () {
+        _this2.tree.deck.setProps({
+          glOptions: {
+            preserveDrawingBuffer: true
+          }
+        });
+
+        _this2.tree.deck.redraw(true);
+      });
+      this.afterScreenshotUnsubscribe = (0, _events.subscribe)("after-screenshot", function () {
+        _this2.tree.deck.setProps({
+          glOptions: {
+            preserveDrawingBuffer: undefined
+          }
+        });
+
+        _this2.tree.deck.redraw(true);
+      }); // window[`mr-${this.props.treeId}`] = () => this.tree;
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.isLassoActive !== this.props.isLassoActive) {
+        this.tree.lasso.setActive(this.props.isLassoActive);
+      }
+
+      if (prevProps.lassoPath !== this.props.lassoPath) {
+        this.tree.lasso.setPath(this.props.lassoPath);
+      }
+
+      if (prevProps.phylocanvasProps !== this.props.phylocanvasProps) {
+        this.tree.props = this.props.phylocanvasProps;
+      }
+
+      this.tree.render();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      var _this$beforeScreensho, _this$afterScreenshot;
+
+      if (this.tree) {
+        if (this.tree.lasso) {
+          this.tree.lasso.destroy();
+        }
+
+        this.tree.destroy();
+        this.tree = undefined;
+        delete this.tree;
+      }
+
+      (_this$beforeScreensho = this.beforeScreenshotUnsubscribe) === null || _this$beforeScreensho === void 0 ? void 0 : _this$beforeScreensho.call(this);
+      (_this$afterScreenshot = this.afterScreenshotUnsubscribe) === null || _this$afterScreenshot === void 0 ? void 0 : _this$afterScreenshot.call(this);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state$contextMe,
+          _this3 = this;
+
+      var size = this.props.phylocanvasProps.size;
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        className: "mr-tree",
+        ref: this.canvasRef,
+        onContextMenu: this.handleContextMenu
+      }, /*#__PURE__*/_react["default"].createElement(_Menu["default"], {
+        open: !!this.state.contextMenuPosition,
+        onClose: this.handleMenuClose,
+        anchorReference: "anchorPosition",
+        anchorPosition: (_this$state$contextMe = this.state.contextMenuPosition) !== null && _this$state$contextMe !== void 0 ? _this$state$contextMe : undefined
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        onClick: this.handleMenuClose
+      }, /*#__PURE__*/_react["default"].createElement(_TreeContextMenu["default"], {
+        onAlignLabelsChange: this.props.onAlignLabelsChange,
+        onShowLeafLabelsChange: this.props.onShowLeafLabelsChange,
+        phylocanvasProps: this.props.phylocanvasProps,
+        tree: this.tree,
+        menuPosition: this.state.contextMenuPosition,
+        node: this.state.contextMenuNode
+      }))), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("canvas", {
+        className: "mr-lasso-canvas",
+        height: size.height,
+        width: size.width,
+        ref: this.lassoRef
+      })), /*#__PURE__*/_react["default"].createElement(_TreeControls["default"] // className={this.props.controls ? "visible" : ""}
+      , {
+        onTypeChange: this.handleTreeTypeChange,
+        onDownloadNewick: this.handleDownloadNewick,
+        onDownloadPNG: this.handleDownloadPNG,
+        onDownloadSVG: this.handleDownloadSVG,
+        treeId: this.props.treeId
+      }), /*#__PURE__*/_react["default"].createElement(_TreeZoomControls["default"], {
+        className: this.props.controls ? "visible" : "",
+        onBranchZoomIn: function onBranchZoomIn() {
+          return _this3.tree.setBranchZoom(_this3.tree.getBranchZoom() + 0.1);
+        },
+        onBranchZoomOut: function onBranchZoomOut() {
+          return _this3.tree.setBranchZoom(_this3.tree.getBranchZoom() - 0.1);
+        },
+        onStepZoomIn: function onStepZoomIn() {
+          return _this3.tree.setStepZoom(_this3.tree.getStepZoom() + 0.1);
+        },
+        onStepZoomOut: function onStepZoomOut() {
+          return _this3.tree.setStepZoom(_this3.tree.getStepZoom() - 0.1);
+        },
+        onZoomIn: function onZoomIn() {
+          return _this3.tree.zoomIn();
+        },
+        onZoomOut: function onZoomOut() {
+          return _this3.tree.zoomOut();
+        },
+        treeType: this.props.treeType
+      }));
+    }
+  }]);
+  return TreePane;
+}(_react["default"].PureComponent);
+
+(0, _defineProperty2["default"])(TreePane, "displayName", "TreePane");
+(0, _defineProperty2["default"])(TreePane, "propTypes", {
+  controls: _propTypes["default"].bool.isRequired,
+  // height: PropTypes.number.isRequired,
+  isLassoActive: _propTypes["default"].bool.isRequired,
+  lassoPath: _propTypes["default"].arrayOf(_propTypes2.GeometricPoint),
+  onAddHistoryEntry: _propTypes["default"].func.isRequired,
+  onAlignLabelsChange: _propTypes["default"].func.isRequired,
+  onFilterChange: _propTypes["default"].func.isRequired,
+  // onPhylocanvasInitialise: PropTypes.func.isRequired,
+  onPhylocanvasPropsChange: _propTypes["default"].func.isRequired,
+  onSelectRows: _propTypes["default"].func.isRequired,
+  onShowLeafLabelsChange: _propTypes["default"].func.isRequired,
+  phylocanvasProps: _propTypes["default"].object,
+  selectedIds: _propTypes["default"].array.isRequired,
+  treeId: _propTypes["default"].string.isRequired,
+  treeType: _propTypes2.TreeType.isRequired // width: PropTypes.number.isRequired,
+
+});
+var _default = TreePane;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 640:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+var _typeof = __webpack_require__(33);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = _default;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(6));
+
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
+
+var _get2 = _interopRequireDefault(__webpack_require__(120));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(7));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
+
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
+
+var _phylocanvas = _interopRequireWildcard(__webpack_require__(99));
+
+var _canvasLasso = _interopRequireDefault(__webpack_require__(514));
+
+var _convertState = _interopRequireDefault(__webpack_require__(641));
+
+var _geometry = __webpack_require__(102);
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function zoomToScale(zoom) {
+  return Math.pow(2, zoom); // eslint-disable-line no-restricted-properties
+}
+
+var displayModes = {
+  Visible: "",
+  Hidden: "none"
+};
+var treeTypeLabels = Object.entries(_phylocanvas.TreeTypes).reduce(function (prev, _ref) {
+  var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
+      label = _ref2[0],
+      value = _ref2[1];
+
+  prev[value] = label;
+  return prev;
+}, {});
+
+function _default(treePane) {
+  return /*#__PURE__*/function (_PhylocanvasGL) {
+    (0, _inherits2["default"])(Phylocanvas, _PhylocanvasGL);
+
+    var _super = _createSuper(Phylocanvas);
+
+    function Phylocanvas(view, props) {
+      var _this;
+
+      (0, _classCallCheck2["default"])(this, Phylocanvas);
+      _this = _super.call(this, view, props, [_phylocanvas.plugins.scalebar]);
+      var tree = (0, _assertThisInitialized2["default"])(_this);
+      tree.lasso = (0, _canvasLasso["default"])(tree.view, treePane.lassoRef.current, {
+        isActive: treePane.props.isLassoActive,
+        clearBeforeDraw: true,
+        path: treePane.props.lassoPath,
+        onPathChange: function onPathChange(path) {
+          if (path === null && treePane.props.selectedIds.length) {
+            return;
+          }
+
+          var ids = null;
+
+          if (path) {
+            ids = [];
+            var graph = tree.getGraphAfterLayout();
+
+            var _iterator = _createForOfIteratorHelper(graph.leaves),
+                _step;
+
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var leaf = _step.value;
+
+                if ((0, _geometry.isPointInPolygon)(tree.absolutePointToRelativePoint([leaf.x, leaf.y]), path)) {
+                  ids.push(leaf.id);
+                }
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+          }
+
+          treePane.props.onFilterChange(ids, path);
+        },
+        onRedrawRequested: function onRedrawRequested() {
+          tree.render();
+        },
+        translateToCanvas: function translateToCanvas(points) {
+          var scale = zoomToScale(tree.getZoom());
+          return points.map(function (x) {
+            return tree.projectPoint(tree.relativePointToAbsolutePoint(x), scale);
+          });
+        },
+        translateFromCanvas: function translateFromCanvas(x, y) {
+          return tree.absolutePointToRelativePoint(tree.unprojectPoint([x, y]));
+        }
+      });
+      tree.deck.setProps({
+        // _onMetrics: (metrics) => {
+        //   if (treePane?.framerateRef?.current) {
+        //     treePane.framerateRef.current.innerHTML = `${metrics.fps.toFixed(0)} fps`;
+        //   }
+        // },
+        getCursor: function getCursor(info) {
+          if (treePane.props.isLassoActive && !Array.isArray(tree.lasso.path)) {
+            return null;
+          } else {
+            return info.isDragging ? "grabbing" : "grab";
+          }
+        }
+      });
+      tree.convertState = _convertState["default"].bind(tree, tree);
+      return _this;
+    }
+
+    (0, _createClass2["default"])(Phylocanvas, [{
+      key: "collapseNode",
+      value: function collapseNode(node) {
+        (0, _get2["default"])((0, _getPrototypeOf2["default"])(Phylocanvas.prototype), "collapseNode", this).call(this, node);
+        treePane.props.onAddHistoryEntry("Collapse subtree");
+      }
+    }, {
+      key: "handleClick",
+      value: function handleClick(info, event) {
+        var tree = this;
+        var node = tree.pickNodeFromLayer(info);
+
+        if (event.rightButton) {
+          event.preventDefault();
+          treePane.setState({
+            contextMenuPosition: {
+              left: event.center.x,
+              top: event.center.y
+            },
+            contextMenuNode: node
+          });
+        } else if (node && event.srcEvent.shiftKey && this.props.selectedIds && this.props.selectedIds.length) {
+          var lastSelectedNode = this.findNodeById(this.props.selectedIds[this.props.selectedIds.length - 1]);
+          var nodes = this.getGraphAfterLayout();
+          var lastSelectedNodeIndex = nodes.leaves.indexOf(lastSelectedNode);
+          var clickedNodeIndex = nodes.leaves.indexOf(node);
+          var first = Math.min(lastSelectedNodeIndex + 1, clickedNodeIndex);
+          var last = Math.max(lastSelectedNodeIndex - 1, clickedNodeIndex);
+          var ids = [];
+
+          for (var index = first; index <= last; index++) {
+            ids.push(nodes.leaves[index].id);
+          }
+
+          this.selectLeafNodes(ids, true);
+        } else {
+          this.selectNode(node, event.srcEvent.metaKey || event.srcEvent.ctrlKey);
+        }
+      }
+    }, {
+      key: "getLeafNodes",
+      value: function getLeafNodes(nodeOrId) {
+        var _ref3 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+            _ref3$includeHidden = _ref3.includeHidden,
+            includeHidden = _ref3$includeHidden === void 0 ? false : _ref3$includeHidden;
+
+        var nodes = this.getGraphWithStyles();
+        var subtreeNode = nodeOrId ? this.findNodeById(nodeOrId) : nodes.root;
+        var leafNodes = [];
+
+        for (var i = subtreeNode.preIndex; i < subtreeNode.preIndex + subtreeNode.totalNodes; i++) {
+          var node = nodes.preorderTraversal[i];
+
+          if (node.isLeaf && (includeHidden || !node.isHidden)) {
+            leafNodes.push(node);
+          }
+        }
+
+        return leafNodes;
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        (0, _get2["default"])((0, _getPrototypeOf2["default"])(Phylocanvas.prototype), "render", this).call(this);
+        this.renderLasso(); // this.renderScalebar();
+      }
+    }, {
+      key: "renderLasso",
+      value: function renderLasso() {
+        var tree = this;
+
+        if (tree.lasso && tree.lasso.isActive) {
+          treePane.lassoRef.current.style.display = displayModes.Visible; // tree.layers.lasso.ctx.save();
+          // tree.layers.lasso.ctx.scale(tree.pixelRatio, tree.pixelRatio);
+
+          tree.lasso.draw(); // tree.layers.lasso.ctx.restore();
+
+          tree.lasso.updateCanvas();
+        } else {
+          treePane.lassoRef.current.style.display = displayModes.Hidden;
+        }
+      } // renderScalebar() {
+      //   const tree = this;
+      //   if (treePane?.scalebarRef?.current) {
+      //     const scaleValue = 88 / tree.getBranchScale() / tree.getScale();
+      //     const minDigitis = parseInt(Math.abs(Math.log(scaleValue) / Math.log(10)), 10);
+      //     treePane.scalebarRef.current.innerHTML = scaleValue.toFixed(minDigitis + 2);
+      //   }
+      // }
+
+    }, {
+      key: "rerootNode",
+      value: function rerootNode(node) {
+        (0, _get2["default"])((0, _getPrototypeOf2["default"])(Phylocanvas.prototype), "rerootNode", this).call(this, node);
+        treePane.props.onAddHistoryEntry("Re-root tree");
+      }
+    }, {
+      key: "setRoot",
+      value: function setRoot(nodeOrId) {
+        (0, _get2["default"])((0, _getPrototypeOf2["default"])(Phylocanvas.prototype), "setRoot", this).call(this, nodeOrId, {
+          ids: this.getLeafNodes(nodeOrId).map(function (x) {
+            return x.id;
+          })
+        });
+        treePane.props.onAddHistoryEntry("View subtree");
+      }
+    }, {
+      key: "selectNode",
+      value: function selectNode(node, isAppend) {
+        var tree = this;
+
+        if (node && node.isLeaf) {
+          treePane.props.onSelectRows([node.id], isAppend);
+        } else {
+          // prevent node selection when a lasso path is being drawn
+          if (treePane.props.lassoPath) {
+            if (treePane.props.selectedIds.length) {
+              treePane.props.onSelectRows();
+            }
+
+            return;
+          }
+
+          if (node && !node.isHidden) {
+            var nodes = tree.getLeafNodes(node, {
+              includeHidden: true
+            });
+
+            if (isAppend) {
+              treePane.props.onSelectRows(nodes.map(function (x) {
+                return x.id;
+              }), isAppend);
+            } else {
+              treePane.props.onFilterChange(nodes.map(function (x) {
+                return x.id;
+              }));
+            }
+          } else if (!isAppend) {
+            if (treePane.props.selectedIds.length) {
+              treePane.props.onSelectRows();
+            } else {
+              treePane.props.onFilterChange(null);
+            }
+          }
+        }
+      } // eslint-disable-next-line class-methods-use-this
+
+    }, {
+      key: "selectLeafNodes",
+      value: function selectLeafNodes(ids, isAppend) {
+        // prevent node selection when a lasso path is being drawn
+        if (ids && Array.isArray(ids)) {
+          treePane.props.onSelectRows(ids, isAppend);
+        }
+      }
+    }, {
+      key: "setTreeType",
+      value: function setTreeType(type) {
+        (0, _get2["default"])((0, _getPrototypeOf2["default"])(Phylocanvas.prototype), "setTreeType", this).call(this, type);
+        treePane.props.onAddHistoryEntry("Set tree type to ".concat(treeTypeLabels[type]));
+      }
+    }, {
+      key: "zoomIn",
+      value: function zoomIn() {
+        this.setZoom(this.getZoom() + 0.1);
+      }
+    }, {
+      key: "zoomOut",
+      value: function zoomOut() {
+        this.setZoom(this.getZoom() - 0.1);
+      }
+    }, {
+      key: "absolutePointToRelativePoint",
+      value: function absolutePointToRelativePoint(_ref4) {
+        var _ref5 = (0, _slicedToArray2["default"])(_ref4, 2),
+            pointX = _ref5[0],
+            pointY = _ref5[1];
+
+        var _this$getGraphAfterLa = this.getGraphAfterLayout(),
+            root = _this$getGraphAfterLa.root;
+
+        return [(pointX - root.x) / this.getBranchScale(), (pointY - root.y) / this.getStepScale()];
+      }
+    }, {
+      key: "relativePointToAbsolutePoint",
+      value: function relativePointToAbsolutePoint(_ref6) {
+        var _ref7 = (0, _slicedToArray2["default"])(_ref6, 2),
+            pointX = _ref7[0],
+            pointY = _ref7[1];
+
+        var _this$getGraphAfterLa2 = this.getGraphAfterLayout(),
+            root = _this$getGraphAfterLa2.root;
+
+        return [pointX * this.getBranchScale() + root.x, pointY * this.getStepScale() + root.y];
+      } // Moved to componentDidMount to avoid updating the store when tree loads
+      // tree.setProps = (updater) => {
+      //   // console.debug('setState', Object.keys(updater));
+      //   component.props.onPhylocanvasPropsChange(updater);
+      // };
+
+    }]);
+    return Phylocanvas;
+  }(_phylocanvas["default"]);
+}
+
+/***/ }),
+
+/***/ 641:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = _default;
+
+var _regenerator = _interopRequireDefault(__webpack_require__(31));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(7));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(6));
+
+var _phylocanvas = __webpack_require__(99);
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+var Tree = /*#__PURE__*/function () {
+  function Tree(tree, state) {
+    (0, _classCallCheck2["default"])(this, Tree);
+    this.tree = tree;
+    this.stepScale = state.stepScale;
+    this.branchScale = state.branchScale;
+    this.offsetX = state.offsetX;
+    this.offsetY = state.offsetY;
+    this.scale = state.scale;
+    this.size = state.prevSize;
+    this.padding = state.padding;
+    this.includeLabelAlignment = false;
+    this.bounds = this.getBounds();
+  }
+
+  (0, _createClass2["default"])(Tree, [{
+    key: "getPostorderTraversal",
+    value: function getPostorderTraversal() {
+      var nodes = this.tree.getNodes();
+      var postorderTraversal = nodes.postorderTraversal.map(function (node) {
+        return _objectSpread(_objectSpread({}, node), {}, {
+          parent: (node.parent || {}).postIndex,
+          children: node.children ? node.children.map(function (_) {
+            return _.postIndex;
+          }) : undefined
+        });
+      });
+      postorderTraversal.forEach(function (node) {
+        node.parent = postorderTraversal[node.parent];
+        node.children = node.children ? node.children.map(function (_) {
+          return postorderTraversal[_];
+        }) : undefined;
+      });
+      return postorderTraversal;
+    }
+  }, {
+    key: "getBounds",
+    value: function getBounds() {
+      var nodes = Array.from(this.getLeaves());
+      return {
+        minX: nodes.reduce(function (acc, v) {
+          return acc.x < v.x ? acc : v;
+        }).x,
+        minY: nodes.reduce(function (acc, v) {
+          return acc.y < v.y ? acc : v;
+        }).y,
+        maxX: nodes.reduce(function (acc, v) {
+          return acc.x > v.x ? acc : v;
+        }).x,
+        maxY: nodes.reduce(function (acc, v) {
+          return acc.y > v.y ? acc : v;
+        }).y
+      };
+    }
+  }]);
+  return Tree;
+}();
+
+var Radial = /*#__PURE__*/function (_Tree) {
+  (0, _inherits2["default"])(Radial, _Tree);
+
+  var _super = _createSuper(Radial);
+
+  function Radial() {
+    (0, _classCallCheck2["default"])(this, Radial);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2["default"])(Radial, [{
+    key: "getLeaves",
+    value: /*#__PURE__*/_regenerator["default"].mark(function getLeaves() {
+      var stepOffset, postorderTraversal, preorderTraversal, _iterator, _step, _node2, rootIdx, root, i, node, angle, _iterator2, _step2, child, _i, _node, dist;
+
+      return _regenerator["default"].wrap(function getLeaves$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              stepOffset = 0;
+              postorderTraversal = this.getPostorderTraversal();
+              preorderTraversal = new Array(postorderTraversal.length);
+              _iterator = _createForOfIteratorHelper(postorderTraversal);
+
+              try {
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  _node2 = _step.value;
+                  preorderTraversal[_node2.preIndex] = _node2;
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
+
+              rootIdx = this.tree.getNodes().root.preIndex;
+              root = preorderTraversal[rootIdx];
+
+              for (i = root.postIndex - root.totalNodes + 1; i <= root.postIndex; i++) {
+                node = postorderTraversal[i];
+
+                if (node.isLeaf) {
+                  // leaf nodes are angled at step offsets (use a fixed step angle for all leaf nodes)
+                  node.angle = stepOffset * (_phylocanvas.Angles.Degrees360 / root.visibleLeaves);
+                } else {
+                  angle = 0;
+                  _iterator2 = _createForOfIteratorHelper(node.children);
+
+                  try {
+                    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                      child = _step2.value;
+                      angle += child.angle * child.totalLeaves;
+                    }
+                  } catch (err) {
+                    _iterator2.e(err);
+                  } finally {
+                    _iterator2.f();
+                  }
+
+                  node.angle = angle / node.totalLeaves;
+                }
+
+                if (node.isLeaf && !node.isHidden || node.isCollapsed && !node.isHidden) {
+                  stepOffset += 1;
+                }
+              }
+
+              _i = root.preIndex;
+
+            case 9:
+              if (!(_i < root.preIndex + root.totalNodes)) {
+                _context.next = 20;
+                break;
+              }
+
+              _node = preorderTraversal[_i]; // calculate vector horizontal and vertical components to position the node
+
+              dist = _node.branchLength * this.branchScale;
+              _node.x = (_node !== root ? _node.parent.x : 0) + dist * Math.cos(_node.angle);
+              _node.y = (_node !== root ? _node.parent.y : 0) + dist * Math.sin(_node.angle);
+
+              if (!_node.isLeaf) {
+                _context.next = 17;
+                break;
+              }
+
+              _context.next = 17;
+              return {
+                x: _node.x,
+                y: _node.y,
+                angle: _node.angle
+              };
+
+            case 17:
+              _i++;
+              _context.next = 9;
+              break;
+
+            case 20:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, getLeaves, this);
+    })
+  }, {
+    key: "getBranchScale",
+    value: function getBranchScale() {
+      var totalLength = Math.min(this.width, this.height) / 2;
+      var nodes = this.tree.getNodes();
+
+      if (nodes.root.totalLeafLength > 0) {
+        return totalLength / nodes.root.totalLeafLength;
+      }
+
+      if (nodes.root.totalLeafLength < 0) {
+        return totalLength * nodes.root.totalLeafLength;
+      }
+
+      return 0;
+    }
+  }]);
+  return Radial;
+}(Tree);
+
+var Rectangular = /*#__PURE__*/function (_Tree2) {
+  (0, _inherits2["default"])(Rectangular, _Tree2);
+
+  var _super2 = _createSuper(Rectangular);
+
+  function Rectangular(tree, state) {
+    var _this;
+
+    (0, _classCallCheck2["default"])(this, Rectangular);
+    _this = _super2.call(this, tree, state);
+    _this.mainAxis = "x";
+    return _this;
+  }
+
+  (0, _createClass2["default"])(Rectangular, [{
+    key: "getLeaves",
+    value: /*#__PURE__*/_regenerator["default"].mark(function getLeaves() {
+      var nodes, branchScale;
+      return _regenerator["default"].wrap(function getLeaves$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              nodes = this.tree.getNodes();
+              branchScale = this.branchScale;
+              _context2.next = 4;
+              return {
+                x: 0,
+                y: 0,
+                angle: _phylocanvas.Angles.Degrees0
+              };
+
+            case 4:
+              _context2.next = 6;
+              return {
+                x: nodes.root.totalSubtreeLength * branchScale,
+                y: this.stepScale * nodes.root.visibleLeaves,
+                angle: _phylocanvas.Angles.Degrees0
+              };
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, getLeaves, this);
+    })
+  }, {
+    key: "getBranchScale",
+    value: function getBranchScale() {
+      var nodes = this.tree.getNodes();
+      var treeHeight = nodes.root.visibleLeaves * this.stepScale;
+      var treeWidth = this.size.width / this.size.height * treeHeight;
+      var totalLeafLength = nodes.root.totalLeafLength;
+      return treeWidth / totalLeafLength;
+    }
+  }]);
+  return Rectangular;
+}(Tree);
+
+var Circular = /*#__PURE__*/function (_Tree3) {
+  (0, _inherits2["default"])(Circular, _Tree3);
+
+  var _super3 = _createSuper(Circular);
+
+  function Circular() {
+    var _this2;
+
+    (0, _classCallCheck2["default"])(this, Circular);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this2 = _super3.call.apply(_super3, [this].concat(args));
+    _this2.includeLabelAlignment = _this2.tree.alignLabels;
+    _this2.bounds = _this2.getBounds();
+    return _this2;
+  }
+
+  (0, _createClass2["default"])(Circular, [{
+    key: "getLeaves",
+    value: /*#__PURE__*/_regenerator["default"].mark(function getLeaves() {
+      var stepOffset, _this$tree$getNodes, root, postorderTraversal, i, node, angle, distanceFromRoot, dist, x, y;
+
+      return _regenerator["default"].wrap(function getLeaves$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              stepOffset = 0;
+              _this$tree$getNodes = this.tree.getNodes(), root = _this$tree$getNodes.root;
+              postorderTraversal = this.getPostorderTraversal();
+              i = root.postIndex - root.totalNodes + 1;
+
+            case 4:
+              if (!(i <= root.postIndex)) {
+                _context3.next = 18;
+                break;
+              }
+
+              node = postorderTraversal[i];
+
+              if (!node.isLeaf) {
+                _context3.next = 14;
+                break;
+              }
+
+              // leaf nodes are angled at step offsets (use a fixed step angle for all leaf nodes)
+              angle = stepOffset * (_phylocanvas.Angles.Degrees360 / root.visibleLeaves); // calculate vector horizontal and vertical components to position the node
+
+              distanceFromRoot = node.distanceFromRoot - root.distanceFromRoot;
+              dist = distanceFromRoot * this.branchScale;
+              x = dist * Math.cos(angle);
+              y = dist * Math.sin(angle);
+              _context3.next = 14;
+              return {
+                x: x,
+                y: y,
+                angle: angle
+              };
+
+            case 14:
+              if (node.isLeaf && !node.isHidden || node.isCollapsed && !node.isHidden) {
+                stepOffset += 1;
+              }
+
+            case 15:
+              i++;
+              _context3.next = 4;
+              break;
+
+            case 18:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, getLeaves, this);
+    })
+  }, {
+    key: "getBranchScale",
+    value: function getBranchScale() {
+      var totalLength = Math.min(this.width, this.height) / 2;
+      var nodes = this.tree.getNodes();
+
+      if (nodes.root.totalLeafLength > 0) {
+        return totalLength / nodes.root.totalLeafLength;
+      }
+
+      if (nodes.root.totalLeafLength < 0) {
+        return totalLength * nodes.root.totalLeafLength;
+      }
+
+      return 0;
+    }
+  }]);
+  return Circular;
+}(Tree);
+
+var Diagonal = /*#__PURE__*/function (_Tree4) {
+  (0, _inherits2["default"])(Diagonal, _Tree4);
+
+  var _super4 = _createSuper(Diagonal);
+
+  function Diagonal(tree, state) {
+    var _this3;
+
+    (0, _classCallCheck2["default"])(this, Diagonal);
+    _this3 = _super4.call(this, tree, state);
+    _this3.mainAxis = "x";
+    return _this3;
+  }
+
+  (0, _createClass2["default"])(Diagonal, [{
+    key: "getLeaves",
+    value: /*#__PURE__*/_regenerator["default"].mark(function getLeaves() {
+      var nodes, root, maxY, maxX;
+      return _regenerator["default"].wrap(function getLeaves$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              nodes = this.tree.getNodes();
+              root = nodes.root;
+              maxY = (root.visibleLeaves - 1) * this.stepScale;
+              maxX = maxY / 2;
+              _context4.next = 6;
+              return {
+                x: 0,
+                y: 0,
+                angle: _phylocanvas.Angles.Degrees0
+              };
+
+            case 6:
+              _context4.next = 8;
+              return {
+                x: maxX,
+                y: maxY,
+                angle: _phylocanvas.Angles.Degrees0
+              };
+
+            case 8:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, getLeaves, this);
+    })
+  }, {
+    key: "getBranchScale",
+    value: function getBranchScale() {
+      var nodes = this.tree.getNodes();
+      var totalLength = this.size.width - this.padding * 2;
+
+      if (nodes.root.totalLeafLength > 0) {
+        return totalLength / nodes.root.totalLeafLength;
+      }
+
+      if (nodes.root.totalLeafLength < 0) {
+        return totalLength * nodes.root.totalLeafLength;
+      }
+
+      return 0;
+    }
+  }]);
+  return Diagonal;
+}(Tree);
+
+var Hierarchical = /*#__PURE__*/function (_Tree5) {
+  (0, _inherits2["default"])(Hierarchical, _Tree5);
+
+  var _super5 = _createSuper(Hierarchical);
+
+  function Hierarchical(tree, state) {
+    var _this4;
+
+    (0, _classCallCheck2["default"])(this, Hierarchical);
+    _this4 = _super5.call(this, tree, state);
+    _this4.mainAxis = "y";
+    return _this4;
+  }
+
+  (0, _createClass2["default"])(Hierarchical, [{
+    key: "getLeaves",
+    value: /*#__PURE__*/_regenerator["default"].mark(function getLeaves() {
+      var nodes, root, angle, maxY, minX;
+      return _regenerator["default"].wrap(function getLeaves$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              nodes = this.tree.getNodes();
+              root = nodes.root;
+              angle = _phylocanvas.Angles.Degrees90;
+              maxY = root.totalSubtreeLength * this.branchScale;
+              minX = -1 * (root.visibleLeaves - 1) * this.stepScale;
+              _context5.next = 7;
+              return {
+                x: minX,
+                y: 0,
+                angle: angle
+              };
+
+            case 7:
+              _context5.next = 9;
+              return {
+                x: 0,
+                y: maxY,
+                angle: angle
+              };
+
+            case 9:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, getLeaves, this);
+    })
+  }, {
+    key: "getBranchScale",
+    value: function getBranchScale() {
+      var nodes = this.tree.getNodes();
+      var treeWidth = nodes.root.visibleLeaves * this.stepScale;
+      var treeHeight = this.size.height / this.size.width * treeWidth;
+      var totalLeafLength = nodes.root.totalSubtreeLength;
+      return treeHeight / totalLeafLength;
+    }
+  }]);
+  return Hierarchical;
+}(Tree);
+
+function _default(tree) {
+  var _TreeTypes$Radial$Tre;
+
+  var oldState = _objectSpread({}, tree.props);
+
+  tree.setProps({
+    offsetX: undefined,
+    offsetY: undefined,
+    branchScale: undefined,
+    stepScale: undefined,
+    scale: undefined,
+    renderLabels: undefined,
+    renderInternalLabels: undefined,
+    renderBranchLengths: undefined,
+    renderLeafLabels: undefined,
+    renderLeafBorders: undefined,
+    showNodes: undefined,
+    showLabels: oldState.renderLabels,
+    showInternalLabels: oldState.renderInternalLabels,
+    showBranchLengths: oldState.renderBranchLengths,
+    showLeafLabels: oldState.renderLeafLabels,
+    showShapeBorders: oldState.renderLeafBorders,
+    showShapes: oldState.showNodes
+  });
+  var TreeFactory = (_TreeTypes$Radial$Tre = {}, (0, _defineProperty2["default"])(_TreeTypes$Radial$Tre, _phylocanvas.TreeTypes.Radial, Radial), (0, _defineProperty2["default"])(_TreeTypes$Radial$Tre, _phylocanvas.TreeTypes.Rectangular, Rectangular), (0, _defineProperty2["default"])(_TreeTypes$Radial$Tre, _phylocanvas.TreeTypes.Circular, Circular), (0, _defineProperty2["default"])(_TreeTypes$Radial$Tre, _phylocanvas.TreeTypes.Diagonal, Diagonal), (0, _defineProperty2["default"])(_TreeTypes$Radial$Tre, _phylocanvas.TreeTypes.Hierarchical, Hierarchical), _TreeTypes$Radial$Tre)[oldState.type];
+  var treeObj = new TreeFactory(tree, oldState);
+  var oldBounds = treeObj.bounds;
+  var defaultBranchScale = treeObj.getBranchScale();
+  var currentState = tree.props;
+  tree.props = _objectSpread({}, tree.props);
+  tree.props.size = oldState.prevSize;
+
+  function getDefaultScale() {
+    var bounds = oldBounds;
+    var area = {
+      width: tree.props.size.width,
+      height: tree.props.size.height,
+      left: tree.props.padding,
+      top: tree.props.padding,
+      right: tree.props.size.width - tree.props.padding,
+      bottom: tree.props.size.height - tree.props.padding
+    };
+    var treeWidth = bounds.maxX - bounds.minX;
+    var treeHeight = bounds.maxY - bounds.minY;
+    var canvasWidth = Math.max(area.width * 0.333, area.right - area.left - tree.props.nodeSize);
+    var canvasHeight = Math.max(area.height * 0.333, area.bottom - area.top - tree.props.nodeSize);
+    var xZoomRatio = canvasWidth / treeWidth;
+    var yZoomRatio = canvasHeight / treeHeight;
+    var scale = Math.min(xZoomRatio, yZoomRatio);
+    return scale;
+  }
+
+  var treeWidth = oldBounds.maxX - oldBounds.minX;
+  var treeHeight = oldBounds.maxY - oldBounds.minY;
+  var treeCenterX = (oldBounds.minX + treeWidth / 2) * oldState.scale + oldState.offsetX;
+  var treeCenterY = (oldBounds.minY + treeHeight / 2) * oldState.scale + oldState.offsetY;
+  var defaultScale = getDefaultScale();
+  var area = tree.getDrawingArea();
+  tree.props = currentState;
+  tree.setProps({
+    transform: _objectSpread(_objectSpread({}, tree.props.transform), {}, {
+      x: treeCenterX / area.width,
+      y: treeCenterY / area.height,
+      z: oldState.scale / defaultScale,
+      branch: oldState.branchScale / defaultBranchScale,
+      step: oldState.stepScale / 8
+    })
+  });
+}
+
+/***/ }),
+
+/***/ 642:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 643:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _trees = __webpack_require__(74);
+
+var _ui = __webpack_require__(27);
+
+var _state = __webpack_require__(3);
+
+var _TreeControls = _interopRequireDefault(__webpack_require__(644));
+
+var _config = _interopRequireDefault(__webpack_require__(50));
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var treeId = _ref.treeId;
+  return {
+    controls: state.trees[treeId].controls,
+    isReadOnly: (0, _config["default"])(state).readOnly,
+    lasso: state.trees[treeId].lasso,
+    type: state.trees[treeId].type
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
+  var treeId = _ref2.treeId;
+  return {
+    onControlsChange: function onControlsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "controls", value));
+    },
+    onEditPane: function onEditPane() {
+      return dispatch((0, _ui.openPaneEditor)(treeId));
+    },
+    onLassoChange: function onLassoChange(value) {
+      return dispatch((0, _trees.setTreeLasso)(treeId, value));
+    }
+  };
+};
+
+var _default = (0, _state.connectToPresentState)(_TreeControls["default"], mapStateToProps, mapDispatchToProps);
+
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 644:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _Menu = _interopRequireDefault(__webpack_require__(163));
+
+var _Divider = _interopRequireDefault(__webpack_require__(97));
+
+var _propTypes2 = __webpack_require__(14);
+
+var _Animation = _interopRequireDefault(__webpack_require__(166));
+
+var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(645));
+
+var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(646));
+
+var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(647));
+
+var _LassoButton = _interopRequireDefault(__webpack_require__(505));
+
+var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(648));
+
+var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
+
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(649));
+
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(651));
+
+var _UiSpeedDial = _interopRequireDefault(__webpack_require__(214));
+
+var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
+
+var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
+
+var treeTypes = [{
+  value: "rc",
+  label: "Rectangular Tree",
+  icon: /*#__PURE__*/_react["default"].createElement(_RectangularTreeIcon["default"], null)
+}, {
+  value: "cr",
+  label: "Circular Tree",
+  icon: /*#__PURE__*/_react["default"].createElement(_CircularTreeIcon["default"], null)
+}, {
+  value: "rd",
+  label: "Radial Tree",
+  icon: /*#__PURE__*/_react["default"].createElement(_RadialTreeIcon["default"], null)
+}, {
+  value: "dg",
+  label: "Diagonal Tree",
+  icon: /*#__PURE__*/_react["default"].createElement(_DiagonalTreeIcon["default"], null)
+}, {
+  value: "hr",
+  label: "Hierarchical Tree",
+  icon: /*#__PURE__*/_react["default"].createElement(_HierarchicalTreeIcon["default"], null)
+}];
+
+var TreeControls = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-main-controls"
+  }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"], {
+    button: _UiControlsButton["default"],
+    icon: /*#__PURE__*/_react["default"].createElement(_Menu["default"], null)
+  }, !props.isReadOnly && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+    onClick: props.onEditPane
+  }, "Edit Tree"), /*#__PURE__*/_react["default"].createElement(_Divider["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+    onClick: props.onDownloadNewick
+  }, "Download as Newick"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+    onClick: props.onDownloadPNG
+  }, "Download as PNG image"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
+    onClick: props.onDownloadSVG
+  }, "Download as SVG image")), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
+    active: props.controls,
+    onClick: function onClick() {
+      return props.onControlsChange(!props.controls);
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_Animation["default"], {
+    "in": props.controls
+  }, /*#__PURE__*/_react["default"].createElement(_LassoButton["default"], {
+    active: props.lasso,
+    onClick: function onClick() {
+      return props.onLassoChange(!props.lasso);
+    }
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiSpeedDial["default"], {
+    items: treeTypes,
+    label: "Tree Type",
+    value: props.type,
+    onChange: props.onTypeChange
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_TreeMetadataMenu["default"], {
+    treeId: props.treeId
+  }), /*#__PURE__*/_react["default"].createElement(_TreeStyleMenu["default"], {
+    treeId: props.treeId
+  })));
+});
+
+TreeControls.displayName = "TreeControls";
+TreeControls.propTypes = {
+  controls: _propTypes["default"].bool.isRequired,
+  isReadOnly: _propTypes["default"].bool.isRequired,
+  lasso: _propTypes["default"].bool.isRequired,
+  onControlsChange: _propTypes["default"].func.isRequired,
+  onDownloadNewick: _propTypes["default"].func.isRequired,
+  onDownloadPNG: _propTypes["default"].func.isRequired,
+  onDownloadSVG: _propTypes["default"].func.isRequired,
+  onEditPane: _propTypes["default"].func.isRequired,
+  onLassoChange: _propTypes["default"].func.isRequired,
+  onTypeChange: _propTypes["default"].func.isRequired,
+  treeId: _propTypes["default"].string.isRequired,
+  type: _propTypes2.TreeType.isRequired
+};
+var _default = TreeControls;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 645:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _extends2 = _interopRequireDefault(__webpack_require__(22));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
+
+var CircularTreeIcon = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_SvgIcon["default"], (0, _extends2["default"])({}, props, {
+    viewBox: "0 0 22 22"
+  }), /*#__PURE__*/_react["default"].createElement("g", {
+    transform: "translate(657 344)"
+  }, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 10 5.01653L 9 5.01653L 9 6.01653L 10 6.01653L 10 5.01653ZM 6 13.0165L 6.83205 12.4618L 6.25871 11.6018L 5.41812 12.2033L 6 13.0165ZM 2 16.0165L 1.21913 16.6412L 2 16.0165ZM 10 20.0165L 10 19.0165L 9.97764 19.0165L 9.95531 19.0175L 10 20.0165ZM 10 11.0165L 15 11.0165L 15 9.01653L 10 9.01653L 10 11.0165ZM 16 10.0165C 16 8.59154 15.6409 7.45632 15.0508 6.5712C 14.4649 5.69234 13.6908 5.11891 12.9472 4.7471C 12.2075 4.37724 11.4799 4.1973 10.9456 4.10826C 10.6762 4.06334 10.4494 4.0405 10.2861 4.02883C 10.2043 4.02299 10.1379 4.01992 10.0895 4.0183C 10.0652 4.01749 10.0455 4.01705 10.0305 4.01681C 10.023 4.01669 10.0167 4.01662 10.0116 4.01658C 10.009 4.01656 10.0068 4.01654 10.0048 4.01654C 10.0039 4.01653 10.003 4.01653 10.0022 4.01653C 10.0018 4.01653 10.0012 4.01653 10.001 4.01653C 10.0005 4.01653 10 4.01653 10 5.01653C 10 6.01653 9.99953 6.01653 9.99908 6.01652C 9.99895 6.01652 9.99852 6.01652 9.99827 6.01652C 9.99776 6.01652 9.99733 6.01652 9.99697 6.01652C 9.99626 6.01652 9.99583 6.01651 9.99569 6.01651C 9.9954 6.01651 9.99626 6.01652 9.99822 6.01655C 10.0021 6.01661 10.0104 6.01678 10.0228 6.01719C 10.0477 6.01802 10.0887 6.01983 10.1436 6.02375C 10.2537 6.03162 10.4176 6.04783 10.6169 6.08104C 11.0201 6.14825 11.5425 6.28081 12.0528 6.53595C 12.5592 6.78914 13.0351 7.15321 13.3867 7.6806C 13.7341 8.20173 14 8.94151 14 10.0165L 16 10.0165ZM 14 10.0165C 14 11.0915 13.7341 11.8313 13.3867 12.3525C 13.0351 12.8798 12.5592 13.2439 12.0528 13.4971C 11.5425 13.7522 11.0201 13.8848 10.6169 13.952C 10.4176 13.9852 10.2537 14.0014 10.1436 14.0093C 10.0887 14.0132 10.0477 14.015 10.0228 14.0159C 10.0104 14.0163 10.0021 14.0164 9.99822 14.0165C 9.99626 14.0165 9.9954 14.0165 9.99569 14.0165C 9.99583 14.0165 9.99626 14.0165 9.99697 14.0165C 9.99733 14.0165 9.99776 14.0165 9.99827 14.0165C 9.99852 14.0165 9.99895 14.0165 9.99908 14.0165C 9.99953 14.0165 10 14.0165 10 15.0165C 10 16.0165 10.0005 16.0165 10.001 16.0165C 10.0012 16.0165 10.0018 16.0165 10.0022 16.0165C 10.003 16.0165 10.0039 16.0165 10.0048 16.0165C 10.0068 16.0165 10.009 16.0165 10.0116 16.0165C 10.0167 16.0164 10.023 16.0164 10.0305 16.0162C 10.0455 16.016 10.0652 16.0156 10.0895 16.0147C 10.1379 16.0131 10.2043 16.0101 10.2861 16.0042C 10.4494 15.9926 10.6762 15.9697 10.9456 15.9248C 11.4799 15.8358 12.2075 15.6558 12.9472 15.286C 13.6908 14.9141 14.4649 14.3407 15.0508 13.4619C 15.6409 12.5767 16 11.4415 16 10.0165L 14 10.0165ZM 11 5.01653L 11 0.0165289L 9 0.0165289L 9 5.01653L 11 5.01653ZM 10 0.0165289C 10.1104 1.01041 10.1099 1.01047 10.1094 1.01052C 10.1093 1.01054 10.1088 1.01059 10.1085 1.01062C 10.108 1.01068 10.1075 1.01073 10.1071 1.01078C 10.1062 1.01087 10.1056 1.01093 10.1053 1.01097C 10.1046 1.01104 10.105 1.01099 10.1064 1.01086C 10.1092 1.0106 10.1161 1.00997 10.127 1.00915C 10.1487 1.00751 10.186 1.00507 10.2378 1.00313C 10.3413 0.999236 10.5017 0.99733 10.7087 1.00751C 11.1233 1.0279 11.7198 1.09654 12.4179 1.29199C 13.804 1.68012 15.6099 2.57232 17.2106 4.63047L 18.7894 3.40259C 16.8901 0.960739 14.696 -0.147057 12.9571 -0.633935C 12.0927 -0.875986 11.3454 -0.963594 10.8069 -0.990076C 10.5373 -1.00333 10.3189 -1.00133 10.1626 -0.99546C 10.0845 -0.992522 10.0217 -0.988608 9.9758 -0.985126C 9.95283 -0.983385 9.93404 -0.98175 9.91962 -0.980397C 9.91241 -0.979721 9.90628 -0.979114 9.90127 -0.9786C 9.89876 -0.978343 9.89653 -0.978109 9.89458 -0.9779C 9.8936 -0.977796 9.8927 -0.977698 9.89186 -0.977607C 9.89145 -0.977562 9.89087 -0.977499 9.89066 -0.977476C 9.89011 -0.977415 9.88957 -0.977355 10 0.0165289ZM 10 0.0165289C 10 -0.983471 9.99962 -0.983471 9.99922 -0.983471C 9.99906 -0.983471 9.99864 -0.98347 9.99832 -0.98347C 9.99768 -0.983469 9.99695 -0.983467 9.99614 -0.983465C 9.99451 -0.98346 9.99255 -0.983452 9.99025 -0.983439C 9.98566 -0.983413 9.97973 -0.983365 9.9725 -0.983281C 9.95804 -0.983113 9.93837 -0.982797 9.91375 -0.982209C 9.86451 -0.981033 9.7954 -0.978765 9.70854 -0.974395C 9.53493 -0.965659 9.28961 -0.948486 8.98959 -0.914681C 8.39132 -0.84727 7.566 -0.712663 6.65341 -0.442265C 4.844 0.0938563 2.58218 1.19825 1.152 3.48652L 2.848 4.54653C 3.91782 2.83482 5.656 1.93921 7.22159 1.47533C 7.9965 1.24573 8.70243 1.13033 9.21353 1.07274C 9.4682 1.04405 9.6721 1.02997 9.80904 1.02308C 9.87745 1.01964 9.92895 1.018 9.9615 1.01722C 9.97777 1.01683 9.98928 1.01666 9.99579 1.01658C 9.99905 1.01655 10.001 1.01653 10.0018 1.01653C 10.0021 1.01653 10.0021 1.01653 10.0019 1.01653C 10.0017 1.01653 10.0015 1.01653 10.0012 1.01653C 10.001 1.01653 10.0007 1.01653 10.0007 1.01653C 10.0003 1.01653 10 1.01653 10 0.0165289ZM 10 14.0165C 8.73055 14.0165 7.59558 13.6071 6.83205 12.4618L 5.16795 13.5712C 6.40442 15.4259 8.26945 16.0165 10 16.0165L 10 14.0165ZM 6 13.0165C 5.41812 12.2033 5.41809 12.2033 5.41806 12.2033C 5.41803 12.2033 5.41799 12.2033 5.41794 12.2034C 5.41783 12.2035 5.41769 12.2036 5.4175 12.2037C 5.41712 12.204 5.41657 12.2044 5.41586 12.2049C 5.41442 12.2059 5.41231 12.2074 5.40955 12.2094C 5.40402 12.2134 5.39586 12.2192 5.3852 12.2268C 5.3639 12.2421 5.33263 12.2646 5.29248 12.2934C 5.21219 12.3511 5.09637 12.4345 4.9538 12.5376C 4.66876 12.7437 4.27629 13.0289 3.84674 13.3449C 2.99584 13.9709 1.97224 14.738 1.35982 15.2483L 2.64018 16.7847C 3.19934 16.3188 4.17573 15.5858 5.03194 14.9559C 5.45594 14.644 5.8438 14.3622 6.12571 14.1583C 6.26661 14.0564 6.38091 13.9741 6.45988 13.9174C 6.49936 13.889 6.52999 13.867 6.55069 13.8521C 6.56104 13.8447 6.56891 13.8391 6.57415 13.8353C 6.57678 13.8335 6.57874 13.832 6.58004 13.8311C 6.58068 13.8307 6.58116 13.8303 6.58147 13.8301C 6.58162 13.83 6.58174 13.8299 6.5818 13.8299C 6.58184 13.8298 6.58186 13.8298 6.58188 13.8298C 6.58188 13.8298 6.58188 13.8298 6 13.0165ZM 2.78087 15.3918C 1.91608 14.3108 1.4615 12.9795 1.22855 11.873C 1.11353 11.3267 1.05614 10.8524 1.02765 10.5177C 1.01344 10.3507 1.00652 10.2196 1.00315 10.133C 1.00147 10.0897 1.00068 10.0576 1.00032 10.0378C 1.00013 10.028 1.00005 10.0211 1.00002 10.0175C 1 10.0157 0.999998 10.0147 0.999997 10.0146C 0.999997 10.0145 0.999998 10.0146 0.999998 10.0149C 0.999999 10.0151 0.999999 10.0153 0.999999 10.0156C 1 10.0157 1 10.0159 1 10.016C 1 10.0163 1 10.0165 0 10.0165C -1 10.0165 -1 10.0168 -1 10.0171C -1 10.0172 -1 10.0176 -0.999999 10.0178C -0.999999 10.0183 -0.999998 10.0188 -0.999997 10.0194C -0.999994 10.0206 -0.999989 10.022 -0.999982 10.0236C -0.999968 10.0268 -0.999942 10.0309 -0.999897 10.0358C -0.999808 10.0456 -0.999643 10.0587 -0.999339 10.075C -0.99873 10.1077 -0.997566 10.1533 -0.995341 10.2106C -0.990892 10.3252 -0.982189 10.487 -0.965148 10.6873C -0.931138 11.0869 -0.863529 11.6439 -0.72855 12.285C -0.461496 13.5535 0.0839238 15.2222 1.21913 16.6412L 2.78087 15.3918ZM 1.21913 16.6412C 3.0549 18.9359 5.24508 20.0328 6.97468 20.552C 7.83757 20.8111 8.58799 20.9273 9.12868 20.9787C 9.39943 21.0044 9.6189 21.014 9.77519 21.017C 9.85337 21.0185 9.91589 21.0184 9.96126 21.0177C 9.98396 21.0174 10.0024 21.017 10.0163 21.0166C 10.0233 21.0163 10.0292 21.0161 10.0339 21.016C 10.0363 21.0159 10.0384 21.0158 10.0402 21.0157C 10.0411 21.0157 10.0419 21.0156 10.0426 21.0156C 10.043 21.0156 10.0435 21.0156 10.0437 21.0156C 10.0442 21.0155 10.0447 21.0155 10 20.0165C 9.95531 19.0175 9.95575 19.0175 9.95617 19.0175C 9.95629 19.0175 9.9567 19.0175 9.95693 19.0175C 9.95741 19.0174 9.95781 19.0174 9.95814 19.0174C 9.95881 19.0174 9.95921 19.0174 9.95934 19.0174C 9.95959 19.0173 9.95876 19.0174 9.95687 19.0174C 9.95309 19.0175 9.94508 19.0178 9.933 19.0179C 9.90885 19.0183 9.86852 19.0185 9.81342 19.0174C 9.70313 19.0153 9.53426 19.0082 9.31797 18.9877C 8.88457 18.9465 8.26609 18.8515 7.54971 18.6365C 6.12077 18.2075 4.31095 17.3044 2.78087 15.3918L 1.21913 16.6412ZM 10 21.0165C 16.0523 21.0165 21 16.0688 21 10.0165L 19 10.0165C 19 14.9642 14.9477 19.0165 10 19.0165L 10 21.0165Z",
+    transform: "matrix(0.707107 0.707107 -0.707107 0.707107 -645.994 -347.156)"
+  })))));
+});
+
+CircularTreeIcon.displayName = "CircularTreeIcon";
+var _default = CircularTreeIcon;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 646:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _extends2 = _interopRequireDefault(__webpack_require__(22));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
+
+var DiagonalTreeIcon = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_SvgIcon["default"], (0, _extends2["default"])({}, props, {
+    viewBox: "0 0 22 22"
+  }), /*#__PURE__*/_react["default"].createElement("g", {
+    transform: "translate(577 344)"
+  }, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 0 9L -0.447215 8.10557L -0.447219 9.89443L 0 9ZM 2.24999 10.125L 1.80277 11.0194L 1.80278 11.0194L 2.24999 10.125ZM 6.74998 12.375L 6.30277 13.2694L 6.30277 13.2694L 6.74998 12.375ZM 9.00004 13.5L 9.44726 12.6056L 9.44724 12.6056L 9.00004 13.5ZM 13.5 15.75L 13.0528 16.6444L 13.0528 16.6444L 13.5 15.75ZM 15.75 16.875L 15.3028 17.7694L 15.3028 17.7694L 15.75 16.875ZM 0.447215 9.89443L 18.4471 0.894426L 17.5527 -0.894426L -0.447215 8.10557L 0.447215 9.89443ZM -0.447219 9.89443L 1.80277 11.0194L 2.69721 9.23059L 0.447219 8.10558L -0.447219 9.89443ZM 1.80278 11.0194L 6.30277 13.2694L 7.19719 11.4806L 2.6972 9.23059L 1.80278 11.0194ZM 6.30277 13.2694L 8.55283 14.3944L 9.44724 12.6056L 7.19718 11.4806L 6.30277 13.2694ZM 8.55282 14.3944L 13.0528 16.6444L 13.9472 14.8556L 9.44726 12.6056L 8.55282 14.3944ZM 13.0528 16.6444L 15.3028 17.7694L 16.1972 15.9806L 13.9472 14.8556L 13.0528 16.6444ZM 15.3028 17.7694L 17.5528 18.8944L 18.4472 17.1056L 16.1972 15.9806L 15.3028 17.7694Z",
+    transform: "matrix(1 0 0 -1 -576 -324)"
+  })), /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M -0.447214 1.39443L 5.55279 4.39443L 6.44721 2.60557L 0.447214 -0.394427L -0.447214 1.39443ZM 5.55279 4.39443L 12.5528 7.89443L 13.4472 6.10557L 6.44721 2.60557L 5.55279 4.39443ZM 6.44721 4.39443L 13.4472 0.894427L 12.5528 -0.894427L 5.55279 2.60557L 6.44721 4.39443Z",
+    transform: "matrix(1 0 0 -1 -571 -329.5)"
+  })))));
+});
+
+DiagonalTreeIcon.displayName = "DiagonalTreeIcon";
+var _default = DiagonalTreeIcon;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 647:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _extends2 = _interopRequireDefault(__webpack_require__(22));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
+
+var HierarchicalTreeIcon = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_SvgIcon["default"], (0, _extends2["default"])({}, props, {
+    viewBox: "0 0 22 22"
+  }), /*#__PURE__*/_react["default"].createElement("g", {
+    transform: "translate(537 344)"
+  }, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 0 3.1875L 0 13L 0 3.1875Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 11 0L 11 6L 11 0Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 6 10L 6 16L 6 10Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 6 16L 14 16L 6 16Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 6 10L 14 10L 6 10Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 0 13L 5 13L 0 13Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 0 3.1875L 11 3.1875L 0 3.1875Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 11 6L 17 6L 11 6Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 11 0L 17 0L 11 0Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  }), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 0 3.1875L 0 2.1875L -1 2.1875L -1 3.1875L 0 3.1875ZM 0 13L -1 13L -1 14L 0 14L 0 13ZM 11 0L 11 -1L 10 -1L 10 0L 11 0ZM 11 6L 10 6L 10 7L 11 7L 11 6ZM 6 10L 6 9L 5 9L 5 10L 6 10ZM 6 16L 5 16L 5 17L 6 17L 6 16ZM -1 3.1875L -1 13L 1 13L 1 3.1875L -1 3.1875ZM 10 0L 10 6L 12 6L 12 0L 10 0ZM 5 10L 5 16L 7 16L 7 10L 5 10ZM 6 17L 14 17L 14 15L 6 15L 6 17ZM 6 11L 14 11L 14 9L 6 9L 6 11ZM 0 14L 5 14L 5 12L 0 12L 0 14ZM 0 4.1875L 11 4.1875L 11 2.1875L 0 2.1875L 0 4.1875ZM 11 7L 17 7L 17 5L 11 5L 11 7ZM 11 1L 17 1L 17 -1L 11 -1L 11 1Z",
+    transform: "matrix(6.12323e-17 1 1 -6.12323e-17 -534 -341)"
+  })))));
+});
+
+HierarchicalTreeIcon.displayName = "HierarchicalTreeIcon";
+var _default = HierarchicalTreeIcon;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 648:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _extends2 = _interopRequireDefault(__webpack_require__(22));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _SvgIcon = _interopRequireDefault(__webpack_require__(54));
+
+var RadialTreeIcon = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_SvgIcon["default"], (0, _extends2["default"])({}, props, {
+    viewBox: "0 0 22 22"
+  }), /*#__PURE__*/_react["default"].createElement("g", {
+    transform: "translate(617 345)"
+  }, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M 10.5363 0.266879L 12.0363 5.68355L 13.9637 5.14979L 12.4637 -0.266879L 10.5363 0.266879ZM 13.4913 6.28765L 19.9913 2.62098L 19.0087 0.879022L 12.5087 4.54569L 13.4913 6.28765ZM 12.1221 4.93781L 9.1221 10.4378L 10.8779 11.3955L 13.8779 5.89552L 12.1221 4.93781ZM 10.296 9.96149L 0.29603 6.86228L -0.29603 8.77264L 9.70397 11.8718L 10.296 9.96149ZM 9.1221 11.3955L 11.6221 15.9789L 13.3779 15.0211L 10.8779 10.4378L 9.1221 11.3955ZM 11.5862 15.0939L 9.58619 19.5939L 11.4138 20.4061L 13.4138 15.9061L 11.5862 15.0939ZM 12.2078 16.4564L 18.2078 18.2897L 18.7922 16.377L 12.7922 14.5436L 12.2078 16.4564Z",
+    transform: "translate(-616 -344)"
+  })))));
+});
+
+RadialTreeIcon.displayName = "RadialTreeIcon";
+var _default = RadialTreeIcon;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 649:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _trees = __webpack_require__(74);
+
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(650));
+
+var _dataColumns = _interopRequireDefault(__webpack_require__(18));
+
+var _state = __webpack_require__(3);
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var treeId = _ref.treeId;
+  var treeState = state.trees[treeId];
+  return {
+    blockHeaderFontSize: treeState.blockHeaderFontSize,
+    blockSize: treeState.blockSize || treeState.blockLength,
+    blockPadding: treeState.blockPadding,
+    blocks: treeState.blocks,
+    colourFields: (0, _dataColumns["default"])(state),
+    fontSize: treeState.fontSize,
+    maxBlockSize: 160,
+    maxBlockPadding: 16,
+    maxFontSize: 64,
+    minBlockSize: 1,
+    minBlockPadding: 0,
+    minFontSize: 1,
+    showBlockHeaders: treeState.showBlockHeaders,
+    treeType: treeState.type
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
+  var treeId = _ref2.treeId;
+  return {
+    onBlockHeaderFontSizeChange: function onBlockHeaderFontSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "blockHeaderFontSize", value));
+    },
+    onBlockSizeChange: function onBlockSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "blockSize", value));
+    },
+    onBlockPaddingChange: function onBlockPaddingChange(value) {
+      return dispatch((0, _trees.update)(treeId, "blockPadding", value));
+    },
+    onBlocksChange: function onBlocksChange(value) {
+      return dispatch((0, _trees.update)(treeId, "blocks", value));
+    },
+    onShowBlockHeadersChange: function onShowBlockHeadersChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showBlockHeaders", value));
+    }
+  };
+};
+
+var _default = (0, _state.connectToPresentState)(_TreeMetadataMenu["default"], mapStateToProps, mapDispatchToProps);
+
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 650:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _classnames = _interopRequireDefault(__webpack_require__(13));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes2 = __webpack_require__(14);
+
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
+
+var _UiToggleSlider = _interopRequireDefault(__webpack_require__(177));
+
+var _UiSlider = _interopRequireDefault(__webpack_require__(176));
+
+var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(518));
+
+var TreeMetadataMenu = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
+    className: (0, _classnames["default"])("mr-tree-metadata-menu", props.className),
+    style: props.style,
+    title: "Metadata blocks"
+  }, /*#__PURE__*/_react["default"].createElement("section", null, (props.treeType === "rc" || props.treeType === "dg" || props.treeType === "hr") && /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    label: "Block Headers",
+    onCheckedChange: props.onShowBlockHeadersChange,
+    checked: props.showBlockHeaders,
+    max: props.maxFontSize,
+    min: props.minFontSize,
+    onChange: props.onBlockHeaderFontSizeChange,
+    unit: "px",
+    value: props.blockHeaderFontSize
+  }), /*#__PURE__*/_react["default"].createElement(_UiSlider["default"], {
+    label: "Block Size",
+    max: props.maxBlockSize,
+    min: props.minBlockSize,
+    onChange: props.onBlockSizeChange,
+    unit: "px",
+    value: props.blockSize
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    label: "Block gap",
+    onCheckedChange: function onCheckedChange(checked) {
+      return props.onBlockPaddingChange(checked ? 2 : 0);
+    },
+    checked: props.blockPadding > 0,
+    max: props.maxBlockPadding,
+    min: props.minBlockPadding,
+    onChange: props.onBlockPaddingChange,
+    unit: "px",
+    value: props.blockPadding
+  })), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_MultipleDataColumnsSelect["default"], {
+    dataColumns: props.colourFields,
+    maxHeightOffset: "400px",
+    onChange: props.onBlocksChange,
+    value: props.blocks
+  })));
+});
+
+TreeMetadataMenu.displayName = "TreeMetadataMenu";
+TreeMetadataMenu.propTypes = {
+  blockHeaderFontSize: _propTypes["default"].number.isRequired,
+  blockPadding: _propTypes["default"].number.isRequired,
+  blocks: _propTypes["default"].arrayOf(_propTypes["default"].string.isRequired),
+  blockSize: _propTypes["default"].number.isRequired,
+  className: _propTypes["default"].string,
+  colourFields: _propTypes["default"].arrayOf(_propTypes2.DataColumn).isRequired,
+  maxBlockPadding: _propTypes["default"].number.isRequired,
+  maxBlockSize: _propTypes["default"].number.isRequired,
+  maxFontSize: _propTypes["default"].number.isRequired,
+  minBlockPadding: _propTypes["default"].number.isRequired,
+  minBlockSize: _propTypes["default"].number.isRequired,
+  minFontSize: _propTypes["default"].number.isRequired,
+  onBlockHeaderFontSizeChange: _propTypes["default"].func.isRequired,
+  onBlockPaddingChange: _propTypes["default"].func.isRequired,
+  onBlocksChange: _propTypes["default"].func,
+  onBlockSizeChange: _propTypes["default"].func.isRequired,
+  onMetadataLabelsChange: _propTypes["default"].func,
+  onShowBlockHeadersChange: _propTypes["default"].func,
+  open: _propTypes["default"].bool,
+  showBlockHeaders: _propTypes["default"].bool,
+  showMetadataLabels: _propTypes["default"].bool,
+  style: _propTypes["default"].object,
+  toggle: _propTypes["default"].func,
+  treeType: _propTypes2.TreeType.isRequired
+};
+var _default = TreeMetadataMenu;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 651:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _reactRedux = __webpack_require__(96);
+
+var _trees = __webpack_require__(74);
+
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(652));
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var treeId = _ref.treeId;
+  return {
+    alignLabels: state.trees[treeId].alignLabels,
+    branchLengthsDigits: state.trees[treeId].branchLengthsDigits,
+    fontSize: state.trees[treeId].fontSize,
+    maxFontSize: 64,
+    maxNodeSize: 64,
+    minFontSize: 4,
+    minNodeSize: 1,
+    nodeSize: state.trees[treeId].nodeSize,
+    roundBranchLengths: state.trees[treeId].roundBranchLengths,
+    scaleLineAlpha: state.trees[treeId].scaleLineAlpha,
+    showBranchLengths: state.trees[treeId].showBranchLengths,
+    showInternalLabels: state.trees[treeId].showInternalLabels,
+    showLeafLabels: state.trees[treeId].showLeafLabels,
+    showPiecharts: state.trees[treeId].showPiecharts,
+    showShapeBorders: state.trees[treeId].showShapeBorders,
+    showShapes: state.trees[treeId].showShapes,
+    styleLeafLabels: state.trees[treeId].styleLeafLabels,
+    styleLeafNodes: state.trees[treeId].styleLeafNodes,
+    styleNodeEdges: state.trees[treeId].styleNodeEdges,
+    styleNodeLines: state.trees[treeId].styleNodeLines
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
+  var treeId = _ref2.treeId;
+  return {
+    onAlignLabelsChange: function onAlignLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "alignLabels", value));
+    },
+    onFontSizeChange: function onFontSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "fontSize", value));
+    },
+    onNodeSizeChange: function onNodeSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "nodeSize", value));
+    },
+    onRoundBranchLengthsChange: function onRoundBranchLengthsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "roundBranchLengths", value));
+    },
+    onRoundBranchLengthsDigitsChange: function onRoundBranchLengthsDigitsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "branchLengthsDigits", value));
+    },
+    onScaleLineAlphaChange: function onScaleLineAlphaChange(value) {
+      return dispatch((0, _trees.update)(treeId, "scaleLineAlpha", value));
+    },
+    onShowBranchLengthsChange: function onShowBranchLengthsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showBranchLengths", value));
+    },
+    onShowInternalLabelsChange: function onShowInternalLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showInternalLabels", value));
+    },
+    onShowLeafLabelsChange: function onShowLeafLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showLeafLabels", value));
+    },
+    onShowPiechartsChange: function onShowPiechartsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showPiecharts", value));
+    },
+    onShowShapeBordersChange: function onShowShapeBordersChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showShapeBorders", value));
+    },
+    onShowShapesChange: function onShowShapesChange(value) {
+      return dispatch((0, _trees.update)(treeId, "showShapes", value));
+    },
+    onStyleLeafLabelsChange: function onStyleLeafLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "styleLeafLabels", value));
+    },
+    onStyleLeafNodesChange: function onStyleLeafNodesChange(value) {
+      return dispatch((0, _trees.update)(treeId, "styleLeafNodes", value));
+    },
+    onStyleNodeEdgesChange: function onStyleNodeEdgesChange(value) {
+      return dispatch((0, _trees.update)(treeId, "styleNodeEdges", value));
+    },
+    onStyleNodeLinesChange: function onStyleNodeLinesChange(value) {
+      return dispatch((0, _trees.update)(treeId, "styleNodeLines", value));
+    }
+  };
+};
+
+var _default = (0, _reactRedux.connect)(function (state, props) {
+  return mapStateToProps(state.present, props);
+}, mapDispatchToProps)(_TreeStyleMenu["default"]);
+
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 652:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _classnames = _interopRequireDefault(__webpack_require__(13));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
+
+var _UiToggleSwitch = _interopRequireDefault(__webpack_require__(43));
+
+var _UiToggleSlider = _interopRequireDefault(__webpack_require__(177));
+
+var TreeStylesMenu = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
+    className: (0, _classnames["default"])("mr-tree-styles-menu", props.className),
+    style: props.style,
+    title: "Nodes & Labels"
+  }, /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    checked: props.showShapes,
+    label: "Leaf Nodes",
+    max: props.maxNodeSize,
+    min: props.minNodeSize,
+    onChange: props.onNodeSizeChange,
+    onCheckedChange: props.onShowShapesChange,
+    unit: "px",
+    value: props.nodeSize
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Leaf Borders",
+    onChange: props.onShowShapeBordersChange,
+    value: props.showShapeBorders
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    checked: props.showLeafLabels,
+    label: "Leaf Labels",
+    max: props.maxFontSize,
+    min: props.minFontSize,
+    onChange: props.onFontSizeChange,
+    onCheckedChange: props.onShowLeafLabelsChange,
+    unit: "px",
+    value: props.fontSize
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Align Leaf Labels",
+    onChange: props.onAlignLabelsChange,
+    value: props.alignLabels
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Colour Leaf Labels",
+    onChange: props.onStyleLeafLabelsChange,
+    value: props.styleLeafLabels
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Show Internal Nodes",
+    onChange: props.onShowPiechartsChange,
+    value: props.showPiecharts
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Show Internal Labels",
+    onChange: props.onShowInternalLabelsChange,
+    value: props.showInternalLabels
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Show Branch Lengths",
+    onChange: props.onShowBranchLengthsChange,
+    value: props.showBranchLengths
+  }), props.showBranchLengths && /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    checked: props.roundBranchLengths,
+    label: "Rounding digits",
+    max: 16,
+    min: 0,
+    onChange: props.onRoundBranchLengthsDigitsChange,
+    onCheckedChange: props.onRoundBranchLengthsChange,
+    unit: "",
+    value: props.branchLengthsDigits
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Colour Internal Edges",
+    onChange: props.onStyleNodeEdgesChange,
+    value: props.styleNodeEdges
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Solid Edges",
+    onChange: function onChange(value) {
+      return props.onScaleLineAlphaChange(!value);
+    },
+    value: !props.scaleLineAlpha
+  }));
+});
+
+TreeStylesMenu.displayName = "TreeStylesMenu";
+TreeStylesMenu.propTypes = {
+  alignLabels: _propTypes["default"].bool.isRequired,
+  branchLengthsDigits: _propTypes["default"].number.isRequired,
+  className: _propTypes["default"].string,
+  fontSize: _propTypes["default"].number.isRequired,
+  maxFontSize: _propTypes["default"].number.isRequired,
+  maxNodeSize: _propTypes["default"].number.isRequired,
+  minFontSize: _propTypes["default"].number.isRequired,
+  minNodeSize: _propTypes["default"].number.isRequired,
+  nodeSize: _propTypes["default"].number.isRequired,
+  onAlignLabelsChange: _propTypes["default"].func.isRequired,
+  onFontSizeChange: _propTypes["default"].func.isRequired,
+  onNodeSizeChange: _propTypes["default"].func.isRequired,
+  onRoundBranchLengthsChange: _propTypes["default"].func.isRequired,
+  onRoundBranchLengthsDigitsChange: _propTypes["default"].func.isRequired,
+  onScaleLineAlphaChange: _propTypes["default"].func.isRequired,
+  onShowBranchLengthsChange: _propTypes["default"].func.isRequired,
+  onShowInternalLabelsChange: _propTypes["default"].func.isRequired,
+  onShowLeafLabelsChange: _propTypes["default"].func.isRequired,
+  onShowPiechartsChange: _propTypes["default"].func.isRequired,
+  onShowShapeBordersChange: _propTypes["default"].func.isRequired,
+  onShowShapesChange: _propTypes["default"].func.isRequired,
+  onStyleLeafLabelsChange: _propTypes["default"].func.isRequired,
+  onStyleNodeEdgesChange: _propTypes["default"].func.isRequired,
+  roundBranchLengths: _propTypes["default"].bool.isRequired,
+  scaleLineAlpha: _propTypes["default"].bool.isRequired,
+  showBranchLengths: _propTypes["default"].bool.isRequired,
+  showInternalLabels: _propTypes["default"].bool.isRequired,
+  showLeafLabels: _propTypes["default"].bool.isRequired,
+  showPiecharts: _propTypes["default"].bool.isRequired,
+  showShapeBorders: _propTypes["default"].bool.isRequired,
+  showShapes: _propTypes["default"].bool.isRequired,
+  style: _propTypes["default"].object,
+  styleLeafLabels: _propTypes["default"].bool.isRequired,
+  styleNodeEdges: _propTypes["default"].bool.isRequired
+};
+var _default = TreeStylesMenu;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 653:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(6));
+
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(7));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _ControlCameraRounded = _interopRequireDefault(__webpack_require__(488));
+
+var _phylocanvas = __webpack_require__(99);
+
+var _ZoomControls = _interopRequireDefault(__webpack_require__(178));
+
+var _propTypes2 = __webpack_require__(14);
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+var modes = ["scale", "branch", "step"];
 
 var _default = /*#__PURE__*/function (_React$PureComponent) {
   (0, _inherits2["default"])(_default, _React$PureComponent);
@@ -842,331 +3146,120 @@ var _default = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call.apply(_super, [this].concat(args));
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
-      isDragging: false,
-      bounds: null,
-      pointer: null
+      mode: 0
     });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onChange", (0, _lodash["default"])(function (bounds) {
-      if (_this.state.bounds && (_this.state.isDragging || _this.state.isBrushing)) {
-        _this.props.onChange(bounds);
-      }
-    }, 200));
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "eventPoint", function (event) {
-      return event.pageX - _this.props.padding;
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleBrushMouseDown", function (event) {
-      _this.setState({
-        isBrushing: true
-      });
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleBrushMouseMove", function (event) {
-      var x = _this.eventPoint(event);
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getMode", function () {
+      switch (_this.props.treeType) {
+        case _phylocanvas.TreeTypes.Rectangular:
+        case _phylocanvas.TreeTypes.Diagonal:
+        case _phylocanvas.TreeTypes.Hierarchical:
+          return modes[_this.state.mode];
 
-      if (_this.state.isBrushing) {
-        var _this$state$brushX;
-
-        if (((_this$state$brushX = _this.state.brushX) !== null && _this$state$brushX !== void 0 ? _this$state$brushX : undefined) === undefined) {
-          _this.setState({
-            pointerX: null,
-            brushX: _this.state.pointerX
-          });
-        } else {
-          var bounds = _this.pixelsToBounds(Math.min(_this.state.brushX, x), Math.abs(_this.state.brushX - x));
-
-          _this.setState({
-            bounds: bounds
-          });
-
-          _this.onChange(bounds);
-        }
-      } else {
-        _this.setState({
-          pointerX: x
-        });
+        case _phylocanvas.TreeTypes.Circular:
+        case _phylocanvas.TreeTypes.Radial:
+          return modes[_this.state.mode === 2 ? 0 : _this.state.mode];
       }
     });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleBrushMouseUp", function (event) {
-      if (_this.state.isBrushing) {
-        var x = _this.eventPoint(event);
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getIconClass", function () {
+      var mode = _this.getMode();
 
-        if (x !== _this.state.brushX && _this.state.brushX) {
-          var bounds = _this.pixelsToBounds(Math.min(_this.state.brushX, x), Math.abs(_this.state.brushX - x));
+      switch (mode) {
+        case "scale":
+          return null;
 
-          _this.setState({
-            bounds: bounds
+        case "branch":
+          return _this.props.treeType === _phylocanvas.TreeTypes.Hierarchical ? "mr-vertical" : "mr-horizontal";
+
+        case "step":
+          return _this.props.treeType === _phylocanvas.TreeTypes.Hierarchical ? "mr-horizontal" : "mr-vertical";
+      }
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "toggleMode", function () {
+      var mode = _this.getMode();
+
+      switch (mode) {
+        case "scale":
+          return _this.setState({
+            mode: 1
           });
 
-          _this.props.onChange(bounds);
+        case "branch":
+          return _this.setState({
+            mode: 2
+          });
 
-          (0, _browser.nextFrame)(function () {
-            return _this.setState({
-              bounds: null,
-              pointerX: null,
-              brushX: null,
-              isBrushing: false
-            });
+        case "step":
+          return _this.setState({
+            mode: 0
           });
-        } else {
-          _this.setState({
-            bounds: null,
-            pointerX: null,
-            brushX: null,
-            isBrushing: false
-          });
-        }
+      }
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleZoomIn", function () {
+      var mode = _this.getMode();
+
+      switch (mode) {
+        case "scale":
+          return _this.props.onZoomIn();
+
+        case "branch":
+          return _this.props.onBranchZoomIn();
+
+        case "step":
+          return _this.props.onStepZoomIn();
+      }
+    });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleZoomOut", function () {
+      var mode = _this.getMode();
+
+      switch (mode) {
+        case "scale":
+          return _this.props.onZoomOut();
+
+        case "branch":
+          return _this.props.onBranchZoomOut();
+
+        case "step":
+          return _this.props.onStepZoomOut();
       }
     });
     return _this;
   }
 
   (0, _createClass2["default"])(_default, [{
-    key: "valueToPixel",
-    value: function valueToPixel(value) {
-      var dataRange = this.props.max - this.props.min;
-      var pixel = (value - this.props.min) / dataRange * this.props.width;
-      return pixel;
-    }
-  }, {
-    key: "boundsToPixels",
-    value: function boundsToPixels(bounds) {
-      // TODO: use `scaleUtc`
-      var dataRange = this.props.max - this.props.min;
-      var sliderStart = (bounds[0] - this.props.min) / dataRange * this.props.width;
-      var sliderEnd = (bounds[1] - this.props.min) / dataRange * this.props.width;
-      return {
-        start: sliderStart,
-        width: sliderEnd - sliderStart
-      };
-    }
-  }, {
-    key: "pixelsToBounds",
-    value: function pixelsToBounds(start, width) {
-      var dataRange = this.props.max - this.props.min;
-      var sliderStart = start / this.props.width * dataRange;
-      var sliderEnd = (start + width) / this.props.width * dataRange;
-      return [Math.max(sliderStart + this.props.min, this.props.min), Math.min(sliderEnd + this.props.min, this.props.max)];
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var props = this.props;
-
-      if (props.value === null) {
-        return null;
-      }
-
-      var timeBounds = this.state.bounds || props.value;
-      var sliderBounds = this.boundsToPixels(timeBounds);
-      var trackSize = {
-        width: sliderBounds.width,
-        height: 16
-      };
-      var trackPosition = {
-        x: sliderBounds.start,
-        y: 0
-      };
-      return /*#__PURE__*/_react["default"].createElement("div", {
-        className: (0, _classnames["default"])("mr-timeline-slider", {
-          "mr-is-brushing": this.state.isBrushing
-        }),
-        style: {
-          width: props.width,
-          height: props.height
-        },
-        onMouseUp: this.handleBrushMouseUp
+      return /*#__PURE__*/_react["default"].createElement(_ZoomControls["default"], {
+        className: this.props.className,
+        onZoomIn: this.handleZoomIn,
+        onZoomOut: this.handleZoomOut
       }, /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-range-box",
-        style: {
-          height: props.height,
-          top: 0,
-          left: trackPosition.x,
-          width: sliderBounds.width
-        }
-      }), /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-dimmers",
-        style: {
-          width: props.width,
-          height: props.height
-        },
-        onMouseMove: this.handleBrushMouseMove,
-        onMouseDown: this.handleBrushMouseDown
+        className: "mr-button",
+        title: "Toogle zoom mode",
+        onClick: this.toggleMode
       }, /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-dimmer-before",
-        style: {
-          width: sliderBounds.start
-        }
-      }), /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-dimmer-after",
-        style: {
-          width: props.width - trackSize.width - sliderBounds.start
-        }
-      }), this.state.pointerX && !this.state.isDragging && /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-brush-pointer",
-        style: {
-          left: this.state.pointerX + 1
-        }
-      })), /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-slider-rail",
-        style: {
-          top: props.height - trackSize.height,
-          height: trackSize.height
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_reactRnd.Rnd, {
-        bounds: "parent",
-        minWidth: 1,
-        maxWidth: props.width,
-        minHeight: trackSize.height,
-        maxHeight: trackSize.height,
-        position: trackPosition,
-        size: trackSize,
-        onDrag: function onDrag(e, delta) {
-          var bounds = _this2.pixelsToBounds(delta.x > 0 ? delta.x : 0, sliderBounds.width);
-
-          _this2.setState({
-            bounds: bounds,
-            isDragging: true
-          });
-
-          _this2.onChange(bounds);
-        },
-        onDragStop: function onDragStop(e, delta) {
-          var bounds = _this2.pixelsToBounds(delta.x > 0 ? delta.x : 0, sliderBounds.width);
-
-          _this2.setState({
-            bounds: bounds,
-            isDragging: false
-          });
-
-          props.onChange(bounds);
-          (0, _browser.nextFrame)(function () {
-            return _this2.setState({
-              bounds: null,
-              isDragging: false
-            });
-          });
-        },
-        onResize: function onResize(e, direction, ref, delta, position) {
-          var bounds = _this2.pixelsToBounds(position.x > 0 ? position.x : 0, ref.offsetWidth);
-
-          _this2.setState({
-            bounds: bounds,
-            isDragging: true
-          });
-
-          _this2.onChange(bounds);
-        },
-        onResizeStop: function onResizeStop(e, direction, ref, delta, position) {
-          var bounds = _this2.pixelsToBounds(position.x > 0 ? position.x : 0, ref.offsetWidth);
-
-          _this2.setState({
-            bounds: bounds,
-            isDragging: false
-          });
-
-          props.onChange(bounds);
-          (0, _browser.nextFrame)(function () {
-            return _this2.setState({
-              bounds: null,
-              isDragging: false
-            });
-          });
-        },
-        className: "mr-slider-track",
-        enableResizing: {
-          top: false,
-          right: true,
-          bottom: false,
-          left: true,
-          topRight: false,
-          bottomRight: false,
-          bottomLeft: false,
-          topLeft: false
-        },
-        dragAxis: "x",
-        resizeHandleClasses: {
-          left: "mr-slider-handle",
-          right: "mr-slider-handle"
-        },
-        resizeHandleStyles: {
-          left: {
-            height: props.height,
-            width: 4,
-            left: -2,
-            top: trackSize.height - props.height
-          },
-          right: {
-            height: props.height,
-            width: 4,
-            right: -2,
-            top: trackSize.height - props.height
-          }
-        },
-        resizeHandleComponent: {
-          left: /*#__PURE__*/_react["default"].createElement("div", {
-            title: Datetime.timestampToDateString(props.value[0]),
-            style: {
-              height: "100%"
-            },
-            onDoubleClick: function onDoubleClick() {
-              return props.onChange([props.min, props.value[1]]);
-            }
-          }),
-          right: /*#__PURE__*/_react["default"].createElement("div", {
-            title: Datetime.timestampToDateString(props.value[1]),
-            style: {
-              height: "100%"
-            },
-            onDoubleClick: function onDoubleClick() {
-              return props.onChange([props.value[0], props.max]);
-            }
-          })
-        }
-      }, /*#__PURE__*/_react["default"].createElement("span", {
-        className: (0, _classnames["default"])("mr-range-info", {
-          "mr-visible": this.state.isDragging || this.state.isBrushing
-        })
-      }, Datetime.rangeToDurationDistance(timeBounds)), /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-track-hover",
-        title: "Drag to move range"
-      }))));
+        className: this.getIconClass()
+      }, /*#__PURE__*/_react["default"].createElement(_ControlCameraRounded["default"], null))));
     }
   }]);
   return _default;
 }(_react["default"].PureComponent);
 
 exports["default"] = _default;
-(0, _defineProperty2["default"])(_default, "displayName", "TimelineSlider");
+(0, _defineProperty2["default"])(_default, "displayName", "TreeZoomControls");
 (0, _defineProperty2["default"])(_default, "propTypes", {
-  height: _propTypes["default"].number,
-  max: _propTypes["default"].number.isRequired,
-  min: _propTypes["default"].number.isRequired,
-  onChange: _propTypes["default"].func.isRequired,
-  trackSize: _propTypes["default"].number,
-  value: _propTypes["default"].arrayOf(_propTypes["default"].number.isRequired).isRequired,
-  width: _propTypes["default"].number.isRequired,
-  padding: _propTypes["default"].number
-});
-(0, _defineProperty2["default"])(_default, "defaultProps", {
-  height: 12,
-  trackSize: 4,
-  padding: 16
+  className: _propTypes["default"].string,
+  onBranchZoomIn: _propTypes["default"].func.isRequired,
+  onBranchZoomOut: _propTypes["default"].func.isRequired,
+  onStepZoomIn: _propTypes["default"].func.isRequired,
+  onStepZoomOut: _propTypes["default"].func.isRequired,
+  onZoomIn: _propTypes["default"].func.isRequired,
+  onZoomOut: _propTypes["default"].func.isRequired,
+  treeType: _propTypes2.TreeType.isRequired
 });
 
 /***/ }),
 
-/***/ 625:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 626:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1178,1106 +3271,192 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
-var _timelines = __webpack_require__(77);
-
-var _ui = __webpack_require__(27);
-
-var _dataColumns = _interopRequireDefault(__webpack_require__(18));
-
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
-
-var _filteredRangeExtent = _interopRequireDefault(__webpack_require__(516));
-
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
-
-var _state = __webpack_require__(3);
-
-var _TimelineControls = _interopRequireDefault(__webpack_require__(628));
-
-var _config = _interopRequireDefault(__webpack_require__(50));
-
-var mapStateToProps = function mapStateToProps(state, _ref) {
-  var timelineId = _ref.timelineId;
-  var timelineState = state.timelines[timelineId];
-  return {
-    chartUnit: (0, _filteredRangeUnit["default"])(state, timelineId),
-    controls: timelineState.controls,
-    dataFields: (0, _dataColumns["default"])(state),
-    fullRangeChartData: (0, _fullRangeChartData["default"])(state, timelineId),
-    isReadOnly: (0, _config["default"])(state).readOnly,
-    laneField: timelineState.laneField,
-    maxNodeSize: 160,
-    minNodeSize: 14,
-    nodeSize: timelineState.nodeSize,
-    silderTemporalRange: (0, _filteredRangeExtent["default"])(state, timelineId),
-    speed: timelineState.speed,
-    style: timelineState.style,
-    unit: timelineState.unit
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
-  var timelineId = _ref2.timelineId;
-  return {
-    onBoundsChange: function onBoundsChange(bounds) {
-      return dispatch((0, _timelines.setFilter)(timelineId, bounds));
-    },
-    onControlsChange: function onControlsChange(value) {
-      return dispatch((0, _timelines.update)(timelineId, "controls", value));
-    },
-    onEditPane: function onEditPane() {
-      return dispatch((0, _ui.openPaneEditor)(timelineId));
-    },
-    onNodeSizeChange: function onNodeSizeChange(value) {
-      return dispatch((0, _timelines.update)(timelineId, "nodeSize", value));
-    },
-    onSpeedChange: function onSpeedChange(value) {
-      return dispatch((0, _timelines.update)(timelineId, "speed", value));
-    },
-    onStackByFieldChange: function onStackByFieldChange(value) {
-      return dispatch((0, _timelines.update)(timelineId, "laneField", value));
-    },
-    onStyleChange: function onStyleChange(value) {
-      return dispatch((0, _timelines.update)(timelineId, "style", value));
-    },
-    onUnitChange: function onUnitChange(value) {
-      return dispatch((0, _timelines.update)(timelineId, "unit", value || null));
-    }
-  };
-};
-
-var _default = (0, _state.connectToPresentState)(_TimelineControls["default"], mapStateToProps, mapDispatchToProps);
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 627:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _state = __webpack_require__(3);
-
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
-
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var dataExtentSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _rowsWithDateField["default"])(state, timelineId);
-}, function (state) {
-  return (0, _activeRowsWithStyleFields["default"])(state);
-}, function (_ref, _ref2) {
-  var dateFieldName = _ref.dateFieldName;
-  var rows = _ref2.rows;
-
-  if (dateFieldName) {
-    var minDate = Number.MAX_SAFE_INTEGER;
-    var maxDate = Number.MIN_SAFE_INTEGER;
-
-    var _iterator = _createForOfIteratorHelper(rows),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var row = _step.value;
-
-        if (row[dateFieldName]) {
-          if (row[dateFieldName] < minDate) {
-            minDate = row[dateFieldName];
-          }
-
-          if (row[dateFieldName] > maxDate) {
-            maxDate = row[dateFieldName];
-          }
-        }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    return [minDate, maxDate];
-  } else {
-    return null;
-  }
-});
-var _default = dataExtentSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 628:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(6));
-
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(7));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8));
-
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
-
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
-
-var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
-
-var _FastForwardRounded = _interopRequireDefault(__webpack_require__(481));
-
-var _FastRewindRounded = _interopRequireDefault(__webpack_require__(482));
-
-var _PauseRounded = _interopRequireDefault(__webpack_require__(483));
-
-var _PlayArrowRounded = _interopRequireDefault(__webpack_require__(484));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _SkipNextRounded = _interopRequireDefault(__webpack_require__(485));
+var _ZoomInRounded = _interopRequireDefault(__webpack_require__(216));
 
-var _SkipPreviousRounded = _interopRequireDefault(__webpack_require__(486));
+var _ZoomOutMapRounded = _interopRequireDefault(__webpack_require__(217));
 
-var _Slider = _interopRequireDefault(__webpack_require__(112));
+var _ZoomOutRounded = _interopRequireDefault(__webpack_require__(218));
 
-var _Menu = _interopRequireDefault(__webpack_require__(163));
+var _downloads = __webpack_require__(53);
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+__webpack_require__(212);
 
-var _reselect = __webpack_require__(10);
+/* eslint-disable react/jsx-no-target-blank */
+var Link = /*#__PURE__*/_react["default"].createElement("div", {
+  className: "mr-ui-context-menu-item single-action"
+}, /*#__PURE__*/_react["default"].createElement("a", {
+  href: "http://phylocanvas.gl/",
+  style: {
+    height: "100%",
+    textAlign: "center",
+    display: "block"
+  },
+  target: "_blank",
+  title: "About PhyloCanvas"
+}, /*#__PURE__*/_react["default"].createElement("img", {
+  src: "https://microreact.org/images/logos/phylocanvas.svg",
+  style: {
+    height: "100%"
+  }
+})));
 
-var _constants = __webpack_require__(12);
-
-var _propTypes2 = __webpack_require__(14);
-
-var _Animation = _interopRequireDefault(__webpack_require__(166));
-
-var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
-
-var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
-
-var _UiControlsButton = _interopRequireDefault(__webpack_require__(162));
-
-var _UiFieldsList = _interopRequireDefault(__webpack_require__(111));
-
-var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(34));
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-var timelineSyles = [{
-  label: "Bar Chart",
-  value: "bar"
-}, {
-  label: "Normalised Bar Chart",
-  value: "normalised-bar"
-} // { label: "Bubble Chart", value: "bubble" },
-];
-var timelineUnits = Object.entries(_constants.timeUnits).map(function (_ref) {
-  var _ref2 = (0, _slicedToArray2["default"])(_ref, 2),
-      value = _ref2[0],
-      label = _ref2[1];
-
-  return {
-    value: value,
-    label: label
-  };
-});
-
-var TimelineControls = /*#__PURE__*/function (_React$PureComponent) {
-  (0, _inherits2["default"])(TimelineControls, _React$PureComponent);
-
-  var _super = _createSuper(TimelineControls);
-
-  function TimelineControls() {
-    var _this;
-
-    (0, _classCallCheck2["default"])(this, TimelineControls);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
-      isPlaying: false,
-      isMovingWindow: false
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "marksSelector", (0, _reselect.createSelector)(function (props) {
-      return props.fullRangeChartData;
-    }, function (_ref3) {
-      var dataset = _ref3.dataset;
-      var marks = [];
-
-      if (dataset && dataset.length) {
-        var _iterator = _createForOfIteratorHelper(dataset),
-            _step;
-
-        try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var binData = _step.value;
-            marks.push(binData.unitStartDate.valueOf());
-          }
-        } catch (err) {
-          _iterator.e(err);
-        } finally {
-          _iterator.f();
-        }
-
-        marks.push(dataset[dataset.length - 1].unitEndDate.valueOf());
-      }
-
-      return marks;
-    }));
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "boundsIndecies", function () {
-      var _assertThisInitialize = (0, _assertThisInitialized2["default"])(_this),
-          props = _assertThisInitialize.props;
-
-      var _props$silderTemporal = (0, _slicedToArray2["default"])(props.silderTemporalRange, 2),
-          lowerTimestamp = _props$silderTemporal[0],
-          upperTimestamp = _props$silderTemporal[1];
-
-      var marks = _this.marksSelector(props);
-
-      var lowerIndex;
-      var upperIndex;
-
-      var _iterator2 = _createForOfIteratorHelper(marks),
-          _step2;
-
-      try {
-        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var mark = _step2.value;
-
-          if (lowerIndex === undefined && mark >= lowerTimestamp) {
-            lowerIndex = marks.indexOf(mark);
-          }
-
-          if (mark <= upperTimestamp) {
-            upperIndex = marks.indexOf(mark);
-          }
-        }
-      } catch (err) {
-        _iterator2.e(err);
-      } finally {
-        _iterator2.f();
-      }
-
-      return [lowerIndex, upperIndex];
-    });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "moveBounds", function (startDelta, endDelta) {
-      var _assertThisInitialize2 = (0, _assertThisInitialized2["default"])(_this),
-          props = _assertThisInitialize2.props;
-
-      var _this$boundsIndecies = _this.boundsIndecies(),
-          _this$boundsIndecies2 = (0, _slicedToArray2["default"])(_this$boundsIndecies, 2),
-          lowerIndex = _this$boundsIndecies2[0],
-          upperIndex = _this$boundsIndecies2[1];
-
-      var minIndex = lowerIndex + startDelta;
-      var maxIndex = upperIndex + endDelta;
-
-      var marks = _this.marksSelector(props);
-
-      if (minIndex >= 0 && maxIndex <= marks.length - 1) {
-        props.onBoundsChange([marks[minIndex], marks[maxIndex]]);
-      }
-
-      return maxIndex >= marks.length - 1;
-    });
-    return _this;
+var TreeContextMenu = /*#__PURE__*/_react["default"].memo(function (props) {
+  if (!props.tree) {
+    return null;
   }
 
-  (0, _createClass2["default"])(TimelineControls, [{
-    key: "componentWillUnmount",
-    value: // componentDidUpdate(prevProps, prevState) {
-    //   if (prevState.isPlaying !== this.state.isPlaying) {
-    //     if (this.state.isPlaying) {
-    //       this.startTimelinePlay();
-    //     } else {
-    //       this.stopTimelinePlay();
-    //     }
-    //   }
-    // }
-    function componentWillUnmount() {
-      this.stopTimelinePlay();
-    }
-  }, {
-    key: "playTimeline",
-    value: function playTimeline(event) {
-      if (this.state.isPlaying) {
-        this.stopTimelinePlay();
-        this.setState({
-          isPlaying: false
-        });
-      } else {
-        this.startTimelinePlay();
-        this.setState({
-          isPlaying: true,
-          isMovingWindow: event.metaKey || event.ctrlKey
+  var tree = props.tree,
+      node = props.node;
+
+  if (node && !node.isLeaf) {
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-item single-action"
+    }, /*#__PURE__*/_react["default"].createElement("button", {
+      onClick: function onClick() {
+        return tree.setRoot(node);
+      }
+    }, "View Subtree")), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-item single-action"
+    }, /*#__PURE__*/_react["default"].createElement("button", {
+      onClick: function onClick() {
+        return tree.collapseNode(node, {
+          refit: true
         });
       }
-    }
-  }, {
-    key: "startTimelinePlay",
-    value: function startTimelinePlay() {
-      this.props.onUnitChange(this.props.chartUnit);
-      this.timerTick(true);
-    }
-  }, {
-    key: "stopTimelinePlay",
-    value: function stopTimelinePlay() {
-      if (this.timeoutID) {
-        clearTimeout(this.timeoutID);
+    }, tree.props.collapsedIds && tree.props.collapsedIds.includes(node.id) ? "Expand" : "Collapse", " Subtree")), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-item single-action"
+    }, /*#__PURE__*/_react["default"].createElement("button", {
+      onClick: function onClick() {
+        return tree.rotateNode(node, {
+          refit: false
+        });
       }
-
-      this.timeoutID = null;
-    }
-  }, {
-    key: "timerTick",
-    value: function timerTick() {
-      var _this2 = this;
-
-      var rewind = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-      var props = this.props;
-      var isFinished = this.moveBounds(this.state.isMovingWindow ? +1 : 0, +1);
-
-      if (isFinished) {
-        if (rewind) {
-          var _this$boundsIndecies3 = this.boundsIndecies(),
-              _this$boundsIndecies4 = (0, _slicedToArray2["default"])(_this$boundsIndecies3, 2),
-              lowerIndex = _this$boundsIndecies4[0],
-              upperIndex = _this$boundsIndecies4[1];
-
-          this.moveBounds(-lowerIndex, 1 - upperIndex);
-          this.timeoutID = setTimeout(function () {
-            return _this2.timerTick();
-          }, props.speed * 1000);
-        } else {
-          this.setState({
-            isPlaying: false
-          });
-        }
-      } else {
-        this.timeoutID = setTimeout(function () {
-          return _this2.timerTick();
-        }, props.speed * 1000);
+    }, tree.props.rotatedIds && tree.props.rotatedIds.includes(node.id) ? "Derotate" : "Rotate", " Subtree")), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-divider"
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-item single-action"
+    }, /*#__PURE__*/_react["default"].createElement("button", {
+      onClick: function onClick() {
+        return tree.rerootNode(node);
       }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
-
-      var props = this.props;
-      return /*#__PURE__*/_react["default"].createElement("div", {
-        className: "mr-main-controls"
-      }, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"], {
-        button: _UiControlsButton["default"],
-        icon: /*#__PURE__*/_react["default"].createElement(_Menu["default"], null)
-      }, !props.isReadOnly && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
-        onClick: props.onEditPane
-      }, "Edit Timeline"), /*#__PURE__*/_react["default"].createElement(_Divider["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
-        onClick: props.onDownloadPNG
-      }, "Download as PNG image"), /*#__PURE__*/_react["default"].createElement(_UiDropdownMenu["default"].Item, {
-        onClick: props.onDownloadSVG
-      }, "Download as SVG image")), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
-        active: props.controls,
-        onClick: function onClick() {
-          return props.onControlsChange(!props.controls);
-        }
-      }), /*#__PURE__*/_react["default"].createElement(_Animation["default"], {
-        "in": props.controls
-      }, /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
-        onClick: function onClick() {
-          var _this3$boundsIndecies = _this3.boundsIndecies(),
-              _this3$boundsIndecies2 = (0, _slicedToArray2["default"])(_this3$boundsIndecies, 2),
-              upperIndex = _this3$boundsIndecies2[1];
-
-          var marks = _this3.marksSelector(props);
-
-          var delta = marks.length - 1 - upperIndex;
-
-          if (delta > 0) {
-            _this3.moveBounds(delta, delta);
-          }
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_SkipNextRounded["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
-        onClick: function onClick() {
-          return _this3.moveBounds(+1, +1);
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_FastForwardRounded["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
-        onClick: function onClick(event) {
-          return _this3.playTimeline(event);
-        },
-        title: this.state.isPlaying ? "Pause" : "Play timeline. Hold Ctrl/Cmd + click for moving window."
-      }, this.state.isPlaying ? /*#__PURE__*/_react["default"].createElement(_PauseRounded["default"], null) : /*#__PURE__*/_react["default"].createElement(_PlayArrowRounded["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
-        onClick: function onClick() {
-          return _this3.moveBounds(-1, -1);
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_FastRewindRounded["default"], null)), /*#__PURE__*/_react["default"].createElement(_UiControlsButton["default"], {
-        onClick: function onClick() {
-          var _this3$boundsIndecies3 = _this3.boundsIndecies(),
-              _this3$boundsIndecies4 = (0, _slicedToArray2["default"])(_this3$boundsIndecies3, 1),
-              lowerIndex = _this3$boundsIndecies4[0];
-
-          if (lowerIndex > 0) {
-            _this3.moveBounds(-lowerIndex, -lowerIndex);
-          }
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_SkipPreviousRounded["default"], null)), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
-        title: "Speed",
-        hideOnClick: true
-      }, /*#__PURE__*/_react["default"].createElement(_UiRadioList["default"], {
-        items: Object.keys(_constants.timeSpeeds).map(function (key) {
-          return {
-            value: key,
-            label: "1 ".concat(props.chartUnit, " per ").concat(_constants.timeSpeeds[key])
-          };
-        }),
-        onChange: function onChange(value) {
-          return props.onSpeedChange(parseInt(value, 10));
-        },
-        value: props.speed.toString()
-      })), /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
-        title: "Unit",
-        hideOnClick: true
-      }, /*#__PURE__*/_react["default"].createElement(_UiRadioList["default"], {
-        nullable: true,
-        nullOptionLabel: "Auto",
-        items: timelineUnits,
-        onChange: props.onUnitChange,
-        value: props.unit
-      })), props.style === "bubble" && /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
-        title: "Stack by",
-        hideOnClick: true,
-        onClear: props.laneField && function () {
-          return props.onStackByFieldChange();
-        }
-      }, /*#__PURE__*/_react["default"].createElement(_UiFieldsList["default"], {
-        columns: props.dataFields,
-        onChange: function onChange(value) {
-          return props.onStackByFieldChange(value);
-        },
-        value: props.laneField
-      })), /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
-        className: "mr-timeline-points-menu",
-        title: "Type"
-      }, /*#__PURE__*/_react["default"].createElement(_UiRadioList["default"], {
-        items: timelineSyles,
-        onChange: props.onStyleChange,
-        value: props.style
-      }), props.style === "bubble" && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement("label", null, "Max Bubble Size: ", /*#__PURE__*/_react["default"].createElement("strong", null, props.nodeSize), " pixels"), /*#__PURE__*/_react["default"].createElement(_Slider["default"], {
-        max: props.maxNodeSize,
-        min: props.minNodeSize,
-        onChange: function onChange(event, value) {
-          return props.onNodeSizeChange(value);
-        },
-        value: props.nodeSize
-      })))));
-    }
-  }]);
-  return TimelineControls;
-}(_react["default"].PureComponent);
-
-exports["default"] = TimelineControls;
-TimelineControls.displayName = "TimelineControls";
-TimelineControls.propTypes = {
-  controls: _propTypes["default"].bool.isRequired,
-  dataFields: _propTypes["default"].arrayOf(_propTypes2.DataColumn).isRequired,
-  isReadOnly: _propTypes["default"].bool.isRequired,
-  laneField: _propTypes["default"].string,
-  maxNodeSize: _propTypes["default"].number.isRequired,
-  minNodeSize: _propTypes["default"].number.isRequired,
-  nodeSize: _propTypes["default"].number.isRequired,
-  onBoundsChange: _propTypes["default"].func.isRequired,
-  onControlsChange: _propTypes["default"].func.isRequired,
-  onDownloadPNG: _propTypes["default"].func.isRequired,
-  onDownloadSVG: _propTypes["default"].func.isRequired,
-  onEditPane: _propTypes["default"].func.isRequired,
-  onNodeSizeChange: _propTypes["default"].func.isRequired,
-  onSpeedChange: _propTypes["default"].func.isRequired,
-  onStackByFieldChange: _propTypes["default"].func.isRequired,
-  onStyleChange: _propTypes["default"].func.isRequired,
-  onUnitChange: _propTypes["default"].func.isRequired,
-  silderTemporalRange: _propTypes["default"].array.isRequired,
-  speed: _propTypes["default"].number.isRequired,
-  style: _propTypes["default"].string.isRequired,
-  unit: _propTypes["default"].string
-};
-
-/***/ }),
-
-/***/ 629:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reactRedux = __webpack_require__(96);
-
-var _reactVega = __webpack_require__(447);
-
-var _fullRangeChartSpec = _interopRequireDefault(__webpack_require__(630));
-
-var _fullRangeChartData = _interopRequireDefault(__webpack_require__(515));
-
-var onError = function onError(err) {
-  return console.error("Timeline", err);
-};
-
-var onParseError = function onParseError(err) {
-  return console.error("Timeline", err);
-};
-
-var mapStateToProps = function mapStateToProps(state, _ref) {
-  var timelineId = _ref.timelineId;
-  return {
-    data: (0, _fullRangeChartData["default"])(state, timelineId),
-    onError: onError,
-    onParseError: onParseError,
-    spec: (0, _fullRangeChartSpec["default"])(state, timelineId),
-    className: "mr-timeline-full-range-chart"
-  };
-};
-
-var mapDispatchToProps = null;
-
-var _default = (0, _reactRedux.connect)(function (state, props) {
-  return mapStateToProps(state.present, props);
-}, mapDispatchToProps)(_reactVega.Vega);
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 630:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _state = __webpack_require__(3);
-
-var _config = _interopRequireDefault(__webpack_require__(50));
-
-var _paneSize = _interopRequireDefault(__webpack_require__(497));
-
-var fullRangeChartSpecSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _paneSize["default"])(state, timelineId);
-}, function (state) {
-  return (0, _config["default"])(state);
-}, function (size, defaults) {
-  var vlSpec = {
-    $schema: "https://vega.github.io/schema/vega-lite/v4.json",
-    autosize: {
-      contains: "padding",
-      type: "fit"
-    },
-    bounds: "flush",
-    data: {
-      name: "dataset"
-    },
-    mark: {
-      type: "rect"
-    },
-    config: {
-      view: {
-        stroke: "transparent"
+    }, "Set as Root (Re-root)")), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-divider"
+    }), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-item single-action"
+    }, /*#__PURE__*/_react["default"].createElement("button", {
+      onClick: function onClick() {
+        return (0, _downloads.downloadDataUrl)(tree.getLeafNodes(node).map(function (x) {
+          return x.label;
+        }).join("\n"), "leaf-labels.txt", "plain/text");
       }
-    },
-    encoding: {
-      x: {
-        field: "unitStartDate",
-        type: "temporal",
-        axis: {
-          title: null,
-          grid: false,
-          tickExtra: true,
-          bandPosition: 1,
-          padding: 0,
-          tickColor: defaults.theme.primary.main,
-          tickSize: 3,
-          // tickWidth: 0,
-          // domainWidth: 0,
-          labelAlign: {
-            condition: [{
-              test: {
-                field: "index",
-                equal: 0
-              },
-              value: "left"
-            }, {
-              test: {
-                field: "index",
-                equal: 1
-              },
-              value: "right"
-            }],
-            value: "center"
-          }
-        } // scale: { domain: dataTemporalRange },
-
-      },
-      fill: {
-        value: defaults.theme.primary.light
-      },
-      strokeWidth: {
-        value: 1
-      },
-      stroke: {
-        value: defaults.theme.background.main
-      },
-      // strokeOpacity: {
-      //   value: 0.1,
-      // },
-      x2: {
-        field: "unitEndDate",
-        type: "temporal",
-        axis: null
-      },
-      y: {
-        // aggregate: "sum",
-        field: "groupCount",
-        type: "quantitative",
-        axis: null
-      } // tooltip: [
-      //   {
-      //     field: "startDate",
-      //     type: "temporal",
-      //     title: "From",
-      //   },
-      //   {
-      //     field: "endDate",
-      //     type: "temporal",
-      //     title: "To",
-      //   },
-      //   {
-      //     field: "rows",
-      //     title: "Number of entries",
-      //   },
-      // ],
-
-    },
-    height: 48,
-    padding: {
-      left: 0,
-      top: 0,
-      right: 0,
-      bottom: 2
-    },
-    width: size.width - 32
-  };
-  return vlSpec;
-});
-var _default = fullRangeChartSpecSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 631:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reactVega = __webpack_require__(447);
-
-var _vegaTooltip = __webpack_require__(450);
-
-var _filteredRangeChartData = _interopRequireDefault(__webpack_require__(632));
-
-var _filteredRangeChartSpec = _interopRequireDefault(__webpack_require__(633));
-
-var _state = __webpack_require__(3);
-
-var onError = function onError(err) {
-  return console.error("Timeline", err);
-};
-
-var onParseError = function onParseError(err) {
-  return console.error("Timeline", err);
-};
-
-var handler = new _vegaTooltip.Handler({
-  theme: "timeline"
-});
-
-var mapStateToProps = function mapStateToProps(state, _ref) {
-  var timelineId = _ref.timelineId;
-  return {
-    className: "mr-timeline-filtered-range-chart",
-    data: (0, _filteredRangeChartData["default"])(state, timelineId),
-    onError: onError,
-    onParseError: onParseError,
-    spec: (0, _filteredRangeChartSpec["default"])(state, timelineId),
-    tooltip: handler.call
-  };
-};
-
-var mapDispatchToProps = null;
-
-var _default = (0, _state.connectToPresentStateWithRef)(_reactVega.Vega, mapStateToProps, mapDispatchToProps);
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 632:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _slicedToArray2 = _interopRequireDefault(__webpack_require__(16));
-
-var _state = __webpack_require__(3);
-
-var _selectedIdsSet = _interopRequireDefault(__webpack_require__(173));
-
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
-
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
-
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
-
-var _datetime = __webpack_require__(56);
-
-var _constants = __webpack_require__(12);
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var chartDataSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _rowsWithDateField["default"])(state, timelineId);
-}, function (state, timelineId) {
-  return (0, _filteredRangeUnit["default"])(state, timelineId);
-}, function (state) {
-  return (0, _selectedIdsSet["default"])(state);
-}, function (state) {
-  return (0, _activeRowsWithStyleFields["default"])(state);
-}, function (_ref, unit, selectionSet, _ref2) {
-  var _dataset;
-
-  var dateFieldName = _ref.dateFieldName;
-  var rows = _ref2.rows;
-  var dataset = null;
-
-  if (dateFieldName) {
-    var groups = {};
-    var countsByUnits = {};
-
-    var _iterator = _createForOfIteratorHelper(rows),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var row = _step.value;
-
-        if (row[dateFieldName]) {
-          var _row$MrScalar, _countsByUnits$unitLa;
-
-          var rowCount = (_row$MrScalar = row["--mr-scalar"]) !== null && _row$MrScalar !== void 0 ? _row$MrScalar : 1;
-          var unitLabel = (0, _datetime.toUnitString)(row[dateFieldName], unit);
-          countsByUnits[unitLabel] = ((_countsByUnits$unitLa = countsByUnits[unitLabel]) !== null && _countsByUnits$unitLa !== void 0 ? _countsByUnits$unitLa : 0) + rowCount;
-          var groupKey = "".concat(unitLabel, " ").concat(row["--microreact-colour"]);
-
-          if (groupKey in groups) {
-            groups[groupKey].groupCount += rowCount;
-
-            if (!groups[groupKey].isSelected) {
-              groups[groupKey].isSelected = selectionSet.has(row[0]);
-            }
-          } else {
-            var _boundsOf = (0, _datetime.boundsOf)(row[dateFieldName], unit),
-                _boundsOf2 = (0, _slicedToArray2["default"])(_boundsOf, 2),
-                unitStartDate = _boundsOf2[0],
-                unitEndDate = _boundsOf2[1];
-
-            groups[groupKey] = {
-              unitLabel: unitLabel,
-              unitStartDate: unitStartDate,
-              unitEndDate: unitEndDate,
-              groupCount: rowCount,
-              groupColour: row["--microreact-colour"],
-              groupLabel: row["--microreact-colour-label"],
-              isSelected: selectionSet.size === 0 || selectionSet.has(row[0])
-            };
-          }
-        }
+    }, "Export Leaf Labels")), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-item single-action"
+    }, /*#__PURE__*/_react["default"].createElement("button", {
+      onClick: function onClick() {
+        return (0, _downloads.downloadDataUrl)(tree.exportNewick(node), "tree.nwk", "plain/text");
       }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    dataset = Object.values(groups);
-
-    var _iterator2 = _createForOfIteratorHelper(dataset),
-        _step2;
-
-    try {
-      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var item = _step2.value;
-        item.unitCount = countsByUnits[item.unitLabel];
-      }
-    } catch (err) {
-      _iterator2.e(err);
-    } finally {
-      _iterator2.f();
-    }
+    }, "Export as Newick File")), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "mr-ui-context-menu-divider"
+    }), Link);
   }
 
-  return {
-    dataset: (_dataset = dataset) !== null && _dataset !== void 0 ? _dataset : _constants.emptyArray
-  };
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item multi-action",
+    onClick: function onClick(event) {
+      return event.stopPropagation();
+    }
+  }, "Zoom", /*#__PURE__*/_react["default"].createElement("button", {
+    title: "Zoom out",
+    onClick: function onClick() {
+      return tree.zoomOut();
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ZoomOutRounded["default"], null)), /*#__PURE__*/_react["default"].createElement("button", {
+    title: "Fit in panel",
+    onClick: function onClick() {
+      return tree.fitInPanel();
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ZoomOutMapRounded["default"], null)), /*#__PURE__*/_react["default"].createElement("button", {
+    title: "Zoom in",
+    onClick: function onClick() {
+      return tree.zoomIn();
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_ZoomInRounded["default"], null))), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return tree.setSource(tree.getGraphWithoutLayout().originalSource);
+    }
+  }, "Redraw Original Tree")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-divider"
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return props.onShowLeafLabelsChange(!props.phylocanvasProps.showLeafLabels);
+    }
+  }, props.phylocanvasProps.showLeafLabels ? "Hide" : "Show", " Leaf Labels")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return props.onAlignLabelsChange(!props.phylocanvasProps.alignLabels);
+    }
+  }, props.phylocanvasProps.alignLabels ? "Unalign" : "Align", " Leaf Labels")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-divider"
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return tree.midpointRoot();
+    }
+  }, "Midpoint Root")), (tree.props.collapsedIds && tree.props.collapsedIds.length) > 0 && /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return tree.resetCollapsedNodes({
+        refit: true
+      });
+    }
+  }, "Expand collapsed subtrees")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-divider"
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return (0, _downloads.downloadDataUrl)(tree.getLeafNodes(node).map(function (x) {
+        return x.label;
+      }).join("\n"), "leaf-labels.txt", "plain/text");
+    }
+  }, "Export Leaf Labels")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return (0, _downloads.downloadDataUrl)(tree.exportNewick(), "tree.nwk", "plain/text");
+    }
+  }, "Export as Newick File")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-item single-action"
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    onClick: function onClick() {
+      return (0, _downloads.downloadDataUrl)(tree.exportPNG(), "tree.png", "image/png");
+    }
+  }, "Export as PNG Image")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mr-ui-context-menu-divider"
+  }), Link);
 });
-var _default = chartDataSelector;
-exports["default"] = _default;
 
-/***/ }),
-
-/***/ 633:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _state = __webpack_require__(3);
-
-var _charts = __webpack_require__(161);
-
-var _config = _interopRequireDefault(__webpack_require__(50));
-
-var _paneSize = _interopRequireDefault(__webpack_require__(497));
-
-var _laneField = _interopRequireDefault(__webpack_require__(634));
-
-var _filteredRangeUnit = _interopRequireDefault(__webpack_require__(506));
-
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(57));
-
-var chartSpecSelector = (0, _state.createKeyedStateSelector)(function (state, timelineId) {
-  return (0, _filteredRangeUnit["default"])(state, timelineId);
-}, function (state, timelineId) {
-  return state.timelines[timelineId].style;
-}, function (state, timelineId) {
-  return state.timelines[timelineId].nodeSize;
-}, function (state, timelineId) {
-  return (0, _laneField["default"])(state, timelineId);
-}, function (state, timelineId) {
-  return (0, _paneSize["default"])(state, timelineId);
-}, function (state) {
-  return (0, _config["default"])(state).fontFamily;
-}, function (state) {
-  return (0, _coloursDataColumn["default"])(state);
-}, function (unit, style, nodeSize, laneField, size, fontFamily, colourByDataField) {
-  var vlSpec = {
-    $schema: "https://vega.github.io/schema/vega-lite/v4.json",
-    autosize: {
-      contains: "padding",
-      type: "fit"
-    },
-    // "selection": {"grid": {"type": "interval", "bind": "scales"}},
-    // "selection": {
-    //   "zoom_x": {"type": "interval", "bind": "scales", "encodings": ["x"]},
-    //   "zoom_y": {"type": "interval", "bind": "scales", "encodings": ["y"]}
-    // },
-    bounds: "flush",
-    config: {
-      background: "#f9f9fa",
-      axis: {
-        labelFont: fontFamily,
-        labelFontSize: 11
-      },
-      view: {
-        stroke: "transparent"
-      }
-    },
-    data: {
-      name: "dataset"
-    },
-    mark: "bar",
-    encoding: {
-      x: {
-        field: "unitStartDate",
-        type: "temporal",
-        axis: {
-          title: null,
-          grid: false
-        }
-      },
-      x2: {
-        field: "unitEndDate",
-        type: "temporal",
-        axis: null,
-        grid: false
-      },
-      y: {
-        // aggregate: "sum",
-        field: "groupCount",
-        type: "quantitative",
-        axis: {
-          title: null
-        }
-      },
-      color: {
-        field: "groupColour",
-        scale: null
-      },
-      fillOpacity: {
-        field: "isSelected",
-        scale: {
-          domain: [false, true],
-          range: [0.14, 1]
-        },
-        legend: false
-      },
-      tooltip: [{
-        field: "unitLabel",
-        type: "nominal",
-        title: unit
-      }, {
-        field: "unitCount",
-        type: "quantitative",
-        title: "unitCount"
-      }, {
-        field: "groupLabel",
-        type: "nominal",
-        title: colourByDataField.name
-      }, {
-        field: "groupCount",
-        type: "quantitative",
-        title: "groupCount"
-      }]
-    },
-    height: size.height - 48 - 12,
-    padding: {
-      left: 16,
-      top: 32,
-      right: 16,
-      bottom: 2
-    },
-    width: size.width
-  };
-
-  if (style === "normalised-bar") {
-    vlSpec.encoding.y.stack = "normalize";
-  }
-
-  var vgSpec = (0, _charts.vegaLiteToVega)(vlSpec);
-  return vgSpec;
-});
-var _default = chartSpecSelector;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 634:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _state = __webpack_require__(3);
-
-var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
-
-var laneFieldSelector = (0, _state.createKeyedStateSelector)(function (state) {
-  return (0, _dataColumnsByFieldMap["default"])(state);
-}, function (state, timelineId) {
-  return state.timelines[timelineId].laneField;
-}, function (fieldsMap, laneField) {
-  if (laneField) {
-    return fieldsMap.get(laneField);
-  } else {
-    return undefined;
-  }
-});
-var _default = laneFieldSelector;
+TreeContextMenu.displayName = "TreeContextMenu";
+TreeContextMenu.propTypes = {
+  onAlignLabelsChange: _propTypes["default"].func.isRequired,
+  onShowLeafLabelsChange: _propTypes["default"].func.isRequired,
+  phylocanvasProps: _propTypes["default"].object,
+  tree: _propTypes["default"].object,
+  node: _propTypes["default"].object
+};
+var _default = TreeContextMenu;
 exports["default"] = _default;
 
 /***/ })
