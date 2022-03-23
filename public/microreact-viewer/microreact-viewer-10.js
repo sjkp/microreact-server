@@ -2855,35 +2855,37 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _reactRedux = __webpack_require__(96);
-
 var _trees = __webpack_require__(74);
+
+var _state = __webpack_require__(3);
 
 var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(652));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
+  var treeState = state.trees[treeId];
   return {
-    alignLabels: state.trees[treeId].alignLabels,
-    branchLengthsDigits: state.trees[treeId].branchLengthsDigits,
-    fontSize: state.trees[treeId].fontSize,
+    alignLabels: treeState.alignLabels,
+    branchLabelsFontSize: treeState.branchLabelsFontSize,
+    branchLengthsDigits: treeState.branchLengthsDigits,
+    fontSize: treeState.fontSize,
     maxFontSize: 64,
     maxNodeSize: 64,
     minFontSize: 4,
     minNodeSize: 1,
-    nodeSize: state.trees[treeId].nodeSize,
-    roundBranchLengths: state.trees[treeId].roundBranchLengths,
-    scaleLineAlpha: state.trees[treeId].scaleLineAlpha,
-    showBranchLengths: state.trees[treeId].showBranchLengths,
-    showInternalLabels: state.trees[treeId].showInternalLabels,
-    showLeafLabels: state.trees[treeId].showLeafLabels,
-    showPiecharts: state.trees[treeId].showPiecharts,
-    showShapeBorders: state.trees[treeId].showShapeBorders,
-    showShapes: state.trees[treeId].showShapes,
-    styleLeafLabels: state.trees[treeId].styleLeafLabels,
-    styleLeafNodes: state.trees[treeId].styleLeafNodes,
-    styleNodeEdges: state.trees[treeId].styleNodeEdges,
-    styleNodeLines: state.trees[treeId].styleNodeLines
+    nodeSize: treeState.nodeSize,
+    roundBranchLengths: treeState.roundBranchLengths,
+    scaleLineAlpha: treeState.scaleLineAlpha,
+    showBranchLengths: treeState.showBranchLengths,
+    showInternalLabels: treeState.showInternalLabels,
+    showLeafLabels: treeState.showLeafLabels,
+    showPiecharts: treeState.showPiecharts,
+    showShapeBorders: treeState.showShapeBorders,
+    showShapes: treeState.showShapes,
+    styleLeafLabels: treeState.styleLeafLabels,
+    styleLeafNodes: treeState.styleLeafNodes,
+    styleNodeEdges: treeState.styleNodeEdges,
+    styleNodeLines: treeState.styleNodeLines
   };
 };
 
@@ -2892,6 +2894,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
   return {
     onAlignLabelsChange: function onAlignLabelsChange(value) {
       return dispatch((0, _trees.update)(treeId, "alignLabels", value));
+    },
+    onBranchLabelsFontSizeChange: function onBranchLabelsFontSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "branchLabelsFontSize", value));
     },
     onFontSizeChange: function onFontSizeChange(value) {
       return dispatch((0, _trees.update)(treeId, "fontSize", value));
@@ -2941,9 +2946,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
   };
 };
 
-var _default = (0, _reactRedux.connect)(function (state, props) {
-  return mapStateToProps(state.present, props);
-}, mapDispatchToProps)(_TreeStyleMenu["default"]);
+var _default = (0, _state.connectToPresentState)(_TreeStyleMenu["default"], mapStateToProps, mapDispatchToProps);
 
 exports["default"] = _default;
 
@@ -3017,10 +3020,15 @@ var TreeStylesMenu = /*#__PURE__*/_react["default"].memo(function (props) {
     label: "Show Internal Labels",
     onChange: props.onShowInternalLabelsChange,
     value: props.showInternalLabels
-  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
-    label: "Show Branch Lengths",
-    onChange: props.onShowBranchLengthsChange,
-    value: props.showBranchLengths
+  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    checked: props.showBranchLengths,
+    label: "Branch Lengths",
+    max: props.maxFontSize,
+    min: props.minFontSize,
+    onChange: props.onBranchLabelsFontSizeChange,
+    onCheckedChange: props.onShowBranchLengthsChange,
+    unit: "px",
+    value: props.branchLabelsFontSize
   }), props.showBranchLengths && /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
     checked: props.roundBranchLengths,
     label: "Rounding digits",
