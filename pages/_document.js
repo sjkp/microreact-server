@@ -34,7 +34,6 @@ export default class MyDocument extends Document {
 
           {/* <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700|Saira+Semi+Condensed:300,400,500|Roboto+Mono:400" rel="stylesheet" /> */}
 
-
           <link rel="stylesheet" href="https://unpkg.com/@fontsource/work-sans@4.5.1/index.css" />
           <link rel="stylesheet" href="https://unpkg.com/@fontsource/work-sans@4.5.1/500.css" />
 
@@ -62,6 +61,7 @@ export default class MyDocument extends Document {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/plugins/sigma.layout.forceAtlas2.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/plugins/sigma.plugins.dragNodes.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+          <script defer data-domain="microreact.org" src="https://analytics.cgps.dev/js/plausible.js"></script>
           <Main />
           <NextScript />
         </body>
