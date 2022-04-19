@@ -10,8 +10,6 @@ import logger from "cgps-application-server/logger";
 import dbAdapter from "cgps-application-server/nextjs/auth/adapter";
 import { boolean } from "boolean";
 
-// import "cgps-application-server/nextjs/auth/with-custom-css";
-
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
 
 const options = {
