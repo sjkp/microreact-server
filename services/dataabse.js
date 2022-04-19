@@ -25,9 +25,9 @@ export default async function connectToDatabase() {
     url: serverRuntimeConfig.mongodb.url,
   });
 
-  const ProjectModel = require("../models/project");
-  const UserModel = require("../models/user");
-  const FolderModel = require("../models/folder");
+  require("../models/project");
+  require("../models/user");
+  require("../models/Folder");
 
   return db;
 }
