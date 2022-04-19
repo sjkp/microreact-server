@@ -31,7 +31,7 @@
   position: absolute;
   top: 8px;
   right: 24px;
-  width: 240px;
+  width: 256px;
 }
 
 .api-section :global .MuiTypography-root + * {
