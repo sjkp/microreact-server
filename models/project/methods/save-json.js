@@ -1,6 +1,6 @@
-const { projectSchemaVersion } = require("./schema");
+const { projectSchemaVersion } = require("../schema");
 
-const FileStorage = require("../../services/file-storage");
+const FileStorage = require("../../../services/file-storage");
 
 /**
  * Saves inline files in storage and converts them to URLs

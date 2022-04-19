@@ -1,5 +1,5 @@
 module.exports = async function getViews(user) {
-  const ProjectModel = require("./index");
+  const ProjectModel = require("../index");
   const projectDocs = await (
     ProjectModel.find(
       {
