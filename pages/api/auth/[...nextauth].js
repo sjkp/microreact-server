@@ -181,19 +181,9 @@ if (serverRuntimeConfig.auth.ldap) {
 }
 
 if (serverRuntimeConfig.auth.openidconnect) {
+  const createOpenIDConnectProvider = require("cgps-application-server/nextjs/auth/openidconnect");
   options.providers.push(
-    {
-      ...serverRuntimeConfig.auth.openidconnect,
-      id: "openidconnect",
-      profile(profile) {
-        logger.debug("openidconnect profile to user", { profile });
-        return {
-          id: profile[serverRuntimeConfig.auth.openidconnect.idAttribute ?? "sub"],
-          name: profile[serverRuntimeConfig.auth.openidconnect.nameAttribute ?? "name"],
-          email: profile[serverRuntimeConfig.auth.openidconnect.emailAttribute ?? "email"],
-        };
-      },
-    }
+    createOpenIDConnectProvider(serverRuntimeConfig.auth.openidconnect)
   );
 }
 
