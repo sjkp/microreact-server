@@ -1,4 +1,6 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
+import Slugs from "cgps-application-server/utils/slugs";
+
 import createMicroreactDocument from "microreact.js";
 
 import databaseService, { isValidObjectId } from "./dataabse";
@@ -14,12 +16,7 @@ function projectSlugToId(projectIdOrSlug) {
     throw new ApiError(400, "Invalid request");
   }
 
-  if ((/^[0-9A-Z]{22}-|^[0-9A-Z]{22}$/i).test(projectIdOrSlug)) {
-    return projectIdOrSlug.substr(0, 22);
-  }
-  else {
-    return projectIdOrSlug;
-  }
+  return Slugs.toId(projectIdOrSlug);
 }
 
 async function findProjectDocuments(query, user) {
@@ -108,7 +105,7 @@ export async function checkProjectAlias(projectAlias, user) {
  * @throws {ApiError} 401 Unauthorized: if the project is not public and the user is anonymous.
  * @throws {ApiError} 403 Forbidden: if the project is not public and the signed-in user does not have access.
 */
-export async function getProjectDocument(projectIdOrSlug, user) {
+async function getProjectDocument(projectIdOrSlug, user) {
   const db = await databaseService();
 
   const identifier = projectSlugToId(projectIdOrSlug);
