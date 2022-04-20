@@ -105,7 +105,7 @@ export async function checkProjectAlias(projectAlias, user) {
  * @throws {ApiError} 401 Unauthorized: if the project is not public and the user is anonymous.
  * @throws {ApiError} 403 Forbidden: if the project is not public and the signed-in user does not have access.
 */
-async function getProjectDocument(projectIdOrSlug, user) {
+export async function getProjectDocument(projectIdOrSlug, user) {
   const db = await databaseService();
 
   const identifier = projectSlugToId(projectIdOrSlug);
@@ -172,7 +172,7 @@ export async function getProjectMetadata(projectIdOrSlug) {
   }
 }
 
-async function findUserProjects(user) {
+export async function findUserProjects(user) {
   await databaseService();
 
   const query = {
@@ -182,7 +182,7 @@ async function findUserProjects(user) {
   return findProjectDocuments(query, user);
 }
 
-async function findUserSharedProjects(user) {
+export async function findUserSharedProjects(user) {
   await databaseService();
 
   const query = {
@@ -197,7 +197,7 @@ async function findUserSharedProjects(user) {
   return findProjectDocuments(query, user);
 }
 
-async function toViewerJson(projectModel) {
+export async function toViewerJson(projectModel) {
   if (projectModel.version > 1) {
     return projectModel.json;
   }
@@ -260,11 +260,3 @@ export async function findOrCreateUserFolder(user, folderIdOrName) {
 
   return doc;
 }
-
-export default {
-  getProjectDocument,
-  getProjectMetadata,
-  findUserProjects,
-  findUserSharedProjects,
-  toViewerJson,
-};

@@ -1,5 +1,5 @@
 import requireUserMiddleware from "cgps-application-server/middleware/require-user";
-import ProjectsService from "../../../services/projects";
+import * as ProjectsService from "../../../services/projects";
 
 export default async function (req, res) {
   const user = await requireUserMiddleware(req, res);

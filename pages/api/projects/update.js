@@ -2,7 +2,7 @@ import requireUserMiddleware from "cgps-application-server/middleware/require-us
 import { ApiError } from "next/dist/next-server/server/api-utils";
 import logger from "cgps-application-server/logger";
 
-import ProjectsService from "../../../services/projects";
+import * as ProjectsService from "../../../services/projects";
 
 import serverRuntimeConfig from "../../../utils/server-runtime-config";
 

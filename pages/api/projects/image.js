@@ -1,4 +1,4 @@
-import ProjectsService from "../../../services/projects";
+import * as ProjectsService from "../../../services/projects";
 
 export default async function (req, res) {
   const [ projectId ] = req.query?.project.split("/");

@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import UiLoadingSpinner from "../../components/UiLoadingSpinner";
 
-import ProjectsService from "../../services/projects";
+import * as ProjectsService from "../../services/projects";
 import UrlService from "../../services/url-service";
 
 export async function getServerSideProps(context) {

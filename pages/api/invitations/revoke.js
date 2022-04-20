@@ -1,7 +1,7 @@
 import { ApiError } from "next/dist/next-server/server/api-utils";
 import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
 
-import ProjectsService from "../../../services/projects";
+import * as ProjectsService from "../../../services/projects";
 import databaseService from "../../../services/dataabse";
 
 export default async function (req, res) {
