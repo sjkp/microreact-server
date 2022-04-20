@@ -16,7 +16,7 @@ module.exports = {
     );
 
     for await (const projectDoc of projectsCursor) {
-      console.log("Moving folder of project %s %s", index, projectDoc._id, projectDoc.owner, projectDoc.folder);
+      console.debug("Moving folder of project %s %s", index, projectDoc._id, projectDoc.owner, projectDoc.folder);
 
       const { value: folderDoc } = await db.collection("folders").findOneAndUpdate(
         { name: projectDoc.folder.trim(), owner: projectDoc.owner },
