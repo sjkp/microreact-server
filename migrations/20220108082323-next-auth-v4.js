@@ -15,7 +15,7 @@ module.exports = {
     );
 
     for await (const doc of cursor) {
-      console.log("Updating account %s %s\r", index, doc._id);
+      console.info("Updating account %s %s\r", index, doc._id);
 
       await db.collection("accounts").updateOne(
         { _id: doc._id },
@@ -30,7 +30,7 @@ module.exports = {
       index++;
     }
 
-    console.log("\n");
+    console.info("\n");
   },
 
   async down(db, client) {
