@@ -8,12 +8,9 @@ module.exports = {
     const oldProjectsCursor = db.collection("projects").find({ "json.version": { $in: [ 1, 2 ] } });
 
     for await (const doc of oldProjectsCursor) {
-      console.log("Updating project %s / %s. %s \r", index, oldProjectsCount, doc._id);
+      console.info("Updating project %s / %s. %s \r", index, oldProjectsCount, doc._id);
 
       if (doc.json) {
-        // console.log(JSON.stringify(doc.json, null, 2))
-        // console.log((doc))
-
         try {
           const json = updateSchema(doc.json);
           await db.collection("projects").updateOne(
@@ -22,7 +19,7 @@ module.exports = {
           );
         }
         catch (error) {
-          console.log(error.stack);
+          console.info(error.stack);
           throw error;
         }
       }
