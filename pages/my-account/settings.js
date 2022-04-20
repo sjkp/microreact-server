@@ -7,7 +7,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Skeleton from "@material-ui/lab/Skeleton";
-import { useSession } from "next-auth/react";
+import sessionUserHook from "cgps-application-server/hooks/session-user";
 
 import AccountPageNav from "../../components/AccountPageNav";
 import UiDataHook from "../../components/UiDataHook";
@@ -33,8 +33,8 @@ export async function getServerSideProps(context) {
 }
 
 function ProfileSection() {
-  const { data: session, status } = useSession();
-  const isLoading = (status === "loading");
+  const session = sessionUserHook(true);
+  const isLoading = (session === "loading");
 
   if (isLoading) {
     return (<Skeleton />);
@@ -43,16 +43,16 @@ function ProfileSection() {
   return (
     <section>
       <p>
-        Name: {session?.user.name}
+        Name: {session.name}
       </p>
 
       <p>
-        Email: {session?.user.email}
+        Email: {session.email}
       </p>
 
       <p>
         Account Gravatar (change at <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>):
-        <UiAvatar email={session?.user.email} />
+        <UiAvatar email={session.email} />
       </p>
 
     </section>
@@ -85,8 +85,8 @@ function ApiSection() {
 }
 
 function DeleteAccountSection() {
-  const { data: session, status } = useSession();
-  const isLoading = (status === "loading");
+  const session = sessionUserHook(true);
+  const isLoading = (session === "loading");
 
   if (isLoading) {
     return (<Skeleton />);
@@ -98,7 +98,7 @@ function DeleteAccountSection() {
 
       <form
         method="post"
-        action={`mailto:support@microreact.org?subject=Account Deletion&body=Please send this request from ${session?.user.email}`}
+        action={`mailto:support@microreact.org?subject=Account Deletion&body=Please send this request from ${session.email}`}
         encType="text/plain"
       >
         <Button

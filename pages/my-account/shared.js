@@ -3,10 +3,10 @@
 import React from "react";
 import Head from "next/head";
 import getUser from "cgps-application-server/middleware/get-user";
-import { useSession } from "next-auth/react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Skeleton from "@material-ui/lab/Skeleton";
+import sessionUserHook from "cgps-application-server/hooks/session-user";
 
 import AccountPageNav from "../../components/AccountPageNav";
 import AccountProjectGrid from "../../components/AccountProjectGrid";
@@ -30,13 +30,13 @@ export async function getServerSideProps(context) {
 }
 
 function PageTitle() {
-  const { data: session, status } = useSession();
-  const isLoading = (status === "loading");
+  const session = sessionUserHook(true);
+  const isLoading = (session === "loading");
 
   return (
     <Typography variant="h2">
       {
-        isLoading ? <Skeleton /> : `Projects shared with ${session.user.name} (${session.user.email})`
+        isLoading ? <Skeleton /> : `Projects shared with ${session.name} (${session.email})`
       }
     </Typography>
   );

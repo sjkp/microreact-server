@@ -3,7 +3,8 @@
 import React from "react";
 import Head from "next/head";
 import getUser from "cgps-application-server/middleware/get-user";
-import { useSession } from "next-auth/react";
+import sessionUserHook from "cgps-application-server/hooks/session-user";
+
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Skeleton from "@material-ui/lab/Skeleton";
@@ -51,13 +52,11 @@ function closeWindowAfterLogin() {
 // };
 
 function PageTitle() {
-  const { data: session, status } = useSession();
-  const isLoading = (status === "loading");
-
+  const user = sessionUserHook(true);
   return (
     <Typography variant="h2">
       {
-        isLoading ? <Skeleton /> : `Projects created by ${session.user.name} (${session.user.email})`
+        (user === "loading") ? <Skeleton /> : `Projects created by ${user.name} (${user.email})`
       }
     </Typography>
   );
