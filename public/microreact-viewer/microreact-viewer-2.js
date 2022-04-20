@@ -19,9 +19,9 @@ var _panes = __webpack_require__(57);
 
 var _styles = __webpack_require__(83);
 
-var _LegendPane = _interopRequireDefault(__webpack_require__(547));
+var _LegendPane = _interopRequireDefault(__webpack_require__(548));
 
-var _legends = _interopRequireDefault(__webpack_require__(553));
+var _legends = _interopRequireDefault(__webpack_require__(554));
 
 var _state = __webpack_require__(3);
 
@@ -536,7 +536,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 547:
+/***/ 548:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -587,7 +587,7 @@ var _UiIconButton = _interopRequireDefault(__webpack_require__(175));
 
 var _constants = __webpack_require__(12);
 
-var _LegendsList = _interopRequireDefault(__webpack_require__(548));
+var _LegendsList = _interopRequireDefault(__webpack_require__(549));
 
 var _html = __webpack_require__(36);
 
@@ -716,7 +716,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 548:
+/***/ 549:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -745,9 +745,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(549));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(550));
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(551));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(552));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -804,7 +804,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 549:
+/***/ 550:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -823,7 +823,7 @@ var _filters = __webpack_require__(51);
 
 var _ShapesLegend = _interopRequireDefault(__webpack_require__(510));
 
-var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(550));
+var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(551));
 
 var _state = __webpack_require__(3);
 
@@ -849,7 +849,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 550:
+/***/ 551:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -872,7 +872,7 @@ var _dataColumnByField = _interopRequireDefault(__webpack_require__(35));
 
 var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(171));
+var _selectedRows = _interopRequireDefault(__webpack_require__(172));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -951,7 +951,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 551:
+/***/ 552:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -970,7 +970,7 @@ var _filters = __webpack_require__(51);
 
 var _ColoursLegend = _interopRequireDefault(__webpack_require__(512));
 
-var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(552));
+var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(553));
 
 var _state = __webpack_require__(3);
 
@@ -1002,7 +1002,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 552:
+/***/ 553:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1027,7 +1027,7 @@ var _uniqueValues = _interopRequireDefault(__webpack_require__(194));
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(100));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(171));
+var _selectedRows = _interopRequireDefault(__webpack_require__(172));
 
 var _colourMapForField = _interopRequireDefault(__webpack_require__(101));
 
@@ -1186,7 +1186,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 553:
+/***/ 554:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1205,9 +1205,9 @@ var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
 
 var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
-var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
+var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(555));
 
-var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(556));
+var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(557));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
@@ -1308,7 +1308,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 554:
+/***/ 555:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1323,7 +1323,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _metadataFields = _interopRequireDefault(__webpack_require__(555));
+var _metadataFields = _interopRequireDefault(__webpack_require__(556));
 
 var _constants = __webpack_require__(12);
 
@@ -1378,7 +1378,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 555:
+/***/ 556:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1404,7 +1404,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 556:
+/***/ 557:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

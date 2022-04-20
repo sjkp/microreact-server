@@ -19,7 +19,7 @@ var _state = __webpack_require__(3);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(498));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(635));
+var _TreePane = _interopRequireDefault(__webpack_require__(636));
 
 var _isValidTree = _interopRequireDefault(__webpack_require__(201));
 
@@ -180,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 505:
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -568,7 +568,7 @@ var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(103));
 
 var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
-var _UiSelectList = _interopRequireDefault(__webpack_require__(169));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(170));
 
 __webpack_require__(519);
 
@@ -628,7 +628,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 530:
+/***/ 533:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -688,7 +688,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 635:
+/***/ 636:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -709,9 +709,9 @@ var _trees = __webpack_require__(74);
 
 var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
-var _phylocanvasProps = _interopRequireDefault(__webpack_require__(636));
+var _phylocanvasProps = _interopRequireDefault(__webpack_require__(637));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(639));
+var _TreePane = _interopRequireDefault(__webpack_require__(640));
 
 var _ui = __webpack_require__(27);
 
@@ -760,7 +760,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 636:
+/***/ 637:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -783,9 +783,9 @@ var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
 var _labelsDataColumn = _interopRequireDefault(__webpack_require__(114));
 
-var _labels = _interopRequireDefault(__webpack_require__(530));
+var _labels = _interopRequireDefault(__webpack_require__(533));
 
-var _metadataValues = _interopRequireDefault(__webpack_require__(637));
+var _metadataValues = _interopRequireDefault(__webpack_require__(638));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
@@ -797,7 +797,7 @@ var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
-var _metadataBlocks = _interopRequireDefault(__webpack_require__(638));
+var _metadataBlocks = _interopRequireDefault(__webpack_require__(639));
 
 var _treeFile = _interopRequireDefault(__webpack_require__(110));
 
@@ -912,7 +912,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 637:
+/***/ 638:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -931,7 +931,7 @@ var _constants = __webpack_require__(12);
 
 var _state = __webpack_require__(3);
 
-var _labels = _interopRequireDefault(__webpack_require__(530));
+var _labels = _interopRequireDefault(__webpack_require__(533));
 
 var _rowsByLabel = _interopRequireDefault(__webpack_require__(183));
 
@@ -1029,7 +1029,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 638:
+/***/ 639:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1088,7 +1088,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 639:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1121,19 +1121,19 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _Menu = _interopRequireDefault(__webpack_require__(211));
 
-var _phylocanvas = _interopRequireDefault(__webpack_require__(640));
+var _phylocanvas = _interopRequireDefault(__webpack_require__(641));
 
 var _downloads = __webpack_require__(53);
 
 var _propTypes2 = __webpack_require__(14);
 
-__webpack_require__(642);
+__webpack_require__(643);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(643));
+var _TreeControls = _interopRequireDefault(__webpack_require__(644));
 
-var _TreeZoomControls = _interopRequireDefault(__webpack_require__(653));
+var _TreeZoomControls = _interopRequireDefault(__webpack_require__(654));
 
-var _TreeContextMenu = _interopRequireDefault(__webpack_require__(654));
+var _TreeContextMenu = _interopRequireDefault(__webpack_require__(655));
 
 var _browser = __webpack_require__(21);
 
@@ -1367,7 +1367,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 640:
+/***/ 641:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1402,7 +1402,7 @@ var _phylocanvas = _interopRequireWildcard(__webpack_require__(99));
 
 var _canvasLasso = _interopRequireDefault(__webpack_require__(514));
 
-var _convertState = _interopRequireDefault(__webpack_require__(641));
+var _convertState = _interopRequireDefault(__webpack_require__(642));
 
 var _geometry = __webpack_require__(102);
 
@@ -1722,7 +1722,7 @@ function _default(treePane) {
 
 /***/ }),
 
-/***/ 641:
+/***/ 642:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2307,7 +2307,7 @@ function _default(tree) {
 
 /***/ }),
 
-/***/ 642:
+/***/ 643:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2317,7 +2317,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 643:
+/***/ 644:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2336,7 +2336,7 @@ var _ui = __webpack_require__(27);
 
 var _state = __webpack_require__(3);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(644));
+var _TreeControls = _interopRequireDefault(__webpack_require__(645));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -2371,7 +2371,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 644:
+/***/ 645:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2396,21 +2396,21 @@ var _propTypes2 = __webpack_require__(14);
 
 var _Animation = _interopRequireDefault(__webpack_require__(166));
 
-var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(645));
+var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(646));
 
-var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(646));
+var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(647));
 
-var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(647));
+var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(648));
 
-var _LassoButton = _interopRequireDefault(__webpack_require__(505));
+var _LassoButton = _interopRequireDefault(__webpack_require__(504));
 
-var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(648));
+var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(649));
 
 var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(649));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(650));
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(651));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(652));
 
 var _UiSpeedDial = _interopRequireDefault(__webpack_require__(214));
 
@@ -2498,7 +2498,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 645:
+/***/ 646:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2534,7 +2534,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 646:
+/***/ 647:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2573,7 +2573,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 647:
+/***/ 648:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2636,7 +2636,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 648:
+/***/ 649:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2672,7 +2672,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 649:
+/***/ 650:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2687,7 +2687,7 @@ exports["default"] = void 0;
 
 var _trees = __webpack_require__(74);
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(650));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(651));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
@@ -2741,7 +2741,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 650:
+/***/ 651:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2842,7 +2842,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 651:
+/***/ 652:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2859,7 +2859,7 @@ var _trees = __webpack_require__(74);
 
 var _state = __webpack_require__(3);
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(652));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(653));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
@@ -2868,7 +2868,10 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
     alignLabels: treeState.alignLabels,
     branchLabelsFontSize: treeState.branchLabelsFontSize,
     branchLengthsDigits: treeState.branchLengthsDigits,
+    filterInternalLabels: treeState.filterInternalLabels,
     fontSize: treeState.fontSize,
+    internalLabelsFilterRange: treeState.internalLabelsFilterRange,
+    internalLabelsFontSize: treeState.internalLabelsFontSize,
     maxFontSize: 64,
     maxNodeSize: 64,
     minFontSize: 4,
@@ -2898,8 +2901,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref2) {
     onBranchLabelsFontSizeChange: function onBranchLabelsFontSizeChange(value) {
       return dispatch((0, _trees.update)(treeId, "branchLabelsFontSize", value));
     },
+    onFilterInternalLabelsChange: function onFilterInternalLabelsChange(value) {
+      return dispatch((0, _trees.update)(treeId, "filterInternalLabels", value));
+    },
     onFontSizeChange: function onFontSizeChange(value) {
       return dispatch((0, _trees.update)(treeId, "fontSize", value));
+    },
+    onInternalLabelsFilterRangeChange: function onInternalLabelsFilterRangeChange(minValue, maxValue) {
+      return dispatch((0, _trees.update)(treeId, "internalLabelsFilterRange", [minValue, maxValue]));
+    },
+    onInternalLabelsFontSizeChange: function onInternalLabelsFontSizeChange(value) {
+      return dispatch((0, _trees.update)(treeId, "internalLabelsFontSize", value));
     },
     onNodeSizeChange: function onNodeSizeChange(value) {
       return dispatch((0, _trees.update)(treeId, "nodeSize", value));
@@ -2952,7 +2964,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 652:
+/***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2970,6 +2982,10 @@ var _classnames = _interopRequireDefault(__webpack_require__(13));
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _TextField = _interopRequireDefault(__webpack_require__(62));
+
+var _Box = _interopRequireDefault(__webpack_require__(23));
 
 var _UiControlsMenu = _interopRequireDefault(__webpack_require__(164));
 
@@ -3004,23 +3020,64 @@ var TreeStylesMenu = /*#__PURE__*/_react["default"].memo(function (props) {
     onCheckedChange: props.onShowLeafLabelsChange,
     unit: "px",
     value: props.fontSize
-  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+  }), props.showLeafLabels && /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
     label: "Align Leaf Labels",
     onChange: props.onAlignLabelsChange,
     value: props.alignLabels
-  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+  }), props.showLeafLabels && /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
     label: "Colour Leaf Labels",
     onChange: props.onStyleLeafLabelsChange,
     value: props.styleLeafLabels
   }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
-    label: "Show Internal Nodes",
+    label: "Internal Nodes",
     onChange: props.onShowPiechartsChange,
     value: props.showPiecharts
-  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
-    label: "Show Internal Labels",
-    onChange: props.onShowInternalLabelsChange,
-    value: props.showInternalLabels
-  }), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+  }), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
+    checked: props.showInternalLabels,
+    label: "Internal Labels",
+    max: props.maxFontSize,
+    min: props.minFontSize,
+    onChange: props.onInternalLabelsFontSizeChange,
+    onCheckedChange: props.onShowInternalLabelsChange,
+    unit: "px",
+    value: props.internalLabelsFontSize
+  }), props.showInternalLabels && /*#__PURE__*/_react["default"].createElement(_UiToggleSwitch["default"], {
+    label: "Filter Internal Nodes",
+    onChange: props.onFilterInternalLabelsChange,
+    value: props.filterInternalLabels
+  }), props.filterInternalLabels && /*#__PURE__*/_react["default"].createElement(_Box["default"], {
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
+    style: {
+      margin: "8px 0"
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_TextField["default"], {
+    label: "Min value",
+    onChange: function onChange(event) {
+      return props.onInternalLabelsFilterRangeChange(event.target.value, props.internalLabelsFilterRange[1]);
+    },
+    size: "small",
+    style: {
+      width: "100%"
+    },
+    type: "number",
+    value: props.internalLabelsFilterRange[0],
+    variant: "outlined"
+  }), /*#__PURE__*/_react["default"].createElement(_TextField["default"], {
+    label: "Max value",
+    onChange: function onChange(event) {
+      return props.onInternalLabelsFilterRangeChange(props.internalLabelsFilterRange[0], event.target.value);
+    },
+    size: "small",
+    style: {
+      marginLeft: 8,
+      width: "100%"
+    },
+    type: "number",
+    value: props.internalLabelsFilterRange[1],
+    variant: "outlined"
+  })), /*#__PURE__*/_react["default"].createElement("hr", null), /*#__PURE__*/_react["default"].createElement(_UiToggleSlider["default"], {
     checked: props.showBranchLengths,
     label: "Branch Lengths",
     max: props.maxFontSize,
@@ -3054,16 +3111,24 @@ var TreeStylesMenu = /*#__PURE__*/_react["default"].memo(function (props) {
 TreeStylesMenu.displayName = "TreeStylesMenu";
 TreeStylesMenu.propTypes = {
   alignLabels: _propTypes["default"].bool.isRequired,
+  branchLabelsFontSize: _propTypes["default"].number,
   branchLengthsDigits: _propTypes["default"].number.isRequired,
   className: _propTypes["default"].string,
+  filterInternalLabels: _propTypes["default"].bool,
   fontSize: _propTypes["default"].number.isRequired,
+  internalLabelsFilterRange: _propTypes["default"].array,
+  internalLabelsFontSize: _propTypes["default"].number,
   maxFontSize: _propTypes["default"].number.isRequired,
   maxNodeSize: _propTypes["default"].number.isRequired,
   minFontSize: _propTypes["default"].number.isRequired,
   minNodeSize: _propTypes["default"].number.isRequired,
   nodeSize: _propTypes["default"].number.isRequired,
   onAlignLabelsChange: _propTypes["default"].func.isRequired,
+  onBranchLabelsFontSizeChange: _propTypes["default"].func.isRequired,
+  onFilterInternalLabelsChange: _propTypes["default"].func.isRequired,
   onFontSizeChange: _propTypes["default"].func.isRequired,
+  onInternalLabelsFilterRangeChange: _propTypes["default"].func.isRequired,
+  onInternalLabelsFontSizeChange: _propTypes["default"].func.isRequired,
   onNodeSizeChange: _propTypes["default"].func.isRequired,
   onRoundBranchLengthsChange: _propTypes["default"].func.isRequired,
   onRoundBranchLengthsDigitsChange: _propTypes["default"].func.isRequired,
@@ -3093,7 +3158,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 653:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3267,7 +3332,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 654:
+/***/ 655:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

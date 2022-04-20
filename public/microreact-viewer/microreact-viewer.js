@@ -9168,7 +9168,8 @@ var initialState = {
   controls: true,
   interpolate: "linear",
   seriesStacking: "stacked",
-  showSelection: false
+  xAxisLabelLimit: 120,
+  yAxisLabelLimit: 30
 };
 exports.initialState = initialState;
 var queryPropMap = {
@@ -10318,14 +10319,7 @@ function vegaLiteToVega(vlSpec) {
           events: "click",
           update: "[ event, datum ]"
         }]
-      } // {
-      //   name: 'onSeriesSelect',
-      //   value: {},
-      //   on: [
-      //     { events: 'dblclick', update: 'datum' },
-      //   ],
-      // },
-      ]);
+      }]);
     } catch (error) {
       console.error(vgSpec, vlSpec);
       return error;
@@ -10978,6 +10972,40 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _chartState = _interopRequireDefault(__webpack_require__(52));
+
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
+
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(35));
+
+var seriesFieldSelector = function seriesFieldSelector(state, chartId) {
+  var _chartStateSelector = (0, _chartState["default"])(state, chartId),
+      seriesField = _chartStateSelector.seriesField;
+
+  if (seriesField) {
+    return (0, _dataColumnByField["default"])(state, seriesField);
+  } else {
+    return (0, _coloursDataColumn["default"])(state);
+  }
+};
+
+var _default = seriesFieldSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
@@ -11207,7 +11235,7 @@ var _default = UiSelectList;
 exports["default"] = _default;
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11295,7 +11323,7 @@ var _default = baseGraphSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11312,7 +11340,7 @@ var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _selectedIdsSet = _interopRequireDefault(__webpack_require__(172));
+var _selectedIdsSet = _interopRequireDefault(__webpack_require__(173));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -11354,7 +11382,7 @@ var _default = selectedRowsSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11380,7 +11408,7 @@ var _default = selectedIdsSetSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11400,40 +11428,6 @@ var chartTypeSelector = function chartTypeSelector(state, chartId) {
 };
 
 var _default = chartTypeSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _chartState = _interopRequireDefault(__webpack_require__(52));
-
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
-
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(35));
-
-var seriesFieldSelector = function seriesFieldSelector(state, chartId) {
-  var _chartStateSelector = (0, _chartState["default"])(state, chartId),
-      seriesField = _chartStateSelector.seriesField;
-
-  if (seriesField) {
-    return (0, _dataColumnByField["default"])(state, seriesField);
-  } else {
-    return (0, _coloursDataColumn["default"])(state);
-  }
-};
-
-var _default = seriesFieldSelector;
 exports["default"] = _default;
 
 /***/ }),
@@ -12425,13 +12419,13 @@ var _state = __webpack_require__(3);
 
 var _arrays = __webpack_require__(24);
 
-var _chartType = _interopRequireDefault(__webpack_require__(173));
+var _chartType = _interopRequireDefault(__webpack_require__(174));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(15));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _seriesField = _interopRequireDefault(__webpack_require__(174));
+var _seriesField = _interopRequireDefault(__webpack_require__(169));
 
 var _xAxisField = _interopRequireDefault(__webpack_require__(187));
 
@@ -12958,7 +12952,7 @@ var _state = __webpack_require__(3);
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(100));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(171));
+var _selectedRows = _interopRequireDefault(__webpack_require__(172));
 
 var _sortState = _interopRequireDefault(__webpack_require__(200));
 
@@ -16422,7 +16416,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _baseGraph = _interopRequireDefault(__webpack_require__(170));
+var _baseGraph = _interopRequireDefault(__webpack_require__(171));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -17828,7 +17822,9 @@ var FileLoader = /*#__PURE__*/function (_React$PureComponent) {
         }, state.error.message);
       }
 
-      return /*#__PURE__*/_react["default"].createElement(_UiSpinningLoader["default"], null, "Loading ", props.file.name || "file", "\xA0", state.bytesUsed > 0 && "(".concat((0, _files.fileSize)(state.bytesUsed), ")"), "\u2026");
+      return /*#__PURE__*/_react["default"].createElement(_UiSpinningLoader["default"], null, "Loading ", props.file.name || "file", "\xA0", state.bytesUsed > 0 && /*#__PURE__*/_react["default"].createElement("span", {
+        className: "mr-file-loader"
+      }, "(", (0, _files.fileSize)(state.bytesUsed), ")"), "\u2026");
     }
   }]);
   return FileLoader;
@@ -25715,6 +25711,8 @@ var initialState = {
   fontSize: 16,
   hideOrphanDataRows: false,
   ids: null,
+  internalLabelsFilterRange: [0, 100],
+  internalLabelsFontSize: 13,
   lasso: false,
   nodeSize: 14,
   path: null,
@@ -26304,7 +26302,7 @@ var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(45));
 
 var _UiRadioList = _interopRequireDefault(__webpack_require__(98));
 
-var _UiSelectList = _interopRequireDefault(__webpack_require__(169));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(170));
 
 var _UiSlider = _interopRequireDefault(__webpack_require__(176));
 

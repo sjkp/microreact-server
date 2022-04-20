@@ -17,9 +17,9 @@ var _panes = __webpack_require__(57);
 
 var _state = __webpack_require__(3);
 
-var _ViewsPane = _interopRequireDefault(__webpack_require__(655));
+var _ViewsPane = _interopRequireDefault(__webpack_require__(656));
 
-var _views = __webpack_require__(658);
+var _views = __webpack_require__(659);
 
 var _ui = __webpack_require__(27);
 
@@ -85,11 +85,11 @@ var _filters = __webpack_require__(51);
 
 var _panes = __webpack_require__(57);
 
-var _SelectionPane = _interopRequireDefault(__webpack_require__(659));
+var _SelectionPane = _interopRequireDefault(__webpack_require__(660));
 
 var _constants = __webpack_require__(12);
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(171));
+var _selectedRows = _interopRequireDefault(__webpack_require__(172));
 
 var _state = __webpack_require__(3);
 
@@ -674,7 +674,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 531:
+/***/ 534:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -693,7 +693,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(78));
 
 var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
-__webpack_require__(657);
+__webpack_require__(658);
 
 /* eslint-disable class-methods-use-this */
 function UiEmptyState(props) {
@@ -718,7 +718,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 655:
+/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -763,11 +763,11 @@ var _reactHashchange = _interopRequireDefault(__webpack_require__(493));
 
 var _reactSortableHoc = __webpack_require__(453);
 
-__webpack_require__(656);
+__webpack_require__(657);
 
 var BrowserUtils = _interopRequireWildcard(__webpack_require__(21));
 
-var _UiEmptyState = _interopRequireDefault(__webpack_require__(531));
+var _UiEmptyState = _interopRequireDefault(__webpack_require__(534));
 
 var _UiIconButton = _interopRequireDefault(__webpack_require__(175));
 
@@ -1014,16 +1014,6 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 656:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 657:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1035,6 +1025,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 658:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 659:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1155,7 +1155,7 @@ function setDefaultView(viewDocument) {
 
 /***/ }),
 
-/***/ 659:
+/***/ 660:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1198,7 +1198,7 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _reactVega = __webpack_require__(447);
 
-__webpack_require__(660);
+__webpack_require__(661);
 
 var _charts = __webpack_require__(161);
 
@@ -1206,7 +1206,7 @@ var _ColoursLegend = _interopRequireDefault(__webpack_require__(512));
 
 var _ShapesLegend = _interopRequireDefault(__webpack_require__(510));
 
-var _UiEmptyState = _interopRequireDefault(__webpack_require__(531));
+var _UiEmptyState = _interopRequireDefault(__webpack_require__(534));
 
 var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(500));
 
@@ -1540,7 +1540,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 660:
+/***/ 661:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
