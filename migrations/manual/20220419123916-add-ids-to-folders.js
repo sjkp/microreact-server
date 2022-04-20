@@ -8,7 +8,7 @@ module.exports = {
     const docCursor = db.collection("folders").find();
 
     for await (const doc of docCursor) {
-      console.log("Adding id to folder %s %s", index, doc._id);
+      console.info("Adding id to folder %s %s", index, doc._id);
 
       await db.collection("folders").updateOne(
         { _id: doc._id },
@@ -19,8 +19,6 @@ module.exports = {
 
       index++;
     }
-
-    await db.collection("folders").rename("collections");
   },
 
   async down(db, client) {},
