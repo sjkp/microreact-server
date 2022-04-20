@@ -7,7 +7,7 @@ module.exports = {
     const oldProjectsCount = await db.collection("project").count({});
     const oldProjectsCursor = db.collection("project").find({});
     for await (const doc of oldProjectsCursor) {
-      console.log("Updating project %s / %s. %s \r", index, oldProjectsCount, doc._id);
+      console.info("Updating project %s / %s. %s \r", index, oldProjectsCount, doc._id);
 
       const {
         _id,
