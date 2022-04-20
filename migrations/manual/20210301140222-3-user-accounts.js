@@ -8,7 +8,7 @@ module.exports = {
 
     const oldUsersCursor = db.collection("users").find({}).addCursorFlag("noCursorTimeout", true);
     for await (const doc of oldUsersCursor) {
-      console.log("Updating user %s / %s. %s %s \r", index, oldUsersCount, doc._id, doc.email);
+      console.info("Updating user %s / %s. %s %s \r", index, oldUsersCount, doc._id, doc.email);
 
       const {
         _id,
