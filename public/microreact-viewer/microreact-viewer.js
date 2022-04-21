@@ -1952,9 +1952,11 @@ function commitFiles(fileDescriptors) {
             var leafLabels = (0, _trees2.newickLabels)(file._content);
             var dataFile = {
               id: (0, _hash.generateHashId)(),
-              name: "metadata",
+              name: "tree-labels",
               format: "text/csv",
-              blob: "id\n".concat(leafLabels.join("\n")),
+              blob: new File(["id\n".concat(leafLabels.join("\n"))], "tree-labels.csv", {
+                type: "text/csv"
+              }),
               type: "data",
               _content: (0, _datasets2.createBasicDataset)(leafLabels.map(function (id) {
                 return {
