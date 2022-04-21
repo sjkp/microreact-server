@@ -41,7 +41,7 @@
     }
   },
 
-  "baseUrl": "http://localhost:80/",
+  "baseUrl": "https://microreact.org/",
 
   "bodySizeLimit": "16mb",
 
