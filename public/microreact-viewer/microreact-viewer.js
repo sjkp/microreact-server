@@ -23303,7 +23303,7 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
   (0, _createClass2["default"])(SlicerPaneEditor, [{
     key: "render",
     value: function render() {
-      var _props$dataColumn, _props$groupColumn, _props$displayMode, _props$sortOrder;
+      var _props$dataColumn, _props$groupColumn;
 
       var props = this.props;
       return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_UiCombobox["default"], {
@@ -23340,7 +23340,7 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
           value: "coloured-by-group"
         }],
         size: "small",
-        value: (_props$displayMode = props.displayMode) !== null && _props$displayMode !== void 0 ? _props$displayMode : "off",
+        value: props.displayMode,
         variant: "outlined"
       }), /*#__PURE__*/_react["default"].createElement(_UiSelect["default"], {
         label: "Sort by",
@@ -23358,7 +23358,7 @@ var SlicerPaneEditor = /*#__PURE__*/function (_React$PureComponent) {
           value: "ascending"
         }],
         size: "small",
-        value: (_props$sortOrder = props.sortOrder) !== null && _props$sortOrder !== void 0 ? _props$sortOrder : "alphabetical",
+        value: props.sortOrder,
         variant: "outlined"
       }));
     }
@@ -24786,14 +24786,8 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var initialState = {
-  chartAxisType: "auto",
-  chartMaxBins: 10,
-  chartOrder: "alphabetical",
-  slicerType: "values",
-  dataValues: [],
-  includedValues: "all",
-  topNValues: 10,
-  chartMainAxis: "y"
+  displayMode: "off",
+  sortOrder: "alphabetical"
 };
 exports.initialState = initialState;
 var queryPropMap = {
