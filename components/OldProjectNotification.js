@@ -4,7 +4,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
-export default function SimpleSnackbar(props) {
+export default function OldProjectNotification(props) {
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
