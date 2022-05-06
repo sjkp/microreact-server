@@ -38,7 +38,6 @@ class ProjectPage extends React.Component {
       .then((projectJson) => {
         projectJson.config = {
           mapboxApiAccessToken: publicRuntimeConfig.mapboxApiAccessToken,
-          // readOnly: true,
         };
         if (this.props.query) {
           projectJson.query = this.props.query;
