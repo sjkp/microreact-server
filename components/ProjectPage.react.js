@@ -61,8 +61,7 @@ class ProjectPage extends React.Component {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  componentWillUnmount() {
+  componentWillUnmount() { // eslint-disable-line class-methods-use-this
     ViewerStore.dispatch(actions.unload());
   }
 
