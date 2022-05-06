@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import UiLoadingSpinner from "./UiLoadingSpinner";
 import ProjectViewer from "./ProjectViewer.react";
 import OldProjectNotification from "./OldProjectNotification";
+import ApiError from "./ApiError.react";
 
 import * as ApiClient from "../utils/api-client";
 import publicRuntimeConfig from "../utils/public-runtime-config";
@@ -69,17 +70,9 @@ class ProjectPage extends React.Component {
   render() {
     const { props, state } = this;
 
-    if (state.error) {
+    if (state.errorResponse) {
       return (
-        <center>
-          <h1>{ state.error?.code } Error</h1>
-          <pre>
-            { state.error?.status }
-          </pre>
-          <pre>
-            { state.error?.error?.message }
-          </pre>
-        </center>
+        <ApiError {...state.errorResponse} />
       );
     }
 

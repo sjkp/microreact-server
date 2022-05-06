@@ -121,7 +121,7 @@ export async function getProjectDocument(projectIdOrSlug, user) {
 
   // Check that the project do exist
   if (!projectDocument) {
-    throw new ApiError(404, "Not found");
+    throw new ApiError(404);
   }
 
   // let originalProject = projectDocument;
