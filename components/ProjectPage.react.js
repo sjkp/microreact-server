@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import UiLoadingSpinner from "./UiLoadingSpinner";
 import ProjectViewer from "./ProjectViewer.react";
-import OldProject from "./OldProjectNotification";
+import OldProjectNotification from "./OldProjectNotification";
 
 import * as ApiClient from "../utils/api-client";
 import publicRuntimeConfig from "../utils/public-runtime-config";
@@ -88,7 +88,7 @@ class ProjectPage extends React.Component {
         <React.Fragment>
           {
             (state.projectProps?.version === 1) && (
-              <OldProject
+              <OldProjectNotification
                 projectSlug={props.projectSlug}
               />
             )
