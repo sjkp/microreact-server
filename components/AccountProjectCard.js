@@ -9,7 +9,6 @@ import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined"
 import StarOutlineOutlinedIcon from "@material-ui/icons/StarOutlineOutlined";
 import StarOutlinedIcon from "@material-ui/icons/StarOutlined";
 import RestoreFromTrashOutlinedIcon from "@material-ui/icons/RestoreFromTrashOutlined";
-import EditTwoToneIcon from "@material-ui/icons/EditTwoTone";
 import dynamic from "next/dynamic";
 
 import UiLoadingBar from "./UiLoadingBar";
@@ -104,14 +103,14 @@ function AccountProjectCard(props) {
               projectId={props.id}
             />
 
-            <IconButton
+            {/* <IconButton
               component="a"
               title="Edit Project Files"
               href={`${props.url}?ui=edit`}
               onClick={props.onLoading}
             >
               <EditTwoToneIcon />
-            </IconButton>
+            </IconButton> */}
 
             <IconButton
               title={props.binned ? "Restore Project" : "Delete Project"}
