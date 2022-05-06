@@ -9,8 +9,8 @@ import * as ProjectsService from "../../services/projects";
 import UrlService from "../../services/url-service";
 
 export async function getServerSideProps(context) {
-  const [ projectId ] = context.query.param;
   const props = {};
+  const [ projectId ] = context.query.param;
   const metadata = await ProjectsService.getProjectMetadata(projectId);
   if (metadata) {
     props.hasMetadata = true;
