@@ -43,13 +43,15 @@ class ProjectPage extends React.Component {
         ViewerStore.dispatch(actions.load(projectJson));
         return projectJson._;
       })
-      .then((projectProps) => {
-        this.setState({ projectProps });
-      })
       .catch((error) => {
         console.error(error);
         this.setState({ error });
       });
+      .then(
+        (projectProps) => {
+          this.setState({ projectProps });
+        }
+      )
   }
 
   componentDidUpdate(prevProps) {
