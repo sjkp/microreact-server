@@ -43,15 +43,17 @@ class ProjectPage extends React.Component {
         ViewerStore.dispatch(actions.load(projectJson));
         return projectJson._;
       })
-      .catch((error) => {
-        console.error(error);
-        this.setState({ error });
-      });
       .then(
         (projectProps) => {
           this.setState({ projectProps });
         }
       )
+      .catch(
+        (errorResponse) => {
+          console.error("error while loading project json", errorResponse);
+          this.setState({ errorResponse });
+        }
+      );
   }
 
   componentDidUpdate(prevProps) {
