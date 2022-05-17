@@ -1,0 +1,16 @@
+# System D Unit config file at: /lib/systemd/system/microreact-server.service
+# sudo systemctl enable microreact-server.service
+
+[Unit]
+Description=Job that runs the Microreact server
+Requires=mongod.service
+After=mongod.service
+
+[Service]
+Restart=always
+RestartSec=3
+WorkingDirectory=/home/microreact/microreact-server/
+ExecStart=/usr/bin/node --max_old_space_size=2048  /home/microreact/microreact-server/start-prod.js
+
+[Install]
+WantedBy=multi-user.target
