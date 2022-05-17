@@ -38,11 +38,11 @@ export default function Home() {
               alt="Public Health England"
               title="Public Health England"
             />
-            <img
+            {/* <img
               src="images/partners/cdc.png"
               alt="Centers for Disease Control and Prevention"
               title="Centers for Disease Control and Prevention"
-            />
+            /> */}
             <img
               src="images/partners/ecdc.png"
               alt="European Centre for Disease Prevention and Control"
