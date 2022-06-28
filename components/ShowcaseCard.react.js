@@ -9,7 +9,7 @@ const ShowcaseCard = (props) => (
     <h2 className="mr-showcase-card-title">
       {props.title}
     </h2>
-    <img src={`${props.imageUrl}?20181022165700`} />
+    <img src={`${props.imageUrl}`} />
     <div className="mr-showcase-card-body">
       <strong className="mr-showcase-card-subtitle">{props.subTitle}</strong>
       <p>{props.supportingText}</p>
