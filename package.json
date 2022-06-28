@@ -18,10 +18,11 @@
     "@next-auth/mongodb-adapter": "^1.0.1",
     "axios": "^0.21.1",
     "boolean": "^3.1.4",
-    "cgps-application-server": "gitlab:cgps/dev/application-server#v21.0.0",
+    "cgps-application-server": "github:cgps-dev/application-server#v21.0.0",
     "clsx": "^1.1.1",
     "ejs": "^3.1.6",
     "email-templates": "^8.0.3",
+    "eslint-config-cgps": "github:cgps-dev/eslint-config",
     "feedback-screenshot-tool": "^1.0.5",
     "ftp-get": "^0.3.1",
     "googleapis": "^89.0.0",
@@ -30,12 +31,12 @@
     "jsonschema": "^1.4.0",
     "lodash.debounce": "^4.0.8",
     "merge-options": "^3.0.4",
-    "microreact-viewer": "gitlab:cgps/microreact/viewer#main",
-    "microreact.js": "gitlab:cgps/data-flo/microreact.js",
+    "microreact-viewer": "github:microreact/viewer#main",
+    "microreact.js": "github:data-flo/microreact.js",
     "migrate-mongo": "^8.1.4",
     "mongoose": "^5.11.16",
     "next": "10.0.6",
-    "next-auth": "gitlab:cgps/open-source/next-auth#53db325",
+    "next-auth": "github:cgps-group/next-auth#53db325",
     "node-uuid": "^1.4.8",
     "nodemailer": "^6.6.5",
     "notistack": "^1.0.5",
@@ -63,8 +64,7 @@
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "@babel/traverse": "^7.13.0",
-    "@babel/types": "^7.13.0",
-    "eslint-config-cgps": "gitlab:cgps/dev/eslint-config"
+    "@babel/types": "^7.13.0"
   },
   "peerOptionalDependencies": {
     "mongodb": "^3.6.0"
