@@ -8,7 +8,8 @@
     "start": "next start",
     "local": "NEXTAUTH_URL=http://localhost:8082 next start -- -p 8082",
     "mm": "migrate-mongo",
-    "release": "npm version major && git push && git push --tags"
+    "release": "npm version major && git push && git push --tags",
+    "install": "npm install --ignore-scripts --legacy-peer-deps"
   },
   "dependencies": {
     "@fontsource/plus-jakarta-sans": "^4.2.1",
