@@ -1,24 +1,16 @@
-FROM node:fermium-alpine AS backend
+FROM node:gallium-alpine3.15 AS backend
 
-ARG REPO_USER
-ARG REPO_TOKEN
+RUN apk add --update --no-cache curl g++ git make openssh-client python2
 
-RUN apk add --update --no-cache \
-      curl \
-      g++ \
-      git \
-      make \
-      py-pip
-
-RUN git config --global url.https://$REPO_USER:$REPO_TOKEN@gitlab.com/.insteadOf git://gitlab.com/ && \
-    git config --global url.https://$REPO_USER:$REPO_TOKEN@gitlab.com/cgps.insteadOf git@gitlab.com:cgps && \
-    git config --global url.https://$REPO_USER:$REPO_TOKEN@gitlab.com/cgps/.insteadOf https://gitlab.com/cgps/
+RUN mkdir -p ~/.ssh/ && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 COPY ./ /microreact/
+
 WORKDIR /microreact
 
-# install produciton deps
-RUN npm install --only=production
+# # install produciton deps
+# # RUN npm install --only=production
+RUN npm install --ignore-scripts --legacy-peer-deps
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -27,7 +19,7 @@ RUN npm install --only=production
 FROM backend AS frontend
 
 # installs dev dependencies
-RUN npm install
+# RUN npm install
 
 # runs webpack build
 RUN npm run build
@@ -36,7 +28,7 @@ RUN npm run build
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
-FROM node:fermium-alpine
+FROM node:gallium-alpine3.15
 
 WORKDIR /microreact
 
