@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[10],{
 
-/***/ 483:
+/***/ 485:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,9 +17,9 @@ var _ui = __webpack_require__(26);
 
 var _state = __webpack_require__(3);
 
-var _PanePlaceholder = _interopRequireDefault(__webpack_require__(497));
+var _PanePlaceholder = _interopRequireDefault(__webpack_require__(499));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(635));
+var _TreePane = _interopRequireDefault(__webpack_require__(637));
 
 var _isValidTree = _interopRequireDefault(__webpack_require__(199));
 
@@ -50,7 +50,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 495:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -94,7 +94,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 497:
+/***/ 499:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115,7 +115,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(498);
+__webpack_require__(500);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -170,7 +170,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 498:
+/***/ 500:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -180,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 503:
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -261,7 +261,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 512:
+/***/ 514:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -464,7 +464,7 @@ function canvasLasso(mouseCanvas, drawingCanvas, options) {
 
 /***/ }),
 
-/***/ 513:
+/***/ 515:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -545,7 +545,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 515:
+/***/ 517:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -568,7 +568,7 @@ var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(106));
 
 var _UiSelectList = _interopRequireDefault(__webpack_require__(168));
 
-__webpack_require__(516);
+__webpack_require__(518);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -616,7 +616,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 516:
+/***/ 518:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -626,7 +626,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 530:
+/***/ 532:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -686,7 +686,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 635:
+/***/ 637:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -707,9 +707,9 @@ var _trees = __webpack_require__(74);
 
 var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
 
-var _phylocanvasProps = _interopRequireDefault(__webpack_require__(636));
+var _phylocanvasProps = _interopRequireDefault(__webpack_require__(638));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(639));
+var _TreePane = _interopRequireDefault(__webpack_require__(641));
 
 var _ui = __webpack_require__(26);
 
@@ -758,7 +758,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 636:
+/***/ 638:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -781,21 +781,21 @@ var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
 var _labelsDataColumn = _interopRequireDefault(__webpack_require__(115));
 
-var _labels = _interopRequireDefault(__webpack_require__(530));
+var _labels = _interopRequireDefault(__webpack_require__(532));
 
-var _metadataValues = _interopRequireDefault(__webpack_require__(637));
+var _metadataValues = _interopRequireDefault(__webpack_require__(639));
 
-var _paneSize = _interopRequireDefault(__webpack_require__(495));
+var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _rowsByLabel = _interopRequireDefault(__webpack_require__(180));
 
-var _rowStyles = _interopRequireDefault(__webpack_require__(513));
+var _rowStyles = _interopRequireDefault(__webpack_require__(515));
 
 var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
-var _metadataBlocks = _interopRequireDefault(__webpack_require__(638));
+var _metadataBlocks = _interopRequireDefault(__webpack_require__(640));
 
 var _treeFile = _interopRequireDefault(__webpack_require__(111));
 
@@ -911,7 +911,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 637:
+/***/ 639:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -930,7 +930,7 @@ var _constants = __webpack_require__(12);
 
 var _state = __webpack_require__(3);
 
-var _labels = _interopRequireDefault(__webpack_require__(530));
+var _labels = _interopRequireDefault(__webpack_require__(532));
 
 var _rowsByLabel = _interopRequireDefault(__webpack_require__(180));
 
@@ -1028,7 +1028,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 638:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1087,7 +1087,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 639:
+/***/ 641:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1120,19 +1120,19 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _Menu = _interopRequireDefault(__webpack_require__(208));
 
-var _phylocanvas = _interopRequireDefault(__webpack_require__(640));
+var _phylocanvas = _interopRequireDefault(__webpack_require__(642));
 
 var _downloads = __webpack_require__(53);
 
 var _propTypes2 = __webpack_require__(14);
 
-__webpack_require__(642);
+__webpack_require__(644);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(643));
+var _TreeControls = _interopRequireDefault(__webpack_require__(645));
 
-var _TreeZoomControls = _interopRequireDefault(__webpack_require__(653));
+var _TreeZoomControls = _interopRequireDefault(__webpack_require__(655));
 
-var _TreeContextMenu = _interopRequireDefault(__webpack_require__(654));
+var _TreeContextMenu = _interopRequireDefault(__webpack_require__(656));
 
 var _browser = __webpack_require__(21);
 
@@ -1366,7 +1366,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 640:
+/***/ 642:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1399,9 +1399,9 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(15));
 
 var _phylocanvas = _interopRequireWildcard(__webpack_require__(98));
 
-var _canvasLasso = _interopRequireDefault(__webpack_require__(512));
+var _canvasLasso = _interopRequireDefault(__webpack_require__(514));
 
-var _convertState = _interopRequireDefault(__webpack_require__(641));
+var _convertState = _interopRequireDefault(__webpack_require__(643));
 
 var _geometry = __webpack_require__(101);
 
@@ -1721,7 +1721,7 @@ function _default(treePane) {
 
 /***/ }),
 
-/***/ 641:
+/***/ 643:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2306,7 +2306,7 @@ function _default(tree) {
 
 /***/ }),
 
-/***/ 642:
+/***/ 644:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2316,7 +2316,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 643:
+/***/ 645:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2335,7 +2335,7 @@ var _ui = __webpack_require__(26);
 
 var _state = __webpack_require__(3);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(644));
+var _TreeControls = _interopRequireDefault(__webpack_require__(646));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -2370,7 +2370,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 644:
+/***/ 646:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2395,21 +2395,21 @@ var _propTypes2 = __webpack_require__(14);
 
 var _UiAnimation = _interopRequireDefault(__webpack_require__(164));
 
-var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(645));
+var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(647));
 
-var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(646));
+var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(648));
 
-var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(647));
+var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(649));
 
-var _LassoButton = _interopRequireDefault(__webpack_require__(503));
+var _LassoButton = _interopRequireDefault(__webpack_require__(505));
 
-var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(648));
+var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(650));
 
 var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(649));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(651));
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(651));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(653));
 
 var _UiSpeedDial = _interopRequireDefault(__webpack_require__(211));
 
@@ -2497,7 +2497,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 645:
+/***/ 647:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2533,7 +2533,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 646:
+/***/ 648:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2572,7 +2572,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 647:
+/***/ 649:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2635,7 +2635,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 648:
+/***/ 650:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2671,7 +2671,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 649:
+/***/ 651:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2686,7 +2686,7 @@ exports["default"] = void 0;
 
 var _trees = __webpack_require__(74);
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(650));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(652));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
@@ -2740,7 +2740,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 650:
+/***/ 652:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2767,7 +2767,7 @@ var _UiToggleSlider = _interopRequireDefault(__webpack_require__(174));
 
 var _UiSlider = _interopRequireDefault(__webpack_require__(187));
 
-var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(515));
+var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(517));
 
 var TreeMetadataMenu = /*#__PURE__*/_react["default"].memo(function (props) {
   return /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
@@ -2841,7 +2841,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 651:
+/***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2858,7 +2858,7 @@ var _trees = __webpack_require__(74);
 
 var _state = __webpack_require__(3);
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(652));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(654));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
@@ -2963,7 +2963,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 652:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3157,7 +3157,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 653:
+/***/ 655:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3188,7 +3188,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _ControlCameraRounded = _interopRequireDefault(__webpack_require__(484));
+var _ControlCameraRounded = _interopRequireDefault(__webpack_require__(486));
 
 var _phylocanvas = __webpack_require__(98);
 
@@ -3331,7 +3331,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 654:
+/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

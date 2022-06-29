@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[11],{
 
-/***/ 485:
+/***/ 487:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,9 +17,9 @@ var _panes = __webpack_require__(57);
 
 var _state = __webpack_require__(3);
 
-var _ViewsPane = _interopRequireDefault(__webpack_require__(655));
+var _ViewsPane = _interopRequireDefault(__webpack_require__(657));
 
-var _views = __webpack_require__(658);
+var _views = __webpack_require__(660);
 
 var _ui = __webpack_require__(26);
 
@@ -68,7 +68,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 493:
+/***/ 495:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85,7 +85,7 @@ var _filters = __webpack_require__(51);
 
 var _panes = __webpack_require__(57);
 
-var _SelectionPane = _interopRequireDefault(__webpack_require__(659));
+var _SelectionPane = _interopRequireDefault(__webpack_require__(661));
 
 var _constants = __webpack_require__(12);
 
@@ -99,7 +99,7 @@ var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
-var _paneSize = _interopRequireDefault(__webpack_require__(495));
+var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -146,7 +146,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 495:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -190,7 +190,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 496:
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -214,9 +214,9 @@ var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(20));
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(35));
 
-var _vegaLite = __webpack_require__(443);
+var _vegaLite = __webpack_require__(445);
 
-var _lzString = _interopRequireDefault(__webpack_require__(444));
+var _lzString = _interopRequireDefault(__webpack_require__(446));
 
 var vegaEditorDataUrlRegex = /https:\/\/vega\.github\.io\/editor\/#\/url\/vega(?:-lite)?\/(.*)/i;
 
@@ -386,7 +386,7 @@ function vegaEditorSpecToDataUrl(specString) {
 
 /***/ }),
 
-/***/ 499:
+/***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -405,7 +405,7 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(501);
+__webpack_require__(503);
 
 // import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 // import UiIconButton from "./UiIconButton.react";
@@ -431,27 +431,27 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 500:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 501:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 502:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 503:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -465,7 +465,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.shapeImage = shapeImage;
 exports.linearGradientImage = linearGradientImage;
 
-var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(448));
+var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(450));
 
 var _phylocanvas = __webpack_require__(98);
 
@@ -506,7 +506,7 @@ function linearGradientImage(width, height, startColour, stopColour) {
 
 /***/ }),
 
-/***/ 508:
+/***/ 510:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -533,9 +533,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(502);
 
-var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(509));
+var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(511));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -591,7 +591,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 509:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -618,7 +618,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(502);
+var _svg = __webpack_require__(504);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -674,7 +674,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 510:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -701,9 +701,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(502);
 
-var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(511));
+var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(513));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -798,7 +798,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 511:
+/***/ 513:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -825,7 +825,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(502);
+var _svg = __webpack_require__(504);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -870,7 +870,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 531:
+/***/ 533:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -887,9 +887,9 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Typography = _interopRequireDefault(__webpack_require__(78));
 
-var _WorkOutline = _interopRequireDefault(__webpack_require__(492));
+var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
-__webpack_require__(657);
+__webpack_require__(659);
 
 /* eslint-disable class-methods-use-this */
 function UiEmptyState(props) {
@@ -914,7 +914,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 655:
+/***/ 657:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,31 +951,31 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _AddCircleTwoTone = _interopRequireDefault(__webpack_require__(486));
+var _AddCircleTwoTone = _interopRequireDefault(__webpack_require__(488));
 
 var _CircularProgress = _interopRequireDefault(__webpack_require__(189));
 
-var _ViewCompact = _interopRequireDefault(__webpack_require__(487));
+var _ViewCompact = _interopRequireDefault(__webpack_require__(489));
 
-var _MoreVert = _interopRequireDefault(__webpack_require__(488));
+var _MoreVert = _interopRequireDefault(__webpack_require__(490));
 
-var _reactHashchange = _interopRequireDefault(__webpack_require__(489));
+var _reactHashchange = _interopRequireDefault(__webpack_require__(491));
 
-var _reactSortableHoc = __webpack_require__(449);
+var _reactSortableHoc = __webpack_require__(451);
 
-var _sweetalert = _interopRequireDefault(__webpack_require__(490));
+var _sweetalert = _interopRequireDefault(__webpack_require__(492));
 
-__webpack_require__(491);
+__webpack_require__(493);
 
-__webpack_require__(656);
+__webpack_require__(658);
 
 var BrowserUtils = _interopRequireWildcard(__webpack_require__(21));
 
-var _UiEmptyState = _interopRequireDefault(__webpack_require__(531));
+var _UiEmptyState = _interopRequireDefault(__webpack_require__(533));
 
 var _UiIconButton = _interopRequireDefault(__webpack_require__(173));
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(499));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(501));
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(33));
 
@@ -1248,27 +1248,27 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 656:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 657:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 658:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 659:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 660:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1389,7 +1389,7 @@ function setDefaultView(viewDocument) {
 
 /***/ }),
 
-/***/ 659:
+/***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1420,7 +1420,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(15));
 
 var _reselect = __webpack_require__(10);
 
-var _DonutSmall = _interopRequireDefault(__webpack_require__(494));
+var _DonutSmall = _interopRequireDefault(__webpack_require__(496));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
@@ -1428,19 +1428,19 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
-var _reactVega = __webpack_require__(442);
+var _reactVega = __webpack_require__(444);
 
-__webpack_require__(660);
+__webpack_require__(662);
 
-var _charts = __webpack_require__(496);
+var _charts = __webpack_require__(498);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(510));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(512));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(508));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(510));
 
-var _UiEmptyState = _interopRequireDefault(__webpack_require__(531));
+var _UiEmptyState = _interopRequireDefault(__webpack_require__(533));
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(499));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(501));
 
 var _UiCombobox = _interopRequireDefault(__webpack_require__(29));
 
@@ -1772,7 +1772,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 660:
+/***/ 662:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

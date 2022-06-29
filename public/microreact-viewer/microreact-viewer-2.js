@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[2],{
 
-/***/ 453:
+/***/ 455:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,9 +19,9 @@ var _panes = __webpack_require__(57);
 
 var _styles = __webpack_require__(82);
 
-var _LegendPane = _interopRequireDefault(__webpack_require__(545));
+var _LegendPane = _interopRequireDefault(__webpack_require__(547));
 
-var _legends = _interopRequireDefault(__webpack_require__(551));
+var _legends = _interopRequireDefault(__webpack_require__(553));
 
 var _state = __webpack_require__(3);
 
@@ -52,7 +52,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 499:
+/***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71,7 +71,7 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(501);
+__webpack_require__(503);
 
 // import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 // import UiIconButton from "./UiIconButton.react";
@@ -97,27 +97,27 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 500:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ 501:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 502:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 503:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -131,7 +131,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.shapeImage = shapeImage;
 exports.linearGradientImage = linearGradientImage;
 
-var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(448));
+var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(450));
 
 var _phylocanvas = __webpack_require__(98);
 
@@ -172,7 +172,7 @@ function linearGradientImage(width, height, startColour, stopColour) {
 
 /***/ }),
 
-/***/ 508:
+/***/ 510:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -199,9 +199,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(502);
 
-var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(509));
+var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(511));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -257,7 +257,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 509:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -284,7 +284,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(502);
+var _svg = __webpack_require__(504);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -340,7 +340,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 510:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -367,9 +367,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(502);
 
-var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(511));
+var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(513));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -464,7 +464,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 511:
+/***/ 513:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -491,7 +491,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(502);
+var _svg = __webpack_require__(504);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -536,7 +536,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 545:
+/***/ 547:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -571,7 +571,7 @@ var _clsx = _interopRequireDefault(__webpack_require__(83));
 
 var _Divider = _interopRequireDefault(__webpack_require__(97));
 
-var _htmlsvg = _interopRequireDefault(__webpack_require__(454));
+var _htmlsvg = _interopRequireDefault(__webpack_require__(456));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
@@ -579,7 +579,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(500);
+__webpack_require__(502);
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(33));
 
@@ -587,13 +587,13 @@ var _UiIconButton = _interopRequireDefault(__webpack_require__(173));
 
 var _constants = __webpack_require__(12);
 
-var _LegendsList = _interopRequireDefault(__webpack_require__(546));
+var _LegendsList = _interopRequireDefault(__webpack_require__(548));
 
 var _html = __webpack_require__(36);
 
 var _downloads = __webpack_require__(53);
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(499));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(501));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -716,7 +716,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 546:
+/***/ 548:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -745,9 +745,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(547));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(549));
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(549));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(551));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -804,7 +804,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 547:
+/***/ 549:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -821,9 +821,9 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _filters = __webpack_require__(51);
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(508));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(510));
 
-var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(548));
+var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(550));
 
 var _state = __webpack_require__(3);
 
@@ -849,7 +849,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 548:
+/***/ 550:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,7 +951,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 549:
+/***/ 551:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -968,9 +968,9 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
 var _filters = __webpack_require__(51);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(510));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(512));
 
-var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(550));
+var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(552));
 
 var _state = __webpack_require__(3);
 
@@ -1002,7 +1002,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 550:
+/***/ 552:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1182,7 +1182,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 551:
+/***/ 553:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1201,9 +1201,9 @@ var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
 
 var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
 
-var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(552));
+var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(554));
 
-var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(554));
+var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(556));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
 
@@ -1304,7 +1304,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 552:
+/***/ 554:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1319,7 +1319,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _metadataFields = _interopRequireDefault(__webpack_require__(553));
+var _metadataFields = _interopRequireDefault(__webpack_require__(555));
 
 var _constants = __webpack_require__(12);
 
@@ -1374,7 +1374,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 553:
+/***/ 555:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1400,7 +1400,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 554:
+/***/ 556:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
