@@ -35,6 +35,7 @@
     "microreact-viewer": "github:microreact/viewer#main",
     "microreact.js": "github:data-flo/microreact.js",
     "migrate-mongo": "^8.1.4",
+    "mongodb": "^4.7.0",
     "mongoose": "^5.11.16",
     "next": "10.0.6",
     "next-auth": "github:cgps-group/next-auth#53db325",
