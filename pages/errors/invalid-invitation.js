@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 
+export async function getServerSideProps(context) {
+  return {};
+}
+
 export default function InvalidInvitation() {
   return (
     <center>
