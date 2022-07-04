@@ -7,8 +7,7 @@ import UiVimeoPlayer from "../components/UiVimeoPlayer";
 import defaultStyles from "../styles/default-layout.module.css";
 
 export async function getServerSideProps(context) {
-  const props = {};
-  return { props };
+  return { props: {} };
 }
 
 export default function Home() {
