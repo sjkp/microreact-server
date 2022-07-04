@@ -6,7 +6,7 @@
     "dev": "NEXTAUTH_URL=http://localhost:8082 next dev --port=8082",
     "build": "next build",
     "local": "NEXTAUTH_URL=http://localhost:8082 next start -- -p 8082",
-    "start": "next start -- -p 8082",
+    "start": "next start",
     "mm": "migrate-mongo",
     "release": "npm version major && git push && git push --tags",
     "install": "npm install --ignore-scripts --legacy-peer-deps"
