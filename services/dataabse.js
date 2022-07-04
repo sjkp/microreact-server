@@ -18,6 +18,10 @@ export function isValidObjectId(value) {
   return mongoose.Types.ObjectId.isValid(value);
 }
 
+export function toObjectId(value) {
+  return mongoose.Types.ObjectId(value);
+}
+
 export default async function connectToDatabase() {
   const db = connect({
     // overwriteModels: true,

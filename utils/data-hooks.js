@@ -54,3 +54,7 @@ export function userProjectsMutation(data, update) {
 export function userSharedProjectsHook() {
   return apiEndpointHook("/api/user/shared-projects");
 }
+
+export function showcaseProjectsHook() {
+  return apiEndpointHook("/api/showcase/projects");
+}

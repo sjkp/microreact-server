@@ -103,7 +103,7 @@ class NavigationDrawer extends React.Component {
         }
         <nav className="mdl-navigation">
           { this.getMyAccountMenu() }
-          <Link className="mdl-navigation__link" to="/showcase">
+          <Link className="mdl-navigation__link" to="/">
             <i className="material-icons">home</i>Showcase
           </Link>
           <Link className="mdl-navigation__link" to="/upload">

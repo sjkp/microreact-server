@@ -28,13 +28,9 @@ function getPublicRuntimeConfig(serverRuntimeConfig) {
 
   return {
     version: packageJson.version,
-    googleAnalyticsAccount: serverRuntimeConfig.googleAnalyticsAccount,
     mapboxApiAccessToken: serverRuntimeConfig.mapboxApiAccessToken,
     baseUrl: serverRuntimeConfig.baseUrl,
-    options: {
-      disableViewerDrawer: serverRuntimeConfig.disableViewerDrawer,
-      disableUploadPage: serverRuntimeConfig.disableUploadPage,
-    },
+    customShowcase: serverRuntimeConfig.showcaseFolders?.length > 0,
   };
 }
 

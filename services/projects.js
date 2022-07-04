@@ -151,18 +151,21 @@ export async function getProjectMetadata(projectIdOrSlug) {
   const id = projectSlugToId(projectIdOrSlug);
 
   const projectDocument = await db.models.Project.findOne(
-    { id },
     {
+      id,
       access: 1,
+    },
+    {
       "json.image": 1,
+      "json.meta.image": 1,
       "json.meta.name": 1,
       "json.meta.description": 1,
     },
   );
 
-  if (projectDocument && projectDocument.access === 1) {
+  if (projectDocument) {
     return {
-      image: projectDocument.json.image,
+      image: projectDocument.json.image || projectDocument.json.meta.image,
       name: projectDocument.json.meta.name,
       description: projectDocument.json.description,
     };
@@ -189,7 +192,7 @@ export async function findUserSharedProjects(user) {
     $or: [
       {
         "shares.kind": "user",
-        "shares.user": (user.id),
+        "shares.user": user.id,
       },
     ],
   };

@@ -1,6 +1,4 @@
 {
-  "accessToken": false,
-
   "auth": {
     "email": {
       "server": {
@@ -45,16 +43,14 @@
 
   "bodySizeLimit": "16mb",
 
-  "disableViewerDrawer": false,
-
-  "disableUploadPage": false,
+  "experimentalFlags": {
+    "publicFolders": false
+  },
 
   "helpDesk": {
     "email": "support@microreact.org",
     "subject": "Feedback from Microreact.org"
   },
-
-  "googleAnalyticsAccount": null,
 
   "mapboxApiAccessToken": "pk.eyJ1IjoiY2dwc2RldiIsImEiOiJja2lhMndmN3AwbGpzMnhvNWZ0eWc3cWhoIn0.SDSaZCcDFP9s812jX1tzeA",
 
@@ -64,6 +60,8 @@
   },
 
   "repoPath": "./files",
+
+  "showcaseFolders": [],
 
   "smtp": {   
     "host": "smtp.microreact.org",

@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 
 const schema = require("./schema");
 
-schema.pre("save", require("./pre-save"));
+schema.pre("save", require("./hooks/pre-save"));
 
 schema.statics.projectUrl = require("./statics/project-url");
+schema.statics.imageUrl = require("./statics/image-url");
 
 schema.methods.isAccessibleBy = require("./methods/is-accessible-by");
 schema.methods.hasOnwerAccess = require("./methods/has-onwer-access");

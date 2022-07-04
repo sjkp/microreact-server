@@ -8,8 +8,9 @@ class Welcome extends React.Component {
 
   componentDidMount() {
     if (process.browser) {
+      console.log("window.opener", window.opener)
       if (window !== undefined && window.opener && window.close) {
-        setTimeout(window.close, 0);
+        // setTimeout(window.close, 0);
       }
     }
     setTimeout(
