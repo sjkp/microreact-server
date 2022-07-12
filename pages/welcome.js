@@ -11,18 +11,27 @@ export async function getServerSideProps(context) {
 class Welcome extends React.Component {
 
   componentDidMount() {
-    if (process.browser) {
-      // console.log("window.opener", window.opener)
-      if (window !== undefined && window.opener && window.close) {
-        setTimeout(window.close, 0);
-      }
+    if (
+      process.browser
+      &&
+      window !== undefined
+      &&
+      window.opener
+      &&
+      window.opener.location.origin === window.location.origin
+      &&
+      window.close
+    ) {
+      setTimeout(window.close, 0);
     }
-    setTimeout(
-      () => {
-        window.location = "/my-account";
-      },
-      0,
-    );
+    else {
+      setTimeout(
+        () => {
+          window.location = "/my-account";
+        },
+        0,
+      );
+    }
   }
 
   render() {
