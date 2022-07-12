@@ -5,7 +5,7 @@ import React from "react";
 import UiLoadingSpinner from "../components/UiLoadingSpinner";
 
 export async function getServerSideProps(context) {
-  return {};
+  return { props: {} };
 }
 
 class Welcome extends React.Component {
