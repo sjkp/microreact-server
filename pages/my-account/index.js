@@ -30,14 +30,6 @@ export async function getServerSideProps(context) {
   };
 }
 
-function closeWindowAfterLogin() {
-  if (process.browser) {
-    if (window !== undefined && window.opener && window.close) {
-      setTimeout(window.close, 1000);
-    }
-  }
-}
-
 // const loginStyle = {
 //   "position": "fixed",
 //   "top": "0",
