@@ -16,6 +16,15 @@ export default function Showcase() {
   return (
     <div className="mr-showcase-grid">
       <ShowcaseCard
+        title={<React.Fragment>Tracing the spread of carbapenem-resistant <i>Klebsiella pneumoniae</i></React.Fragment>}
+        linkUrl="/project/EuSCAPE_Kp"
+        imageUrl="images/showcase/euscape-cover.png"
+        subTitle="David S et al. 2019."
+        supportingText={<React.Fragment>Epidemic of carbapenem-resistant <i>Klebsiella pneumoniae</i> in Europe is driven by nosocomial spread. Nature Microbiology 2058-5276. (doi:10.1038/s41564-019-0492-8)</React.Fragment>}
+        supportingLink="https://www.nature.com/articles/s41564-019-0492-8"
+      />
+
+      <ShowcaseCard
         title={<React.Fragment>SARS-CoV-2 in the UK</React.Fragment>}
         linkUrl="https://microreact.org/project/cogconsortium"
         imageUrl="images/showcase/cogconsortium-uk.png"
@@ -24,6 +33,16 @@ export default function Showcase() {
         supportingLink="https://www.cogconsortium.uk/data/"
         externalLink
       />
+
+      <ShowcaseCard
+        title={<React.Fragment><i>Streptococcus pneumoniae</i> PMEN2</React.Fragment>}
+        linkUrl="/project/N1TRn11L"
+        imageUrl="images/showcase/cover1.png"
+        subTitle="Croucher NJ et al. 2014."
+        supportingText="Variable recombination dynamics during the emergence, transmission and 'disarming' of a multidrug-resistant pneumococcal clone. BMC Biology 12:49"
+        supportingLink="http://www.ncbi.nlm.nih.gov/pubmed/24957517"
+      />
+
       <ShowcaseCard
         title={<React.Fragment>Global Distribution of SARS-CoV-2</React.Fragment>}
         linkUrl="https://microreact.org/project/cogconsortium-global"
@@ -33,22 +52,7 @@ export default function Showcase() {
         supportingLink="https://www.cogconsortium.uk/data/"
         externalLink
       />
-      <ShowcaseCard
-        title={<React.Fragment>Tracing the spread of carbapenem-resistant <i>Klebsiella pneumoniae</i></React.Fragment>}
-        linkUrl="/project/EuSCAPE_Kp"
-        imageUrl="images/showcase/euscape-cover.png"
-        subTitle="David S et al. 2019."
-        supportingText={<React.Fragment>Epidemic of carbapenem-resistant <i>Klebsiella pneumoniae</i> in Europe is driven by nosocomial spread. Nature Microbiology 2058-5276. (doi:10.1038/s41564-019-0492-8)</React.Fragment>}
-        supportingLink="https://www.nature.com/articles/s41564-019-0492-8"
-      />
-      <ShowcaseCard
-        title={<React.Fragment><i>Streptococcus pneumoniae</i> PMEN2</React.Fragment>}
-        linkUrl="/project/N1TRn11L"
-        imageUrl="images/showcase/cover1.png"
-        subTitle="Croucher NJ et al. 2014."
-        supportingText="Variable recombination dynamics during the emergence, transmission and 'disarming' of a multidrug-resistant pneumococcal clone. BMC Biology 12:49"
-        supportingLink="http://www.ncbi.nlm.nih.gov/pubmed/24957517"
-      />
+
       <ShowcaseCard
         title="West African Ebola epidemic (2013-2016)"
         linkUrl="/project/west-african-ebola-epidemic?tt=rc"
