@@ -55,8 +55,6 @@ function PageTitle() {
 }
 
 function MyProjectsPage() {
-  closeWindowAfterLogin();
-
   return (
     <div
       className={Styles.page}
