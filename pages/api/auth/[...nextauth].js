@@ -176,9 +176,9 @@ if (serverRuntimeConfig.auth.github) {
   );
 }
 
-if (serverRuntimeConfig.auth.azuread) {
+if (serverRuntimeConfig.auth["azure-ad"]) {
   options.providers.push(
-    AzureADProvider(serverRuntimeConfig.auth.azuread)
+    AzureADProvider(serverRuntimeConfig.auth["azure-ad"])
   );
 }
 
