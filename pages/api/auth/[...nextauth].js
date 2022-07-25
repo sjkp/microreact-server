@@ -6,6 +6,8 @@ import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import TwitterProvider from "next-auth/providers/twitter";
 import GitHubProvider from "next-auth/providers/github";
+import AzureADProvider from "next-auth/providers/azure-ad";
+
 import logger from "cgps-application-server/logger";
 import dbAdapter from "cgps-application-server/nextjs/auth/adapter";
 import { boolean } from "boolean";
@@ -171,6 +173,12 @@ if (serverRuntimeConfig.auth.twitter) {
 if (serverRuntimeConfig.auth.github) {
   options.providers.push(
     GitHubProvider(serverRuntimeConfig.auth.github)
+  );
+}
+
+if (serverRuntimeConfig.auth.azuread) {
+  options.providers.push(
+    AzureADProvider(serverRuntimeConfig.auth.azuread)
   );
 }
 
