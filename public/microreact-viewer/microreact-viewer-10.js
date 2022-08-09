@@ -19,7 +19,7 @@ var _state = __webpack_require__(3);
 
 var _PanePlaceholder = _interopRequireDefault(__webpack_require__(499));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(637));
+var _TreePane = _interopRequireDefault(__webpack_require__(638));
 
 var _isValidTree = _interopRequireDefault(__webpack_require__(199));
 
@@ -180,7 +180,88 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 505:
+/***/ 503:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _classnames = _interopRequireDefault(__webpack_require__(13));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
+
+var _UiSelectList = _interopRequireDefault(__webpack_require__(166));
+
+__webpack_require__(504);
+
+var _propTypes2 = __webpack_require__(14);
+
+var groupBy = function groupBy(item) {
+  var _item$group;
+
+  return (_item$group = item.group) !== null && _item$group !== void 0 ? _item$group : "";
+};
+
+var MultipleDataColumnsSelect = /*#__PURE__*/_react["default"].memo(function (props) {
+  return /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
+    className: (0, _classnames["default"])("mr-multiple-data-columns-select", props.className),
+    items: props.dataColumns,
+    label: "Search columns",
+    style: props.style,
+    renderItems: function renderItems(items) {
+      return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"], {
+        items: items,
+        onChange: props.onChange,
+        value: props.value,
+        groupItem: groupBy,
+        showSelectOnly: true,
+        style: {
+          height: 40 + props.dataColumns.length * 28,
+          maxHeight: "calc(100vh - ".concat(props.maxHeightOffset, ")")
+        }
+      });
+    }
+  });
+});
+
+MultipleDataColumnsSelect.displayName = "MultipleDataColumnsSelect";
+MultipleDataColumnsSelect.propTypes = {
+  className: _propTypes["default"].string,
+  dataColumns: _propTypes["default"].arrayOf(_propTypes2.DataColumn),
+  maxHeightOffset: _propTypes["default"].string,
+  multiple: _propTypes["default"].bool,
+  onChange: _propTypes["default"].func,
+  style: _propTypes["default"].object,
+  value: _propTypes["default"].array
+};
+MultipleDataColumnsSelect.defaultProps = {};
+var _default = MultipleDataColumnsSelect;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ 504:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 507:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -261,7 +342,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 514:
+/***/ 516:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -464,7 +545,7 @@ function canvasLasso(mouseCanvas, drawingCanvas, options) {
 
 /***/ }),
 
-/***/ 515:
+/***/ 517:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -545,87 +626,6 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 517:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _classnames = _interopRequireDefault(__webpack_require__(13));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
-
-var _react = _interopRequireDefault(__webpack_require__(1));
-
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(106));
-
-var _UiSelectList = _interopRequireDefault(__webpack_require__(168));
-
-__webpack_require__(518);
-
-var _propTypes2 = __webpack_require__(14);
-
-var groupBy = function groupBy(item) {
-  var _item$group;
-
-  return (_item$group = item.group) !== null && _item$group !== void 0 ? _item$group : "";
-};
-
-var MultipleDataColumnsSelect = /*#__PURE__*/_react["default"].memo(function (props) {
-  return /*#__PURE__*/_react["default"].createElement(_UiFloatingFilter["default"], {
-    className: (0, _classnames["default"])("mr-multiple-data-columns-select", props.className),
-    items: props.dataColumns,
-    label: "Search columns",
-    style: props.style,
-    renderItems: function renderItems(items) {
-      return /*#__PURE__*/_react["default"].createElement(_UiSelectList["default"], {
-        items: items,
-        onChange: props.onChange,
-        value: props.value,
-        groupItem: groupBy,
-        showSelectOnly: true,
-        style: {
-          height: 40 + props.dataColumns.length * 28,
-          maxHeight: "calc(100vh - ".concat(props.maxHeightOffset, ")")
-        }
-      });
-    }
-  });
-});
-
-MultipleDataColumnsSelect.displayName = "MultipleDataColumnsSelect";
-MultipleDataColumnsSelect.propTypes = {
-  className: _propTypes["default"].string,
-  dataColumns: _propTypes["default"].arrayOf(_propTypes2.DataColumn),
-  maxHeightOffset: _propTypes["default"].string,
-  multiple: _propTypes["default"].bool,
-  onChange: _propTypes["default"].func,
-  style: _propTypes["default"].object,
-  value: _propTypes["default"].array
-};
-MultipleDataColumnsSelect.defaultProps = {};
-var _default = MultipleDataColumnsSelect;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 518:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 532:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -686,7 +686,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 637:
+/***/ 638:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -705,11 +705,11 @@ var _filters = __webpack_require__(51);
 
 var _trees = __webpack_require__(74);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
-var _phylocanvasProps = _interopRequireDefault(__webpack_require__(638));
+var _phylocanvasProps = _interopRequireDefault(__webpack_require__(639));
 
-var _TreePane = _interopRequireDefault(__webpack_require__(641));
+var _TreePane = _interopRequireDefault(__webpack_require__(642));
 
 var _ui = __webpack_require__(26);
 
@@ -758,7 +758,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 638:
+/***/ 639:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -779,23 +779,23 @@ var _state = __webpack_require__(3);
 
 var _filteredIds = _interopRequireDefault(__webpack_require__(59));
 
-var _labelsDataColumn = _interopRequireDefault(__webpack_require__(115));
+var _labelsDataColumn = _interopRequireDefault(__webpack_require__(117));
 
 var _labels = _interopRequireDefault(__webpack_require__(532));
 
-var _metadataValues = _interopRequireDefault(__webpack_require__(639));
+var _metadataValues = _interopRequireDefault(__webpack_require__(640));
 
 var _paneSize = _interopRequireDefault(__webpack_require__(497));
 
 var _rowsByLabel = _interopRequireDefault(__webpack_require__(180));
 
-var _rowStyles = _interopRequireDefault(__webpack_require__(515));
+var _rowStyles = _interopRequireDefault(__webpack_require__(517));
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
-var _metadataBlocks = _interopRequireDefault(__webpack_require__(640));
+var _metadataBlocks = _interopRequireDefault(__webpack_require__(641));
 
 var _treeFile = _interopRequireDefault(__webpack_require__(111));
 
@@ -911,7 +911,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 639:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1028,7 +1028,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 640:
+/***/ 641:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1087,7 +1087,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 641:
+/***/ 642:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1120,19 +1120,19 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _Menu = _interopRequireDefault(__webpack_require__(208));
 
-var _phylocanvas = _interopRequireDefault(__webpack_require__(642));
+var _phylocanvas = _interopRequireDefault(__webpack_require__(643));
 
 var _downloads = __webpack_require__(53);
 
 var _propTypes2 = __webpack_require__(14);
 
-__webpack_require__(644);
+__webpack_require__(645);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(645));
+var _TreeControls = _interopRequireDefault(__webpack_require__(646));
 
-var _TreeZoomControls = _interopRequireDefault(__webpack_require__(655));
+var _TreeZoomControls = _interopRequireDefault(__webpack_require__(656));
 
-var _TreeContextMenu = _interopRequireDefault(__webpack_require__(656));
+var _TreeContextMenu = _interopRequireDefault(__webpack_require__(657));
 
 var _browser = __webpack_require__(21);
 
@@ -1366,7 +1366,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 642:
+/***/ 643:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1387,7 +1387,7 @@ var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
 var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
-var _get2 = _interopRequireDefault(__webpack_require__(119));
+var _get2 = _interopRequireDefault(__webpack_require__(121));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -1399,9 +1399,9 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(15));
 
 var _phylocanvas = _interopRequireWildcard(__webpack_require__(98));
 
-var _canvasLasso = _interopRequireDefault(__webpack_require__(514));
+var _canvasLasso = _interopRequireDefault(__webpack_require__(516));
 
-var _convertState = _interopRequireDefault(__webpack_require__(643));
+var _convertState = _interopRequireDefault(__webpack_require__(644));
 
 var _geometry = __webpack_require__(101);
 
@@ -1721,7 +1721,7 @@ function _default(treePane) {
 
 /***/ }),
 
-/***/ 643:
+/***/ 644:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2306,7 +2306,7 @@ function _default(tree) {
 
 /***/ }),
 
-/***/ 644:
+/***/ 645:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2316,7 +2316,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 645:
+/***/ 646:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2335,7 +2335,7 @@ var _ui = __webpack_require__(26);
 
 var _state = __webpack_require__(3);
 
-var _TreeControls = _interopRequireDefault(__webpack_require__(646));
+var _TreeControls = _interopRequireDefault(__webpack_require__(647));
 
 var _config = _interopRequireDefault(__webpack_require__(50));
 
@@ -2370,7 +2370,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 646:
+/***/ 647:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2395,21 +2395,21 @@ var _propTypes2 = __webpack_require__(14);
 
 var _UiAnimation = _interopRequireDefault(__webpack_require__(164));
 
-var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(647));
+var _CircularTreeIcon = _interopRequireDefault(__webpack_require__(648));
 
-var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(648));
+var _DiagonalTreeIcon = _interopRequireDefault(__webpack_require__(649));
 
-var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(649));
+var _HierarchicalTreeIcon = _interopRequireDefault(__webpack_require__(650));
 
-var _LassoButton = _interopRequireDefault(__webpack_require__(505));
+var _LassoButton = _interopRequireDefault(__webpack_require__(507));
 
-var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(650));
+var _RadialTreeIcon = _interopRequireDefault(__webpack_require__(651));
 
-var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
+var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(119));
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(651));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(652));
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(653));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(654));
 
 var _UiSpeedDial = _interopRequireDefault(__webpack_require__(211));
 
@@ -2497,7 +2497,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 647:
+/***/ 648:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2533,7 +2533,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 648:
+/***/ 649:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2572,7 +2572,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 649:
+/***/ 650:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2635,7 +2635,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 650:
+/***/ 651:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2671,7 +2671,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 651:
+/***/ 652:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2686,7 +2686,7 @@ exports["default"] = void 0;
 
 var _trees = __webpack_require__(74);
 
-var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(652));
+var _TreeMetadataMenu = _interopRequireDefault(__webpack_require__(653));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
@@ -2740,7 +2740,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 652:
+/***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2767,7 +2767,7 @@ var _UiToggleSlider = _interopRequireDefault(__webpack_require__(174));
 
 var _UiSlider = _interopRequireDefault(__webpack_require__(187));
 
-var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(517));
+var _MultipleDataColumnsSelect = _interopRequireDefault(__webpack_require__(503));
 
 var TreeMetadataMenu = /*#__PURE__*/_react["default"].memo(function (props) {
   return /*#__PURE__*/_react["default"].createElement(_UiControlsMenu["default"], {
@@ -2841,7 +2841,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 653:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2858,7 +2858,7 @@ var _trees = __webpack_require__(74);
 
 var _state = __webpack_require__(3);
 
-var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(654));
+var _TreeStyleMenu = _interopRequireDefault(__webpack_require__(655));
 
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var treeId = _ref.treeId;
@@ -2963,7 +2963,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 654:
+/***/ 655:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3157,7 +3157,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 655:
+/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3331,7 +3331,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 656:
+/***/ 657:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

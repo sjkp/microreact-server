@@ -631,7 +631,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 //     type[item] = type
 //   }
 // }
-var ChartTypes = _propTypes["default"].oneOf(["area", "bar", "circle", "line", "point", "tick", "custom"]);
+var ChartTypes = _propTypes["default"].oneOf(["area", "bar", "circle", "custom", "heatmap", "line", "point", "tick"]);
 
 exports.ChartTypes = ChartTypes;
 
@@ -676,7 +676,7 @@ var FileDescriptor = _propTypes["default"].shape({
 
 exports.FileDescriptor = FileDescriptor;
 
-var FileKind = _propTypes["default"].oneOf(["microrect", "data", "geo", "network", "tree"]);
+var FileKind = _propTypes["default"].oneOf(["microreact", "data", "geo", "network", "tree"]);
 
 exports.FileKind = FileKind;
 
@@ -1377,7 +1377,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(15));
 
 var _reselect = __webpack_require__(10);
 
-var _idFieldName = _interopRequireDefault(__webpack_require__(122));
+var _idFieldName = _interopRequireDefault(__webpack_require__(115));
 
 var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
 
@@ -1623,9 +1623,9 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(35));
 
 var _files = __webpack_require__(38);
 
-var _datasets = __webpack_require__(124);
+var _datasets = __webpack_require__(125);
 
-var _files2 = __webpack_require__(125);
+var _files2 = __webpack_require__(126);
 
 var _maps = __webpack_require__(73);
 
@@ -1635,7 +1635,7 @@ var _tables = __webpack_require__(75);
 
 var _trees = __webpack_require__(74);
 
-var _notes = __webpack_require__(116);
+var _notes = __webpack_require__(118);
 
 var _timelines = __webpack_require__(76);
 
@@ -3617,8 +3617,8 @@ var _default = {
     kind: "geo",
     extension: "geojson"
   }, {
-    kind: "microrect",
-    extension: "microrect"
+    kind: "microreact",
+    extension: "microreact"
   }],
   DELAY: 64,
   SHAPE: "circle",
@@ -4614,9 +4614,9 @@ var _DescriptionTwoTone = _interopRequireDefault(__webpack_require__(311));
 
 var _UndoRounded = _interopRequireDefault(__webpack_require__(201));
 
-var _js = __webpack_require__(118);
+var _js = __webpack_require__(120);
 
-var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
+var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(119));
 
 var _UiSvgIcon = _interopRequireDefault(__webpack_require__(81));
 
@@ -4946,7 +4946,7 @@ var _maps = __webpack_require__(73);
 
 var _networks = __webpack_require__(77);
 
-var _notes = __webpack_require__(116);
+var _notes = __webpack_require__(118);
 
 var _tables = __webpack_require__(75);
 
@@ -5126,7 +5126,7 @@ var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
-var _idDataField = _interopRequireDefault(__webpack_require__(127));
+var _idDataField = _interopRequireDefault(__webpack_require__(116));
 
 var coloursDataColumnSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _dataColumnsByFieldMap["default"])(state);
@@ -6331,7 +6331,7 @@ var _filters = __webpack_require__(51);
 
 var _style = _interopRequireDefault(__webpack_require__(265));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 var _rowsWithStyleFields = _interopRequireDefault(__webpack_require__(108));
 
@@ -7580,357 +7580,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _classnames = _interopRequireDefault(__webpack_require__(13));
-
-var _FormControlLabel = _interopRequireDefault(__webpack_require__(95));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
-
-var _Radio = _interopRequireDefault(__webpack_require__(365));
-
-var _RadioGroup = _interopRequireDefault(__webpack_require__(366));
-
-var _react = _interopRequireDefault(__webpack_require__(1));
-
-var _DoneRounded = _interopRequireDefault(__webpack_require__(152));
-
-__webpack_require__(367);
-
-var _EmptyIcon = _interopRequireDefault(__webpack_require__(153));
-
-var UiRadioList = /*#__PURE__*/_react["default"].memo(function (props) {
-  var control = props.boxed ? /*#__PURE__*/_react["default"].createElement(_Radio["default"], {
-    color: "primary",
-    size: "small"
-  }) : /*#__PURE__*/_react["default"].createElement(_Radio["default"], {
-    color: "primary",
-    size: "small",
-    icon: /*#__PURE__*/_react["default"].createElement(_EmptyIcon["default"], null),
-    checkedIcon: /*#__PURE__*/_react["default"].createElement(_DoneRounded["default"], null)
-  });
-  return /*#__PURE__*/_react["default"].createElement(_RadioGroup["default"], {
-    className: (0, _classnames["default"])("mr-ui-radio-list", props.className),
-    onChange: function onChange(event) {
-      return props.onChange(event.target.value);
-    },
-    value: props.value || null
-  }, props.nullable && /*#__PURE__*/_react["default"].createElement(_FormControlLabel["default"], {
-    control: control,
-    label: props.nullOptionLabel,
-    value: null
-  }), props.items.map(function (item) {
-    return /*#__PURE__*/_react["default"].createElement(_FormControlLabel["default"], {
-      control: control,
-      key: item[props.valueProperty],
-      label: item[props.labelProperty],
-      value: item[props.valueProperty]
-    });
-  }));
-});
-
-UiRadioList.displayName = "RadioList";
-UiRadioList.propTypes = {
-  boxed: _propTypes["default"].bool,
-  className: _propTypes["default"].string,
-  items: _propTypes["default"].array,
-  labelProperty: _propTypes["default"].string,
-  nullable: _propTypes["default"].bool,
-  nullOptionLabel: _propTypes["default"].string,
-  onChange: _propTypes["default"].func,
-  value: _propTypes["default"].string,
-  valueProperty: _propTypes["default"].string
-};
-UiRadioList.defaultProps = {
-  boxed: true,
-  labelProperty: "label",
-  nullable: false,
-  nullOptionLabel: "None",
-  valueProperty: "value"
-};
-var _default = UiRadioList;
-exports["default"] = _default;
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
-
-var _state = __webpack_require__(3);
-
-var _geodataFile = _interopRequireDefault(__webpack_require__(190));
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var geojsonLayerDataSelector = (0, _state.createKeyedStateSelector)(function (state, mapId) {
-  return state.maps[mapId].geodata;
-}, function (state, mapId) {
-  var _geodataFileSelector;
-
-  return (_geodataFileSelector = (0, _geodataFile["default"])(state, mapId)) === null || _geodataFileSelector === void 0 ? void 0 : _geodataFileSelector._content;
-}, function (geodata, geofileContent) {
-  if (!geodata) {
-    return undefined;
-  } // if (geodata.format !== "application/geo+json") {
-  //   throw new Error(`Invalid geo data format: ${geodata.format}`);
-  // }
-
-
-  if (geofileContent.type !== "FeatureCollection") {
-    throw new Error("Invalid GeoJSON type: ".concat(geofileContent.type));
-  }
-
-  var index = 0;
-
-  var _iterator = _createForOfIteratorHelper(geofileContent.features),
-      _step;
-
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var feature = _step.value;
-      feature.properties["mr-region-id"] = index;
-      index += 1;
-    }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
-
-  return _objectSpread({}, geofileContent);
-});
-var _default = geojsonLayerDataSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _constants = __webpack_require__(12);
-
-var _state = __webpack_require__(3);
-
-var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
-
-var _rows = _interopRequireDefault(__webpack_require__(17));
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var rowsWithDateFieldSelector = (0, _state.createKeyedStateSelector)(function (state) {
-  return (0, _rows["default"])(state);
-}, function (state) {
-  return (0, _dataColumnsByFieldMap["default"])(state);
-}, function (state, timelineId) {
-  return state.timelines[timelineId].dataType;
-}, function (state, timelineId) {
-  return state.timelines[timelineId].yearField;
-}, function (state, timelineId) {
-  return state.timelines[timelineId].monthField;
-}, function (state, timelineId) {
-  return state.timelines[timelineId].dayField;
-}, function (state, timelineId) {
-  return state.timelines[timelineId].valueField;
-}, function (state, timelineId) {
-  return "--mr-".concat(timelineId);
-}, function (rows, fieldsMap, timelineType, yearFieldName, monthFieldName, dayFieldName, valueFieldName, timelineFieldName) {
-  var minDate = Number.MAX_SAFE_INTEGER;
-  var maxDate = Number.MIN_SAFE_INTEGER;
-
-  if (timelineType === "year-month-day") {
-    var yearField = fieldsMap.get(yearFieldName);
-
-    if (yearField) {
-      var monthField = fieldsMap.get(monthFieldName);
-      var dayField = fieldsMap.get(dayFieldName);
-      var yearFieldIndex = yearField.name;
-
-      var _iterator = _createForOfIteratorHelper(rows),
-          _step;
-
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var row = _step.value;
-          var yearValue = parseInt(row[yearFieldIndex], 10);
-
-          if (Number.isInteger(yearValue)) {
-            var month = 1;
-            var day = 1;
-
-            if (monthField) {
-              var monthValue = parseInt(row[monthField.name], 10);
-
-              if (Number.isInteger(monthValue)) {
-                month = monthValue;
-              }
-            }
-
-            if (dayField) {
-              var dayValue = parseInt(row[dayField.name], 10);
-
-              if (Number.isInteger(dayValue)) {
-                day = dayValue;
-              }
-            }
-
-            if (dayField && Number.isFinite(row[dayField.name])) {
-              day = parseInt(row[dayField.name], 10);
-            }
-
-            var dateInstance = new Date(yearValue, month - 1, day);
-            row[timelineFieldName] = dateInstance;
-            var timestamp = dateInstance.valueOf();
-
-            if (timestamp < minDate) {
-              minDate = timestamp;
-            }
-
-            if (timestamp > maxDate) {
-              maxDate = timestamp;
-            }
-          }
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
-
-      return {
-        extent: [minDate, maxDate],
-        dateFieldName: timelineFieldName
-      };
-    }
-  } else if (timelineType === "formatted-value") {
-    var valueDataColumn = fieldsMap.get(valueFieldName);
-
-    if (valueDataColumn) {
-      var _iterator2 = _createForOfIteratorHelper(rows),
-          _step2;
-
-      try {
-        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var _row = _step2.value;
-
-          if (_row[valueDataColumn.name] instanceof Date) {
-            // const dateInstance = (
-            //   (timelineFields.format && timelineFields.format !== valueDataColumn.format)
-            //     ?
-            //     Datetime.toDate(row[valueDataColumn.name], timelineFields.format)
-            //     :
-            //     row[valueDataColumn.name]
-            // );
-            var _timestamp = _row[valueDataColumn.name].valueOf();
-
-            if (_timestamp < minDate) {
-              minDate = _timestamp;
-            }
-
-            if (_timestamp > maxDate) {
-              maxDate = _timestamp;
-            } // row[timelineId] = valueDataColumn.name;
-
-          }
-        }
-      } catch (err) {
-        _iterator2.e(err);
-      } finally {
-        _iterator2.f();
-      }
-
-      return {
-        extent: [minDate, maxDate],
-        dateFieldName: valueDataColumn.name
-      };
-    }
-  } else {
-    throw new Error("Invalid timeline type ".concat(timelineType));
-  }
-
-  return _constants.emptyObject;
-});
-var _default = rowsWithDateFieldSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _reselect = __webpack_require__(10);
-
-var _filteredIds = _interopRequireDefault(__webpack_require__(59));
-
-var selectedIdsListSelector = (0, _reselect.createSelector)(function (state) {
-  return (0, _filteredIds["default"])(state);
-}, function (state) {
-  return state.filters.selection;
-}, function (filteredIds, selectedIds) {
-  if (filteredIds) {
-    return selectedIds.filter(function (id) {
-      return filteredIds.has(id);
-    });
-  } else {
-    return selectedIds;
-  }
-});
-var _default = selectedIdsListSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(5));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(6));
@@ -8094,6 +7743,357 @@ var _default = UiFloatingFilter;
 exports["default"] = _default;
 
 /***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _classnames = _interopRequireDefault(__webpack_require__(13));
+
+var _FormControlLabel = _interopRequireDefault(__webpack_require__(95));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(2));
+
+var _Radio = _interopRequireDefault(__webpack_require__(365));
+
+var _RadioGroup = _interopRequireDefault(__webpack_require__(366));
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _DoneRounded = _interopRequireDefault(__webpack_require__(152));
+
+__webpack_require__(367);
+
+var _EmptyIcon = _interopRequireDefault(__webpack_require__(153));
+
+var UiRadioList = /*#__PURE__*/_react["default"].memo(function (props) {
+  var control = props.boxed ? /*#__PURE__*/_react["default"].createElement(_Radio["default"], {
+    color: "primary",
+    size: "small"
+  }) : /*#__PURE__*/_react["default"].createElement(_Radio["default"], {
+    color: "primary",
+    size: "small",
+    icon: /*#__PURE__*/_react["default"].createElement(_EmptyIcon["default"], null),
+    checkedIcon: /*#__PURE__*/_react["default"].createElement(_DoneRounded["default"], null)
+  });
+  return /*#__PURE__*/_react["default"].createElement(_RadioGroup["default"], {
+    className: (0, _classnames["default"])("mr-ui-radio-list", props.className),
+    onChange: function onChange(event) {
+      return props.onChange(event.target.value);
+    },
+    value: props.value || null
+  }, props.nullable && /*#__PURE__*/_react["default"].createElement(_FormControlLabel["default"], {
+    control: control,
+    label: props.nullOptionLabel,
+    value: null
+  }), props.items.map(function (item) {
+    return /*#__PURE__*/_react["default"].createElement(_FormControlLabel["default"], {
+      control: control,
+      key: item[props.valueProperty],
+      label: item[props.labelProperty],
+      value: item[props.valueProperty]
+    });
+  }));
+});
+
+UiRadioList.displayName = "RadioList";
+UiRadioList.propTypes = {
+  boxed: _propTypes["default"].bool,
+  className: _propTypes["default"].string,
+  items: _propTypes["default"].array,
+  labelProperty: _propTypes["default"].string,
+  nullable: _propTypes["default"].bool,
+  nullOptionLabel: _propTypes["default"].string,
+  onChange: _propTypes["default"].func,
+  value: _propTypes["default"].string,
+  valueProperty: _propTypes["default"].string
+};
+UiRadioList.defaultProps = {
+  boxed: true,
+  labelProperty: "label",
+  nullable: false,
+  nullOptionLabel: "None",
+  valueProperty: "value"
+};
+var _default = UiRadioList;
+exports["default"] = _default;
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
+
+var _state = __webpack_require__(3);
+
+var _geodataFile = _interopRequireDefault(__webpack_require__(190));
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var geojsonLayerDataSelector = (0, _state.createKeyedStateSelector)(function (state, mapId) {
+  return state.maps[mapId].geodata;
+}, function (state, mapId) {
+  var _geodataFileSelector;
+
+  return (_geodataFileSelector = (0, _geodataFile["default"])(state, mapId)) === null || _geodataFileSelector === void 0 ? void 0 : _geodataFileSelector._content;
+}, function (geodata, geofileContent) {
+  if (!geodata) {
+    return undefined;
+  } // if (geodata.format !== "application/geo+json") {
+  //   throw new Error(`Invalid geo data format: ${geodata.format}`);
+  // }
+
+
+  if (geofileContent.type !== "FeatureCollection") {
+    throw new Error("Invalid GeoJSON type: ".concat(geofileContent.type));
+  }
+
+  var index = 0;
+
+  var _iterator = _createForOfIteratorHelper(geofileContent.features),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var feature = _step.value;
+      feature.properties["mr-region-id"] = index;
+      index += 1;
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return _objectSpread({}, geofileContent);
+});
+var _default = geojsonLayerDataSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _constants = __webpack_require__(12);
+
+var _state = __webpack_require__(3);
+
+var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
+
+var _rows = _interopRequireDefault(__webpack_require__(17));
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var rowsWithDateFieldSelector = (0, _state.createKeyedStateSelector)(function (state) {
+  return (0, _rows["default"])(state);
+}, function (state) {
+  return (0, _dataColumnsByFieldMap["default"])(state);
+}, function (state, timelineId) {
+  return state.timelines[timelineId].dataType;
+}, function (state, timelineId) {
+  return state.timelines[timelineId].yearField;
+}, function (state, timelineId) {
+  return state.timelines[timelineId].monthField;
+}, function (state, timelineId) {
+  return state.timelines[timelineId].dayField;
+}, function (state, timelineId) {
+  return state.timelines[timelineId].valueField;
+}, function (state, timelineId) {
+  return "--mr-".concat(timelineId);
+}, function (rows, fieldsMap, timelineType, yearFieldName, monthFieldName, dayFieldName, valueFieldName, timelineFieldName) {
+  var minDate = Number.MAX_SAFE_INTEGER;
+  var maxDate = Number.MIN_SAFE_INTEGER;
+
+  if (timelineType === "year-month-day") {
+    var yearField = fieldsMap.get(yearFieldName);
+
+    if (yearField) {
+      var monthField = fieldsMap.get(monthFieldName);
+      var dayField = fieldsMap.get(dayFieldName);
+      var yearFieldIndex = yearField.name;
+
+      var _iterator = _createForOfIteratorHelper(rows),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var row = _step.value;
+          var yearValue = parseInt(row[yearFieldIndex], 10);
+
+          if (Number.isInteger(yearValue)) {
+            var month = 1;
+            var day = 1;
+
+            if (monthField) {
+              var monthValue = parseInt(row[monthField.name], 10);
+
+              if (Number.isInteger(monthValue)) {
+                month = monthValue;
+              }
+            }
+
+            if (dayField) {
+              var dayValue = parseInt(row[dayField.name], 10);
+
+              if (Number.isInteger(dayValue)) {
+                day = dayValue;
+              }
+            }
+
+            if (dayField && Number.isFinite(row[dayField.name])) {
+              day = parseInt(row[dayField.name], 10);
+            }
+
+            var dateInstance = new Date(yearValue, month - 1, day);
+            row[timelineFieldName] = dateInstance;
+            var timestamp = dateInstance.valueOf();
+
+            if (timestamp < minDate) {
+              minDate = timestamp;
+            }
+
+            if (timestamp > maxDate) {
+              maxDate = timestamp;
+            }
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return {
+        extent: [minDate, maxDate],
+        dateFieldName: timelineFieldName
+      };
+    }
+  } else if (timelineType === "formatted-value") {
+    var valueDataColumn = fieldsMap.get(valueFieldName);
+
+    if (valueDataColumn) {
+      var _iterator2 = _createForOfIteratorHelper(rows),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var _row = _step2.value;
+
+          if (_row[valueDataColumn.name] instanceof Date) {
+            // const dateInstance = (
+            //   (timelineFields.format && timelineFields.format !== valueDataColumn.format)
+            //     ?
+            //     Datetime.toDate(row[valueDataColumn.name], timelineFields.format)
+            //     :
+            //     row[valueDataColumn.name]
+            // );
+            var _timestamp = _row[valueDataColumn.name].valueOf();
+
+            if (_timestamp < minDate) {
+              minDate = _timestamp;
+            }
+
+            if (_timestamp > maxDate) {
+              maxDate = _timestamp;
+            } // row[timelineId] = valueDataColumn.name;
+
+          }
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      return {
+        extent: [minDate, maxDate],
+        dateFieldName: valueDataColumn.name
+      };
+    }
+  } else {
+    throw new Error("Invalid timeline type ".concat(timelineType));
+  }
+
+  return _constants.emptyObject;
+});
+var _default = rowsWithDateFieldSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _reselect = __webpack_require__(10);
+
+var _filteredIds = _interopRequireDefault(__webpack_require__(59));
+
+var selectedIdsListSelector = (0, _reselect.createSelector)(function (state) {
+  return (0, _filteredIds["default"])(state);
+}, function (state) {
+  return state.filters.selection;
+}, function (filteredIds, selectedIds) {
+  if (filteredIds) {
+    return selectedIds.filter(function (id) {
+      return filteredIds.has(id);
+    });
+  } else {
+    return selectedIds;
+  }
+});
+var _default = selectedIdsListSelector;
+exports["default"] = _default;
+
+/***/ }),
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8130,7 +8130,7 @@ var _reselect = __webpack_require__(10);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
 
-var _labelsDataColumn = _interopRequireDefault(__webpack_require__(115));
+var _labelsDataColumn = _interopRequireDefault(__webpack_require__(117));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
@@ -8316,9 +8316,9 @@ var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(106));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(103));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -8376,11 +8376,60 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
+
+var idFieldNameSelector = function idFieldNameSelector(state) {
+  var masterDataset = (0, _mainDatasetConfig["default"])(state);
+  return masterDataset && (masterDataset.idFieldName || "--mr-index");
+};
+
+var _default = idFieldNameSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
+
+var _idFieldName = _interopRequireDefault(__webpack_require__(115));
+
+var idDataFieldSelector = function idDataFieldSelector(state) {
+  return (0, _dataColumnsByFieldMap["default"])(state).get((0, _idFieldName["default"])(state));
+};
+
+var _default = idDataFieldSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var _reselect = __webpack_require__(10);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
 
-var _idDataField = _interopRequireDefault(__webpack_require__(127));
+var _idDataField = _interopRequireDefault(__webpack_require__(116));
 
 var labelsDataColumnSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _dataColumnsByFieldMap["default"])(state);
@@ -8400,7 +8449,7 @@ var _default = labelsDataColumnSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8452,7 +8501,7 @@ function update(noteId, key, value) {
 }
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8514,25 +8563,25 @@ var _default = RectangularTreeIcon;
 exports["default"] = _default;
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = require("@mdi/js");
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/get");
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/List");
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8594,37 +8643,13 @@ var _default = UiToggleButtons;
 exports["default"] = _default;
 
 /***/ }),
-/* 122 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _mainDatasetConfig = _interopRequireDefault(__webpack_require__(64));
-
-var idFieldNameSelector = function idFieldNameSelector(state) {
-  var masterDataset = (0, _mainDatasetConfig["default"])(state);
-  return masterDataset && (masterDataset.idFieldName || "--mr-index");
-};
-
-var _default = idFieldNameSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/helpers/asyncIterator");
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8671,7 +8696,7 @@ var updateDataset = function updateDataset(datasetId, options) {
 exports.updateDataset = updateDataset;
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8730,35 +8755,10 @@ function updateFile(file) {
 }
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports) {
 
 module.exports = require("geojson-geometries-lookup");
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
-
-var _idFieldName = _interopRequireDefault(__webpack_require__(122));
-
-var idDataFieldSelector = function idDataFieldSelector(state) {
-  return (0, _dataColumnsByFieldMap["default"])(state).get((0, _idFieldName["default"])(state));
-};
-
-var _default = idDataFieldSelector;
-exports["default"] = _default;
 
 /***/ }),
 /* 128 */
@@ -9418,7 +9418,7 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _List = _interopRequireDefault(__webpack_require__(120));
+var _List = _interopRequireDefault(__webpack_require__(122));
 
 var _ListItem = _interopRequireDefault(__webpack_require__(63));
 
@@ -10337,7 +10337,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _files = __webpack_require__(125);
+var _files = __webpack_require__(126);
 
 var _state = __webpack_require__(3);
 
@@ -10462,7 +10462,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geojsonGeometriesLookup = _interopRequireDefault(__webpack_require__(126));
+var _geojsonGeometriesLookup = _interopRequireDefault(__webpack_require__(127));
 
 var _centroid = _interopRequireDefault(__webpack_require__(245));
 
@@ -10472,7 +10472,7 @@ var _state = __webpack_require__(3);
 
 var _mapState = _interopRequireDefault(__webpack_require__(31));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
@@ -10722,61 +10722,6 @@ exports["default"] = _default;
 
 /***/ }),
 /* 166 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-function dataFieldFilterSelector(state, field) {
-  return state.filters.dataFilters.find(function (x) {
-    return x.field === field;
-  });
-}
-
-var _default = dataFieldFilterSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _chartState = _interopRequireDefault(__webpack_require__(52));
-
-var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
-
-var _dataColumnByField = _interopRequireDefault(__webpack_require__(27));
-
-var seriesFieldSelector = function seriesFieldSelector(state, chartId) {
-  var _chartStateSelector = (0, _chartState["default"])(state, chartId),
-      seriesField = _chartStateSelector.seriesField;
-
-  if (seriesField) {
-    return (0, _dataColumnByField["default"])(state, seriesField);
-  } else {
-    return (0, _coloursDataColumn["default"])(state);
-  }
-};
-
-var _default = seriesFieldSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11045,7 +10990,85 @@ var _default = UiSelectList;
 exports["default"] = _default;
 
 /***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function dataFieldFilterSelector(state, field) {
+  return state.filters.dataFilters.find(function (x) {
+    return x.field === field;
+  });
+}
+
+var _default = dataFieldFilterSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _chartState = _interopRequireDefault(__webpack_require__(52));
+
+var chartTypeSelector = function chartTypeSelector(state, chartId) {
+  return (0, _chartState["default"])(state, chartId).type;
+};
+
+var _default = chartTypeSelector;
+exports["default"] = _default;
+
+/***/ }),
 /* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _chartState = _interopRequireDefault(__webpack_require__(52));
+
+var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
+
+var _dataColumnByField = _interopRequireDefault(__webpack_require__(27));
+
+var seriesFieldSelector = function seriesFieldSelector(state, chartId) {
+  var _chartStateSelector = (0, _chartState["default"])(state, chartId),
+      seriesField = _chartStateSelector.seriesField;
+
+  if (seriesField) {
+    return (0, _dataColumnByField["default"])(state, seriesField);
+  } else {
+    return (0, _coloursDataColumn["default"])(state);
+  }
+};
+
+var _default = seriesFieldSelector;
+exports["default"] = _default;
+
+/***/ }),
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11133,7 +11156,7 @@ var _default = baseGraphSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11150,7 +11173,7 @@ var _reselect = __webpack_require__(10);
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _selectedIdsSet = _interopRequireDefault(__webpack_require__(171));
+var _selectedIdsSet = _interopRequireDefault(__webpack_require__(172));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -11192,7 +11215,7 @@ var _default = selectedRowsSelector;
 exports["default"] = _default;
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11207,7 +11230,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -11215,29 +11238,6 @@ var selectedIdsSetSelector = (0, _reselect.createSelector)(function (state) {
   return new Set(selectedIds);
 });
 var _default = selectedIdsSetSelector;
-exports["default"] = _default;
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _chartState = _interopRequireDefault(__webpack_require__(52));
-
-var chartTypeSelector = function chartTypeSelector(state, chartId) {
-  return (0, _chartState["default"])(state, chartId).type;
-};
-
-var _default = chartTypeSelector;
 exports["default"] = _default;
 
 /***/ }),
@@ -11441,13 +11441,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _geojsonGeometriesLookup = _interopRequireDefault(__webpack_require__(126));
+var _geojsonGeometriesLookup = _interopRequireDefault(__webpack_require__(127));
 
 var _state = __webpack_require__(3);
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
 
-var _geojsonLayerData = _interopRequireDefault(__webpack_require__(103));
+var _geojsonLayerData = _interopRequireDefault(__webpack_require__(104));
 
 var _mapState = _interopRequireDefault(__webpack_require__(31));
 
@@ -12102,7 +12102,7 @@ var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
 
 var _datetime = __webpack_require__(56);
 
-var _dataFieldFilter = _interopRequireDefault(__webpack_require__(166));
+var _dataFieldFilter = _interopRequireDefault(__webpack_require__(167));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -12177,13 +12177,13 @@ var _state = __webpack_require__(3);
 
 var _arrays = __webpack_require__(23);
 
-var _chartType = _interopRequireDefault(__webpack_require__(172));
+var _chartType = _interopRequireDefault(__webpack_require__(168));
 
 var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _seriesField = _interopRequireDefault(__webpack_require__(167));
+var _seriesField = _interopRequireDefault(__webpack_require__(169));
 
 var _xAxisField = _interopRequireDefault(__webpack_require__(184));
 
@@ -12753,7 +12753,7 @@ var _state = __webpack_require__(3);
 
 var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+var _selectedRows = _interopRequireDefault(__webpack_require__(171));
 
 var _sortState = _interopRequireDefault(__webpack_require__(198));
 
@@ -14310,7 +14310,7 @@ var _regenerator = _interopRequireDefault(__webpack_require__(34));
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(35));
 
-var _asyncIterator2 = _interopRequireDefault(__webpack_require__(123));
+var _asyncIterator2 = _interopRequireDefault(__webpack_require__(124));
 
 var _core = __webpack_require__(66);
 
@@ -14767,7 +14767,7 @@ var _awaitAsyncGenerator2 = _interopRequireDefault(__webpack_require__(241));
 
 var _wrapAsyncGenerator2 = _interopRequireDefault(__webpack_require__(242));
 
-var _asyncIterator2 = _interopRequireDefault(__webpack_require__(123));
+var _asyncIterator2 = _interopRequireDefault(__webpack_require__(124));
 
 var _core = __webpack_require__(66);
 
@@ -16062,7 +16062,7 @@ exports["default"] = void 0;
 
 var _state = __webpack_require__(3);
 
-var _baseGraph = _interopRequireDefault(__webpack_require__(169));
+var _baseGraph = _interopRequireDefault(__webpack_require__(170));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -16127,7 +16127,7 @@ var _bounds2 = _interopRequireDefault(__webpack_require__(196));
 
 var _rows = _interopRequireDefault(__webpack_require__(17));
 
-var _rowsWithDateField = _interopRequireDefault(__webpack_require__(104));
+var _rowsWithDateField = _interopRequireDefault(__webpack_require__(105));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -17090,7 +17090,7 @@ __webpack_require__(288);
 
 var _FileIcon = _interopRequireDefault(__webpack_require__(289));
 
-var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(117));
+var _RectangularTreeIcon = _interopRequireDefault(__webpack_require__(119));
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -17264,7 +17264,7 @@ var _SpeedDialIcon = _interopRequireDefault(__webpack_require__(294));
 
 var _InsertDriveFile = _interopRequireDefault(__webpack_require__(295));
 
-var _js = __webpack_require__(118);
+var _js = __webpack_require__(120);
 
 __webpack_require__(296);
 
@@ -18463,7 +18463,7 @@ exports["default"] = void 0;
 
 var _reselect = __webpack_require__(10);
 
-var _selectedIdsList = _interopRequireDefault(__webpack_require__(105));
+var _selectedIdsList = _interopRequireDefault(__webpack_require__(106));
 
 var numberOfSelectedRowsSelector = (0, _reselect.createSelector)(function (state) {
   return (0, _selectedIdsList["default"])(state);
@@ -18829,7 +18829,7 @@ var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
 
 var _dataColumns = _interopRequireDefault(__webpack_require__(18));
 
-var _labelsDataColumn = _interopRequireDefault(__webpack_require__(115));
+var _labelsDataColumn = _interopRequireDefault(__webpack_require__(117));
 
 var _shapableDataFields = _interopRequireDefault(__webpack_require__(338));
 
@@ -19433,7 +19433,7 @@ var _CategoricalColourPalettePicker = _interopRequireDefault(__webpack_require__
 
 var _GradientColourPalettePicker = _interopRequireDefault(__webpack_require__(362));
 
-var _UiToggleButtons = _interopRequireDefault(__webpack_require__(121));
+var _UiToggleButtons = _interopRequireDefault(__webpack_require__(123));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(112));
 
@@ -19577,7 +19577,7 @@ var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
 var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
-var _get2 = _interopRequireDefault(__webpack_require__(119));
+var _get2 = _interopRequireDefault(__webpack_require__(121));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -20356,7 +20356,7 @@ var _createClass2 = _interopRequireDefault(__webpack_require__(6));
 
 var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(11));
 
-var _get2 = _interopRequireDefault(__webpack_require__(119));
+var _get2 = _interopRequireDefault(__webpack_require__(121));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
 
@@ -21130,7 +21130,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _Box = _interopRequireDefault(__webpack_require__(28));
 
-var _List = _interopRequireDefault(__webpack_require__(120));
+var _List = _interopRequireDefault(__webpack_require__(122));
 
 var _ListItem = _interopRequireDefault(__webpack_require__(63));
 
@@ -22161,7 +22161,7 @@ var _state = __webpack_require__(3);
 
 var _tables = __webpack_require__(75);
 
-var _datasets = __webpack_require__(124);
+var _datasets = __webpack_require__(125);
 
 var _TablePaneEditor = _interopRequireDefault(__webpack_require__(389));
 
@@ -25959,7 +25959,7 @@ var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(33));
 
 var _UiFieldsList = _interopRequireDefault(__webpack_require__(112));
 
-var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(106));
+var _UiFloatingFilter = _interopRequireDefault(__webpack_require__(102));
 
 var _UiIconButton = _interopRequireDefault(__webpack_require__(173));
 
@@ -25971,9 +25971,9 @@ var _UiPopover = _interopRequireDefault(__webpack_require__(148));
 
 var _UiPopoverMenu = _interopRequireDefault(__webpack_require__(47));
 
-var _UiRadioList = _interopRequireDefault(__webpack_require__(102));
+var _UiRadioList = _interopRequireDefault(__webpack_require__(103));
 
-var _UiSelectList = _interopRequireDefault(__webpack_require__(168));
+var _UiSelectList = _interopRequireDefault(__webpack_require__(166));
 
 var _UiSlider = _interopRequireDefault(__webpack_require__(187));
 
@@ -25983,7 +25983,7 @@ var _UiTabs = _interopRequireDefault(__webpack_require__(212));
 
 var _UiTextfield = _interopRequireDefault(__webpack_require__(49));
 
-var _UiToggleButtons = _interopRequireDefault(__webpack_require__(121));
+var _UiToggleButtons = _interopRequireDefault(__webpack_require__(123));
 
 var _UiToggleSlider = _interopRequireDefault(__webpack_require__(174));
 

@@ -17,9 +17,9 @@ var _panes = __webpack_require__(57);
 
 var _state = __webpack_require__(3);
 
-var _ViewsPane = _interopRequireDefault(__webpack_require__(657));
+var _ViewsPane = _interopRequireDefault(__webpack_require__(658));
 
-var _views = __webpack_require__(660);
+var _views = __webpack_require__(661);
 
 var _ui = __webpack_require__(26);
 
@@ -85,11 +85,11 @@ var _filters = __webpack_require__(51);
 
 var _panes = __webpack_require__(57);
 
-var _SelectionPane = _interopRequireDefault(__webpack_require__(661));
+var _SelectionPane = _interopRequireDefault(__webpack_require__(662));
 
 var _constants = __webpack_require__(12);
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(170));
+var _selectedRows = _interopRequireDefault(__webpack_require__(171));
 
 var _state = __webpack_require__(3);
 
@@ -405,7 +405,7 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(503);
+__webpack_require__(505);
 
 // import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 // import UiIconButton from "./UiIconButton.react";
@@ -441,7 +441,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 503:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -451,7 +451,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 504:
+/***/ 506:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -506,7 +506,7 @@ function linearGradientImage(width, height, startColour, stopColour) {
 
 /***/ }),
 
-/***/ 510:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -535,7 +535,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 __webpack_require__(502);
 
-var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(511));
+var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(513));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -591,7 +591,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 511:
+/***/ 513:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -618,7 +618,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(504);
+var _svg = __webpack_require__(506);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -674,7 +674,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 512:
+/***/ 514:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -703,7 +703,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 __webpack_require__(502);
 
-var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(513));
+var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(515));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -798,7 +798,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 513:
+/***/ 515:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -825,7 +825,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 var _propTypes = _interopRequireDefault(__webpack_require__(2));
 
-var _svg = __webpack_require__(504);
+var _svg = __webpack_require__(506);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -889,7 +889,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(78));
 
 var _WorkOutline = _interopRequireDefault(__webpack_require__(494));
 
-__webpack_require__(659);
+__webpack_require__(660);
 
 /* eslint-disable class-methods-use-this */
 function UiEmptyState(props) {
@@ -914,7 +914,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 657:
+/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -967,7 +967,7 @@ var _sweetalert = _interopRequireDefault(__webpack_require__(492));
 
 __webpack_require__(493);
 
-__webpack_require__(658);
+__webpack_require__(659);
 
 var BrowserUtils = _interopRequireWildcard(__webpack_require__(21));
 
@@ -1248,16 +1248,6 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 658:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 659:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1269,6 +1259,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 660:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1389,7 +1389,7 @@ function setDefaultView(viewDocument) {
 
 /***/ }),
 
-/***/ 661:
+/***/ 662:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1430,13 +1430,13 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _reactVega = __webpack_require__(444);
 
-__webpack_require__(662);
+__webpack_require__(663);
 
 var _charts = __webpack_require__(498);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(512));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(514));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(510));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(512));
 
 var _UiEmptyState = _interopRequireDefault(__webpack_require__(533));
 
@@ -1772,7 +1772,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 662:
+/***/ 663:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
