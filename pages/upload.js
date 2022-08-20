@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import UiLoadingBar from "../components/UiLoadingBar";
 
 export async function getServerSideProps(context) {
-  return {};
+  return { props: {} };
 }
 
 const DynamicUploadPage = dynamic(
