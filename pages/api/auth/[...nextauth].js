@@ -70,6 +70,9 @@ const options = {
      */
     signIn: async ({ user, account, profile, email, credentials }) => {
       logger.debug("signin", { user, account, profile, email, credentials });
+      if (serverRuntimeConfig.auth.allowedUsers && !serverRuntimeConfig.auth.allowedUsers.includes(user.email)) {
+        return false;
+      }
       if (account.provider === "openidconnect" && Array.isArray(serverRuntimeConfig.auth.openidconnect.checks)) {
         const ckecks = serverRuntimeConfig.auth.openidconnect.checks;
         const passed = ckecks.every((x) => boolean(profile[x]));
