@@ -1,6 +1,6 @@
 (this["webpackJsonpProjectViewer"] = this["webpackJsonpProjectViewer"] || []).push([[2],{
 
-/***/ 455:
+/***/ 458:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,17 +13,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _filters = __webpack_require__(51);
+var _filters = __webpack_require__(52);
 
 var _panes = __webpack_require__(57);
 
-var _styles = __webpack_require__(82);
+var _styles = __webpack_require__(83);
 
-var _LegendPane = _interopRequireDefault(__webpack_require__(548));
+var _LegendPane = _interopRequireDefault(__webpack_require__(551));
 
-var _legends = _interopRequireDefault(__webpack_require__(554));
+var _legends = _interopRequireDefault(__webpack_require__(557));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 function mapStateToProps(state) {
   return {
@@ -52,7 +52,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 501:
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71,7 +71,7 @@ var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(505);
+__webpack_require__(508);
 
 // import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 // import UiIconButton from "./UiIconButton.react";
@@ -97,16 +97,6 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 502:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -117,7 +107,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 506:
+/***/ 508:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ 509:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -131,9 +131,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.shapeImage = shapeImage;
 exports.linearGradientImage = linearGradientImage;
 
-var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(450));
+var _miniSvgDataUri = _interopRequireDefault(__webpack_require__(453));
 
-var _phylocanvas = __webpack_require__(98);
+var _phylocanvas = __webpack_require__(99);
 
 /* eslint-disable no-lonely-if */
 
@@ -172,7 +172,7 @@ function linearGradientImage(width, height, startColour, stopColour) {
 
 /***/ }),
 
-/***/ 512:
+/***/ 515:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -195,13 +195,13 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(502);
+__webpack_require__(505);
 
-var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(513));
+var _ShapeSvgImage = _interopRequireDefault(__webpack_require__(516));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -257,7 +257,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 513:
+/***/ 516:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -282,9 +282,9 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _svg = __webpack_require__(506);
+var _svg = __webpack_require__(509);
 
 var _propTypes2 = __webpack_require__(14);
 
@@ -340,7 +340,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 514:
+/***/ 517:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -363,13 +363,13 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(8))
 
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(502);
+__webpack_require__(505);
 
-var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(515));
+var _LinearGradientSvgImage = _interopRequireDefault(__webpack_require__(518));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -464,7 +464,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 515:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -489,9 +489,9 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
-var _svg = __webpack_require__(506);
+var _svg = __webpack_require__(509);
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -536,7 +536,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 548:
+/***/ 551:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -567,11 +567,11 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _clsx = _interopRequireDefault(__webpack_require__(83));
+var _clsx = _interopRequireDefault(__webpack_require__(84));
 
-var _Divider = _interopRequireDefault(__webpack_require__(97));
+var _Divider = _interopRequireDefault(__webpack_require__(98));
 
-var _htmlsvg = _interopRequireDefault(__webpack_require__(456));
+var _htmlsvg = _interopRequireDefault(__webpack_require__(459));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
@@ -579,21 +579,21 @@ var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-__webpack_require__(502);
+__webpack_require__(505);
 
 var _UiDropdownMenu = _interopRequireDefault(__webpack_require__(33));
 
-var _UiIconButton = _interopRequireDefault(__webpack_require__(173));
+var _UiIconButton = _interopRequireDefault(__webpack_require__(175));
 
 var _constants = __webpack_require__(12);
 
-var _LegendsList = _interopRequireDefault(__webpack_require__(549));
+var _LegendsList = _interopRequireDefault(__webpack_require__(552));
 
-var _html = __webpack_require__(36);
+var _html = __webpack_require__(37);
 
 var _downloads = __webpack_require__(53);
 
-var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(501));
+var _UiSidePaneHeader = _interopRequireDefault(__webpack_require__(504));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -716,7 +716,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 549:
+/***/ 552:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -741,13 +741,13 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(9));
 
 var _ListSubheader = _interopRequireDefault(__webpack_require__(71));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(2));
+var _propTypes = _interopRequireDefault(__webpack_require__(3));
 
 var _react = _interopRequireDefault(__webpack_require__(1));
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(550));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(553));
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(552));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(555));
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -804,7 +804,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 550:
+/***/ 553:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -819,13 +819,13 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _filters = __webpack_require__(51);
+var _filters = __webpack_require__(52);
 
-var _ShapesLegend = _interopRequireDefault(__webpack_require__(512));
+var _ShapesLegend = _interopRequireDefault(__webpack_require__(515));
 
-var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(551));
+var _shapesLegendEntries = _interopRequireDefault(__webpack_require__(554));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 function mapStateToProps(state, _ref) {
   var field = _ref.field;
@@ -849,7 +849,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 551:
+/***/ 554:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -870,9 +870,9 @@ var _text = __webpack_require__(72);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(27));
 
-var _shapeMapByField = _interopRequireDefault(__webpack_require__(193));
+var _shapeMapByField = _interopRequireDefault(__webpack_require__(195));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(171));
+var _selectedRows = _interopRequireDefault(__webpack_require__(172));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -951,7 +951,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 552:
+/***/ 555:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -966,13 +966,13 @@ exports["default"] = void 0;
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(4));
 
-var _filters = __webpack_require__(51);
+var _filters = __webpack_require__(52);
 
-var _ColoursLegend = _interopRequireDefault(__webpack_require__(514));
+var _ColoursLegend = _interopRequireDefault(__webpack_require__(517));
 
-var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(553));
+var _coloursLegendEntries2 = _interopRequireDefault(__webpack_require__(556));
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
 function mapStateToProps(state, _ref) {
   var field = _ref.field;
@@ -1002,7 +1002,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 553:
+/***/ 556:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1015,17 +1015,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _arrays = __webpack_require__(23);
+var _arrays = __webpack_require__(22);
 
 var _text = __webpack_require__(72);
 
 var _dataColumnByField = _interopRequireDefault(__webpack_require__(27));
 
-var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(99));
+var _activeRowsWithStyleFields = _interopRequireDefault(__webpack_require__(100));
 
-var _selectedRows = _interopRequireDefault(__webpack_require__(171));
+var _selectedRows = _interopRequireDefault(__webpack_require__(172));
 
-var _colourMapForField = _interopRequireDefault(__webpack_require__(100));
+var _colourMapForField = _interopRequireDefault(__webpack_require__(101));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -1182,7 +1182,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 554:
+/***/ 557:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1199,13 +1199,13 @@ var _reselect = __webpack_require__(10);
 
 var _coloursDataColumn = _interopRequireDefault(__webpack_require__(58));
 
-var _shapesDataColumn = _interopRequireDefault(__webpack_require__(109));
+var _shapesDataColumn = _interopRequireDefault(__webpack_require__(110));
 
-var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(555));
+var _allTreesMetadataFields = _interopRequireDefault(__webpack_require__(558));
 
-var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(557));
+var _allChartSeriesFields = _interopRequireDefault(__webpack_require__(560));
 
-var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(16));
+var _dataColumnsByFieldMap = _interopRequireDefault(__webpack_require__(17));
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -1304,7 +1304,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 555:
+/***/ 558:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1317,9 +1317,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
-var _metadataFields = _interopRequireDefault(__webpack_require__(556));
+var _metadataFields = _interopRequireDefault(__webpack_require__(559));
 
 var _constants = __webpack_require__(12);
 
@@ -1374,7 +1374,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 556:
+/***/ 559:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1400,7 +1400,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 557:
+/***/ 560:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1415,9 +1415,9 @@ exports["default"] = void 0;
 
 var _constants = __webpack_require__(12);
 
-var _state = __webpack_require__(3);
+var _state = __webpack_require__(2);
 
-var _chartState = _interopRequireDefault(__webpack_require__(52));
+var _chartState = _interopRequireDefault(__webpack_require__(40));
 
 var allChartsSeriesFieldsSelector = (0, _state.createCombinedStateSelector)(function (state) {
   return state.charts;
