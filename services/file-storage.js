@@ -1,4 +1,4 @@
-const { ApiError } = require("next/dist/next-server/server/api-utils");
+const { ApiError } = require("next/dist/server/api-utils");
 
 const fs = require("fs");
 const Stream = require("stream");

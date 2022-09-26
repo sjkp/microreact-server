@@ -1,4 +1,4 @@
-import { ApiError } from "next/dist/next-server/server/api-utils";
+import { ApiError } from "next/dist/server/api-utils";
 import logger from "cgps-application-server/logger";
 
 import getUserMiddleware from "cgps-application-server/middleware/get-user";

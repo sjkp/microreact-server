@@ -42,9 +42,12 @@ module.exports.publicRuntimeConfig = publicRuntimeConfig;
 
 module.exports = ({
 
-  // env: {
-  //   mapboxApiAccessToken: serverRuntimeConfig.mapboxApiAccessToken,
-  // },
+  reactStrictMode: true,
+  swcMinify: true,
+
+  experimental: {
+    // images: { unoptimized: true },
+  },
 
   // Will only be available on the server side
   serverRuntimeConfig,
@@ -86,12 +89,4 @@ module.exports = ({
     ];
   },
 
-  // Custom Webpack Config: https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Note: we provide webpack above so you should not `require` it
-    // Perform customizations to webpack config
-    // Important: return the modified config
-    config.resolve.alias["microreact-viewer"] = path.resolve(__dirname, "public", "microreact-viewer", "microreact-viewer.js");
-    return config;
-  },
 });

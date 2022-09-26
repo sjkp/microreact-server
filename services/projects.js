@@ -1,4 +1,4 @@
-import { ApiError } from "next/dist/next-server/server/api-utils";
+import { ApiError } from "next/dist/server/api-utils";
 import Slugs from "cgps-application-server/utils/slugs";
 
 import createMicroreactDocument from "microreact.js";

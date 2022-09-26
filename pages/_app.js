@@ -2,39 +2,40 @@ import "../styles/showcase.css";
 import "../styles/viewer.css";
 import "../styles/feedback.css";
 
-import React from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { SessionProvider as AuthSessionProvider } from "next-auth/react";
 import { SnackbarProvider } from "notistack";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { CacheProvider } from "@emotion/react";
 
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/700.css";
+import "@fontsource/work-sans";
 
-import DefaultLayout from "../layouts/default";
-import muiTheme from "../utils/mui-theme";
+import "@sweetalert2/theme-material-ui/material-ui.css";
+import "microreact-viewer/src/styles/index.css";
 
-export default function App(props) {
-  const { Component } = props;
+import muiTheme from "../utils/theme";
+import createEmotionCache from "../utils/create-emotion-cache";
+import DefaultLayout from "../components/default-layout";
+
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
+
+export default function MyApp(props) {
+  const { Component, emotionCache = clientSideEmotionCache } = props;
   const { session, ...pageProps } = props.pageProps;
 
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
-    <React.Fragment>
+    <CacheProvider value={emotionCache}>
       <Head>
-        <title>Microreact</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/microreact-viewer/microreact-viewer.css" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={muiTheme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
 
         <AuthSessionProvider session={session}>
@@ -46,11 +47,12 @@ export default function App(props) {
         </AuthSessionProvider>
 
       </ThemeProvider>
-    </React.Fragment>
+    </CacheProvider>
   );
 }
 
-App.propTypes = {
+MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
+  emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };

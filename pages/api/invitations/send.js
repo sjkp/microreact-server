@@ -1,5 +1,5 @@
 import shortUUID from "short-uuid";
-import { ApiError } from "next/dist/next-server/server/api-utils";
+import { ApiError } from "next/dist/server/api-utils";
 import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
 
 import { sendEmailMessage, renderEmailMessage } from "../../../services/email-messages";

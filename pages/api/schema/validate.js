@@ -1,4 +1,4 @@
-import { ApiError } from "next/dist/next-server/server/api-utils";
+import { ApiError } from "next/dist/server/api-utils";
 import jsonschema from "jsonschema";
 
 import serverRuntimeConfig from "../../../utils/server-runtime-config";

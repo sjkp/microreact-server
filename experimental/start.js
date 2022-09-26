@@ -1,4 +1,4 @@
-const apiUtils = require("next/dist/next-server/server/api-utils.js");
+const apiUtils = require("next/dist/server/api-utils.js");
 
 const nextApiResolver = apiUtils.apiResolver;
 // apiUtils.apiResolver = async function (...args) {
