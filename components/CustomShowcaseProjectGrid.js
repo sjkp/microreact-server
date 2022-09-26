@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import React from "react";
 import PropTypes from "prop-types";
 import Skeleton from "@material-ui/lab/Skeleton";
@@ -86,9 +85,5 @@ function CustomShowcaseProjectGrid(props) {
     </React.Fragment>
   );
 }
-
-CustomShowcaseProjectGrid.propTypes = {
-  folderId: PropTypes.string.isRequired,
-};
 
 export default CustomShowcaseProjectGrid;
