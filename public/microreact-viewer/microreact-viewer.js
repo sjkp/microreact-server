@@ -970,7 +970,7 @@ exports["default"] = _default;
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/IconButton");
+module.exports = require("@mui/material/IconButton");
 
 /***/ }),
 /* 20 */
@@ -2388,7 +2388,7 @@ exports["default"] = _default;
 /* 28 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Box");
+module.exports = require("@mui/material/Box");
 
 /***/ }),
 /* 29 */
@@ -2577,7 +2577,7 @@ exports["default"] = _default;
 /* 30 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Button");
+module.exports = require("@mui/material/Button");
 
 /***/ }),
 /* 31 */
@@ -2868,7 +2868,7 @@ function canvasPixelRatio(ctx) {
 /* 38 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Paper");
+module.exports = require("@mui/material/Paper");
 
 /***/ }),
 /* 39 */
@@ -3985,7 +3985,7 @@ function generateUniqueName(allNames, name) {
 /* 47 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/CloseRounded");
+module.exports = require("@mui/icons-material/CloseRounded");
 
 /***/ }),
 /* 48 */
@@ -4600,7 +4600,7 @@ function openUrl(url) {
 /* 54 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/SvgIcon");
+module.exports = require("@mui/material/SvgIcon");
 
 /***/ }),
 /* 55 */
@@ -5311,13 +5311,13 @@ function publish(event, data) {
 /* 62 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TextField");
+module.exports = require("@mui/material/TextField");
 
 /***/ }),
 /* 63 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/ListItem");
+module.exports = require("@mui/material/ListItem");
 
 /***/ }),
 /* 64 */
@@ -5764,7 +5764,7 @@ exports["default"] = _default;
 /* 71 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/ListSubheader");
+module.exports = require("@mui/material/ListSubheader");
 
 /***/ }),
 /* 72 */
@@ -6719,7 +6719,7 @@ function update(networkId, key, value) {
 /* 79 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Typography");
+module.exports = require("@mui/material/Typography");
 
 /***/ }),
 /* 80 */
@@ -6752,7 +6752,7 @@ exports["default"] = _default;
 /* 81 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/MenuItem");
+module.exports = require("@mui/material/MenuItem");
 
 /***/ }),
 /* 82 */
@@ -6930,7 +6930,7 @@ module.exports = require("react-base-table/lib");
 /* 86 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/ListItemText");
+module.exports = require("@mui/material/ListItemText");
 
 /***/ }),
 /* 87 */
@@ -7363,19 +7363,19 @@ exports["default"] = _default;
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/InputAdornment");
+module.exports = require("@mui/material/InputAdornment");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Popover");
+module.exports = require("@mui/material/Popover");
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/FormControlLabel");
+module.exports = require("@mui/material/FormControlLabel");
 
 /***/ }),
 /* 97 */
@@ -7387,7 +7387,7 @@ module.exports = require("react-redux");
 /* 98 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Divider");
+module.exports = require("@mui/material/Divider");
 
 /***/ }),
 /* 99 */
@@ -8455,7 +8455,7 @@ exports["default"] = _default;
 /* 114 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Slider");
+module.exports = require("@mui/material/Slider");
 
 /***/ }),
 /* 115 */
@@ -8679,7 +8679,7 @@ module.exports = require("@babel/runtime/helpers/get");
 /* 123 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/List");
+module.exports = require("@mui/material/List");
 
 /***/ }),
 /* 124 */
@@ -9378,25 +9378,25 @@ __webpack_require__.r(__webpack_exports__);
 /* 137 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ShareTwoTone");
+module.exports = require("@mui/icons-material/ShareTwoTone");
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/InsertDriveFileTwoTone");
+module.exports = require("@mui/icons-material/InsertDriveFileTwoTone");
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/SpeedDial");
+module.exports = require("@mui/lab/SpeedDial");
 
 /***/ }),
 /* 140 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/SpeedDialAction");
+module.exports = require("@mui/lab/SpeedDialAction");
 
 /***/ }),
 /* 141 */
@@ -9444,7 +9444,7 @@ __webpack_require__.r(__webpack_exports__);
 /* 143 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/EditTwoTone");
+module.exports = require("@mui/icons-material/EditTwoTone");
 
 /***/ }),
 /* 144 */
@@ -9459,13 +9459,13 @@ __webpack_require__.r(__webpack_exports__);
 /* 145 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/SearchRounded");
+module.exports = require("@mui/icons-material/SearchRounded");
 
 /***/ }),
 /* 146 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Checkbox");
+module.exports = require("@mui/material/Checkbox");
 
 /***/ }),
 /* 147 */
@@ -9781,25 +9781,25 @@ exports["default"] = _default;
 /* 151 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/InputLabel");
+module.exports = require("@mui/material/InputLabel");
 
 /***/ }),
 /* 152 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/FormControl");
+module.exports = require("@mui/material/FormControl");
 
 /***/ }),
 /* 153 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Switch");
+module.exports = require("@mui/material/Switch");
 
 /***/ }),
 /* 154 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/DoneRounded");
+module.exports = require("@mui/icons-material/DoneRounded");
 
 /***/ }),
 /* 155 */
@@ -10302,7 +10302,7 @@ exports["default"] = _default;
 /* 163 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/Menu");
+module.exports = require("@mui/icons-material/Menu");
 
 /***/ }),
 /* 164 */
@@ -12661,7 +12661,7 @@ exports.keyMap = keyMap;
 /* 191 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/CircularProgress");
+module.exports = require("@mui/material/CircularProgress");
 
 /***/ }),
 /* 192 */
@@ -13159,25 +13159,25 @@ exports["default"] = _default;
 /* 205 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/UndoRounded");
+module.exports = require("@mui/icons-material/UndoRounded");
 
 /***/ }),
 /* 206 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/FilterListRounded");
+module.exports = require("@mui/icons-material/FilterListRounded");
 
 /***/ }),
 /* 207 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/ToggleButton");
+module.exports = require("@mui/lab/ToggleButton");
 
 /***/ }),
 /* 208 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/ToggleButtonGroup");
+module.exports = require("@mui/lab/ToggleButtonGroup");
 
 /***/ }),
 /* 209 */
@@ -13373,7 +13373,7 @@ function _default() {
 /* 212 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Menu");
+module.exports = require("@mui/material/Menu");
 
 /***/ }),
 /* 213 */
@@ -13388,7 +13388,7 @@ __webpack_require__.r(__webpack_exports__);
 /* 214 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/ListItemIcon");
+module.exports = require("@mui/material/ListItemIcon");
 
 /***/ }),
 /* 215 */
@@ -13697,19 +13697,19 @@ exports["default"] = _default;
 /* 217 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ZoomInRounded");
+module.exports = require("@mui/icons-material/ZoomInRounded");
 
 /***/ }),
 /* 218 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ZoomOutMapRounded");
+module.exports = require("@mui/icons-material/ZoomOutMapRounded");
 
 /***/ }),
 /* 219 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ZoomOutRounded");
+module.exports = require("@mui/icons-material/ZoomOutRounded");
 
 /***/ }),
 /* 220 */
@@ -17214,43 +17214,43 @@ exports["default"] = _default;
 /* 274 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Table");
+module.exports = require("@mui/material/Table");
 
 /***/ }),
 /* 275 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TableBody");
+module.exports = require("@mui/material/TableBody");
 
 /***/ }),
 /* 276 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TableCell");
+module.exports = require("@mui/material/TableCell");
 
 /***/ }),
 /* 277 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TableContainer");
+module.exports = require("@mui/material/TableContainer");
 
 /***/ }),
 /* 278 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TableHead");
+module.exports = require("@mui/material/TableHead");
 
 /***/ }),
 /* 279 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TableRow");
+module.exports = require("@mui/material/TableRow");
 
 /***/ }),
 /* 280 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/AddCircleOutlineRounded");
+module.exports = require("@mui/icons-material/AddCircleOutlineRounded");
 
 /***/ }),
 /* 281 */
@@ -17265,31 +17265,31 @@ __webpack_require__.r(__webpack_exports__);
 /* 282 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Dialog");
+module.exports = require("@mui/material/Dialog");
 
 /***/ }),
 /* 283 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/DialogActions");
+module.exports = require("@mui/material/DialogActions");
 
 /***/ }),
 /* 284 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/DialogContent");
+module.exports = require("@mui/material/DialogContent");
 
 /***/ }),
 /* 285 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/DialogTitle");
+module.exports = require("@mui/material/DialogTitle");
 
 /***/ }),
 /* 286 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/LinearProgress");
+module.exports = require("@mui/material/LinearProgress");
 
 /***/ }),
 /* 287 */
@@ -17304,7 +17304,7 @@ __webpack_require__.r(__webpack_exports__);
 /* 288 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ClearRounded");
+module.exports = require("@mui/icons-material/ClearRounded");
 
 /***/ }),
 /* 289 */
@@ -17389,7 +17389,7 @@ exports["default"] = _default;
 /* 290 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/GridOn");
+module.exports = require("@mui/icons-material/GridOn");
 
 /***/ }),
 /* 291 */
@@ -17462,7 +17462,7 @@ __webpack_require__.r(__webpack_exports__);
 /* 294 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Badge");
+module.exports = require("@mui/material/Badge");
 
 /***/ }),
 /* 295 */
@@ -17594,19 +17594,19 @@ exports["default"] = _default;
 /* 296 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Backdrop");
+module.exports = require("@mui/material/Backdrop");
 
 /***/ }),
 /* 297 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/SpeedDialIcon");
+module.exports = require("@mui/lab/SpeedDialIcon");
 
 /***/ }),
 /* 298 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/InsertDriveFile");
+module.exports = require("@mui/icons-material/InsertDriveFile");
 
 /***/ }),
 /* 299 */
@@ -17898,13 +17898,13 @@ exports["default"] = _default;
 /* 304 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/AppBar");
+module.exports = require("@mui/material/AppBar");
 
 /***/ }),
 /* 305 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Toolbar");
+module.exports = require("@mui/material/Toolbar");
 
 /***/ }),
 /* 306 */
@@ -18043,43 +18043,43 @@ exports["default"] = _default;
 /* 308 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/AccessTimeTwoTone");
+module.exports = require("@mui/icons-material/AccessTimeTwoTone");
 
 /***/ }),
 /* 309 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/EqualizerRounded");
+module.exports = require("@mui/icons-material/EqualizerRounded");
 
 /***/ }),
 /* 310 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/NoteTwoTone");
+module.exports = require("@mui/icons-material/NoteTwoTone");
 
 /***/ }),
 /* 311 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/PublicTwoTone");
+module.exports = require("@mui/icons-material/PublicTwoTone");
 
 /***/ }),
 /* 312 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/TableChartTwoTone");
+module.exports = require("@mui/icons-material/TableChartTwoTone");
 
 /***/ }),
 /* 313 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/VisibilityTwoTone");
+module.exports = require("@mui/icons-material/VisibilityTwoTone");
 
 /***/ }),
 /* 314 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/DescriptionTwoTone");
+module.exports = require("@mui/icons-material/DescriptionTwoTone");
 
 /***/ }),
 /* 315 */
@@ -18130,7 +18130,7 @@ exports["default"] = _default;
 /* 316 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/MenuList");
+module.exports = require("@mui/material/MenuList");
 
 /***/ }),
 /* 317 */
@@ -18193,7 +18193,7 @@ exports["default"] = _default;
 /* 319 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/GetAppRounded");
+module.exports = require("@mui/icons-material/GetAppRounded");
 
 /***/ }),
 /* 320 */
@@ -18491,7 +18491,7 @@ exports["default"] = _default;
 /* 324 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/InfoTwoTone");
+module.exports = require("@mui/icons-material/InfoTwoTone");
 
 /***/ }),
 /* 325 */
@@ -18992,7 +18992,7 @@ module.exports = require("react-debounce-input");
 /* 336 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ExplicitRounded");
+module.exports = require("@mui/icons-material/ExplicitRounded");
 
 /***/ }),
 /* 337 */
@@ -19337,19 +19337,19 @@ __webpack_require__.r(__webpack_exports__);
 /* 344 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/Autocomplete");
+module.exports = require("@mui/lab/Autocomplete");
 
 /***/ }),
 /* 345 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/CheckBoxOutlineBlank");
+module.exports = require("@mui/icons-material/CheckBoxOutlineBlank");
 
 /***/ }),
 /* 346 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/CheckBox");
+module.exports = require("@mui/icons-material/CheckBox");
 
 /***/ }),
 /* 347 */
@@ -20558,7 +20558,7 @@ __webpack_require__.r(__webpack_exports__);
 /* 362 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Select");
+module.exports = require("@mui/material/Select");
 
 /***/ }),
 /* 363 */
@@ -20737,7 +20737,7 @@ exports["default"] = _default;
 /* 366 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/Backspace");
+module.exports = require("@mui/icons-material/Backspace");
 
 /***/ }),
 /* 367 */
@@ -20752,13 +20752,13 @@ __webpack_require__.r(__webpack_exports__);
 /* 368 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Radio");
+module.exports = require("@mui/material/Radio");
 
 /***/ }),
 /* 369 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/RadioGroup");
+module.exports = require("@mui/material/RadioGroup");
 
 /***/ }),
 /* 370 */
@@ -21649,13 +21649,13 @@ exports["default"] = _default;
 /* 378 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/ListItemAvatar");
+module.exports = require("@mui/material/ListItemAvatar");
 
 /***/ }),
 /* 379 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Avatar");
+module.exports = require("@mui/material/Avatar");
 
 /***/ }),
 /* 380 */
@@ -22116,7 +22116,7 @@ exports["default"] = _default;
 /* 383 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/OutlinedInput");
+module.exports = require("@mui/material/OutlinedInput");
 
 /***/ }),
 /* 384 */
@@ -22128,19 +22128,19 @@ module.exports = require("valid-url");
 /* 385 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/SaveTwoTone");
+module.exports = require("@mui/icons-material/SaveTwoTone");
 
 /***/ }),
 /* 386 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/LinkTwoTone");
+module.exports = require("@mui/icons-material/LinkTwoTone");
 
 /***/ }),
 /* 387 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/HighlightOffTwoTone");
+module.exports = require("@mui/icons-material/HighlightOffTwoTone");
 
 /***/ }),
 /* 388 */
@@ -23829,13 +23829,13 @@ exports["default"] = _default;
 /* 404 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/styles");
+module.exports = require("@mui/material/styles");
 
 /***/ }),
 /* 405 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/CssBaseline");
+module.exports = require("@mui/material/CssBaseline");
 
 /***/ }),
 /* 406 */
@@ -26468,19 +26468,19 @@ exports["default"] = _default;
 /* 427 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/TuneRounded");
+module.exports = require("@mui/icons-material/TuneRounded");
 
 /***/ }),
 /* 428 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ArrowDropDownTwoTone");
+module.exports = require("@mui/icons-material/ArrowDropDownTwoTone");
 
 /***/ }),
 /* 429 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Chip");
+module.exports = require("@mui/material/Chip");
 
 /***/ }),
 /* 430 */
@@ -26540,25 +26540,25 @@ __webpack_require__.r(__webpack_exports__);
 /* 437 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Tab");
+module.exports = require("@mui/material/Tab");
 
 /***/ }),
 /* 438 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/TabContext");
+module.exports = require("@mui/lab/TabContext");
 
 /***/ }),
 /* 439 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/TabList");
+module.exports = require("@mui/lab/TabList");
 
 /***/ }),
 /* 440 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/lab/TabPanel");
+module.exports = require("@mui/lab/TabPanel");
 
 /***/ }),
 /* 441 */
@@ -26654,7 +26654,7 @@ module.exports = require("vega-tooltip");
 /* 452 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/EditRounded");
+module.exports = require("@mui/icons-material/EditRounded");
 
 /***/ }),
 /* 453 */
@@ -26674,7 +26674,7 @@ module.exports = require("react-sortable-hoc");
 /* 457 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/RedoRounded");
+module.exports = require("@mui/icons-material/RedoRounded");
 
 /***/ }),
 /* 458 */,
@@ -26688,27 +26688,27 @@ module.exports = require("htmlsvg");
 /* 461 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/CropFreeOutlined");
+module.exports = require("@mui/icons-material/CropFreeOutlined");
 
 /***/ }),
 /* 462 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/MapTwoTone");
+module.exports = require("@mui/icons-material/MapTwoTone");
 
 /***/ }),
 /* 463 */,
 /* 464 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ShuffleRounded");
+module.exports = require("@mui/icons-material/ShuffleRounded");
 
 /***/ }),
 /* 465 */,
 /* 466 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/DoneOutlineRounded");
+module.exports = require("@mui/icons-material/DoneOutlineRounded");
 
 /***/ }),
 /* 467 */
@@ -26722,62 +26722,62 @@ module.exports = require("react-markdown");
 /* 470 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/DragIndicatorOutlined");
+module.exports = require("@mui/icons-material/DragIndicatorOutlined");
 
 /***/ }),
 /* 471 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/CheckBoxTwoTone");
+module.exports = require("@mui/icons-material/CheckBoxTwoTone");
 
 /***/ }),
 /* 472 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/CheckBoxOutlineBlankTwoTone");
+module.exports = require("@mui/icons-material/CheckBoxOutlineBlankTwoTone");
 
 /***/ }),
 /* 473 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/SortByAlphaRounded");
+module.exports = require("@mui/icons-material/SortByAlphaRounded");
 
 /***/ }),
 /* 474 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/VisibilityOffTwoTone");
+module.exports = require("@mui/icons-material/VisibilityOffTwoTone");
 
 /***/ }),
 /* 475 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Accordion");
+module.exports = require("@mui/material/Accordion");
 
 /***/ }),
 /* 476 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/AccordionSummary");
+module.exports = require("@mui/material/AccordionSummary");
 
 /***/ }),
 /* 477 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/AccordionDetails");
+module.exports = require("@mui/material/AccordionDetails");
 
 /***/ }),
 /* 478 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/PlayArrow");
+module.exports = require("@mui/icons-material/PlayArrow");
 
 /***/ }),
 /* 479 */,
 /* 480 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/InputBase");
+module.exports = require("@mui/material/InputBase");
 
 /***/ }),
 /* 481 */
@@ -26789,63 +26789,63 @@ module.exports = require("react-rnd");
 /* 482 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/FastForwardRounded");
+module.exports = require("@mui/icons-material/FastForwardRounded");
 
 /***/ }),
 /* 483 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/FastRewindRounded");
+module.exports = require("@mui/icons-material/FastRewindRounded");
 
 /***/ }),
 /* 484 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/PauseRounded");
+module.exports = require("@mui/icons-material/PauseRounded");
 
 /***/ }),
 /* 485 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/PlayArrowRounded");
+module.exports = require("@mui/icons-material/PlayArrowRounded");
 
 /***/ }),
 /* 486 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/SkipNextRounded");
+module.exports = require("@mui/icons-material/SkipNextRounded");
 
 /***/ }),
 /* 487 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/SkipPreviousRounded");
+module.exports = require("@mui/icons-material/SkipPreviousRounded");
 
 /***/ }),
 /* 488 */,
 /* 489 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ControlCameraRounded");
+module.exports = require("@mui/icons-material/ControlCameraRounded");
 
 /***/ }),
 /* 490 */,
 /* 491 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/AddCircleTwoTone");
+module.exports = require("@mui/icons-material/AddCircleTwoTone");
 
 /***/ }),
 /* 492 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/ViewCompact");
+module.exports = require("@mui/icons-material/ViewCompact");
 
 /***/ }),
 /* 493 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/MoreVert");
+module.exports = require("@mui/icons-material/MoreVert");
 
 /***/ }),
 /* 494 */
@@ -26869,14 +26869,14 @@ module.exports = require("@sweetalert2/theme-material-ui/material-ui.css");
 /* 497 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/WorkOutline");
+module.exports = require("@mui/icons-material/WorkOutline");
 
 /***/ }),
 /* 498 */,
 /* 499 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/icons/DonutSmall");
+module.exports = require("@mui/icons-material/DonutSmall");
 
 /***/ })
 /******/ ]);

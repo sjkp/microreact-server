@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 import React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import SvgIcon from "@material-ui/core/SvgIcon";
+import IconButton from "@mui/material/IconButton";
+import SvgIcon from "@mui/material/SvgIcon";
 import { mdiLinkVariantPlus, mdiLinkVariantRemove } from "@mdi/js";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
-import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import InputLabel from "@material-ui/core/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
+import FormHelperText from "@mui/material/FormHelperText";
+import InputAdornment from "@mui/material/InputAdornment";
+import InputLabel from "@mui/material/InputLabel";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useSnackbar } from "notistack";
-import FileCopyRoundedIcon from "@material-ui/icons/FileCopyRounded";
-import SaveRoundedIcon from "@material-ui/icons/SaveRounded";
+import FileCopyRoundedIcon from "@mui/icons-material/FileCopyRounded";
+import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
 import UiCopyTextfield from "./UiCopyTextfield";
 import * as ApiClient from "../utils/api-client";

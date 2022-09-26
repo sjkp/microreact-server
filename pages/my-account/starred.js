@@ -3,10 +3,10 @@
 import React from "react";
 import Head from "next/head";
 import getUser from "cgps-application-server/middleware/get-user";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Skeleton from "@material-ui/lab/Skeleton";
-import StarOutlineOutlinedIcon from "@material-ui/icons/StarOutlineOutlined";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Skeleton from "@mui/material/Skeleton";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
 import sessionUserHook from "cgps-application-server/hooks/session-user";
 
 import AccountPageNav from "../../components/AccountPageNav";

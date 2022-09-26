@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
-import Grid from "@material-ui/core/Grid";
+import Skeleton from "@mui/material/Skeleton";
+import Grid from "@mui/material/Grid";
 
 import UiLoadingBar from "./UiLoadingBar";
 import UiEmptyState from "./UiEmptyState";

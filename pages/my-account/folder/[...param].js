@@ -4,8 +4,8 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import getUser from "cgps-application-server/middleware/get-user";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 import AccountPageNav from "../../../components/AccountPageNav";
 import AccountProjectGrid from "../../../components/AccountProjectGrid";

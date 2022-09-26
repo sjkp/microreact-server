@@ -5,9 +5,9 @@ import Head from "next/head";
 import getUser from "cgps-application-server/middleware/get-user";
 import sessionUserHook from "cgps-application-server/hooks/session-user";
 
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Skeleton from "@material-ui/lab/Skeleton";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Skeleton from "@mui/material/Skeleton";
 
 import AccountPageNav from "../../components/AccountPageNav";
 import AccountProjectGrid from "../../components/AccountProjectGrid";

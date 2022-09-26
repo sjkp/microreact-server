@@ -1,6 +1,6 @@
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import PeopleOutlineOutlinedIcon from "@material-ui/icons/PeopleOutlineOutlined";
-import PublicOutlinedIcon from "@material-ui/icons/PublicOutlined";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
+import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 
 export const AccessLevels = {
   0: {

@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
-import FormControl from "@material-ui/core/FormControl";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import IconButton from "@material-ui/core/IconButton";
-import FileCopyRoundedIcon from "@material-ui/icons/FileCopyRounded";
-import DoneOutlineRoundedIcon from "@material-ui/icons/DoneOutlineRounded";
-import InputLabel from "@material-ui/core/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import FileCopyRoundedIcon from "@mui/icons-material/FileCopyRounded";
+import DoneOutlineRoundedIcon from "@mui/icons-material/DoneOutlineRounded";
+import InputLabel from "@mui/material/InputLabel";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
 

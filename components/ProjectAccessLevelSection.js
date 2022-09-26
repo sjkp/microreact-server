@@ -1,11 +1,11 @@
 /* eslint-disable class-methods-use-this */
 
-import Box from "@material-ui/core/Box";
-import PeopleOutlineOutlinedIcon from "@material-ui/icons/PeopleOutlineOutlined";
+import Box from "@mui/material/Box";
+import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import PropTypes from "prop-types";
-import PublicOutlinedIcon from "@material-ui/icons/PublicOutlined";
+import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import React from "react";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 
 import UiSelect from "./UiSelect";
 

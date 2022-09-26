@@ -2,11 +2,11 @@
 import { Provider, connect } from "react-redux";
 
 import clsx from "clsx";
-import IconButton from "@material-ui/core/IconButton";
+import IconButton from "@mui/material/IconButton";
 import PropTypes from "prop-types";
 import React from "react";
-import SaveRoundedIcon from "@material-ui/icons/SaveRounded";
-import MenuIcon from "@material-ui/icons/Menu";
+import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
+import MenuIcon from "@mui/icons-material/Menu";
 
 import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as viewerStore, actions as viewerActions } from "microreact-viewer";
 

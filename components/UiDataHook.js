@@ -2,7 +2,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import LinearProgress from "@mui/material/LinearProgress";
 
 function UiDataHook(props) {
   const { dataHook, EmptyView, ErrorView, children: DataView, LoadingView, ...rest } = props;

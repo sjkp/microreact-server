@@ -1,24 +1,24 @@
 /* eslint-disable class-methods-use-this */
 
 import React from "react";
-import Drawer from "@material-ui/core/Drawer";
+import Drawer from "@mui/material/Drawer";
 import clsx from "clsx";
-import TreeView from "@material-ui/lab/TreeView";
-import TreeItem from "@material-ui/lab/TreeItem";
-// import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-// import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import FolderOutlinedIcon from "@material-ui/icons/FolderOutlined";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
-import StarOutlineOutlinedIcon from "@material-ui/icons/StarOutlineOutlined";
-import PeopleOutlinedIcon from "@material-ui/icons/PeopleOutlined";
-import IconButton from "@material-ui/core/IconButton";
-import ChevronLeftOutlinedIcon from "@material-ui/icons/ChevronLeftOutlined";
-import ChevronRightOutlinedIcon from "@material-ui/icons/ChevronRightOutlined";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
-import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
-import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
-import VpnKeyTwoToneIcon from "@material-ui/icons/VpnKeyTwoTone";
+import TreeView from "@mui/lab/TreeView";
+import TreeItem from "@mui/lab/TreeItem";
+// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import IconButton from "@mui/material/IconButton";
+import ChevronLeftOutlinedIcon from "@mui/icons-material/ChevronLeftOutlined";
+import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
+import LinearProgress from "@mui/material/LinearProgress";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import VpnKeyTwoToneIcon from "@mui/icons-material/VpnKeyTwoTone";
 
 import styles from "../styles/account-page-nav.module.css";
 

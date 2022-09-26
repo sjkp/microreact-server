@@ -1,18 +1,18 @@
 /* eslint-disable class-methods-use-this */
 
 import { useSession } from "next-auth/react";
-import Button from "@material-ui/core/Button";
-import CheckCircleTwoToneIcon from "@material-ui/icons/CheckCircleTwoTone";
+import Button from "@mui/material/Button";
+import CheckCircleTwoToneIcon from "@mui/icons-material/CheckCircleTwoTone";
 import clsx from "clsx";
-import EditRoundedIcon from "@material-ui/icons/EditRounded";
-import GetAppRoundedIcon from "@material-ui/icons/GetAppRounded";
-import InsertDriveFileTwoToneIcon from "@material-ui/icons/InsertDriveFileTwoTone";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import EditRoundedIcon from "@mui/icons-material/EditRounded";
+import GetAppRoundedIcon from "@mui/icons-material/GetAppRounded";
+import InsertDriveFileTwoToneIcon from "@mui/icons-material/InsertDriveFileTwoTone";
+import LinearProgress from "@mui/material/LinearProgress";
 import PropTypes from "prop-types";
 import React from "react";
-import Skeleton from "@material-ui/lab/Skeleton";
-import TextField from "@material-ui/core/TextField";
-import WebAssetTwoToneIcon from "@material-ui/icons/WebAssetTwoTone";
+import Skeleton from "@mui/material/Skeleton";
+import TextField from "@mui/material/TextField";
+import WebAssetTwoToneIcon from "@mui/icons-material/WebAssetTwoTone";
 
 import { actions as viewerActions, utils as viewerUtils, selectors as viewerSelectors, store as ViewerStore, UiDialog } from "microreact-viewer";
 

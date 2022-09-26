@@ -1,19 +1,19 @@
 /* eslint new-cap: 0 */
 
 import React from "react";
-import Button from "@material-ui/core/Button";
-import FeedbackTwoToneIcon from "@material-ui/icons/FeedbackTwoTone";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import CloseIcon from "@material-ui/icons/Close";
-import IconButton from "@material-ui/core/IconButton";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+import Button from "@mui/material/Button";
+import FeedbackTwoToneIcon from "@mui/icons-material/FeedbackTwoTone";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 import clsx from "clsx";
 import FeedbackScreenshot from "feedback-screenshot-tool";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const initialState = {
   mode: "off",

@@ -1,10 +1,10 @@
 /* eslint-disable class-methods-use-this */
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import SearchIcon from "@material-ui/icons/Search";
+import Skeleton from "@mui/material/Skeleton";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
 
 import UiLoadingBar from "./UiLoadingBar";
 import UiEmptyState from "./UiEmptyState";

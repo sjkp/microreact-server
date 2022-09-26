@@ -412,7 +412,7 @@ var _react = _interopRequireDefault(__webpack_require__(1));
 
 __webpack_require__(508);
 
-// import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
+// import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 // import UiIconButton from "./UiIconButton.react";
 var UiSidePaneHeader = /*#__PURE__*/_react["default"].memo(function (props) {
   return /*#__PURE__*/_react["default"].createElement(_ListSubheader["default"], {

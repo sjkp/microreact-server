@@ -3,9 +3,9 @@
 import React from "react";
 import Head from "next/head";
 import getUser from "cgps-application-server/middleware/get-user";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
 import AccountPageNav from "../../components/AccountPageNav";
 import AccountProjectGrid from "../../components/AccountProjectGrid";
