@@ -2,7 +2,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { UiDialog } from "microreact-viewer";
+import { UiDialog } from "microreact-viewer/src/viewer";
 
 import { root as dialogClassname } from "../styles/project-dialog.module.css";
 import { root as rootClassname } from "../styles/project-access-dialog.module.css";

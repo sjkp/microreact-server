@@ -8,7 +8,7 @@ import React from "react";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as viewerStore, actions as viewerActions } from "microreact-viewer";
+import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as viewerStore, actions as viewerActions } from "microreact-viewer/src/viewer";
 
 import fetcher from "../utils/viewer-fetch-proxy";
 import useLeavePageConfirm from "../hooks/leave-page-confirm";

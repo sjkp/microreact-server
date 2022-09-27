@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Router from "next/router";
 import { useBeforeunload } from "react-beforeunload";
 
-import { selectors as viewerSelectors, store as viewerStore } from "microreact-viewer";
+import { selectors as viewerSelectors, store as viewerStore } from "microreact-viewer/src/viewer";
 
 function checkChnages() {
   const presentState = viewerSelectors.presentStateSelector(viewerStore.getState());

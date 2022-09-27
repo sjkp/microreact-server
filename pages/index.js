@@ -5,7 +5,7 @@ import Head from "next/head";
 import Showcase from "../components/Showcase";
 import UiVimeoPlayer from "../components/UiVimeoPlayer";
 
-import defaultStyles from "../styles/default-layout.module.css";
+import defaultStyles from "../components/default-layout/index.module.css";
 
 export async function getServerSideProps(context) {
   return { props: {} };

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { useSession } from "next-auth/react";
 
-import { UiIconButtonMenu } from "microreact-viewer";
+import { UiIconButtonMenu } from "microreact-viewer/src/viewer";
 
 import * as Auth from "../utils/auth";
 
