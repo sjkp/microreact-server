@@ -76,7 +76,7 @@ const Link = React.forwardRef((props, ref) => {
       return <Anchor className={className} href={href} ref={ref} {...other} />;
     }
 
-    return <MuiLink className={className} href={href} ref={ref} {...other} />;
+    return <MuiLink className={className} href={href} ref={ref} underline="hover" {...other} />;
   }
 
   const linkAs = linkAsProp || as;
@@ -91,6 +91,7 @@ const Link = React.forwardRef((props, ref) => {
       component={NextLinkComposed}
       className={className}
       ref={ref}
+      underline="hover"
       {...nextjsProps}
       {...other}
     />
