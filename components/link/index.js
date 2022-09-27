@@ -55,6 +55,7 @@ const Link = React.forwardRef((props, ref) => {
     noLinkStyle,
     prefetch,
     replace,
+    // eslint-disable-next-line no-unused-vars
     role, // Link don't have roles.
     scroll,
     shallow,
