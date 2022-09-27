@@ -42,6 +42,8 @@ body {
 
 a {
   color: inherit;
+}
+a:not(:hover) {
   text-decoration: none;
 }
 
