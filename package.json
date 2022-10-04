@@ -26,6 +26,7 @@
     "@next-auth/mongodb-adapter": "^1.0.1",
     "axios": "^0.21.1",
     "boolean": "^3.1.4",
+    "bytes": "^3.1.2",
     "cgps-application-server": "github:cgps-dev/application-server#v24.0.0",
     "clsx": "^1.1.1",
     "ejs": "^3.1.6",
