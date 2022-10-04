@@ -14,7 +14,7 @@ import Skeleton from "@mui/material/Skeleton";
 import TextField from "@mui/material/TextField";
 import WebAssetTwoToneIcon from "@mui/icons-material/WebAssetTwoTone";
 
-import { actions as viewerActions, utils as viewerUtils, selectors as viewerSelectors, store as ViewerStore, UiDialog } from "microreact-viewer/src/viewer";
+import { actions as viewerActions, utils as viewerUtils, selectors as viewerSelectors, store as ViewerStore, UiDialog } from "microreact-viewer/index";
 
 import * as LocalStorage from "../utils/local-storage";
 import * as Projects from "../utils/projects";

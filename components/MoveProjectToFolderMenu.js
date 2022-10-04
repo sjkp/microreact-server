@@ -5,7 +5,7 @@ import React from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 import FolderOpenTwoToneIcon from '@mui/icons-material/FolderOpenTwoTone';
 
-import { UiFloatingFilter, UiRadioList, UiIconButtonMenu, emptyArray } from "microreact-viewer/src/viewer";
+import { UiFloatingFilter, UiRadioList, UiIconButtonMenu, emptyArray } from "microreact-viewer/index";
 
 import { root as rootClassname } from "../styles/move-project-to-folder.module.css";
 

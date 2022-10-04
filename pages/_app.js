@@ -17,7 +17,7 @@ import "@fontsource/work-sans/400.css";
 import "@fontsource/work-sans/700.css";
 
 import "@sweetalert2/theme-material-ui/material-ui.css";
-import "microreact-viewer/src/styles/index.css";
+import "microreact-viewer/styles/index.css";
 
 import muiTheme from "../utils/theme";
 import createEmotionCache from "../utils/create-emotion-cache";

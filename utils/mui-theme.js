@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@mui/material/styles";
 
-// import defaults from "microreact-viewer/src/defaults";
+// import defaults from "microreact-viewer/defaults";
 export const theme = {
   background: {
     main: "#ffffff",

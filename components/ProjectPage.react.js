@@ -1,5 +1,5 @@
 import React from "react";
-import { actions, store as ViewerStore } from "microreact-viewer/src/viewer";
+import { actions, store as ViewerStore } from "microreact-viewer/index";
 
 import PropTypes from "prop-types";
 
