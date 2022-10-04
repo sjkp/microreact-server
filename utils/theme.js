@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export const theme = {
+const theme = {
   background: {
     main: "#ffffff",
     highlight: "#f8f9fa",
@@ -29,6 +29,24 @@ export const theme = {
     headline: `"Space Grotesk", "Helvetica", "Arial", sans-serif`,
     body: `"Work Sans", "Helvetica", "Arial", sans-serif`,
   },
+};
+
+export const themeStyle = {
+  "--primary-light": theme.primary.light,
+  "--primary-main": theme.primary.main,
+  "--primary-dark": theme.primary.dark,
+  "--primary-contrast": theme.primary.contrast,
+  "--secondary-main": theme.secondary.main,
+  "--secondary-contrast": theme.secondary.contrast,
+  "--text-primary": theme.text.primary,
+  "--text-secondary": theme.text.secondary,
+  "--text-disabled": theme.text.disabled,
+  "--text-hint": theme.text.hint,
+  "--background-main": theme.background.main,
+  "--background-highlight": theme.background.highlight,
+  "--background-hover": theme.background.hover,
+  "--background-disabled": theme.background.disabled,
+  "--headline-font": theme.fonts.headline,
 };
 
 // Create a theme instance.
