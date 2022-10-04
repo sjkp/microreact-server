@@ -287,7 +287,6 @@ class ProjectViewer extends React.PureComponent {
       <Provider store={viewerStore}>
         <MicroreactViewer
           components={this.renderViewerComponents()}
-          disableThemeProvider
         >
           { this.renderAccessDialog() }
 
