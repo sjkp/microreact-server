@@ -13,7 +13,8 @@ import { CacheProvider } from "@emotion/react";
 
 import "@fontsource/space-grotesk/400.css";
 import "@fontsource/space-grotesk/700.css";
-import "@fontsource/work-sans";
+import "@fontsource/work-sans/400.css";
+import "@fontsource/work-sans/700.css";
 
 import "@sweetalert2/theme-material-ui/material-ui.css";
 import "microreact-viewer/src/styles/index.css";
