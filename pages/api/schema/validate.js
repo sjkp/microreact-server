@@ -1,13 +1,12 @@
 import { ApiError } from "next/dist/server/api-utils";
 import jsonschema from "jsonschema";
 
-import serverRuntimeConfig from "../../../utils/server-runtime-config";
 import schema from "../../../public/schema/v1";
 
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: serverRuntimeConfig.bodySizeLimit,
+      sizeLimit: "16mb",
     },
   },
 };

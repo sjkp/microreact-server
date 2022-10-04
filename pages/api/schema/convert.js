@@ -1,12 +1,10 @@
 import { ApiError } from "next/dist/server/api-utils";
 import createMicroreactDocument from "microreact.js";
 
-import serverRuntimeConfig from "../../../utils/server-runtime-config";
-
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: serverRuntimeConfig.bodySizeLimit,
+      sizeLimit: "16mb",
     },
   },
 };

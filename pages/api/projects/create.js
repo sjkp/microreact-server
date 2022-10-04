@@ -2,12 +2,11 @@ import requireUserMiddlewarefrom from "cgps-application-server/middleware/requir
 import logger from "cgps-application-server/logger";
 
 import dataabse from "../../../services/dataabse";
-import serverRuntimeConfig from "../../../utils/server-runtime-config";
 
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: serverRuntimeConfig.bodySizeLimit,
+      sizeLimit: "16mb",
     },
   },
 };

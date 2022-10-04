@@ -6,7 +6,7 @@ import serverRuntimeConfig from "../../../utils/server-runtime-config";
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: serverRuntimeConfig.bodySizeLimit,
+      sizeLimit: "16mb",
     },
   },
 };

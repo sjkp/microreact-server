@@ -4,12 +4,10 @@ import logger from "cgps-application-server/logger";
 
 import * as ProjectsService from "../../../services/projects";
 
-import serverRuntimeConfig from "../../../utils/server-runtime-config";
-
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: serverRuntimeConfig.bodySizeLimit,
+      sizeLimit: "16mb",
     },
   },
 };
