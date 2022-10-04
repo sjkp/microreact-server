@@ -61,7 +61,7 @@
     "swr": "^0.4.2",
     "tmp-promise": "^3.0.2",
     "valid-url": "^1.0.9",
-    "writers-digest": "^1.1.0",
+    "writers-digest": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "8.24.0",
