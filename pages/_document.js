@@ -1,7 +1,7 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import theme from "../utils/theme";
+import muiTheme, { themeStyle } from "../utils/theme";
 import createEmotionCache from "../utils/create-emotion-cache";
 
 export default class MyDocument extends Document {
@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content={muiTheme.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link
             rel="stylesheet"
@@ -47,7 +47,9 @@ export default class MyDocument extends Document {
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}
         </Head>
-        <body>
+        <body
+          style={themeStyle}
+        >
           <script
             defer
             src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"
