@@ -1,11 +1,9 @@
 /* eslint-disable consistent-return */
-import { Provider, connect } from "react-redux";
+import { Provider } from "react-redux";
 
-import clsx from "clsx";
 import IconButton from "@mui/material/IconButton";
 import PropTypes from "prop-types";
 import React from "react";
-import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import MicroreactViewer, { utils as ViewerUtils, UiIconButton, selectors as viewerSelectors, store as viewerStore, actions as viewerActions } from "microreact-viewer/index";
@@ -19,6 +17,7 @@ import ProjectSaveDialog from "./ProjectSaveDialog";
 import ProjectAccessDialog from "./ProjectAccessDialog";
 import ManageAccountsIcon from "./ManageAccountsIcon";
 import EditOffMenu from "./EditOffMenu.react";
+import SaveButton from "./SaveButton";
 
 ViewerUtils.proxy.setFetcher(fetcher);
 
@@ -26,36 +25,6 @@ const ChangesChecker = (props) => {
   useLeavePageConfirm();
   return null;
 };
-
-const SaveButton = React.memo(
-  (props) => {
-    return (
-      <UiIconButton
-        colour="inherit"
-        onClick={props.toggleSaveDialog}
-        title="Save Project"
-        className={
-          clsx(
-            "mr-save-project",
-            { "mr-has-changes": props.hasChanges },
-          )
-        }
-      >
-        <SaveRoundedIcon />
-      </UiIconButton>
-    );
-  }
-);
-
-SaveButton.displayName = "SaveButton";
-
-const mapStateToProps = (state, { chartId }) => {
-  const presentState = viewerSelectors.presentStateSelector(state);
-  return {
-    hasChanges: presentState.config.isDirty,
-  };
-};
-const ConnectedSaveButton = connect(mapStateToProps)(SaveButton);
 
 class ProjectViewer extends React.PureComponent {
 
@@ -231,8 +200,8 @@ class ProjectViewer extends React.PureComponent {
             )
           }
 
-          <ConnectedSaveButton
-            toggleSaveDialog={this.toggleSaveDialog}
+          <SaveButton
+            onClick={this.toggleSaveDialog}
           />
         </React.Fragment>
       ),
