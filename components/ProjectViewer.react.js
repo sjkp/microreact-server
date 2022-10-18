@@ -117,36 +117,29 @@ class ProjectViewer extends React.PureComponent {
   handleMakeCopy = () => {
     viewerStore.dispatch(viewerActions.save())
       .then(Projects.saveProjectOnServer)
-      .then((savedProjectProps) => {
-        viewerStore.dispatch(
-          viewerActions.config({
-            readOnly: false,
-          })
-        );
-        this.setSavedProjectProps(savedProjectProps);
-      });
+      .then(this.setSavedProjectProps);
   }
 
   setSavedProjectProps = (
     savedProjectProps,
-    callback,
-    extraState = {},
   ) => {
     viewerStore.dispatch(
       viewerActions.config({
         isDirty: false,
+        readOnly: false,
       })
     );
-    this.setState(
-      {
-        ...extraState,
-        projectProps: {
-          ...this.state.projectProps,
-          ...savedProjectProps,
+    return new Promise((resolve) => {
+      this.setState(
+        {
+          projectProps: {
+            ...this.state.projectProps,
+            ...savedProjectProps,
+          },
         },
-      },
-      callback,
-    );
+        resolve,
+      );
+    });
   }
 
   renderViewerComponents = () => {
@@ -234,9 +227,13 @@ class ProjectViewer extends React.PureComponent {
             (savedProjectProps) => {
               this.setSavedProjectProps(
                 savedProjectProps,
-                () => this.setState({ isSaveDialogOpen: false }),
-                { isAccessDialogOpen: true },
-              );
+              )
+                .then(
+                  () => this.setState(
+                    { isAccessDialogOpen: true },
+                    () => this.setState({ isSaveDialogOpen: false }),
+                  )
+                );
             }
           }
           onUpdatedOnServer={
