@@ -200,3 +200,8 @@ if (serverRuntimeConfig.auth.openidconnect) {
 }
 
 export default NextAuth(options);
+
+// const handler = NextAuth(options);
+// export default function (req, res) {
+//   return handler(req, res);
+// }
