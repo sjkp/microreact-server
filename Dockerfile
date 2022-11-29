@@ -8,18 +8,15 @@ COPY ./ /microreact/
 
 WORKDIR /microreact
 
-# # install produciton deps
-# # RUN npm install --only=production
-RUN npm install --ignore-scripts --legacy-peer-deps
-
+# install produciton deps
+RUN npm install --omit=dev
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
 
 FROM backend AS frontend
 
 # installs dev dependencies
-# RUN npm install
+RUN npm install
 
 # runs webpack build
 RUN npm run build
