@@ -1,0 +1,8 @@
+# public/data/*
+build
+.next
+.git
+node_modules
+out
+microreact-viewer/.git
+microreact-viewer/node_modules
