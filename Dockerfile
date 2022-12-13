@@ -4,9 +4,9 @@ RUN apk add --update --no-cache curl g++ git make openssh-client python2
 
 RUN mkdir -p ~/.ssh/ && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
-COPY ./ /microreact/
+COPY ./ /website/
 
-WORKDIR /microreact
+WORKDIR /website
 
 # install produciton deps
 RUN npm install --omit=dev
@@ -27,14 +27,16 @@ RUN npm run build
 
 FROM node:gallium-alpine3.15
 
-WORKDIR /microreact
+WORKDIR /website
 
 ENV NODE_ENV=production
 
-COPY . /microreact/
+COPY . /website/
 
-COPY --from=backend /microreact/node_modules /microreact/node_modules
+COPY --from=backend /website/node_modules /website/node_modules
 
-COPY --from=frontend /microreact/.next /microreact/.next
+COPY --from=frontend /website/.next /website/.next
+
+RUN ln -s /website /microreact
 
 CMD [ "npm", "start" ]
