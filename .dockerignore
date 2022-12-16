@@ -1,7 +1,8 @@
-# public/data/*
 build
 .next
 .git
+.swc
+.vscode
 node_modules
 out
 microreact-viewer/.git
