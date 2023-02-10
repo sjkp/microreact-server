@@ -1,4 +1,4 @@
-import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
+import requireUserMiddleware from "cgps-application-server/middleware/require-user";
 import logger from "cgps-application-server/logger";
 
 import dataabse from "../../../services/dataabse";
@@ -13,7 +13,7 @@ export const config = {
 
 export default async function (req, res) {
   // Only logged in users can create projects
-  const user = await requireUserMiddlewarefrom(req, res);
+  const user = await requireUserMiddleware(req, res);
 
   const db = await dataabse();
 
