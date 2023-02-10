@@ -199,9 +199,11 @@ if (serverRuntimeConfig.auth.openidconnect) {
   );
 }
 
-export default NextAuth(options);
+export default function (req, res) {
+  if (req.method === "HEAD") {
+    console.info("HEAD", req.url);
+    return res.status(200);
+  }
 
-// const handler = NextAuth(options);
-// export default function (req, res) {
-//   return handler(req, res);
-// }
+  return NextAuth(req, res, options);
+}
