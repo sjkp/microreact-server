@@ -5,7 +5,7 @@ export default async function (req, res) {
   if (!req.query?.project) {
     throw new ApiError(400);
   }
-  const [ projectId ] = req.query?.project.split("/");
+  const [ projectId ] = req.query.project.split("/");
   const metadata = await ProjectsService.getProjectMetadata(projectId);
 
   if (metadata && metadata.image && metadata.image.startsWith("data:image/png")) {
