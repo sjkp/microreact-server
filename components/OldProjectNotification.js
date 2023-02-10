@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
@@ -50,3 +51,7 @@ export default function OldProjectNotification(props) {
     </div>
   );
 }
+
+OldProjectNotification.propTypes = {
+  projectSlug: PropTypes.string,
+};
