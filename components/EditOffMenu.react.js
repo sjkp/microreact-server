@@ -62,6 +62,10 @@ function EditOffContent(props) {
   }
 }
 
+EditOffContent.propTypes = {
+  onMakeCopy: PropTypes.func,
+};
+
 const icon = (<EditOffIcon />);
 
 const EditOffMenu = React.memo(
