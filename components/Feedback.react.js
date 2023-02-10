@@ -1,8 +1,8 @@
 /* eslint new-cap: 0 */
 
+import PropTypes from "prop-types";
 import React from "react";
 import Button from "@mui/material/Button";
-import FeedbackTwoToneIcon from "@mui/icons-material/FeedbackTwoTone";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
@@ -127,7 +127,7 @@ class Feedback extends React.Component {
     this.feedback.close()
       .then(
         (canvas) => {
-          this.setState({ screenshotImage: canvas.toDataURL()});
+          this.setState({ screenshotImage: canvas.toDataURL() });
           this.props?.onAfterScreenshot();
         },
       )
@@ -319,5 +319,12 @@ class Feedback extends React.Component {
     );
   }
 }
+
+Feedback.propTypes = {
+  onAfterScreenshot: PropTypes.func,
+  onBeforeScreenshot: PropTypes.func,
+  onSend: PropTypes.func,
+  renderButton: PropTypes.node,
+};
 
 export default Feedback;
