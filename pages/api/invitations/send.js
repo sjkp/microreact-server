@@ -1,13 +1,13 @@
 import shortUUID from "short-uuid";
 import { ApiError } from "next/dist/server/api-utils";
-import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
+import requireUserMiddleware from "cgps-application-server/middleware/require-user";
 
 import { sendEmailMessage, renderEmailMessage } from "../../../services/email-messages";
 import * as ProjectsService from "../../../services/projects";
 
 export default async function (req, res) {
   // Only logged in users can send invitations
-  const user = await requireUserMiddlewarefrom(req, res);
+  const user = await requireUserMiddleware(req, res);
 
   const projectModel = await ProjectsService.getProjectDocument(req.query?.project, user);
 
@@ -53,5 +53,5 @@ export default async function (req, res) {
 
   await projectModel.save();
 
-  res.status(200).send({ ok: true });
+  res.status(200).send(true);
 }
