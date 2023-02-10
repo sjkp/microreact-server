@@ -3,7 +3,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import LinearProgress from "@mui/material/LinearProgress";
-import FolderOpenTwoToneIcon from '@mui/icons-material/FolderOpenTwoTone';
+import FolderOpenTwoToneIcon from "@mui/icons-material/FolderOpenTwoTone";
 
 import { UiFloatingFilter, UiRadioList, UiIconButtonMenu, emptyArray } from "microreact-viewer/index";
 
