@@ -86,4 +86,9 @@ function CustomShowcaseProjectGrid(props) {
   );
 }
 
+CustomShowcaseProjectGrid.propTypes = {
+  emptyIcon: PropTypes.node,
+  emptyMessage: PropTypes.node,
+};
+
 export default CustomShowcaseProjectGrid;
