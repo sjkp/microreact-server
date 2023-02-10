@@ -186,8 +186,10 @@ function AccountProjectGrid(props) {
 }
 
 AccountProjectGrid.propTypes = {
-  filter: PropTypes.func,
   apiEndpoint: PropTypes.func.isRequired,
+  emptyIcon: PropTypes.node,
+  emptyMessage: PropTypes.node,
+  filter: PropTypes.func,
 };
 
 export default AccountProjectGrid;
