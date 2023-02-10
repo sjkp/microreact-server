@@ -26,7 +26,7 @@ async function findProjectState(stateId, projectModel) {
 export default async function (req, res) {
   const user = await getUserMiddleware(req, res);
 
-  const [ projectId, stateId ] = req.query?.project.split("/");
+  const [ projectId, stateId ] = req.query.project.split("/");
   const projectModel = await ProjectsService.getProjectDocument(projectId, user);
 
   logger.info("project access", { project: projectModel.id }, { user, req, res });
