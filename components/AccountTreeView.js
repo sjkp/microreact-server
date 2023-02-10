@@ -1,26 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TreeView from '@mui/lab/TreeView';
-import TreeItem from '@mui/lab/TreeItem';
-import Typography from '@mui/material/Typography';
-import MailIcon from '@mui/icons-material/Mail';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Label from '@mui/icons-material/Label';
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
-import InfoIcon from '@mui/icons-material/Info';
-import ForumIcon from '@mui/icons-material/Forum';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
-import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
+import React from "react";
+import PropTypes from "prop-types";
+import TreeView from "@mui/lab/TreeView";
+import TreeItem from "@mui/lab/TreeItem";
+import MailIcon from "@mui/icons-material/Mail";
+import Label from "@mui/icons-material/Label";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import InfoIcon from "@mui/icons-material/Info";
+import ForumIcon from "@mui/icons-material/Forum";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 
 import styles from "../styles/account-page-nav.module.css";
 
-import Link from "./Link";
+import Link from "./link";
 
 function StyledTreeItem(props) {
+  // eslint-disable-next-line no-unused-vars
   const { labelText, labelIcon: LabelIcon, labelInfo, href, ...other } = props;
   const LinkComponent = href ? Link : "div";
 
@@ -54,6 +53,7 @@ StyledTreeItem.propTypes = {
   color: PropTypes.string,
   labelIcon: PropTypes.elementType.isRequired,
   labelInfo: PropTypes.string,
+  href: PropTypes.string,
   labelText: PropTypes.string.isRequired,
 };
 
