@@ -51,7 +51,7 @@ function ProfileSection() {
       </p>
 
       <p>
-        Account Gravatar (change at <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>):
+        Account Gravatar (change at <a href="https://gravatar.com/" target="_blank" rel="noreferrer">https://gravatar.com/</a>):
         <UiAvatar email={session.email} />
       </p>
 
