@@ -1,12 +1,12 @@
 import { ApiError } from "next/dist/server/api-utils";
-import requireUserMiddlewarefrom from "cgps-application-server/middleware/require-user";
+import requireUserMiddleware from "cgps-application-server/middleware/require-user";
 
 import * as ProjectsService from "../../../services/projects";
 import databaseService from "../../../services/dataabse";
 
 export default async function (req, res) {
   // Only logged in users can send invitations
-  const reqUser = await requireUserMiddlewarefrom(req, res);
+  const reqUser = await requireUserMiddleware(req, res);
 
   const projectModel = await ProjectsService.getProjectDocument(req.query?.project, reqUser);
 
