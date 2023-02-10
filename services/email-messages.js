@@ -1,5 +1,4 @@
-import nodemailer from "nodemailer";
-
+const nodemailer = require("nodemailer");
 const path = require("path");
 const EmailTemplates = require("email-templates");
 
