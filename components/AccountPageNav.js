@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 
+import PropTypes from "prop-types";
 import React from "react";
 import Drawer from "@mui/material/Drawer";
 import clsx from "clsx";
@@ -24,9 +25,10 @@ import styles from "../styles/account-page-nav.module.css";
 
 import * as DataHooks from "../utils/data-hooks";
 
-import Link from "./Link";
+import Link from "./link";
 
 function StyledTreeItem(props) {
+  // eslint-disable-next-line no-unused-vars
   const { labelText, labelIcon: LabelIcon, showTitle, labelInfo, href, expanded, ...other } = props;
   const LinkComponent = href ? Link : "div";
 
@@ -54,6 +56,15 @@ function StyledTreeItem(props) {
     />
   );
 }
+
+StyledTreeItem.propTypes = {
+  labelIcon: PropTypes.string,
+  labelText: PropTypes.string,
+  showTitle: PropTypes.string,
+  labelInfo: PropTypes.string,
+  href: PropTypes.string,
+  expanded: PropTypes.bool,
+};
 
 function ProjectFoldersTreeItems() {
   const { data, isError, isLoading } = DataHooks.userFoldersDataHook();
