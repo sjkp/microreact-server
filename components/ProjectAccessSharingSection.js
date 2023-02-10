@@ -81,6 +81,12 @@ const EmailAddressesInput = (props) => {
   );
 };
 
+EmailAddressesInput.propTypes = {
+  projectAccessData: PropTypes.object.isRequired,
+  value: PropTypes.any,
+  onChange: PropTypes.func,
+};
+
 const ProjectAccessSharingSection = ({ projectAccessData }) => {
   const [ emails, setEmails ] = React.useState([]);
   const [ sendingStatus, setSendingStatus ] = React.useState(false);
