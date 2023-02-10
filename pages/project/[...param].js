@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -63,6 +64,13 @@ const Project = (props) => {
   else {
     return null;
   }
+};
+
+Project.propTypes = {
+  hasMetadata: PropTypes.bool,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default Project;
