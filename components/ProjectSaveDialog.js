@@ -59,6 +59,10 @@ function UpdateProjectButton(props) {
   }
 }
 
+UpdateProjectButton.propTypes = {
+  handleUpdateOnServer: PropTypes.func,
+};
+
 function SaveProjectButton(props) {
   const { data: session, status } = useSession();
   const loading = (status === "loading");
@@ -120,6 +124,10 @@ function SaveProjectButton(props) {
     );
   }
 }
+
+SaveProjectButton.propTypes = {
+  handleSaveOnServer: PropTypes.func,
+};
 
 function getInitialState() {
   const presentState = viewerSelectors.presentStateSelector(ViewerStore.getState());
