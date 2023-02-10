@@ -52,6 +52,11 @@ const CopyUrl = React.memo(
   }
 );
 
+CopyUrl.propTypes = {
+  value: PropTypes.string,
+  children: PropTypes.func,
+};
+
 class ProjectAccessLinkSection extends React.PureComponent {
 
   state = {
