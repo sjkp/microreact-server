@@ -63,6 +63,7 @@ UiCopyTextfield.propTypes = {
   size: PropTypes.string,
   title: PropTypes.string,
   value: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
 
 export default UiCopyTextfield;
