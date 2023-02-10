@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import React from "react";
+import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
@@ -20,6 +21,11 @@ function UiEmptyState(props) {
     </div>
   );
 }
+
+UiEmptyState.propTypes = {
+  icon: PropTypes.node,
+  message: PropTypes.node,
+};
 
 UiEmptyState.defaultProps = {
   icon: (<WorkOutlineIcon />),
