@@ -21,7 +21,7 @@ export default function Home() {
       <div className="mr-showcase__intro">
 
       <h1 className="mr-showcase__title">
-        <strong>Open data visualization</strong> and <strong>sharing</strong>{' '}
+        <strong>Open data visualization</strong> and <strong>sharing</strong>{" "}
         for <strong>genomic epidemiology</strong>
       </h1>
 
