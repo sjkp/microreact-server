@@ -1,4 +1,4 @@
-FROM node:gallium-alpine3.15 AS backend
+FROM node:18-alpine3.15 AS backend
 
 RUN apk add --update --no-cache curl g++ git make openssh-client python2
 
@@ -25,7 +25,7 @@ RUN npm run build
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
-FROM node:gallium-alpine3.15
+FROM node:18-alpine3.15
 
 WORKDIR /app
 
