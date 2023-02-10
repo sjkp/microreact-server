@@ -12,7 +12,6 @@ import fetcher from "../utils/viewer-fetch-proxy";
 import useLeavePageConfirm from "../hooks/leave-page-confirm";
 import * as Projects from "../utils/projects";
 
-// import SaveViewMenu from "./SaveViewMenu";
 import ProjectSaveDialog from "./ProjectSaveDialog";
 import ProjectAccessDialog from "./ProjectAccessDialog";
 import ManageAccountsIcon from "./ManageAccountsIcon";
@@ -39,6 +38,7 @@ class ProjectViewer extends React.PureComponent {
     window.ViewerUtils = ViewerUtils;
   }
 
+  // eslint-disable-next-line react/no-deprecated
   componentWillMount() {
     viewerStore.dispatch(
       viewerActions.config({
