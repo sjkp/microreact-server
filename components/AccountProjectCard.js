@@ -135,6 +135,8 @@ AccountProjectCard.propTypes = {
   access: PropTypes.number,
   binned: PropTypes.bool,
   folder: PropTypes.string,
+  name: PropTypes.string,
+  createdAt: PropTypes.string,
   id: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
   onLoading: PropTypes.func.isRequired,
