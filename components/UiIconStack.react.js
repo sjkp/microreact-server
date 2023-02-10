@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { root as rootClassName } from "../styles/ui-icon-stack.module.css";
 
@@ -12,6 +13,11 @@ const UiIconStack = React.memo(
     </figure>
   ),
 );
+
+UiIconStack.propTypes = {
+  style: PropTypes.object,
+  children: PropTypes.node,
+};
 
 UiIconStack.displayName = "IconStack";
 
