@@ -200,10 +200,21 @@ if (serverRuntimeConfig.auth.openidconnect) {
 }
 
 export default function (req, res) {
-  if (req.method === "HEAD") {
-    console.info("HEAD", req.url);
-    return res.status(200);
+  if (
+    req.method === "GET"
+    &&
+    req.url.startsWith("/api/auth/callback/email")
+    &&
+    !req.headers.cookie
+  ) {
+    return res.status(200).send();
   }
+
+  if (req.method === "HEAD") {
+    return res.status(200).send();
+  }
+
+  // res.setHeader("Set-Cookie", "mr-next-auth=true; Path=/");
 
   return NextAuth(req, res, options);
 }
