@@ -5,6 +5,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
+import InputAdornment from '@mui/material/InputAdornment';
 
 import UiLoadingBar from "./UiLoadingBar";
 import UiEmptyState from "./UiEmptyState";
@@ -120,20 +121,24 @@ function AccountProjectGrid(props) {
         spacing={1}
       >
         <Grid item>
-          <label htmlFor="serach-projects-input">
-            <SearchIcon />
-          </label>
-        </Grid>
-        <Grid item>
           <TextField
+            size="small"
             autoFocus
             id="serach-projects-input"
             placeholder="Search"
             value={searchFilter}
             onChange={(event) => setSearchFilter(event.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
           />
         </Grid>
       </Grid>
+
       {
         (filteredData && filteredData.length === 0)
           ?
@@ -146,39 +151,39 @@ function AccountProjectGrid(props) {
           :
           (
             <Grid container spacing={3}>
-        {
-          filteredData.map(
-            (item) => (
-              <Grid
-                key={item.id}
-                item
-                xs={12}
-                sm={12}
-                md={6}
-                lg={4}
-                xl={3}
-              >
-                <AccountProjectCard
-                  access={item.access}
-                  binned={item.binned}
-                  createdAt={item.createdAt}
-                  destination={item.destination}
-                  folder={item.folder}
-                  id={item.id}
-                  name={item.name}
-                  onDelete={() => handleDeleteProject(data, item.id, !item.binned)}
-                  onLoading={setLoading}
-                  onMove={(folderId, allFolders) => handleMoveProject(data, item.id, folderId, allFolders)}
-                  onStar={() => handleStarProject(data, item.id, !item.starred)}
-                  starred={item.starred}
-                  updatedAt={item.updatedAt}
-                  url={item.url}
-                />
-              </Grid>
-            )
-          )
-        }
-      </Grid>
+              {
+                filteredData.map(
+                  (item) => (
+                    <Grid
+                      key={item.id}
+                      item
+                      xs={12}
+                      sm={12}
+                      md={6}
+                      lg={4}
+                      xl={3}
+                    >
+                      <AccountProjectCard
+                        access={item.access}
+                        binned={item.binned}
+                        createdAt={item.createdAt}
+                        destination={item.destination}
+                        folder={item.folder}
+                        id={item.id}
+                        name={item.name}
+                        onDelete={() => handleDeleteProject(data, item.id, !item.binned)}
+                        onLoading={setLoading}
+                        onMove={(folderId, allFolders) => handleMoveProject(data, item.id, folderId, allFolders)}
+                        onStar={() => handleStarProject(data, item.id, !item.starred)}
+                        starred={item.starred}
+                        updatedAt={item.updatedAt}
+                        url={item.url}
+                      />
+                    </Grid>
+                  )
+                )
+              }
+            </Grid>
           )
       }
     </React.Fragment>

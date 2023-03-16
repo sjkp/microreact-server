@@ -47,7 +47,7 @@ function AccountProjectCard(props) {
           className="attribute"
           color="textSecondary"
         >
-          Project ID: { props.id }
+          ID: { props.id }
         </Typography>
 
         <Typography
@@ -102,15 +102,6 @@ function AccountProjectCard(props) {
             <ProjectAccessTrigger
               projectId={props.id}
             />
-
-            {/* <IconButton
-              component="a"
-              title="Edit Project Files"
-              href={`${props.url}?ui=edit`}
-              onClick={props.onLoading}
-            >
-              <EditTwoToneIcon />
-            </IconButton> */}
 
             <IconButton
               title={props.binned ? "Restore Project" : "Delete Project"}

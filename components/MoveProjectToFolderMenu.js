@@ -85,7 +85,7 @@ const MoveProjectToFolderMenu = React.memo(
         hideOnClick={true}
         icon={ButtonIcon}
         title="Move Project to Folder"
-        className={rootClassname}
+        menuClassName={rootClassname}
       />
     );
   }
