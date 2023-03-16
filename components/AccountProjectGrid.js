@@ -5,7 +5,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
-import InputAdornment from '@mui/material/InputAdornment';
+import InputAdornment from "@mui/material/InputAdornment";
 
 import UiLoadingBar from "./UiLoadingBar";
 import UiEmptyState from "./UiEmptyState";
