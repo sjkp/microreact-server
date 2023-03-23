@@ -29,6 +29,11 @@ export default async function (req, res) {
   const [ projectId, stateId ] = req.query.project.split("/");
   const projectModel = await ProjectsService.getProjectDocument(projectId, user);
 
+  // eslint-disable-next-line no-extra-boolean-cast
+  if (!!projectModel.binned) {
+    throw new ApiError(404);
+  }
+
   logger.info("project access", { project: projectModel.id }, { user, req, res });
 
   // Legacy projects (version 1) may have state documents
