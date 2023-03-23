@@ -23,7 +23,23 @@ async function findProjectState(stateId, projectModel) {
   }
 }
 
-export default async function (req, res) {
+function catchApiErrors(func) {
+  return async (req, res) => {
+    try {
+      await func(req, res);
+    }
+    catch (err) {
+      if (err instanceof ApiError) {
+        res.status(err.statusCode).end(err.message);
+      }
+      else {
+        throw err;
+      }
+    }
+  };
+}
+
+export default catchApiErrors(async (req, res) => {
   const user = await getUserMiddleware(req, res);
 
   const [ projectId, stateId ] = req.query.project.split("/");
@@ -31,7 +47,7 @@ export default async function (req, res) {
 
   // eslint-disable-next-line no-extra-boolean-cast
   if (!!projectModel.binned) {
-    throw new ApiError(404);
+    throw new ApiError(404, "not found");
   }
 
   logger.info("project access", { project: projectModel.id }, { user, req, res });
@@ -60,4 +76,4 @@ export default async function (req, res) {
   jsonDocument._.linkedProjectId = projectModel.linkedProjectId;
 
   return res.json(jsonDocument);
-}
+})
