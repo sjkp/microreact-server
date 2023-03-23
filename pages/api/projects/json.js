@@ -76,4 +76,4 @@ export default catchApiErrors(async (req, res) => {
   jsonDocument._.linkedProjectId = projectModel.linkedProjectId;
 
   return res.json(jsonDocument);
-})
+});
