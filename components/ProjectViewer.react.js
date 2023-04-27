@@ -252,7 +252,7 @@ class ProjectViewer extends React.PureComponent {
     return (
       <Provider store={viewerStore}>
         <MicroreactViewer
-          components={this.renderViewerComponents()}
+          slots={this.renderViewerComponents()}
         >
           { this.renderAccessDialog() }
 
