@@ -324,7 +324,7 @@ Feedback.propTypes = {
   onAfterScreenshot: PropTypes.func,
   onBeforeScreenshot: PropTypes.func,
   onSend: PropTypes.func,
-  renderButton: PropTypes.node,
+  renderButton: PropTypes.func,
 };
 
 export default Feedback;
