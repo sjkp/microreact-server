@@ -1,0 +1,5 @@
+ms.local {
+    route /* {
+        reverse_proxy microreact:3000
+    }   
+}

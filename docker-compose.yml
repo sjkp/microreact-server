@@ -1,0 +1,64 @@
+version: "3.4"
+services:
+  mongodb:
+    image: mongo:4.4.2
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: mongodb_test   
+    volumes:
+      - ./mongodb/data/db/:/data/db/
+      - ./mongodb/data/log/:/var/log/mongodb/
+    ports:
+      - "27017:27017"
+    expose:
+      - 27017
+
+  # Allows for testing email-based self-service flows in kratos (forgot password, account verification, etc)
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  proxy:
+    hostname: ms.local
+    image: caddy:2.5.0-alpine    
+    ports:
+      - "443:443"
+    command:
+      - "caddy"
+      - "run"
+      - "-config"
+      - "/etc/Caddyfile"
+    depends_on:
+      - "microreact"
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile:ro
+
+  microreact:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mongodb
+    environment:
+      #NODE_EXTRA_CA_CERTS: /etc/ssl/certs/ca-certificates.crt
+      NEXTAUTH_URL: https://ms.local/
+      NEXTAUTH_URL_INTERNAL: http://localhost:3000/
+      LOGGER_FILENAME: microreactlogs
+      LOGGER_LEVEL: debug
+      LOGGER_DIR: /logs
+      CONFIG_FILE: /app/config.js
+      MONGODB_CONNECTION: mongodb://mongodb:27017/mongodb_test
+      MONGODB_DATABASE: mongodb_test
+      AUTH_SECRET: bablla
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./logs:/logs
+      - ./microreact_example.js:/app/config.js
+
+networks:
+  default:
+    name: microreact_default
